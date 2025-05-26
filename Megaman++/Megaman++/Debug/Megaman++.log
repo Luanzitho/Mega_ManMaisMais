@@ -1,3 +1,11 @@
-﻿  main.cpp
-  LINK : C:\Users\Note\Documents\GitHub\Jogo-simao\Megaman++\Debug\Megaman++.exe não encontrado ou não compilado pelo o último link incremental; executando link completo
-  Megaman++.vcxproj -> C:\Users\Note\Documents\GitHub\Jogo-simao\Megaman++\Debug\Megaman++.exe
+﻿  Ente.cpp
+  Entidade.cpp
+C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(20,20): error C2061: erro de sintaxe: identificador 'Ente'
+  (compilando o arquivo fonte 'Ente.cpp')
+  
+C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(20,20): error C2061: erro de sintaxe: identificador 'Ente'
+  (compilando o arquivo fonte 'Entidades/Entidade.cpp')
+  
+  Gerenciador_Grafico.cpp
+  main.cpp
+  Gerando Código...
