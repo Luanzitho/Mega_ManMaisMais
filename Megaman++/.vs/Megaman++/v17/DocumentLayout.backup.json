@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Note\\Documents\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\",
+  "WorkspaceRootPath": "C:\\Users\\Jambr\\OneDrive\\Documentos\\TestesJogoTecProg\\Megaman\u002B\u002B\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Note\\Documents\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\TestesJogoTecProg\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -24,11 +24,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\Note\\Documents\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\main.cpp",
+              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\TestesJogoTecProg\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\main.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\main.cpp",
-              "ToolTip": "C:\\Users\\Note\\Documents\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\main.cpp",
+              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\TestesJogoTecProg\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\main.cpp",
               "RelativeToolTip": "Megaman\u002B\u002B\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-25T22:51:26.194Z",
               "EditorCaption": ""
