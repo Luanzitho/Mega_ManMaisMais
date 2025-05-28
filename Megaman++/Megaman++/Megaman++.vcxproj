@@ -131,13 +131,19 @@
   <ItemGroup>
     <ClCompile Include="Ente.cpp" />
     <ClCompile Include="Entidades\Entidade.cpp" />
+    <ClCompile Include="Entidades\Personagens\Personagem.cpp" />
     <ClCompile Include="Gerenciadores\Gerenciador_Grafico.cpp" />
+    <ClCompile Include="Jogo.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ente.h" />
     <ClInclude Include="Entidades\Entidade.h" />
+    <ClInclude Include="Entidades\Personagens\Personagem.h" />
     <ClInclude Include="Gerenciadores\Gerenciador_Grafico.h" />
+    <ClInclude Include="Jogo.h" />
+    <ClInclude Include="Menu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

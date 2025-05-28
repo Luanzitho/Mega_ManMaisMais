@@ -1,11 +1,7 @@
-﻿  Ente.cpp
-  Entidade.cpp
-C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(20,20): error C2061: erro de sintaxe: identificador 'Ente'
-  (compilando o arquivo fonte 'Ente.cpp')
-  
-C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(20,20): error C2061: erro de sintaxe: identificador 'Ente'
-  (compilando o arquivo fonte 'Entidades/Entidade.cpp')
-  
-  Gerenciador_Grafico.cpp
-  main.cpp
-  Gerando Código...
+﻿  Gerenciador_Grafico.cpp
+C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.cpp(42,33): warning C4305: 'argumento': truncamento de 'double' para 'T'
+C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.cpp(42,33): warning C4305:         with
+C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.cpp(42,33): warning C4305:         [
+C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.cpp(42,33): warning C4305:             T=float
+C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.cpp(42,33): warning C4305:         ]
+  Megaman++.vcxproj -> C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Debug\Megaman++.exe

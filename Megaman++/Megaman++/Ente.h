@@ -1,6 +1,4 @@
 #pragma once
-#ifndef _ENTE_H_
-#define _ENTE_H_
 
 #include "Gerenciadores/Gerenciador_Grafico.h"
 #include <string>
@@ -13,14 +11,19 @@ protected:
 	int id;
 	static int contId;
 	Gerenciador_Grafico* pGG;
-	char nomeTextureFile[20];
-	sf::Vector2f coords;
+	//sf::Sprite sprite;
+	sf::Texture textura;
+	//char* nomeTextureFile;
+	//sf::Vector2f coords;
 
 public:
 	Ente();
 	~Ente();
+	//void setTexturaTESTE(); //Apenas para fazer testes
+	//sf::Texture* getTexturaTESTE(); //Apenas para fazer testes
 	virtual void executar() = 0;
+	//sf::Sprite getSprite();
+	//virtual void setTextureFile() = 0;
+	virtual std::string getTextureFile() = 0;
 	void desenhar();
 };
-
-#endif // _ENTE_H_
