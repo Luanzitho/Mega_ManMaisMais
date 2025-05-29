@@ -11,19 +11,19 @@ protected:
 	int id;
 	static int contId;
 	Gerenciador_Grafico* pGG;
-	//sf::Sprite sprite;
-	sf::Texture textura;
-	//char* nomeTextureFile;
-	//sf::Vector2f coords;
+	sf::Vector2f coords;
+	sf::Vector2f tamanho;
 
 public:
 	Ente();
+	Ente(sf::Vector2f coordsIni, sf::Vector2f size);
 	~Ente();
-	//void setTexturaTESTE(); //Apenas para fazer testes
-	//sf::Texture* getTexturaTESTE(); //Apenas para fazer testes
+	void setGerenciadorGrafico(Gerenciador_Grafico* p);
 	virtual void executar() = 0;
-	//sf::Sprite getSprite();
-	//virtual void setTextureFile() = 0;
 	virtual std::string getTextureFile() = 0;
+	const sf::Vector2f getTamanho(); //TESTE
+	void setTamanho(sf::Vector2f size);
+	const sf::Vector2f getCoords(); 
+	void setCoords(sf::Vector2f coordenadas); //TESTE
 	void desenhar();
 };

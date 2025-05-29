@@ -1,7 +1,1 @@
-﻿  Gerenciador_Grafico.cpp
-C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.cpp(42,33): warning C4305: 'argumento': truncamento de 'double' para 'T'
-C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.cpp(42,33): warning C4305:         with
-C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.cpp(42,33): warning C4305:         [
-C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.cpp(42,33): warning C4305:             T=float
-C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.cpp(42,33): warning C4305:         ]
-  Megaman++.vcxproj -> C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Debug\Megaman++.exe
+﻿  Megaman++.vcxproj -> C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Debug\Megaman++.exe

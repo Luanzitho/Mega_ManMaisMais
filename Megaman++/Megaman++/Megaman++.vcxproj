@@ -131,6 +131,7 @@
   <ItemGroup>
     <ClCompile Include="Ente.cpp" />
     <ClCompile Include="Entidades\Entidade.cpp" />
+    <ClCompile Include="Entidades\Personagens\Megaman.cpp" />
     <ClCompile Include="Entidades\Personagens\Personagem.cpp" />
     <ClCompile Include="Gerenciadores\Gerenciador_Grafico.cpp" />
     <ClCompile Include="Jogo.cpp" />
@@ -140,9 +141,11 @@
   <ItemGroup>
     <ClInclude Include="Ente.h" />
     <ClInclude Include="Entidades\Entidade.h" />
+    <ClInclude Include="Entidades\Personagens\Megaman.h" />
     <ClInclude Include="Entidades\Personagens\Personagem.h" />
     <ClInclude Include="Gerenciadores\Gerenciador_Grafico.h" />
     <ClInclude Include="Jogo.h" />
+    <ClInclude Include="Listas\Lista.h" />
     <ClInclude Include="Menu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

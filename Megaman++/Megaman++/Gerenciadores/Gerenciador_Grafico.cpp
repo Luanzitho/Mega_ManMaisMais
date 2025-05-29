@@ -1,8 +1,11 @@
 #include "Gerenciador_Grafico.h"
+#include "../Entidades/Personagens/Megaman.h"
 
-Gerenciador_Grafico::Gerenciador_Grafico()
+Gerenciador_Grafico* Gerenciador_Grafico::instancia = nullptr;
+
+Gerenciador_Grafico::Gerenciador_Grafico(): window(sf::VideoMode(1280, 720), "Megaman++")
 {
-    pGG = nullptr;
+    //instancia = new Gerenciador_Grafico();
 }
 
 Gerenciador_Grafico::~Gerenciador_Grafico()
@@ -11,6 +14,22 @@ Gerenciador_Grafico::~Gerenciador_Grafico()
 
 void Gerenciador_Grafico::desenharEnte(Ente* pE)
 {
+    sf::RectangleShape corpo;
+    sf::Texture textura;
+    
+    textura.loadFromFile(pE->getTextureFile());
+
+    sf::Vector2f tam = pE->getTamanho();
+    sf::Vector2f pos = pE->getCoords();
+
+
+    corpo.setSize(tam);
+    corpo.setPosition(pos);
+    corpo.setTexture(&textura);
+
+    window.draw(corpo);
+    
+    /*
     sf::RenderWindow window(sf::VideoMode::getDesktopMode(), "Megaman++");
 
     sf::RectangleShape corpo;
@@ -44,7 +63,42 @@ void Gerenciador_Grafico::desenharEnte(Ente* pE)
         window.draw(corpo);
         window.draw(shape);
         window.display();
+    }*/
+}
+
+Gerenciador_Grafico* Gerenciador_Grafico::getInstancia() //Para instanciar um único Gerenciador_Grafico
+{ 
+    if (!instancia)
+    {
+        instancia = new Gerenciador_Grafico();
+    }
+    return instancia; 
+}
+
+bool Gerenciador_Grafico::janelaEstaAberta()
+{
+    return window.isOpen();
+}
+
+void Gerenciador_Grafico::fecharJanela()
+{
+    sf::Event evento;
+
+    while (window.pollEvent(evento)) 
+    {
+        if (evento.type == sf::Event::Closed) 
+        {
+            window.close();
+        }
     }
 }
 
-Gerenciador_Grafico* Gerenciador_Grafico::getGerenciador_Grafico() { return pGG; }
+void Gerenciador_Grafico::limparJanela()
+{
+    window.clear();
+}
+
+void Gerenciador_Grafico::mostrarConteudoJanela()
+{
+    window.display();
+}

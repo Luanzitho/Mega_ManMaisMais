@@ -2,36 +2,25 @@
 
 Ente::Ente(): id(contId++)
 {
-	pGG = new Gerenciador_Grafico();
+	pGG = nullptr;
 }
 int Ente::contId(0);
 
-Ente::~Ente()
+Ente::Ente(sf::Vector2f coordsIni, sf::Vector2f size): coords(coordsIni), tamanho(size) {}
+
+Ente::~Ente(){}
+
+void Ente::setGerenciadorGrafico(Gerenciador_Grafico* p)
 {
-}
-/*
-void Ente::setTexturaTESTE()
-{
-	if (!textura.loadFromFile("Sprites/Megaman/Parado/Parado1.png")) {
-		std::cout << "Erro ao carregar textura!" << std::endl;
-	}
-	else {
-		std::cout << "Textura carregada com sucesso!" << std::endl;
-	}
-	//textura.loadFromFile("Sprites/Megaman/Parado/Parado1.png");
+	pGG = p;
 }
 
-sf::Texture* Ente::getTexturaTESTE()
-{
-	return &textura;
-}
+const sf::Vector2f Ente::getTamanho() { return tamanho; }
 
-sf::Sprite Ente::getSprite()
-{
-	return sprite;
-}
-*/
-void Ente::desenhar()
-{
-	pGG->desenharEnte(this);
-}
+void Ente::setTamanho(sf::Vector2f size) { tamanho = size; }
+
+const sf::Vector2f Ente::getCoords() { return coords; }
+
+void Ente::setCoords(sf::Vector2f coordenadas) { coords = coordenadas; }
+
+void Ente::desenhar() { pGG->desenharEnte(this); }
