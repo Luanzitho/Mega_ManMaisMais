@@ -1,12 +1,11 @@
 #include "Megaman.h"
 
-Megaman::Megaman() : Personagem(5), player1(true)//Define que o player tem 5 vidas ou uma barra de vida com 5 unidades
+Megaman::Megaman() : Personagem(5), pontos(0), player1(true)//Define que o player tem 5 vidas ou uma barra de vida com 5 unidades
 {
 }
 
-Megaman::Megaman(bool novoPlayer)
+Megaman::Megaman(bool player) : Personagem(5), pontos(0), player1(player)
 {
-	player1 = novoPlayer;
 }
 
 Megaman::~Megaman()

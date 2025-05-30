@@ -133,8 +133,10 @@
     <ClCompile Include="Entidades\Entidade.cpp" />
     <ClCompile Include="Entidades\Personagens\Megaman.cpp" />
     <ClCompile Include="Entidades\Personagens\Personagem.cpp" />
+    <ClCompile Include="Fases\Fase.cpp" />
     <ClCompile Include="Gerenciadores\Gerenciador_Grafico.cpp" />
     <ClCompile Include="Jogo.cpp" />
+    <ClCompile Include="Listas\ListaEntidades.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
   </ItemGroup>
@@ -143,9 +145,11 @@
     <ClInclude Include="Entidades\Entidade.h" />
     <ClInclude Include="Entidades\Personagens\Megaman.h" />
     <ClInclude Include="Entidades\Personagens\Personagem.h" />
+    <ClInclude Include="Fases\Fase.h" />
     <ClInclude Include="Gerenciadores\Gerenciador_Grafico.h" />
     <ClInclude Include="Jogo.h" />
     <ClInclude Include="Listas\Lista.h" />
+    <ClInclude Include="Listas\ListaEntidades.h" />
     <ClInclude Include="Menu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -11,15 +11,15 @@ private:
 	static Gerenciador_Grafico* instancia;
 	sf::RenderWindow window;
 	//sf::RectangleShape* corpo;
-	//sf::Texture* textura;
+	//sf::Texture textura;
 	//sf::Sprite* sprite;
 	Gerenciador_Grafico(); //Padrão singleton, vídeo do Burda
 
 public:
 	
 	~Gerenciador_Grafico();
-	void desenharEnte(Ente* pE);
 	static Gerenciador_Grafico* getInstancia();
+	void desenharEnte(Ente* pE);
 	bool janelaEstaAberta();
 	void fecharJanela();
 	void limparJanela();

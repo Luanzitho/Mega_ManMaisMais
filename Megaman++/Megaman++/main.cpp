@@ -5,11 +5,15 @@
 #include "Entidades/Entidade.h"
 #include "Entidades/Personagens/Megaman.h"
 #include "Gerenciadores/Gerenciador_Grafico.h"
+#include "Listas/ListaEntidades.h"
 
 int main()
 {
     //Jogo jog;
     //jog.executar();
+
+    //ListaEntidades* LEs;
+    //LEs = new ListaEntidades();
 
     //TESTE MEGAMAN
     Megaman* p1;
@@ -19,20 +23,24 @@ int main()
 
     Gerenciador_Grafico* GG = Gerenciador_Grafico::getInstancia();
 
-    p1->setCoords(sf::Vector2f(550.f, 680.f));
+    p1->setCoords(sf::Vector2f(550.f, 180.f));
     p1->setTamanho(sf::Vector2f(100.f, 100.f));
 
-    p2->setCoords(sf::Vector2f(550.f, 780.f));
+    //LEs->incluirEntidade(p1); A LISTA AINDA ESTÁ COM PROBLEMAS, INUTILIZAVEL POR ENQUANTO
+
+    p2->setCoords(sf::Vector2f(950.f, 180.f));
     p2->setTamanho(sf::Vector2f(100.f, 100.f));
 
     while (GG->janelaEstaAberta())
     {
         GG->fecharJanela();
         GG->limparJanela();
-        p1->executar();
-        p2->executar();
+        
         GG->desenharEnte(static_cast<Ente*>(p1));
         GG->desenharEnte(static_cast<Ente*>(p2));
+        p1->executar();
+        p2->executar();
+
         GG->mostrarConteudoJanela();
     }
     /*sf::RenderWindow window(sf::VideoMode::getDesktopMode(), "Megaman++");
