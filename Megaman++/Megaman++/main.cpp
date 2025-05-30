@@ -6,6 +6,7 @@
 #include "Entidades/Personagens/Megaman.h"
 #include "Gerenciadores/Gerenciador_Grafico.h"
 #include "Listas/ListaEntidades.h"
+#include "Entidades/Personagens/Metall.h"
 
 int main()
 {
@@ -20,13 +21,18 @@ int main()
     Megaman* p2;
     p1 = new Megaman(true);
     p2 = new Megaman(false);
+    Metall* m1;
+    m1 = new Metall();
 
     Gerenciador_Grafico* GG = Gerenciador_Grafico::getInstancia();
 
     p1->setCoords(sf::Vector2f(550.f, 180.f));
-    p1->setTamanho(sf::Vector2f(100.f, 100.f));
+    p1->setTamanho(sf::Vector2f(70.f, 70.f));
+    m1->setCoords(sf::Vector2f(100.f, 400.f));
+    m1->setTamanho(sf::Vector2f(50.f, 50.f));
+    
+    //LEs->incluirEntidade(p1); //A LISTA AINDA ESTÁ COM PROBLEMAS, INUTILIZAVEL POR ENQUANTO
 
-    //LEs->incluirEntidade(p1); A LISTA AINDA ESTÁ COM PROBLEMAS, INUTILIZAVEL POR ENQUANTO
 
     p2->setCoords(sf::Vector2f(950.f, 180.f));
     p2->setTamanho(sf::Vector2f(100.f, 100.f));
@@ -40,52 +46,10 @@ int main()
         GG->desenharEnte(static_cast<Ente*>(p2));
         p1->executar();
         p2->executar();
+        GG->desenharEnte(static_cast<Ente*>(m1));
 
         GG->mostrarConteudoJanela();
     }
-    /*sf::RenderWindow window(sf::VideoMode::getDesktopMode(), "Megaman++");
-    
-    p1.setCoords(sf::Vector2f(1250.f, 680.f));
-    p1.setTamanho(sf::Vector2f(100.f, 100.f));
-
-    p2.setCoords(sf::Vector2f(550.f, 680.f));
-    p2.setTamanho(sf::Vector2f(100.f, 100.f));
-
-    sf::RectangleShape corpo, corpo2;
-    sf::Texture textura, textura2;
-
-    corpo.setSize(p1.getTamanho());
-    corpo2.setSize(p2.getTamanho());
-
-    textura.loadFromFile(p1.getTextureFile());
-    corpo.setTexture(&textura);
-
-    textura2.loadFromFile(p2.getTextureFile());
-    corpo2.setTexture(&textura2);
-
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
-
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
-        window.clear();
-
-        p1.executar();
-        corpo.setPosition(p1.getCoords());
-        window.draw(corpo);
-
-        p2.executar();
-        corpo2.setPosition(p2.getCoords());
-        window.draw(corpo2);
-
-        window.draw(shape);
-        window.display();
-    }*/
+   
     return 0;
 }
