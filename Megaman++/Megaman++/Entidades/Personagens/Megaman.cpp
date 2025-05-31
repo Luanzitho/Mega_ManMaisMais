@@ -1,51 +1,61 @@
 #include "Megaman.h"
 #include "Metall.h"
 
-Megaman::Megaman() : Personagem(5), pontos(0), player1(true)//Define que o player tem 5 vidas ou uma barra de vida com 5 unidades
+Megaman::Megaman() : Personagem(5), pontos(0), noChao(false), gravidade(50), velocidade(0), aceleracao(30.f), velVertical(0), velMax(100), player1(true)
 {
 }
 
-Megaman::Megaman(bool player) : Personagem(5), pontos(0), player1(player)
+Megaman::Megaman(bool player) : Personagem(5), pontos(0), noChao(false), gravidade(50), velocidade(0), aceleracao(30.f), velVertical(0), velMax(100), player1(player)
 {
 }
 
 Megaman::~Megaman(){}
 
-void Megaman::mover()
+void Megaman::mover(float dt)
 {
-	if (player1) 
-	{
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-			coords.x -= 0.1;
+	sf::Vector2f posicao = getCoords();
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-			coords.x += 0.1;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+		velocidade -= aceleracao * dt;
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-			coords.y -= 0.1;
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+		velocidade += aceleracao * dt;
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-			coords.y += 0.1;
-	}
+	else
+		velocidade = velocidade * 0.7;
+	
+	if (velocidade > velMax)
+		velocidade = velMax;
+	else if (velocidade < velMax * (-1))
+		velocidade = velMax * (-1);
+
+	if (!noChao)
+		velVertical += gravidade * dt;
 	else
 	{
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-			coords.x -= 0.1;
+		velVertical = 0;
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-			coords.x += 0.1;
-
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-			coords.y -= 0.1;
-
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-			coords.y += 0.1;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+			velVertical = -100.f;
+			noChao = false;
+		}
 	}
+	
+	posicao.x += velocidade * dt;
+	posicao.y += velVertical * dt;
+
+	if (posicao.y + getTamanho().y >= 600)
+	{
+		posicao.y = 600 - getTamanho().y;
+		noChao = true;
+	}
+
+	setCoords(posicao);
 }
 
-void Megaman::executar() 
+void Megaman::executar(float dt) 
 {
-	mover();
+	mover(dt);
 	//atirar();
 }
 

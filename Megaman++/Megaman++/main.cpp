@@ -10,14 +10,14 @@
 
 int main()
 {
-    //Jogo jog;
-    //jog.executar();
+    Jogo jog;
+    jog.executar();
 
     //ListaEntidades* LEs;
     //LEs = new ListaEntidades();
 
     //TESTE MEGAMAN
-    Megaman* p1;
+    /*Megaman* p1;
     Megaman* p2;
     p1 = new Megaman(true);
     p2 = new Megaman(false);
@@ -50,6 +50,6 @@ int main()
 
         GG->mostrarConteudoJanela();
     }
-   
+   */
     return 0;
 }

@@ -12,6 +12,6 @@ public:
 	ListaEntidades();
 	~ListaEntidades();
 	void incluirEntidade(Entidade* pE);
-	void percorrer();
+	void percorrer(float dt);
 };
 

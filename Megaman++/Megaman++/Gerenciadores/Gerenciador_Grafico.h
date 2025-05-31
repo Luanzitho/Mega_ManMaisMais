@@ -13,10 +13,10 @@ private:
 	//sf::RectangleShape* corpo;
 	//sf::Texture textura;
 	//sf::Sprite* sprite;
-	Gerenciador_Grafico(); //Padrão singleton, vídeo do Burda
+	//Gerenciador_Grafico(); //Padrão singleton, vídeo do Burda
 
 public:
-	
+	Gerenciador_Grafico(); //Padrão luanzin kkkk
 	~Gerenciador_Grafico();
 	static Gerenciador_Grafico* getInstancia();
 	void desenharEnte(Ente* pE);

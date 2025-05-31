@@ -5,16 +5,21 @@ class Megaman:public Personagem
 {
 private:
 	bool player1;
-	sf::Texture textura;
 	int pontos;
+	bool noChao;
+	float velocidade;
+	float velVertical;
+	float aceleracao;
+	float gravidade;
+	float velMax;
 
 public:
 	Megaman();
 	Megaman(bool player);
 	~Megaman();
-	void mover();
+	void mover(float dt);
 	//void atirar();
-	void executar();
+	void executar(float dt);
 	std::string getTextureFile();
 };
 

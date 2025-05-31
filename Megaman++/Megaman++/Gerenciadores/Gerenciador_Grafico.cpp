@@ -5,7 +5,7 @@ Gerenciador_Grafico* Gerenciador_Grafico::instancia = nullptr;
 
 Gerenciador_Grafico::Gerenciador_Grafico(): window(sf::VideoMode(1280, 720), "Megaman++")
 {
-    //instancia = new Gerenciador_Grafico();
+    window.setFramerateLimit(60);
 }
 
 Gerenciador_Grafico::~Gerenciador_Grafico()

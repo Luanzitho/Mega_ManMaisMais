@@ -8,8 +8,8 @@ private:
 public:
 	Metall();
 	~Metall();
-	void executar();
-	void mover();
+	void executar(float dt);
+	void mover(float dt);
 	//void danificar(Megaman* p);
 	//void esconder();
 	std::string getTextureFile();

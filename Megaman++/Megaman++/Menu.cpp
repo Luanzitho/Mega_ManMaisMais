@@ -9,9 +9,10 @@ Menu::~Menu()
 {
 }
 
-void Menu::executar()
+void Menu::executar(float dt)
 {
-	desenhar();
+	pG= pJog->getGerenciador();
+	pG->desenharEnte(static_cast<Ente*>(this));
 }
 
 void Menu::setGame(Jogo* jog)
@@ -21,10 +22,10 @@ void Menu::setGame(Jogo* jog)
 
 std::string Menu::getTextureFile()
 {
-	return "";
+	return "Sprites/Megaman/Parado/Parado1.png";
 }
 
-void Menu::setDesenho(Gerenciador_Grafico* pG)
+/*void Menu::setDesenho(Gerenciador_Grafico* pG)
 {
 	pGG = pG;
-}
+}*/

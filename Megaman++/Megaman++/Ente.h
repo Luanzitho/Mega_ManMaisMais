@@ -19,11 +19,11 @@ public:
 	Ente(sf::Vector2f coordsIni, sf::Vector2f size);
 	~Ente();
 	void setGerenciadorGrafico(Gerenciador_Grafico* p);
-	virtual void executar() = 0;
+	virtual void executar(float dt) = 0;
 	virtual std::string getTextureFile() = 0;
-	const sf::Vector2f getTamanho(); //TESTE
+	const sf::Vector2f getTamanho();
 	void setTamanho(sf::Vector2f size);
 	const sf::Vector2f getCoords(); 
-	void setCoords(sf::Vector2f coordenadas); //TESTE
+	void setCoords(sf::Vector2f coordenadas);
 	void desenhar();
 };

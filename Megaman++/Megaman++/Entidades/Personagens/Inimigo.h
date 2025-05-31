@@ -11,8 +11,8 @@ public:
 	Inimigo();
 	~Inimigo();
 	//void salvarDataBuffer();
-	virtual void mover() = 0;
-	virtual void executar() = 0;
+	virtual void mover(float dt) = 0;
+	virtual void executar(float dt) = 0;
 	//virtual void danificar() = 0;
 	virtual std::string getTextureFile() = 0;
 };

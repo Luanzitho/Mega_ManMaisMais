@@ -8,12 +8,12 @@ Metall::~Metall()
 {
 }
 
-void Metall::executar()
+void Metall::executar(float dt)
 {
 	//esconder()
 }
 
-void Metall::mover()
+void Metall::mover(float dt)
 {
 }
 

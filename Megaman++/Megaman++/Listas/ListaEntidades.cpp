@@ -14,7 +14,7 @@ void ListaEntidades::incluirEntidade(Entidade* pE)
 		LEs.incluir(pE);
 }
 
-void ListaEntidades::percorrer()
+void ListaEntidades::percorrer(float dt)
 {
     Lista<Entidade>::Elemento<Entidade>* aux = LEs.getpPrimeiro();
 
@@ -23,7 +23,7 @@ void ListaEntidades::percorrer()
         Entidade* pEntidade = aux->getInfo();
         if (pEntidade)
         {
-            pEntidade->executar();
+            pEntidade->executar(dt);
             pEntidade->desenhar();
         }
 

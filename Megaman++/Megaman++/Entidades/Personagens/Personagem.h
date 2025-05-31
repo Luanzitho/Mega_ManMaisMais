@@ -13,7 +13,7 @@ public:
 	Personagem();
 	Personagem(int v);
 	~Personagem();
-	virtual void mover() = 0;
-	virtual void executar() = 0;
+	virtual void mover(float dt) = 0;
+	virtual void executar(float dt) = 0;
 	virtual std::string getTextureFile() = 0;
 };
