@@ -1,3 +1,4 @@
 ﻿  Megaman.cpp
-C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp(25,27): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
+C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp(38,28): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
+C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp(56,28): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
   Megaman++.vcxproj -> C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Debug\Megaman++.exe

@@ -1,43 +1,87 @@
 #include "Megaman.h"
 #include "Metall.h"
 
-Megaman::Megaman() : Personagem(5), pontos(0), noChao(false), gravidade(50), velocidade(0), aceleracao(30.f), velVertical(0), velMax(100), player1(true)
+Megaman::Megaman() : Personagem(5), pontos(0), noChao(false), direita(true), gravidade(400), velocidade(0), aceleracao(50.f), velVertical(100), velMax(200), player1(true)
 {
+	LE = nullptr;
 }
 
-Megaman::Megaman(bool player) : Personagem(5), pontos(0), noChao(false), gravidade(50), velocidade(0), aceleracao(30.f), velVertical(0), velMax(100), player1(player)
+Megaman::Megaman(bool player) : Personagem(5), pontos(0), noChao(false), direita(true), gravidade(400), velocidade(0), aceleracao(50.f), velVertical(100), velMax(200), player1(player)
 {
+	LE = nullptr;
 }
 
 Megaman::~Megaman(){}
 
+void Megaman::associaListaEntidades(ListaEntidades* lista)
+{
+	LE = lista;
+}
+
 void Megaman::mover(float dt)
 {
 	sf::Vector2f posicao = getCoords();
-
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-		velocidade -= aceleracao * dt;
-
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-		velocidade += aceleracao * dt;
-
-	else
-		velocidade = velocidade * 0.7;
 	
-	if (velocidade > velMax)
+	if (player1) //Player 1 usa as SETAS
+	{
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+		{
+			velocidade -= velMax; //aceleracao * dt;
+			direita = false;
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+		{
+			velocidade += velMax; //aceleracao* dt;
+			direita = true;
+		}
+		else
+			velocidade = velocidade * 0.9;
+	}
+	
+	else //Player 2 usa WASD
+	{
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+		{
+			velocidade -= velMax; //aceleracao * dt;
+			direita = false;
+		}
+
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+		{
+			velocidade += velMax; //aceleracao* dt;
+			direita = true;
+		}
+
+		else
+			velocidade = velocidade * 0.9;
+	}
+	
+	if (velocidade > velMax) //Limita a velocidade
 		velocidade = velMax;
 	else if (velocidade < velMax * (-1))
 		velocidade = velMax * (-1);
 
-	if (!noChao)
+	if (!noChao) //Confere se ele está no chão, se sim, consegue pular, se não, sofre efeito da gravidade
 		velVertical += gravidade * dt;
 	else
 	{
 		velVertical = 0;
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-			velVertical = -100.f;
-			noChao = false;
+		if (player1) //Se for Player 1 usa seta para cima, se não, usa W
+		{
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+			{
+				velVertical = -400.f;
+				noChao = false;
+			}
+		}
+		else
+		{
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+			{
+				velVertical = -400.f;
+				noChao = false;
+			}
 		}
 	}
 	
@@ -53,10 +97,37 @@ void Megaman::mover(float dt)
 	setCoords(posicao);
 }
 
+void Megaman::atirar(float dt)
+{
+	if (player1)
+	{
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
+		{
+			sf::Vector2f pos = getCoords();
+
+			ProjetilMegaman* tiro = new ProjetilMegaman(pos, direita);
+			LE->incluirEntidade(tiro);
+			tiro->setGerenciadorGrafico(pGG);
+		}
+	}
+
+	else
+	{
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))
+		{
+			sf::Vector2f pos = getCoords();
+
+			ProjetilMegaman* tiro = new ProjetilMegaman(pos, direita);
+			LE->incluirEntidade(tiro);
+			tiro->setGerenciadorGrafico(pGG);
+		}
+	}
+}
+
 void Megaman::executar(float dt) 
 {
 	mover(dt);
-	//atirar();
+	atirar(dt);
 }
 
 std::string Megaman::getTextureFile() 

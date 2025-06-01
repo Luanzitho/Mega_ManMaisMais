@@ -17,6 +17,9 @@ Jogo::Jogo(): GG(), inMenu(false), playing(true), p1(new Megaman), p2(new Megama
 	LEs->incluirEntidade(static_cast <Entidade*>(p1));
 	LEs->incluirEntidade(static_cast <Entidade*>(p2));
 	LEs->incluirEntidade(static_cast <Entidade*>(m1));
+
+	p1->associaListaEntidades(LEs); //Teste da função atirar
+	p2->associaListaEntidades(LEs);
 }
 
 Jogo::~Jogo()
@@ -63,5 +66,3 @@ Gerenciador_Grafico* Jogo::getGerenciador()
 {
 	return &GG;
 }
-
-

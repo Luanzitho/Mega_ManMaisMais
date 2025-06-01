@@ -15,6 +15,7 @@ void Metall::executar(float dt)
 
 void Metall::mover(float dt)
 {
+	return; //Ele não se move no jogo
 }
 
 std::string Metall::getTextureFile()

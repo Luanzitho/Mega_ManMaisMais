@@ -1,7 +1,7 @@
 #pragma once
 #include "Inimigo.h"
-class InimMed :
-    public Inimigo
+class InimMed:public Inimigo
 {
+
 };
 
