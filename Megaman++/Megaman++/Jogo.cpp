@@ -15,7 +15,7 @@ Jogo::Jogo(): GG(), inMenu(false), playing(true), p1(new Megaman), p2(new Megama
 	p2->setGerenciadorGrafico(&GG);
 	m1->setGerenciadorGrafico(&GG);
 	LEs->incluirEntidade(static_cast <Entidade*>(p1));
-	LEs->incluirEntidade(static_cast <Entidade*>(p2));
+	//LEs->incluirEntidade(static_cast <Entidade*>(p2));
 	LEs->incluirEntidade(static_cast <Entidade*>(m1));
 
 	p1->associaListaEntidades(LEs); //Teste da função atirar
