@@ -1,12 +1,12 @@
 #include "Megaman.h"
 #include "Metall.h"
 
-Megaman::Megaman() : Personagem(5), pontos(0), noChao(false), direita(true), gravidade(400), velocidade(0), aceleracao(50.f), velVertical(100), velMax(200), player1(true)
+Megaman::Megaman() : Personagem(5), pontos(0), noChao(false), direita(true), gravidade(300), velocidade(0), aceleracao(100.f), velVertical(0), velMax(200), player1(true)
 {
 	LE = nullptr;
 }
 
-Megaman::Megaman(bool player) : Personagem(5), pontos(0), noChao(false), direita(true), gravidade(400), velocidade(0), aceleracao(50.f), velVertical(100), velMax(200), player1(player)
+Megaman::Megaman(bool player) : Personagem(5), pontos(0), noChao(false), direita(true), gravidade(300), velocidade(0), aceleracao(100.f), velVertical(0), velMax(200), player1(player)
 {
 	LE = nullptr;
 }
@@ -71,7 +71,7 @@ void Megaman::mover(float dt)
 		{
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 			{
-				velVertical = -400.f;
+				velVertical = -300.f;
 				noChao = false;
 			}
 		}
@@ -79,7 +79,7 @@ void Megaman::mover(float dt)
 		{
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 			{
-				velVertical = -400.f;
+				velVertical = -300.f;
 				noChao = false;
 			}
 		}

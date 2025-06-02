@@ -1,5 +1,6 @@
 C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Ente.cpp;C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Debug\Ente.obj
 C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Entidade.cpp;C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Debug\Entidade.obj
+C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Obstaculos\Obstaculo.cpp;C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Debug\Obstaculo.obj
 C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Inimigo.cpp;C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Debug\Inimigo.obj
 C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\InimMed.cpp;C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Debug\InimMed.obj
 C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp;C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Debug\Megaman.obj
@@ -8,6 +9,7 @@ C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Entidad
 C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Projetil.cpp;C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Debug\Projetil.obj
 C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\ProjetilMegaman.cpp;C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Debug\ProjetilMegaman.obj
 C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Fases\Fase.cpp;C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Debug\Fase.obj
+C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Gerenciadores\Gerenciador_Colisoes.cpp;C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Debug\Gerenciador_Colisoes.obj
 C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.cpp;C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Debug\Gerenciador_Grafico.obj
 C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Jogo.cpp;C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Debug\Jogo.obj
 C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Listas\ListaEntidades.cpp;C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Debug\ListaEntidades.obj

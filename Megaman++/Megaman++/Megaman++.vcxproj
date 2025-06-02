@@ -131,6 +131,7 @@
   <ItemGroup>
     <ClCompile Include="Ente.cpp" />
     <ClCompile Include="Entidades\Entidade.cpp" />
+    <ClCompile Include="Entidades\Obstaculos\Obstaculo.cpp" />
     <ClCompile Include="Entidades\Personagens\Inimigo.cpp" />
     <ClCompile Include="Entidades\Personagens\InimMed.cpp" />
     <ClCompile Include="Entidades\Personagens\Megaman.cpp" />
@@ -139,6 +140,7 @@
     <ClCompile Include="Entidades\Projetil.cpp" />
     <ClCompile Include="Entidades\ProjetilMegaman.cpp" />
     <ClCompile Include="Fases\Fase.cpp" />
+    <ClCompile Include="Gerenciadores\Gerenciador_Colisoes.cpp" />
     <ClCompile Include="Gerenciadores\Gerenciador_Grafico.cpp" />
     <ClCompile Include="Jogo.cpp" />
     <ClCompile Include="Listas\ListaEntidades.cpp" />
@@ -148,6 +150,7 @@
   <ItemGroup>
     <ClInclude Include="Ente.h" />
     <ClInclude Include="Entidades\Entidade.h" />
+    <ClInclude Include="Entidades\Obstaculos\Obstaculo.h" />
     <ClInclude Include="Entidades\Personagens\Inimigo.h" />
     <ClInclude Include="Entidades\Personagens\InimMed.h" />
     <ClInclude Include="Entidades\Personagens\Megaman.h" />
@@ -156,6 +159,7 @@
     <ClInclude Include="Entidades\Projetil.h" />
     <ClInclude Include="Entidades\ProjetilMegaman.h" />
     <ClInclude Include="Fases\Fase.h" />
+    <ClInclude Include="Gerenciadores\Gerenciador_Colisoes.h" />
     <ClInclude Include="Gerenciadores\Gerenciador_Grafico.h" />
     <ClInclude Include="Jogo.h" />
     <ClInclude Include="Listas\Lista.h" />
