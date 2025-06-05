@@ -24,7 +24,7 @@ public:
 	void colisaoMegaInimigos();
 	void colisaoMegaProjeteis();
 	void colisaoInimsProjeteis();
-	//void colisaoInimsObstacs();
+	void colisaoInimsObstacs();
 	void incluirInimigo(Inimigo* pI);
 	void incluirObstaculo(Obstaculo* pO);
 	void incluirProjetil(Projetil* pP);

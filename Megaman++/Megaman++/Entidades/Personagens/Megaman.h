@@ -12,11 +12,8 @@ public://private:
 	bool direita;
 	bool noChao;
 	int pontos;
-	float velocidade;
-	float velVertical;
-	float aceleracao;
-	float gravidade;
-	float velMax;
+	float cooldownTiro;
+	float tempoCooldown;
 	ProjetilMegaman tiro;
 	ListaEntidades* LE;
 

@@ -1,2 +1,14 @@
-﻿  Gerenciador_Colisoes.cpp
+﻿  BigEye.cpp
+  Inimigo.cpp
+  Megaman.cpp
+C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp(39,28): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
+C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp(57,28): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
+  Metall.cpp
+  Fase.cpp
+  Gerenciador_Colisoes.cpp
+  Gerenciador_Grafico.cpp
+  Jogo.cpp
+  Menu.cpp
+  main.cpp
+  Gerando Código...
   Megaman++.vcxproj -> C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Debug\Megaman++.exe

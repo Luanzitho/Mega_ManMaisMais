@@ -2,12 +2,12 @@
 #include "Metall.h"
 #include <iostream>
 
-Megaman::Megaman() : Personagem(5), pontos(0), noChao(false), direita(true), gravidade(300), velocidade(0), aceleracao(100.f), velVertical(0), velMax(200), player1(true)
+Megaman::Megaman() : Personagem(20), pontos(0), noChao(false), direita(true), gravidade(300), velocidade(0), aceleracao(100.f), velVertical(0), velMax(200), cooldownTiro(0.25), tempoCooldown(0), player1(true)
 {
 	LE = nullptr;
 }
 
-Megaman::Megaman(bool player) : Personagem(5), pontos(0), noChao(false), direita(true), gravidade(300), velocidade(0), aceleracao(100.f), velVertical(0), velMax(200), player1(player)
+Megaman::Megaman(bool player) : Personagem(20), pontos(0), noChao(false), direita(true), gravidade(300), velocidade(0), aceleracao(100.f), velVertical(0), velMax(200), cooldownTiro(0.25), tempoCooldown(0), player1(player)
 {
 	LE = nullptr;
 }
@@ -101,15 +101,22 @@ void Megaman::mover(float dt)
 
 void Megaman::atirar(float dt)
 {
+	tempoCooldown += dt;
+
 	if (player1)
 	{
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 		{
-			sf::Vector2f pos = getCoords();
+			if (tempoCooldown >= cooldownTiro)
+			{
+				sf::Vector2f pos = getCoords();
 
-			ProjetilMegaman* tiro = new ProjetilMegaman(pos, direita);
-			LE->incluirEntidade(tiro);
-			tiro->setGerenciadorGrafico(pGG);
+				ProjetilMegaman* tiro = new ProjetilMegaman(pos, direita);
+				LE->incluirEntidade(tiro);
+				tiro->setGerenciadorGrafico(pGG);
+
+				tempoCooldown = 0;
+			}
 		}
 	}
 
@@ -117,11 +124,16 @@ void Megaman::atirar(float dt)
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))
 		{
-			sf::Vector2f pos = getCoords();
+			if (tempoCooldown >= cooldownTiro)
+			{
+				sf::Vector2f pos = getCoords();
 
-			ProjetilMegaman* tiro = new ProjetilMegaman(pos, direita);
-			LE->incluirEntidade(tiro);
-			tiro->setGerenciadorGrafico(pGG);
+				ProjetilMegaman* tiro = new ProjetilMegaman(pos, direita);
+				LE->incluirEntidade(tiro);
+				tiro->setGerenciadorGrafico(pGG);
+
+				tempoCooldown = 0;
+			}
 		}
 	}
 }

@@ -6,8 +6,13 @@ class Entidade;
 
 class Personagem:public Entidade
 {
-public://protected:
+protected:
 	int num_vidas;
+	float velocidade;
+	float velVertical;
+	float aceleracao;
+	float gravidade;
+	float velMax;
 
 public:
 	Personagem();

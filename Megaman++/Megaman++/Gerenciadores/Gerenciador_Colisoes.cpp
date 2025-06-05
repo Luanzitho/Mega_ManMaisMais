@@ -14,6 +14,7 @@ Gerenciador_Colisoes::~Gerenciador_Colisoes()
 
 const bool Gerenciador_Colisoes::verificarColisao(Entidade* pe1, Entidade* pe2) //Referência: Giu do PETECO
 {
+    /*
     float xE1, yE1, xE2, yE2; //Coordenadas
     float txE1, tyE1, txE2, tyE2; //Tamanhos
 
@@ -35,8 +36,16 @@ const bool Gerenciador_Colisoes::verificarColisao(Entidade* pe1, Entidade* pe2) 
 
     if (direitaE1 < xE2 || xE1 > direitaE2 || baseE1 < yE2 || yE1 > baseE2)
         return false;
+    */
 
-    return true;
+    sf::FloatRect ret1(pe1->getCoords(), pe1->getTamanho());
+    sf::FloatRect ret2(pe2->getCoords(), pe2->getTamanho());
+
+    if (ret1.intersects(ret2)) {
+        return true;
+    }
+
+    return false;
 }
 
 void Gerenciador_Colisoes::colisaoMegaObstacs()
@@ -55,7 +64,7 @@ void Gerenciador_Colisoes::colisaoInimsProjeteis()
 {
 }
 
-//void Gerenciador_Colisoes::colisaoInimsObstacs(){}
+void Gerenciador_Colisoes::colisaoInimsObstacs(){}
 
 void Gerenciador_Colisoes::incluirInimigo(Inimigo* pI) { if (pI) LIs.push_back(pI); }
 
