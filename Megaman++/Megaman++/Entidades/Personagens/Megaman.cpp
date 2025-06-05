@@ -1,5 +1,6 @@
 #include "Megaman.h"
 #include "Metall.h"
+#include <iostream>
 
 Megaman::Megaman() : Personagem(5), pontos(0), noChao(false), direita(true), gravidade(300), velocidade(0), aceleracao(100.f), velVertical(0), velMax(200), player1(true)
 {
@@ -73,6 +74,7 @@ void Megaman::mover(float dt)
 			{
 				velVertical = -300.f;
 				noChao = false;
+				std::cout << "Tenho " << num_vidas << " de HP" << std::endl;
 			}
 		}
 		else

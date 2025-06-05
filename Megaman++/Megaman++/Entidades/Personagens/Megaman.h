@@ -1,13 +1,13 @@
 #pragma once
 
 #include "Personagem.h"
-#include "../ProjetilMegaman.h"
+#include "../Projeteis/ProjetilMegaman.h"
 #include "../../Listas/ListaEntidades.h"
 #include <vector>
 
 class Megaman:public Personagem
 {
-private:
+public://private:
 	bool player1;
 	bool direita;
 	bool noChao;

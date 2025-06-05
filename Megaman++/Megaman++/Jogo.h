@@ -7,10 +7,12 @@
 #include "Gerenciadores/Gerenciador_Grafico.h"
 #include "Listas/ListaEntidades.h"
 #include "Entidades/Personagens/Metall.h"
+#include "Gerenciadores/Gerenciador_Colisoes.h"
 
 class Jogo
 {
 private:
+	Gerenciador_Colisoes GC;
 	Megaman* pJog1;
 	Gerenciador_Grafico GG;
 	Megaman* p1, *p2;

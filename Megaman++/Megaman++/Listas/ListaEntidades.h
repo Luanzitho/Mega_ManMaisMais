@@ -5,7 +5,7 @@
 
 class ListaEntidades
 {
-public://private:
+public: //private:
 	Lista<Entidade> LEs;
 
 public:

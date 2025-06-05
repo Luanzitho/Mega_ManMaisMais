@@ -20,6 +20,9 @@ Jogo::Jogo(): GG(), inMenu(false), playing(true), p1(new Megaman), p2(new Megama
 
 	p1->associaListaEntidades(LEs); //Teste da função atirar
 	p2->associaListaEntidades(LEs);
+
+	GC.incluirMegaman(p1);
+	GC.incluirInimigo(m1);
 }
 
 Jogo::~Jogo()
@@ -52,6 +55,8 @@ void Jogo::executar()
 			GG.fecharJanela();
 			GG.limparJanela();
 			LEs->percorrer(dt);
+			if (GC.verificarColisao(p1, m1))
+				m1->danificar(p1);
 			//GG.desenharEnte(static_cast<Ente*>(p1));
 			//GG.desenharEnte(static_cast<Ente*>(p2));
 			//p1->executar();

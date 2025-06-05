@@ -6,7 +6,7 @@ class Entidade;
 
 class Personagem:public Entidade
 {
-protected:
+public://protected:
 	int num_vidas;
 
 public:
