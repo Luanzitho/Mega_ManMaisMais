@@ -24,4 +24,5 @@ public:
 	void fecharJanela();
 	void limparJanela();
 	void mostrarConteudoJanela();
+	void desenhaTexto(sf::Text text);
 };

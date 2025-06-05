@@ -17,7 +17,7 @@ public://private:
 	ProjetilMegaman tiro;
 	ListaEntidades* LE;
 
-public:
+//public:
 	Megaman();
 	Megaman(bool player);
 	~Megaman();

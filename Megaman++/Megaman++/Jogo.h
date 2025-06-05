@@ -13,17 +13,19 @@ class Jogo
 {
 private:
 	Gerenciador_Colisoes GC;
-	Megaman* pJog1;
 	Gerenciador_Grafico GG;
 	Megaman* p1, *p2;
 	Metall* m1;
 	ListaEntidades* LEs;
 	bool inMenu;
 	bool playing;
+	int faseA;
 
 public:
 	Jogo();
 	~Jogo();
 	void executar();
+	void iniciar(int fase);
+	void encerrar();
 	Gerenciador_Grafico* getGerenciador();
 };

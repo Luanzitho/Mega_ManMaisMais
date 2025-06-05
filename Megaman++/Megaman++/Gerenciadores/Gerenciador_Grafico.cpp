@@ -68,3 +68,8 @@ void Gerenciador_Grafico::mostrarConteudoJanela()
 {
     window.display();
 }
+
+void Gerenciador_Grafico::desenhaTexto(sf::Text text)
+{
+	window.draw(text);
+}

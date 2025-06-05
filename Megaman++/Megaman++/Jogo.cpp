@@ -2,7 +2,7 @@
 #include "Entidades/Personagens/Megaman.h"
 #include <SFML/Graphics.hpp>
 
-Jogo::Jogo(): GG(), inMenu(false), playing(true), p1(new Megaman), p2(new Megaman(false)), m1(new Metall)
+Jogo::Jogo(): GG(), inMenu(true), playing(false), p1(new Megaman), p2(new Megaman(false)), m1(new Metall), faseA(0)
 {
 	p1->setCoords(sf::Vector2f(550.f, 180.f));
 	p1->setTamanho(sf::Vector2f(70.f, 70.f));
@@ -41,16 +41,15 @@ void Jogo::executar()
 	sf::Clock tempo;
 	while (GG.janelaEstaAberta())
 	{
+		float dt = tempo.restart().asSeconds();
+
 		if (inMenu)
 		{
-			GG.fecharJanela();
-			GG.limparJanela();
-			GG.desenharEnte(static_cast<Ente*>(menu));
-			//menu->executar();
+			menu->executar(dt);
 		}
 		else if (playing)
 		{
-			float dt = tempo.restart().asSeconds();
+			
 
 			GG.fecharJanela();
 			GG.limparJanela();
@@ -65,6 +64,18 @@ void Jogo::executar()
 		}
 		GG.mostrarConteudoJanela();
 	}
+}
+
+void Jogo::iniciar(int fase)
+{
+	faseA = fase;
+}
+
+void Jogo::encerrar()
+{
+	//LEs->limparLista();
+	delete LEs;
+
 }
 
 Gerenciador_Grafico* Jogo::getGerenciador()

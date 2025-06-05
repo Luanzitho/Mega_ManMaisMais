@@ -1,14 +1,49 @@
-﻿  BigEye.cpp
+﻿  Ente.cpp
+  Entidade.cpp
+  Obstaculo.cpp
   Inimigo.cpp
+  BigEye.cpp
   Megaman.cpp
-C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp(39,28): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
-C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp(57,28): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
   Metall.cpp
+C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp(5,79): error C2614: 'Megaman': inicialização de membro inválida: 'gravidade' não é uma base ou membro
+C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp(5,95): error C2614: 'Megaman': inicialização de membro inválida: 'velocidade' não é uma base ou membro
+C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp(5,110): error C2614: 'Megaman': inicialização de membro inválida: 'aceleracao' não é uma base ou membro
+C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp(5,129): error C2614: 'Megaman': inicialização de membro inválida: 'velVertical' não é uma base ou membro
+C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp(5,145): error C2614: 'Megaman': inicialização de membro inválida: 'velMax' não é uma base ou membro
+C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp(10,90): error C2614: 'Megaman': inicialização de membro inválida: 'gravidade' não é uma base ou membro
+C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp(10,106): error C2614: 'Megaman': inicialização de membro inválida: 'velocidade' não é uma base ou membro
+C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp(10,121): error C2614: 'Megaman': inicialização de membro inválida: 'aceleracao' não é uma base ou membro
+C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp(10,140): error C2614: 'Megaman': inicialização de membro inválida: 'velVertical' não é uma base ou membro
+C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp(10,156): error C2614: 'Megaman': inicialização de membro inválida: 'velMax' não é uma base ou membro
+C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp(39,28): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
+C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp(57,28): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
+C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Metall.cpp(23,3): error C2248: 'Personagem::num_vidas': não é possível acessar protected membro declarado na classe 'Personagem'
+      C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Personagem.h(10,6):
+      consulte a declaração de 'Personagem::num_vidas'
+      C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Personagem.h(7,7):
+      consulte a declaração de 'Personagem'
+  
+C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Metall.cpp(23,18): error C2248: 'Personagem::num_vidas': não é possível acessar protected membro declarado na classe 'Personagem'
+      C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Personagem.h(10,6):
+      consulte a declaração de 'Personagem::num_vidas'
+      C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Personagem.h(7,7):
+      consulte a declaração de 'Personagem'
+  
+  Personagem.cpp
+  Projetil.cpp
+  ProjetilMegaman.cpp
   Fase.cpp
   Gerenciador_Colisoes.cpp
   Gerenciador_Grafico.cpp
   Jogo.cpp
-  Menu.cpp
+  ListaEntidades.cpp
   main.cpp
+  Menu.cpp
+C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Menu.cpp(12,20): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Menu.cpp(14,29): warning C4244: 'argumento': conversão de 'float' para 'unsigned int', possível perda de dados
+C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Menu.cpp(67,12): error C2039: ' iniciar': não é um membro de 'Jogo'
+      C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Jogo.h(12,7):
+      consulte a declaração de 'Jogo'
+  
+C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Menu.cpp(80,21): warning C4018: '<': incompatibilidade de signed/unsigned
   Gerando Código...
-  Megaman++.vcxproj -> C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Debug\Megaman++.exe
