@@ -2,6 +2,7 @@
 
 Metall::Metall()
 {
+	setNumVidas(2);
 }
 
 Metall::~Metall()

@@ -7,6 +7,7 @@
 #include "Gerenciadores/Gerenciador_Grafico.h"
 #include "Listas/ListaEntidades.h"
 #include "Entidades/Personagens/Metall.h"
+#include "Entidades/Personagens/BigEye.h"
 #include "Gerenciadores/Gerenciador_Colisoes.h"
 
 class Jogo
@@ -16,6 +17,7 @@ private:
 	Gerenciador_Grafico& GG;
 	Megaman* p1, *p2;
 	Metall* m1;
+	BigEye* m2;
 	ListaEntidades* LEs;
 	bool inMenu;
 	bool playing;
