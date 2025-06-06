@@ -2,7 +2,7 @@
 #include "Entidades/Personagens/Megaman.h"
 #include <SFML/Graphics.hpp>
 
-Jogo::Jogo() : GG(*Gerenciador_Grafico::getInstancia()), inMenu(false), playing(true), p1(new Megaman), p2(new Megaman(false)), m1(new Metall), m2(new BigEye), faseA(0)
+Jogo::Jogo() : GG(*Gerenciador_Grafico::getInstancia()), inMenu(true), playing(false), p1(new Megaman), p2(new Megaman(false)), m1(new Metall), m2(new BigEye), faseA(0)
 {
 	p1->setCoords(sf::Vector2f(550.f, 180.f));
 	p1->setTamanho(sf::Vector2f(70.f, 70.f));
@@ -41,20 +41,28 @@ void Jogo::executar()
 	menu->setCoords(sf::Vector2f(0.f, 0.f));
 	menu->setTamanho(sf::Vector2f(1280.f, 720.f));
 	menu->setGame(this);
+	//menu->setGerenciadorGrafico(&GG);
 
 	sf::Clock tempo;
+	float dt;
+
 	while (GG.janelaEstaAberta())
 	{
-		float dt = tempo.restart().asSeconds();
-
+		dt = tempo.restart().asSeconds();
+		GG.eventoFecharJanela();
+		GG.limparJanela();
 		if (inMenu)
-		{
 			menu->executar(dt);
-		}
 		else if (playing)
 		{
-			GG.eventoFecharJanela();
-			GG.limparJanela();
+			if(faseA==1)
+			{
+			
+			}
+			else if(faseA==2)
+			{
+			
+			}
 			LEs->percorrer(dt);
 			if (GC.verificarColisao(p1, m1))
 				m1->danificar(p1);
@@ -67,8 +75,14 @@ void Jogo::executar()
 
 void Jogo::iniciar(int fase)
 {
-	faseA = fase;
+	if(inMenu)
+	{
+		inMenu = false;
+		playing = true;
+		faseA = fase;
+	}
 }
+
 
 void Jogo::encerrar()
 {

@@ -10,7 +10,7 @@ class Menu : public Ente
 {
 private:
 	Jogo* pJog;
-	Gerenciador_Grafico* pGG;
+	//Gerenciador_Grafico* pGG;
 	int escolha, tela;
 	bool isPressed, enter, start;
 	sf::Font* font;
@@ -26,5 +26,6 @@ public:
 	void setGame(Jogo* jog);
 	std::string getTextureFile();
 	int getEscolha() { return escolha; };
-	//void setDesenho(Gerenciador_Grafico* pG);
+	void selecionar();
+	void desenhaInteracao();
 };

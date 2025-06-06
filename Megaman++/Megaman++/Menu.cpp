@@ -7,8 +7,8 @@ Menu::Menu() : escolha(0), tela(0), enter(false), isPressed(false), start(false)
 	pGG = Gerenciador_Grafico::getInstancia();
 	font = new sf::Font();
 	font->loadFromFile("Fontes/Pixelify_Sans/static/PixelifySans-Regular.ttf");
-	options = { "Jogar", "Ranking", "Sair", "Fase 1", "Fase 2"};
-	coordsTexts = { {500.f, 400.f},{440.f, 500.f}, {540.f,600.f}, {500.f, 400.f},{440.f, 500.f} };
+	options = { "Jogar", "Ranking", "Sair", "Fase 1", "Fase 2", "Voltar"};
+	coordsTexts = { {500.f, 400.f},{440.f, 500.f}, {540.f,600.f}, {440.f, 400.f},{440.f, 500.f}, {440.f, 600.f} };
 	texts.resize(options.size());
 	for (int i = 0; i < options.size(); i++)
 	{
@@ -32,79 +32,28 @@ Menu::~Menu()
 
 void Menu::executar(float dt)
 {
-	//sf::Vector2f pos = sf::Vector2f(230.f, 444.f), tam = sf::Vector2f(850.f, 60.f);// obs: acertar melhor o desenho no menu
-	
-	while (!start)
+	while (!start) //redundante??
 	{
 		pGG->eventoFecharJanela();
 		pGG->limparJanela();
 		pGG->desenharEnte(this);
-
+		//std::cout << "Menu" << std::endl;
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !isPressed) //movimento da escolha de op��es
 		{
-			if (tela == 0 && escolha < 4)escolha++;
-			else if (tela == 1 && escolha < 2)escolha++;
+			if ((tela == 0 || tela==1) && escolha < 2)escolha++;
 			isPressed = true;
-			//pos.y += tam.y;
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && !isPressed && escolha > 0)
 		{
 			isPressed = true;
 			escolha--;
-			//pos.y -= tam.y;
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
 		{
-			if (tela == 0)
-			{
-				if (escolha == 0)
-					tela = 1; // tela para escolher a fase
-				else if (escolha == 1)
-					tela = 2; // ranking
-				else if (escolha == 2) {
-					tela = 3; //sair
-					pJog->encerrar();
-				}
-				escolha = 0;
-			}
-			else if (tela == 1)
-			{
-				if (escolha == 0) {//fase 1
-					pJog->iniciar(escolha+1);
-				}
-				else if (escolha == 1) {//fase 2
-				}
-				else if(escolha==3)
-				{ //voltar
-				
-				}
-			}
-		}
-
-		
-		if(tela==0)
-		{
-			for (int i = 0; i < 3; i++)
-			{
-				if (i == escolha)texts[i].setOutlineThickness(3.f);
-				else texts[i].setOutlineThickness(0);
-				pGG->desenhaTexto(texts[i]);
-			}
-		}
-		else if (tela == 1) 
-		{
-			for (int i = 3; i < 5; i++)
-			{
-				if (i == escolha)texts[i].setOutlineThickness(3.f);
-				else texts[i].setOutlineThickness(0);
-				pGG->desenhaTexto(texts[i]);
-			}
+			selecionar();
 		}
 		
-
-		//system("Pause");
-		
-		//pGG->desenhaRetangulo(pos, tam);
+		desenhaInteracao();
 		pGG->mostrarConteudoJanela();
 		if (isPressed) // conseguir uma forma de saber quando soltou o bot�o
 		{
@@ -120,10 +69,59 @@ void Menu::setGame(Jogo* jog)
 
 std::string Menu::getTextureFile()
 {
+	if (tela == 0 || tela==1)
+		return "Sprites/Menu/Menu1.png";
+}
+
+void Menu::selecionar()
+{
 	if (tela == 0)
-		return "Sprites/Menu/Menu1.png";
+	{
+		if (escolha == 0)
+			tela = 1; // tela para escolher a fase
+		else if (escolha == 1)
+			tela = 2; // ranking
+		else if (escolha == 2) {
+			tela = 3; //sair
+			pJog->encerrar(); //rever esse encerrar, para fechar o programa corretamente
+		}
+		escolha = 0;
+	}
 	else if (tela == 1)
-		return "Sprites/Menu/Menu1.png";
-	else 
-		return "Sprites/Menu/Menu1.png"; // retornar a imagem da tela atual
+	{
+		/*if (escolha == 0) { //Continuar
+
+		}*/
+		if (escolha == 0 || escolha==1) { //fase selecionada
+			pJog->iniciar(escolha + 1);
+			start = true; //iniciar o jogo
+		}
+		else if (escolha == 2)
+		{
+			tela = 0;//voltar
+
+		}
+	}
+}
+
+void Menu::desenhaInteracao()
+{
+	if (tela == 0)
+	{
+		for (int i = 0; i < 3; i++)
+		{
+			if (i == escolha)texts[i].setOutlineThickness(3.f);
+			else texts[i].setOutlineThickness(0);
+			pGG->desenhaTexto(texts[i]);
+		}
+	}
+	else if (tela == 1)
+	{
+		for (int i = 3; i < 6; i++)
+		{
+			if (i == escolha + 3)texts[i].setOutlineThickness(3.f);
+			else texts[i].setOutlineThickness(0);
+			pGG->desenhaTexto(texts[i]);
+		}
+	}
 }

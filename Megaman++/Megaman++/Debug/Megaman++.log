@@ -1,2 +1,4 @@
-﻿  Jogo.cpp
+﻿  Menu.cpp
+C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Menu.cpp(13,20): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Menu.cpp(74,1): warning C4715: 'Menu::getTextureFile': nem todos os caminhos de controle retornam um valor
   Megaman++.vcxproj -> C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Debug\Megaman++.exe
