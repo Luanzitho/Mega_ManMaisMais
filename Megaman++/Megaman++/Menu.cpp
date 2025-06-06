@@ -6,17 +6,21 @@ Menu::Menu() : escolha(0), tela(0), enter(false), isPressed(false), start(false)
 	pJog = nullptr;
 	pGG = Gerenciador_Grafico::getInstancia();
 	font = new sf::Font();
-	font->loadFromFile("Fontes/Pixels.ttf");
-	options = { "Jogar", "Rankinng", "Sair"};
-	coordsTexts = { {0.f, 0.f},{640.f, 460.f}, {640.f,560.f}};
-	texts.resize((int)options.size());
+	font->loadFromFile("Fontes/Pixelify_Sans/static/PixelifySans-Regular.ttf");
+	options = { "Jogar", "Ranking", "Sair", "Fase 1", "Fase 2"};
+	coordsTexts = { {500.f, 400.f},{440.f, 500.f}, {540.f,600.f}, {500.f, 400.f},{440.f, 500.f} };
+	texts.resize(options.size());
 	for (int i = 0; i < options.size(); i++)
 	{
-		texts[i].setCharacterSize(240.f);
+		texts[i].setCharacterSize(100);
+		texts[i].setString(options[i]);
 		texts[i].setFillColor(sf::Color::White);
 		texts[i].setFont(*font);
 		texts[i].setPosition(coordsTexts[i]);
 		texts[i].setOutlineColor(sf::Color::Black);
+	}
+	if (!font->loadFromFile("Fontes/Pixelify_Sans/static/PixelifySans-Regular.ttf")) {
+		std::cout << "Erro ao carregar fonte!" << std::endl;
 	}
 }
 
@@ -33,7 +37,8 @@ void Menu::executar(float dt)
 	while (!start)
 	{
 		pGG->eventoFecharJanela();
-		pGG->limparJanela();		
+		pGG->limparJanela();
+		pGG->desenharEnte(this);
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !isPressed) //movimento da escolha de op��es
 		{
@@ -76,16 +81,26 @@ void Menu::executar(float dt)
 			}
 		}
 
-		pGG->desenharEnte(this);
-
-		for (int i = 0; i < texts.size(); i++)
+		
+		if(tela==0)
 		{
-			if (i == escolha)texts[i].setOutlineThickness(3.f);
-			else texts[i].setOutlineThickness(0);
-			pGG->desenhaTexto(texts[i]);
-			//std::cout << texts[i].getPosition().x << "," << texts[i].getPosition().y << std::endl;
-			//std::cout << texts[i].getFont()->getInfo().family << std::endl;
+			for (int i = 0; i < 3; i++)
+			{
+				if (i == escolha)texts[i].setOutlineThickness(3.f);
+				else texts[i].setOutlineThickness(0);
+				pGG->desenhaTexto(texts[i]);
+			}
 		}
+		else if (tela == 1) 
+		{
+			for (int i = 3; i < 5; i++)
+			{
+				if (i == escolha)texts[i].setOutlineThickness(3.f);
+				else texts[i].setOutlineThickness(0);
+				pGG->desenhaTexto(texts[i]);
+			}
+		}
+		
 
 		//system("Pause");
 		
@@ -106,7 +121,9 @@ void Menu::setGame(Jogo* jog)
 std::string Menu::getTextureFile()
 {
 	if (tela == 0)
-		return "Sprites/Menu/MenuMegaman2.png";
+		return "Sprites/Menu/Menu1.png";
 	else if (tela == 1)
-		return "Sprites/Menu/MenuMegaman3.png";
+		return "Sprites/Menu/Menu1.png";
+	else 
+		return "Sprites/Menu/Menu1.png"; // retornar a imagem da tela atual
 }

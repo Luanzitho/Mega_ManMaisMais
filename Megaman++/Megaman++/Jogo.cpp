@@ -2,7 +2,7 @@
 #include "Entidades/Personagens/Megaman.h"
 #include <SFML/Graphics.hpp>
 
-Jogo::Jogo() : GG(*Gerenciador_Grafico::getInstancia()), inMenu(false), playing(true), p1(new Megaman), p2(new Megaman(false)), m1(new Metall), faseA(0)
+Jogo::Jogo() : GG(*Gerenciador_Grafico::getInstancia()), inMenu(true), playing(false), p1(new Megaman), p2(new Megaman(false)), m1(new Metall), faseA(0)
 {
 	p1->setCoords(sf::Vector2f(550.f, 180.f));
 	p1->setTamanho(sf::Vector2f(70.f, 70.f));
@@ -33,8 +33,8 @@ void Jogo::executar()
 {
 	Menu* menu = new Menu();
 
-	menu->setCoords(sf::Vector2f(550.f, 180.f));
-	menu->setTamanho(sf::Vector2f(70.f, 70.f));
+	menu->setCoords(sf::Vector2f(0.f, 0.f));
+	menu->setTamanho(sf::Vector2f(1280.f, 720.f));
 	menu->setGame(this);
 
 	sf::Clock tempo;
