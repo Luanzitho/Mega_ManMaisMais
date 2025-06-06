@@ -2,21 +2,21 @@
 #include "Metall.h"
 #include <iostream>
 
-Megaman::Megaman() : Personagem(20), pontos(0), noChao(false), direita(true), velMax(200), velocidade(0), gravidade(300), aceleracao(100.f), velVertical(0), cooldownTiro(0.25), tempoCooldown(0), player1(true)
+Megaman::Megaman() : Personagem(20), pontos(0), noChao(false), direita(true), velMax(200), velocidade(0), gravidade(300), aceleracao(100), velVertical(0), cooldownTiro(0.25), tempoCooldown(0), player1(true)
 {
 	LE = nullptr;
 }
 
-Megaman::Megaman(bool player) : Personagem(20), pontos(0), noChao(false), direita(true), velMax(200), velocidade(0), gravidade(300), aceleracao(100.f), velVertical(0), cooldownTiro(0.25), tempoCooldown(0), player1(player)
+Megaman::Megaman(bool player) : Personagem(20), pontos(0), noChao(false), direita(true), velMax(200), velocidade(0), gravidade(300), aceleracao(100), velVertical(0), cooldownTiro(0.25), tempoCooldown(0), player1(player)
 {
 	LE = nullptr;
 }
 
 Megaman::~Megaman(){}
 
-void Megaman::associaListaEntidades(ListaEntidades* lista)
+void Megaman::associaListaEntidades(ListaEntidades* pLista)
 {
-	LE = lista;
+	LE = pLista;
 }
 
 void Megaman::mover(float dt)
@@ -74,7 +74,8 @@ void Megaman::mover(float dt)
 			{
 				velVertical = -300.f;
 				noChao = false;
-				std::cout << "Tenho " << num_vidas << " de HP" << std::endl;
+				std::cout << "Tenho " << getNumVidas() << " de HP" << std::endl;
+				std::cout << "FPS: " << 1.0 / dt << std::endl;
 			}
 		}
 		else
@@ -113,6 +114,7 @@ void Megaman::atirar(float dt)
 
 				ProjetilMegaman* tiro = new ProjetilMegaman(pos, direita);
 				LE->incluirEntidade(tiro);
+				tiro->associaListaEntidades(LE);
 				tiro->setGerenciadorGrafico(pGG);
 
 				tempoCooldown = 0;

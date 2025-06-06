@@ -16,17 +16,19 @@ void ListaEntidades::incluirEntidade(Entidade* pE)
 
 void ListaEntidades::percorrer(float dt)
 {
-    Lista<Entidade>::Elemento<Entidade>* aux = LEs.getpPrimeiro();
+    if (LEs.getpPrimeiro()) {
+        Lista<Entidade>::Elemento<Entidade>* aux = LEs.getpPrimeiro();
 
-    while (aux != nullptr)
-    {
-        Entidade* pEntidade = aux->getInfo();
-        if (pEntidade)
+        while (aux != nullptr)
         {
-            pEntidade->executar(dt);
-            pEntidade->desenhar();
-        }
+            Entidade* pEntidade = aux->getInfo();
+            if (pEntidade)
+            {
+                pEntidade->executar(dt);
+                pEntidade->desenhar();
+            }
 
-        aux = aux->getProximo();
+            aux = aux->getProximo();
+        }
     }
 }

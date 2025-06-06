@@ -19,7 +19,7 @@ Jogo::Jogo() : GG(*Gerenciador_Grafico::getInstancia()), inMenu(false), playing(
 	LEs->incluirEntidade(static_cast <Entidade*>(m1));
 
 	p1->associaListaEntidades(LEs); //Teste da função atirar
-	p2->associaListaEntidades(LEs);
+	//p2->associaListaEntidades(LEs);
 
 	GC.incluirMegaman(p1);
 	GC.incluirInimigo(m1);
@@ -66,7 +66,7 @@ void Jogo::iniciar(int fase)
 void Jogo::encerrar()
 {
 	//LEs->limparLista();
-	delete LEs;
+	//delete LEs;
 
 }
 

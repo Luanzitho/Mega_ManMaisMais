@@ -4,7 +4,7 @@ Personagem::Personagem(): num_vidas(0)
 {
 }
 
-Personagem::Personagem(int v):num_vidas(v) //Acho que dá para remover isso, agora que tem setNumVidas, dai so usar na construtora dos personagens
+Personagem::Personagem(int v): num_vidas(v)
 {
 }
 

@@ -20,13 +20,14 @@ public://private:
 	float cooldownTiro;
 	float tempoCooldown;
 	ProjetilMegaman tiro;
+	//std::vector<ProjetilMegaman*> disparos;
 	ListaEntidades* LE;
 
 //public:
 	Megaman();
 	Megaman(bool player);
 	~Megaman();
-	void associaListaEntidades(ListaEntidades* lista);
+	void associaListaEntidades(ListaEntidades* pLista);
 	void mover(float dt);
 	void atirar(float dt);
 	void executar(float dt);
