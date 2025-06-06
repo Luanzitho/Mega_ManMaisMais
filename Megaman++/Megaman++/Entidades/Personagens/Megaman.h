@@ -7,7 +7,7 @@
 
 class Megaman:public Personagem
 {
-private://private:
+public://private:
 	bool player1;
 	bool direita;
 	bool noChao;
@@ -23,7 +23,7 @@ private://private:
 	//std::vector<ProjetilMegaman*> disparos;
 	ListaEntidades* LE;
 
-public:
+//public:
 	Megaman();
 	Megaman(bool player);
 	~Megaman();
