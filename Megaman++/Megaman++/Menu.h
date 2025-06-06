@@ -10,7 +10,7 @@ class Menu : public Ente
 {
 private:
 	Jogo* pJog;
-	Gerenciador_Grafico* pG;
+	Gerenciador_Grafico* pGG;
 	int escolha, tela;
 	bool isPressed, enter, start;
 	sf::Font* font;

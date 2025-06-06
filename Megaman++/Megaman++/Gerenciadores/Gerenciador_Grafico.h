@@ -21,7 +21,7 @@ public:
 	static Gerenciador_Grafico* getInstancia();
 	void desenharEnte(Ente* pE);
 	bool janelaEstaAberta();
-	void fecharJanela();
+	void eventoFecharJanela();
 	void limparJanela();
 	void mostrarConteudoJanela();
 	void desenhaTexto(sf::Text text);

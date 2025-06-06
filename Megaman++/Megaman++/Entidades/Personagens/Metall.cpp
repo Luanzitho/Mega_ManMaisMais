@@ -20,7 +20,7 @@ void Metall::mover(float dt)
 
 void Metall::danificar(Megaman* p)
 {
-	p->num_vidas = p->num_vidas-1;
+	p->operator--();
 }
 
 std::string Metall::getTextureFile()

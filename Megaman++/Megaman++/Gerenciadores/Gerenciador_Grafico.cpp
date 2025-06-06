@@ -5,7 +5,7 @@ Gerenciador_Grafico* Gerenciador_Grafico::instancia = nullptr;
 
 Gerenciador_Grafico::Gerenciador_Grafico(): window(sf::VideoMode(1280, 720), "Megaman++")
 {
-    window.setFramerateLimit(60);
+    window.setFramerateLimit(120);
 }
 
 Gerenciador_Grafico::~Gerenciador_Grafico()
@@ -46,7 +46,7 @@ bool Gerenciador_Grafico::janelaEstaAberta()
     return window.isOpen();
 }
 
-void Gerenciador_Grafico::fecharJanela()
+void Gerenciador_Grafico::eventoFecharJanela()
 {
     sf::Event evento;
 

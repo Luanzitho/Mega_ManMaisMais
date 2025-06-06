@@ -4,6 +4,7 @@
 Menu::Menu() : escolha(0), tela(0), enter(false), isPressed(false), start(false)
 {
 	pJog = nullptr;
+	pGG = Gerenciador_Grafico::getInstancia();
 	font = new sf::Font();
 	font->loadFromFile("Fontes/Pixels.ttf");
 	options = { "Jogar", "Rankinng", "Sair"};
@@ -31,7 +32,7 @@ void Menu::executar(float dt)
 	
 	while (!start)
 	{
-		pGG->fecharJanela();
+		pGG->eventoFecharJanela();
 		pGG->limparJanela();		
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !isPressed) //movimento da escolha de op��es

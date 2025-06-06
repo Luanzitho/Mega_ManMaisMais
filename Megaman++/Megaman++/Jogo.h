@@ -13,7 +13,7 @@ class Jogo
 {
 private:
 	Gerenciador_Colisoes GC;
-	Gerenciador_Grafico GG;
+	Gerenciador_Grafico& GG;
 	Megaman* p1, *p2;
 	Metall* m1;
 	ListaEntidades* LEs;
