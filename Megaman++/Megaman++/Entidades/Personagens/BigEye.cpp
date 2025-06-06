@@ -14,12 +14,15 @@ void BigEye::mover(float dt)
 
 void BigEye::executar(float dt)
 {
+	mover(dt);
 }
 
-//void BigEye::danificar(){}
-
+void BigEye::danificar(Megaman* p)
+{
+	p->operator--();
+}
 
 std::string BigEye::getTextureFile()
 {
-	return "Sprites/Inimigos/Metall.png";
+	return "Sprites/Inimigos/BigEye1-blue.png";
 }
