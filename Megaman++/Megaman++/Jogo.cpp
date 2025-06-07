@@ -11,7 +11,7 @@ Jogo::Jogo() : GG(*Gerenciador_Grafico::getInstancia()), inMenu(true), playing(f
 	p2->setCoords(sf::Vector2f(950.f, 180.f));
 	p2->setTamanho(sf::Vector2f(100.f, 100.f));
 	m2->setCoords(sf::Vector2f(110.f, 230.f));
-	m2->setTamanho(sf::Vector2f(100.f, 100.f));
+	m2->setTamanho(sf::Vector2f(80.f, 100.f));
 	LEs = new ListaEntidades();
 	p1->setGerenciadorGrafico(&GG);
 	p2->setGerenciadorGrafico(&GG);
@@ -21,6 +21,9 @@ Jogo::Jogo() : GG(*Gerenciador_Grafico::getInstancia()), inMenu(true), playing(f
 	//LEs->incluirEntidade(static_cast <Entidade*>(p2));
 	LEs->incluirEntidade(static_cast <Entidade*>(m1));
 	LEs->incluirEntidade(static_cast <Entidade*>(m2));
+
+	m1->conhecerJogador(p1);
+	m2->conhecerJogador(p1);
 
 	p1->associaListaEntidades(LEs); //Teste da função atirar
 	//p2->associaListaEntidades(LEs);

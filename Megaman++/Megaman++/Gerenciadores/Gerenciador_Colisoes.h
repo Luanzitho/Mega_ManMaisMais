@@ -20,11 +20,11 @@ public:
 	Gerenciador_Colisoes();
 	~Gerenciador_Colisoes();
 	const bool verificarColisao(Entidade* pe1, Entidade* pe2);
-	void colisaoMegaObstacs();
-	void colisaoMegaInimigos();
-	void colisaoMegaProjeteis();
-	void colisaoInimsProjeteis();
-	void colisaoInimsObstacs();
+	void tratarColisaoMegaObstacs();
+	void tratarColisaoMegaInimigos();
+	void tratarColisaoMegaProjeteis();
+	void tratarColisaoInimsProjeteis();
+	void tratarColisaoInimsObstacs();
 	void incluirInimigo(Inimigo* pI);
 	void incluirObstaculo(Obstaculo* pO);
 	void incluirProjetil(Projetil* pP);

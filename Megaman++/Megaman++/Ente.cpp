@@ -1,18 +1,30 @@
 #include "Ente.h"
 
-Ente::Ente(): id(contId++)
+Ente::Ente(): id(0)
 {
 	pGG = nullptr;
 }
-int Ente::contId(0);
 
-Ente::Ente(sf::Vector2f coordsIni, sf::Vector2f size): coords(coordsIni), tamanho(size) {}
+Ente::Ente(sf::Vector2f coordsIni, sf::Vector2f size): coords(coordsIni), tamanho(size), id(0) 
+{
+	pGG = nullptr;
+}
 
 Ente::~Ente(){}
 
 void Ente::setGerenciadorGrafico(Gerenciador_Grafico* p)
 {
 	pGG = p;
+}
+
+void Ente::setId(int id)
+{
+	this->id = id;
+}
+
+int Ente::getId()
+{
+	return id;
 }
 
 const sf::Vector2f Ente::getTamanho() { return tamanho; }

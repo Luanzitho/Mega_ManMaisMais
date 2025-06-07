@@ -132,8 +132,8 @@
     <ClCompile Include="Ente.cpp" />
     <ClCompile Include="Entidades\Entidade.cpp" />
     <ClCompile Include="Entidades\Obstaculos\Obstaculo.cpp" />
-    <ClCompile Include="Entidades\Personagens\Inimigo.cpp" />
     <ClCompile Include="Entidades\Personagens\BigEye.cpp" />
+    <ClCompile Include="Entidades\Personagens\Inimigo.cpp" />
     <ClCompile Include="Entidades\Personagens\Megaman.cpp" />
     <ClCompile Include="Entidades\Personagens\Metall.cpp" />
     <ClCompile Include="Entidades\Personagens\Personagem.cpp" />
@@ -151,8 +151,8 @@
     <ClInclude Include="Ente.h" />
     <ClInclude Include="Entidades\Entidade.h" />
     <ClInclude Include="Entidades\Obstaculos\Obstaculo.h" />
-    <ClInclude Include="Entidades\Personagens\Inimigo.h" />
     <ClInclude Include="Entidades\Personagens\BigEye.h" />
+    <ClInclude Include="Entidades\Personagens\Inimigo.h" />
     <ClInclude Include="Entidades\Personagens\Megaman.h" />
     <ClInclude Include="Entidades\Personagens\Metall.h" />
     <ClInclude Include="Entidades\Personagens\Personagem.h" />

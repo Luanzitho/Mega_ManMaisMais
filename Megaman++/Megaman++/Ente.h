@@ -9,7 +9,6 @@ class Ente
 {
 protected:
 	int id;
-	static int contId;
 	Gerenciador_Grafico* pGG;
 	sf::Vector2f coords;
 	sf::Vector2f tamanho;
@@ -19,6 +18,8 @@ public:
 	Ente(sf::Vector2f coordsIni, sf::Vector2f size);
 	~Ente();
 	void setGerenciadorGrafico(Gerenciador_Grafico* p);
+	void setId(int id);
+	int getId();
 	virtual void executar(float dt) = 0;
 	virtual std::string getTextureFile() = 0;
 	const sf::Vector2f getTamanho();

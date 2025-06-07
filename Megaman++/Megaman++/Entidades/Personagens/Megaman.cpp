@@ -5,11 +5,13 @@
 Megaman::Megaman() : Personagem(20), pontos(0), noChao(false), direita(true), velMax(200), velocidade(0), gravidade(300), aceleracao(100), velVertical(0), cooldownTiro(0.25), tempoCooldown(0), player1(true)
 {
 	LE = nullptr;
+	setId(1);
 }
 
 Megaman::Megaman(bool player) : Personagem(20), pontos(0), noChao(false), direita(true), velMax(200), velocidade(0), gravidade(300), aceleracao(100), velVertical(0), cooldownTiro(0.25), tempoCooldown(0), player1(player)
 {
 	LE = nullptr;
+	setId(1);
 }
 
 Megaman::~Megaman(){}
