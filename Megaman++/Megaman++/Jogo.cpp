@@ -30,6 +30,7 @@ Jogo::Jogo() : GG(*Gerenciador_Grafico::getInstancia()), inMenu(true), playing(f
 
 	GC.incluirMegaman(p1);
 	GC.incluirInimigo(m1);
+	GC.incluirInimigo(m2);
 }
 
 Jogo::~Jogo()
@@ -67,10 +68,8 @@ void Jogo::executar()
 			
 			}
 			LEs->percorrer(dt);
-			if (GC.verificarColisao(p1, m1))
-				m1->danificar(p1);
-			if (GC.verificarColisao(p1, m2))
-				m1->danificar(p1);
+
+			GC.executar();
 		}
 		GG.mostrarConteudoJanela();
 	}

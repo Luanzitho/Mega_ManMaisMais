@@ -18,15 +18,6 @@ const bool Gerenciador_Colisoes::verificarColisao(Entidade* pe1, Entidade* pe2) 
     sf::FloatRect rect2(pe2->getCoords(), pe2->getTamanho());
 
     if (rect1.intersects(rect2)) { //Houve colisão
-        /*if (pe1->getId() == 1) //Colisão entre jogador e alguém
-        {
-            if(pe2->getId()==2) //Jogador e inimigo
-        }
-
-        if(pe1->getId()==2) //Colisão entre inimigo e alguém
-
-        if(pe1->getId()==3) //Colisão entre obstáculo e alguém
-        */
         return true;
     }
     return false;
@@ -60,7 +51,45 @@ void Gerenciador_Colisoes::incluirProjetil(Projetil* pP) { if (pP) LPs.insert(pP
 
 void Gerenciador_Colisoes::incluirMegaman(Megaman* pM) { if (pM) p1 = pM; }
 
-void Gerenciador_Colisoes::executar()
+void Gerenciador_Colisoes::executar() //Referência: Giovane do canal Gege++
 {
+     std::vector<Inimigo*>::iterator itInim;
+     std::list<Obstaculo*>::iterator itObst;
+     std::set<Projetil*>::iterator itProj;
 
+     for (itInim = LIs.begin(); itInim != LIs.end(); itInim++) //Colisão Megaman x Inimigo
+     {
+        if (verificarColisao(p1, *itInim))
+            (*itInim)->danificar(p1);
+     }
+     
+     for (itObst = LOs.begin(); itObst != LOs.end(); itObst++) //Colisão Obstáculo x Alguém
+     {
+         if (verificarColisao(p1, *itObst)) //Obstáculo x Megaman
+             (*itObst)->obstacular();
+
+         for (itInim = LIs.begin(); itInim != LIs.end(); itInim++) //Obstáculo x Inimigo
+         {
+             if (verificarColisao(*itInim, *itObst))
+                 (*itObst)->obstacular();
+         }
+     }
+
+     for (itProj = LPs.begin(); itProj != LPs.end(); itProj++) //Colisão Projétil x Alguém
+     {
+         if (verificarColisao(p1, *itProj)) {} //Projétil x Megaman
+             //(*itProj)-> AGIR
+
+         for (itInim = LIs.begin(); itInim != LIs.end(); itInim++) //Projétil x Inimigo
+         {
+              if (verificarColisao(*itInim, *itProj)){} 
+                 //(*itProj)-> AGIR
+         }
+
+         for (itObst = LOs.begin(); itObst != LOs.end(); itObst++) //Projétil x Obstáculo
+         {
+             if(verificarColisao(*itObst, *itProj)){}
+                //(*itProj)-> AGIR
+         }
+     }
 }
