@@ -11,7 +11,7 @@ protected:
 public:
 	Obstaculo();
 	~Obstaculo();
-	virtual void executar() = 0;
+	virtual void executar(float dt) = 0;
 	virtual void obstaculizar(Personagem* pPers) = 0;
 	virtual std::string getTextureFile() = 0;
 };

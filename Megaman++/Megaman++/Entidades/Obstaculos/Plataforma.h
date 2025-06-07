@@ -5,12 +5,12 @@
 class Plataforma:public Obstaculo
 {
 private:
-	int largura;
+	int altura;
 
 public:
 	Plataforma();
 	~Plataforma();
-	void executar();
+	void executar(float dt);
 	void obstaculizar(Personagem* pPers);
 	std::string getTextureFile();
 };

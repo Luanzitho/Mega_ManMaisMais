@@ -1,6 +1,6 @@
 #include "Personagem.h"
 
-Personagem::Personagem(): num_vidas(0)
+Personagem::Personagem(): num_vidas(0), noChao(false), velocidade(0), velVertical(0)
 {
 }
 
@@ -30,4 +30,34 @@ void Personagem::setNumVidas(int v)
 int Personagem::getNumVidas()
 {
 	return num_vidas;
+}
+
+void Personagem::setVelocidade(float v)
+{
+	velocidade = v;
+}
+
+float Personagem::getVelocidade()
+{
+	return velocidade;
+}
+
+void Personagem::setVelVertical(float v)
+{
+	velVertical = v;
+}
+
+float Personagem::getVelVertical()
+{
+	return velVertical;
+}
+
+void Personagem::setNoChao(bool noChao)
+{
+	this->noChao = noChao;
+}
+
+bool Personagem::getNoChao()
+{
+	return noChao;
 }

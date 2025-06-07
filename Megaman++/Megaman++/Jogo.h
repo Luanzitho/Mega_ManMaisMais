@@ -9,6 +9,7 @@
 #include "Entidades/Personagens/Metall.h"
 #include "Entidades/Personagens/BigEye.h"
 #include "Gerenciadores/Gerenciador_Colisoes.h"
+#include "Entidades/Obstaculos/Plataforma.h"
 
 class Jogo
 {
@@ -16,6 +17,7 @@ private:
 	Gerenciador_Colisoes GC;
 	Gerenciador_Grafico& GG;
 	Megaman* p1, *p2;
+	Plataforma* pl1;
 	Metall* m1;
 	BigEye* m2;
 	ListaEntidades* LEs;

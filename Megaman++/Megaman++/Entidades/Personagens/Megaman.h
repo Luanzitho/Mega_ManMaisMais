@@ -10,11 +10,8 @@ class Megaman:public Personagem
 private:
 	bool player1;
 	bool direita;
-	bool noChao;
 	int pontos;
 	float gravidade;
-	float velocidade;
-	float velVertical;
 	float aceleracao;
 	float velMax;
 	float cooldownTiro;

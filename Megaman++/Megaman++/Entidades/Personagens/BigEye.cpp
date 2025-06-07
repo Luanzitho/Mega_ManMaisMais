@@ -1,6 +1,6 @@
 #include "BigEye.h"
 
-BigEye::BigEye() : direita(false), noChao(false), gravidade(300), velocidade(0), velVertical(0), velMax(50), aceleracao(100), timerAtaque(0)
+BigEye::BigEye() : direita(false), gravidade(300), velMax(50), aceleracao(150), timerAtaque(0)
 {
 	setNumVidas(20);
 }
@@ -14,8 +14,8 @@ void BigEye::mover(float dt)
 	sf::Vector2f posicao = getCoords();
 	sf::Vector2f alvo = pMega->getCoords();
 
-	timerAtaque += dt; //Quando o timer atinge 3.5 ele pode pular
-
+	timerAtaque += dt; //Quando o timer atinge 3.5 o BigEye pode pular
+	
 	if (velocidade > velMax) //Limita a velocidade
 		velocidade = velMax;
 	else if (velocidade < velMax * (-1))
@@ -23,17 +23,22 @@ void BigEye::mover(float dt)
 	else
 		velocidade = velocidade * 0.9;
 
-	if (!noChao)
+	if (!noChao) //Só se movimenta se estiver no ar
 	{
 		velVertical += gravidade * dt;
-
-		if (direita) //Só se movimenta se estiver no ar
+		
+		if (direita)
 			velocidade += velMax;
 		else
 			velocidade -= velMax;
+
+		posicao.x += velocidade * dt;
 	}
-	else
+
+	else //Se estiver no chão, procura o player e pula se o timer estiver em 3.5
 	{
+		velocidade = 0;
+
 		if (alvo.x > getCoords().x) //Só confere as coordenadas do player quando o BigEye está no chão
 			direita = true;
 		else
@@ -41,7 +46,7 @@ void BigEye::mover(float dt)
 
 		if (timerAtaque >= 3.5)
 		{
-			velVertical = 0;			
+			velVertical = 0;
 			velVertical = -350.f;
 			noChao = false;
 
@@ -49,14 +54,8 @@ void BigEye::mover(float dt)
 		}
 	}
 
-	posicao.x += velocidade * dt;
+	//posicao.x += velocidade * dt;
 	posicao.y += velVertical * dt;
-
-	if (posicao.y + getTamanho().y >= 600)
-	{
-		posicao.y = 600 - getTamanho().y;
-		noChao = true;
-	}
 
 	setCoords(posicao);
 }

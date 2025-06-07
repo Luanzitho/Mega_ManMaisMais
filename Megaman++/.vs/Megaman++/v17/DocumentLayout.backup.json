@@ -3,104 +3,120 @@
   "WorkspaceRootPath": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Obstaculos\\Plataforma.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Obstaculos\\Plataforma.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Jogo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Jogo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Obstaculos\\Plataforma.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Obstaculos\\Plataforma.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Obstaculos\\Obstaculo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Obstaculos\\Obstaculo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Obstaculos\\Plataforma.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Obstaculos\\Plataforma.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Jogo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Jogo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Entidade.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Entidade.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Obstaculos\\Espinho.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Obstaculos\\Espinho.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\BigEye.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\BigEye.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Ente.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Ente.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Ente.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Ente.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Megaman.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\Megaman.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\BigEye.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\BigEye.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Jogo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Jogo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Ente.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Ente.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Listas\\Lista.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Listas\\Lista.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Listas\\ListaEntidades.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Listas\\ListaEntidades.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Listas\\ListaEntidades.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Listas\\ListaEntidades.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Fases\\Fase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Fases\\Fase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Fases\\Fase.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Fases\\Fase.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Obstaculos\\Obstaculo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Obstaculos\\Obstaculo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Obstaculos\\Obstaculo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Obstaculos\\Obstaculo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Inimigo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\Inimigo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Inimigo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\Inimigo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Jogo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Jogo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Entidade.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Entidade.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Ente.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Ente.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -110,11 +126,174 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 24,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Espinho.h",
+              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Obstaculos\\Espinho.h",
+              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Obstaculos\\Espinho.h",
+              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Obstaculos\\Espinho.h",
+              "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Obstaculos\\Espinho.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-07T21:38:04.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Gerenciador_Grafico.cpp",
+              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.cpp",
+              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.cpp",
+              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.cpp",
+              "RelativeToolTip": "Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-07T20:28:32.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BigEye.cpp",
+              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\BigEye.cpp",
+              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Personagens\\BigEye.cpp",
+              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\BigEye.cpp",
+              "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Personagens\\BigEye.cpp",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAACcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-07T16:31:21.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "BigEye.h",
+              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\BigEye.h",
+              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Personagens\\BigEye.h",
+              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\BigEye.h",
+              "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Personagens\\BigEye.h",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-07T16:31:03.855Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Projetil.cpp",
+              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.cpp",
+              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.cpp",
+              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.cpp",
+              "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.cpp",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAQAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-07T16:56:24.553Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Metall.cpp",
+              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.cpp",
+              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.cpp",
+              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.cpp",
+              "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-07T16:31:33.506Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Inimigo.cpp",
+              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Inimigo.cpp",
+              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Personagens\\Inimigo.cpp",
+              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Inimigo.cpp",
+              "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Personagens\\Inimigo.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-07T16:31:27.791Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Personagem.h",
+              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.h",
+              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.h",
+              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.h",
+              "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.h",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-07T16:31:17.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Personagem.cpp",
+              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.cpp",
+              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.cpp",
+              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.cpp",
+              "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.cpp",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-07T16:31:35.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Metall.h",
+              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.h",
+              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.h",
+              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.h",
+              "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-07T16:31:16.043Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Inimigo.h",
+              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Inimigo.h",
+              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Personagens\\Inimigo.h",
+              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Inimigo.h",
+              "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Personagens\\Inimigo.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-07T16:31:09.866Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Entidade.h",
+              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Entidade.h",
+              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Entidade.h",
+              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Entidade.h",
+              "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Entidade.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-07T15:08:23.348Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Entidade.cpp",
+              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Entidade.cpp",
+              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Entidade.cpp",
+              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Entidade.cpp",
+              "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Entidade.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-07T15:08:15.088Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -124,75 +303,39 @@
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Obstaculos\\Plataforma.cpp",
               "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Obstaculos\\Plataforma.cpp",
               "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Obstaculos\\Plataforma.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-07T14:51:52.312Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Plataforma.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Obstaculos\\Plataforma.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Obstaculos\\Plataforma.h",
               "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Obstaculos\\Plataforma.h",
               "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Obstaculos\\Plataforma.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-06-07T14:51:46.148Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "ProjetilMegaman.h",
-              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.h",
-              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.h",
-              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.h",
-              "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAACAAAAAAAAAA==",
+              "DocumentIndex": 19,
+              "Title": "Obstaculo.h",
+              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Obstaculos\\Obstaculo.h",
+              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Obstaculos\\Obstaculo.h",
+              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Obstaculos\\Obstaculo.h",
+              "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Obstaculos\\Obstaculo.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-05T00:41:39.556Z"
+              "WhenOpened": "2025-06-02T02:02:17.335Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "ProjetilMegaman.cpp",
-              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.cpp",
-              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.cpp",
-              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.cpp",
-              "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-05T00:41:31.494Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Projetil.cpp",
-              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.cpp",
-              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.cpp",
-              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.cpp",
-              "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-05T00:41:32.512Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Projetil.h",
-              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.h",
-              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.h",
-              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.h",
-              "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-05T00:36:49.235Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 18,
               "Title": "Obstaculo.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Obstaculos\\Obstaculo.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Obstaculos\\Obstaculo.cpp",
@@ -204,143 +347,96 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Obstaculo.h",
-              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Obstaculos\\Obstaculo.h",
-              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Obstaculos\\Obstaculo.h",
-              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Obstaculos\\Obstaculo.h",
-              "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Obstaculos\\Obstaculo.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAANAAAAAAAAAA==",
+              "DocumentIndex": 17,
+              "Title": "ProjetilMegaman.h",
+              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.h",
+              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.h",
+              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.h",
+              "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-02T02:02:17.335Z",
+              "WhenOpened": "2025-06-05T00:41:39.556Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Fase.h",
-              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Fases\\Fase.h",
-              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Fases\\Fase.h",
-              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Fases\\Fase.h",
-              "RelativeToolTip": "Megaman\u002B\u002B\\Fases\\Fase.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-30T02:08:31.7Z"
+              "DocumentIndex": 23,
+              "Title": "ProjetilMegaman.cpp",
+              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.cpp",
+              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.cpp",
+              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.cpp",
+              "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.cpp",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAIAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-05T00:41:31.494Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Gerenciador_Colisoes.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.cpp",
               "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.cpp",
               "RelativeToolTip": "Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.cpp",
-              "ViewState": "AgIAACkAAAAAAAAAAAD4v14AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAAHYAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-02T01:52:54.01Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Gerenciador_Colisoes.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.h",
               "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.h",
               "RelativeToolTip": "Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.h",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABsAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-06-02T01:36:53.391Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Fase.cpp",
-              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Fases\\Fase.cpp",
-              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Fases\\Fase.cpp",
-              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Fases\\Fase.cpp",
-              "RelativeToolTip": "Megaman\u002B\u002B\\Fases\\Fase.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-30T02:12:26.648Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "ListaEntidades.cpp",
-              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Listas\\ListaEntidades.cpp",
-              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Listas\\ListaEntidades.cpp",
-              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Listas\\ListaEntidades.cpp",
-              "RelativeToolTip": "Megaman\u002B\u002B\\Listas\\ListaEntidades.cpp",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAjwCAAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-29T22:46:04.58Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ListaEntidades.h",
-              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Listas\\ListaEntidades.h",
-              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Listas\\ListaEntidades.h",
-              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Listas\\ListaEntidades.h",
-              "RelativeToolTip": "Megaman\u002B\u002B\\Listas\\ListaEntidades.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-29T22:45:58.221Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Lista.h",
-              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Listas\\Lista.h",
-              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Listas\\Lista.h",
-              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Listas\\Lista.h",
-              "RelativeToolTip": "Megaman\u002B\u002B\\Listas\\Lista.h",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-29T13:50:02.321Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Megaman.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Megaman.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Personagens\\Megaman.cpp",
               "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Megaman.cpp",
               "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Personagens\\Megaman.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAUwFUAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-28T23:19:57.264Z"
+              "WhenOpened": "2025-05-28T23:19:57.264Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 26,
               "Title": "Jogo.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Jogo.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Jogo.h",
               "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Jogo.h",
               "RelativeToolTip": "Megaman\u002B\u002B\\Jogo.h",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-26T18:44:45.916Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Jogo.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Jogo.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Jogo.cpp",
               "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Jogo.cpp",
               "RelativeToolTip": "Megaman\u002B\u002B\\Jogo.cpp",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAACAAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-26T18:44:32.185Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Menu.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Menu.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Menu.h",
@@ -348,11 +444,12 @@
               "RelativeToolTip": "Megaman\u002B\u002B\\Menu.h",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-26T18:41:33.066Z"
+              "WhenOpened": "2025-05-26T18:41:33.066Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "Menu.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Menu.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Menu.cpp",
@@ -360,11 +457,12 @@
               "RelativeToolTip": "Megaman\u002B\u002B\\Menu.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-26T18:41:47.525Z"
+              "WhenOpened": "2025-05-26T18:41:47.525Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "Gerenciador_Grafico.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.h",
@@ -372,24 +470,12 @@
               "RelativeToolTip": "Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.h",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABQAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-26T12:47:49.572Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Gerenciador_Grafico.cpp",
-              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.cpp",
-              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.cpp",
-              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.cpp",
-              "RelativeToolTip": "Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.cpp",
-              "ViewState": "AgIAABIAAAAAAAAAAAAewB4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-26T13:00:37.744Z",
+              "WhenOpened": "2025-05-26T12:47:49.572Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 15,
               "Title": "Ente.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Ente.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Ente.cpp",
@@ -397,31 +483,20 @@
               "RelativeToolTip": "Megaman\u002B\u002B\\Ente.cpp",
               "ViewState": "AgIAAAYAAAAAAAAAAAAswBUAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-26T12:50:03.304Z"
+              "WhenOpened": "2025-05-26T12:50:03.304Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 28,
               "Title": "Ente.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Ente.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Ente.h",
               "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Ente.h",
               "RelativeToolTip": "Megaman\u002B\u002B\\Ente.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-26T12:50:05.118Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\main.cpp",
-              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\main.cpp",
-              "ToolTip": "C:\\Users\\Jambr\\OneDrive\\Documentos\\GitHub\\Jogo-simao\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\main.cpp",
-              "RelativeToolTip": "Megaman\u002B\u002B\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-25T22:51:26.194Z"
             }
           ]
         }

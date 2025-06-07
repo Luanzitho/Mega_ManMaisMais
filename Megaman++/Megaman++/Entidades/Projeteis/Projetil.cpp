@@ -2,6 +2,7 @@
 
 Projetil::Projetil(): ativo(true), velocidade(500), dano(1)
 {
+	LEs = nullptr;
 }
 
 Projetil::~Projetil()

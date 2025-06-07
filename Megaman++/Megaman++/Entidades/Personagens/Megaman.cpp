@@ -2,13 +2,13 @@
 #include "Metall.h"
 #include <iostream>
 
-Megaman::Megaman() : Personagem(20), pontos(0), noChao(false), direita(true), velMax(200), velocidade(0), gravidade(300), aceleracao(100), velVertical(0), cooldownTiro(0.25), tempoCooldown(0), player1(true)
+Megaman::Megaman() : Personagem(20), pontos(0), direita(true), velMax(200), gravidade(300), aceleracao(100), cooldownTiro(0.25), tempoCooldown(0), player1(true)
 {
 	LE = nullptr;
 	setId(1);
 }
 
-Megaman::Megaman(bool player) : Personagem(20), pontos(0), noChao(false), direita(true), velMax(200), velocidade(0), gravidade(300), aceleracao(100), velVertical(0), cooldownTiro(0.25), tempoCooldown(0), player1(player)
+Megaman::Megaman(bool player) : Personagem(20), pontos(0), direita(true), velMax(200), gravidade(300), aceleracao(100), cooldownTiro(0.25), tempoCooldown(0), player1(player)
 {
 	LE = nullptr;
 	setId(1);
@@ -24,7 +24,7 @@ void Megaman::associaListaEntidades(ListaEntidades* pLista)
 void Megaman::mover(float dt)
 {
 	sf::Vector2f posicao = getCoords();
-	
+
 	if (player1) //Player 1 usa as SETAS
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
@@ -40,7 +40,7 @@ void Megaman::mover(float dt)
 		else
 			velocidade = velocidade * 0.9;
 	}
-	
+
 	else //Player 2 usa WASD
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
@@ -58,15 +58,13 @@ void Megaman::mover(float dt)
 		else
 			velocidade = velocidade * 0.9;
 	}
-	
+
 	if (velocidade > velMax) //Limita a velocidade
 		velocidade = velMax;
 	else if (velocidade < velMax * (-1))
 		velocidade = velMax * (-1);
 
-	if (!noChao) //Confere se ele está no chão, se sim, consegue pular, se não, sofre efeito da gravidade
-		velVertical += gravidade * dt;
-	else
+	if (noChao) //Confere se ele está no chão, se sim, consegue pular, se não, sofre efeito da gravidade
 	{
 		velVertical = 0;
 
@@ -89,15 +87,14 @@ void Megaman::mover(float dt)
 			}
 		}
 	}
-	
+
+	else
+	{
+		velVertical += gravidade * dt;
+	}
+
 	posicao.x += velocidade * dt;
 	posicao.y += velVertical * dt;
-
-	if (posicao.y + getTamanho().y >= 600)
-	{
-		posicao.y = 600 - getTamanho().y;
-		noChao = true;
-	}
 
 	setCoords(posicao);
 }
@@ -142,7 +139,7 @@ void Megaman::atirar(float dt)
 	}
 }
 
-void Megaman::executar(float dt) 
+void Megaman::executar(float dt)
 {
 	mover(dt);
 	atirar(dt);

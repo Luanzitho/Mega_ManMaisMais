@@ -131,6 +131,7 @@
   <ItemGroup>
     <ClCompile Include="Ente.cpp" />
     <ClCompile Include="Entidades\Entidade.cpp" />
+    <ClCompile Include="Entidades\Obstaculos\Espinho.cpp" />
     <ClCompile Include="Entidades\Obstaculos\Obstaculo.cpp" />
     <ClCompile Include="Entidades\Obstaculos\Plataforma.cpp" />
     <ClCompile Include="Entidades\Personagens\BigEye.cpp" />
@@ -151,6 +152,7 @@
   <ItemGroup>
     <ClInclude Include="Ente.h" />
     <ClInclude Include="Entidades\Entidade.h" />
+    <ClInclude Include="Entidades\Obstaculos\Espinho.h" />
     <ClInclude Include="Entidades\Obstaculos\Obstaculo.h" />
     <ClInclude Include="Entidades\Obstaculos\Plataforma.h" />
     <ClInclude Include="Entidades\Personagens\BigEye.h" />

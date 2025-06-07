@@ -1,6 +1,6 @@
 #include "ProjetilMegaman.h"
 
-ProjetilMegaman::ProjetilMegaman()
+ProjetilMegaman::ProjetilMegaman(): direcao(0)
 {
 }
 

@@ -25,22 +25,80 @@ const bool Gerenciador_Colisoes::verificarColisao(Entidade* pe1, Entidade* pe2) 
 
 void Gerenciador_Colisoes::tratarColisaoMegaObstacs()
 {
+    std::list<Obstaculo*>::iterator itObst;
+
+    for (itObst = LOs.begin(); itObst != LOs.end(); itObst++) //Colisão Obstáculo x Alguém
+    {
+        if (verificarColisao(p1, *itObst)) {} //Obstáculo x Megaman
+            (*itObst)->obstaculizar(p1);
+    }
 }
 
 void Gerenciador_Colisoes::tratarColisaoMegaInimigos()
 {
+    std::vector<Inimigo*>::iterator itInim;
+
+    for (itInim = LIs.begin(); itInim != LIs.end(); itInim++) //Colisão Megaman x Inimigo
+    {
+        if (verificarColisao(p1, *itInim))
+            (*itInim)->danificar(p1);
+    }
 }
 
 void Gerenciador_Colisoes::tratarColisaoMegaProjeteis()
 {
+    std::set<Projetil*>::iterator itProj;
+
+    for (itProj = LPs.begin(); itProj != LPs.end(); itProj++) //Colisão Projétil x Alguém
+    {
+        if (verificarColisao(p1, *itProj)) {} //Projétil x Megaman
+            //(*itProj)-> AGIR
+    }
 }
 
 void Gerenciador_Colisoes::tratarColisaoInimsProjeteis()
 {
+    std::set<Projetil*>::iterator itProj;
+    std::vector<Inimigo*>::iterator itInim;
+
+    for (itProj = LPs.begin(); itProj != LPs.end(); itProj++) //Colisão Projétil x Alguém
+    {
+        for (itInim = LIs.begin(); itInim != LIs.end(); itInim++) //Projétil x Inimigo
+        {
+            if (verificarColisao(*itInim, *itProj)) {}
+                //(*itProj)-> AGIR
+        }
+    }
 }
 
 void Gerenciador_Colisoes::tratarColisaoInimsObstacs()
 {
+    std::list<Obstaculo*>::iterator itObst;
+    std::vector<Inimigo*>::iterator itInim;
+
+    for (itObst = LOs.begin(); itObst != LOs.end(); itObst++) //Colisão Obstáculo x Alguém
+    {
+        for (itInim = LIs.begin(); itInim != LIs.end(); itInim++) //Obstáculo x Inimigo
+        {
+            if (verificarColisao(*itInim, *itObst)) {}
+                (*itObst)->obstaculizar(*itInim);
+        }
+    }
+}
+
+void Gerenciador_Colisoes::tratarColisaoProjObstacs()
+{
+    std::list<Obstaculo*>::iterator itObst;
+    std::set<Projetil*>::iterator itProj;
+
+    for (itProj = LPs.begin(); itProj != LPs.end(); itProj++) //Colisão Projétil x Alguém
+    {
+        for (itObst = LOs.begin(); itObst != LOs.end(); itObst++) //Projétil x Obstáculo
+        {
+            if (verificarColisao(*itObst, *itProj)) {}
+                //(*itProj)-> AGIR
+        }
+    }
 }
 
 void Gerenciador_Colisoes::incluirInimigo(Inimigo* pI) { if (pI) LIs.push_back(pI); }
@@ -53,43 +111,10 @@ void Gerenciador_Colisoes::incluirMegaman(Megaman* pM) { if (pM) p1 = pM; }
 
 void Gerenciador_Colisoes::executar() //Referência: Giovane do canal Gege++
 {
-     std::vector<Inimigo*>::iterator itInim;
-     std::list<Obstaculo*>::iterator itObst;
-     std::set<Projetil*>::iterator itProj;
-
-     for (itInim = LIs.begin(); itInim != LIs.end(); itInim++) //Colisão Megaman x Inimigo
-     {
-        if (verificarColisao(p1, *itInim))
-            (*itInim)->danificar(p1);
-     }
-     
-     for (itObst = LOs.begin(); itObst != LOs.end(); itObst++) //Colisão Obstáculo x Alguém
-     {
-         if (verificarColisao(p1, *itObst)) //Obstáculo x Megaman
-             (*itObst)->obstacular();
-
-         for (itInim = LIs.begin(); itInim != LIs.end(); itInim++) //Obstáculo x Inimigo
-         {
-             if (verificarColisao(*itInim, *itObst))
-                 (*itObst)->obstacular();
-         }
-     }
-
-     for (itProj = LPs.begin(); itProj != LPs.end(); itProj++) //Colisão Projétil x Alguém
-     {
-         if (verificarColisao(p1, *itProj)) {} //Projétil x Megaman
-             //(*itProj)-> AGIR
-
-         for (itInim = LIs.begin(); itInim != LIs.end(); itInim++) //Projétil x Inimigo
-         {
-              if (verificarColisao(*itInim, *itProj)){} 
-                 //(*itProj)-> AGIR
-         }
-
-         for (itObst = LOs.begin(); itObst != LOs.end(); itObst++) //Projétil x Obstáculo
-         {
-             if(verificarColisao(*itObst, *itProj)){}
-                //(*itProj)-> AGIR
-         }
-     }
+    tratarColisaoMegaObstacs();
+    tratarColisaoMegaInimigos();
+    //tratarColisaoMegaProjeteis();
+    //tratarColisaoInimsProjeteis();
+    tratarColisaoInimsObstacs();
+    //tratarColisaoProjObstacs();
 }
