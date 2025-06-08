@@ -19,6 +19,7 @@ private:
 	ProjetilMegaman tiro;
 	//std::vector<ProjetilMegaman*> disparos;
 	ListaEntidades* LE;
+	float cooldownNoChao;
 
 public:
 	Megaman();

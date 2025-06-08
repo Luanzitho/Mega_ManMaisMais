@@ -3,11 +3,13 @@
 Ente::Ente(): id(0)
 {
 	pGG = nullptr;
+	//pGC = nullptr;
 }
 
 Ente::Ente(sf::Vector2f coordsIni, sf::Vector2f size): coords(coordsIni), tamanho(size), id(0) 
 {
 	pGG = nullptr;
+	//pGC = nullptr;
 }
 
 Ente::~Ente(){}
@@ -16,6 +18,11 @@ void Ente::setGerenciadorGrafico(Gerenciador_Grafico* p)
 {
 	pGG = p;
 }
+
+/*void Ente::setGerenciadorColisoes(Gerenciador_Colisoes* p)
+{
+	pGC = p;
+}*/
 
 void Ente::setId(int id)
 {

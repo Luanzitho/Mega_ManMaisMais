@@ -36,6 +36,13 @@ Jogo::Jogo() : GG(*Gerenciador_Grafico::getInstancia()), inMenu(false), playing(
 	p1->associaListaEntidades(LEs); //Teste da função atirar
 	//p2->associaListaEntidades(LEs);
 
+	/*p1->setGerenciadorColisoes(&GC);
+	p2->setGerenciadorColisoes(&GC);
+	m1->setGerenciadorColisoes(&GC);
+	m2->setGerenciadorColisoes(&GC);
+	pl1->setGerenciadorColisoes(&GC);
+	es->setGerenciadorColisoes(&GC);*/
+	
 	GC.incluirMegaman(p1);
 	GC.incluirInimigo(m1);
 	GC.incluirInimigo(m2);
@@ -55,7 +62,6 @@ void Jogo::executar()
 	menu->setCoords(sf::Vector2f(0.f, 0.f));
 	menu->setTamanho(sf::Vector2f(1280.f, 720.f));
 	menu->setGame(this);
-	//menu->setGerenciadorGrafico(&GG);
 
 	sf::Clock tempo;
 	float dt;

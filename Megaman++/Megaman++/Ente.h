@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Gerenciadores/Gerenciador_Grafico.h"
+//#include "Gerenciadores/Gerenciador_Colisoes.h"
 #include <string>
 
 class Gerenciador_Grafico;
@@ -10,6 +11,7 @@ class Ente
 protected:
 	int id;
 	Gerenciador_Grafico* pGG;
+	//Gerenciador_Colisoes* pGC;
 	sf::Vector2f coords;
 	sf::Vector2f tamanho;
 
@@ -18,6 +20,7 @@ public:
 	Ente(sf::Vector2f coordsIni, sf::Vector2f size);
 	~Ente();
 	void setGerenciadorGrafico(Gerenciador_Grafico* p);
+	//void setGerenciadorColisoes(Gerenciador_Colisoes* p);
 	void setId(int id);
 	int getId();
 	virtual void executar(float dt) = 0;

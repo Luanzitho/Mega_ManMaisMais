@@ -2,7 +2,7 @@
 #include "Metall.h"
 #include <iostream>
 
-Megaman::Megaman() : Personagem(20), pontos(0), direita(true), velMax(200), gravidade(300), aceleracao(100), cooldownTiro(0.25), tempoCooldown(0), player1(true)
+Megaman::Megaman() : Personagem(20), pontos(0), direita(true), velMax(200), gravidade(300), aceleracao(100), cooldownTiro(0.25), tempoCooldown(0), player1(true), cooldownNoChao(0)
 {
 	LE = nullptr;
 	setId(1);
@@ -10,7 +10,7 @@ Megaman::Megaman() : Personagem(20), pontos(0), direita(true), velMax(200), grav
 	setTamanho(sf::Vector2f(70.f, 70.f));
 }
 
-Megaman::Megaman(bool player) : Personagem(20), pontos(0), direita(true), velMax(200), gravidade(300), aceleracao(100), cooldownTiro(0.25), tempoCooldown(0), player1(player)
+Megaman::Megaman(bool player) : Personagem(20), pontos(0), direita(true), velMax(200), gravidade(300), aceleracao(100), cooldownTiro(0.25), tempoCooldown(0), player1(player), cooldownNoChao(0)
 {
 	LE = nullptr;
 	setId(1);
@@ -65,7 +65,12 @@ void Megaman::mover(float dt)
 		velocidade = velMax;
 	else if (velocidade < velMax * (-1))
 		velocidade = velMax * (-1);
-
+	cooldownNoChao += dt;
+	if (cooldownNoChao > 0.1 && noChao)// reseta a colisão do chão em um determinado tempo
+	{
+		noChao = false;
+		cooldownNoChao = 0;
+	}
 	if (noChao) //Confere se ele está no chão, se sim, consegue pular, se não, sofre efeito da gravidade
 	{
 		velVertical = 0;
@@ -115,8 +120,10 @@ void Megaman::atirar(float dt)
 
 				ProjetilMegaman* tiro = new ProjetilMegaman(pos, direita);
 				LE->incluirEntidade(tiro);
+				//pGC->incluirProjetil(tiro);
 				tiro->associaListaEntidades(LE);
 				tiro->setGerenciadorGrafico(pGG);
+				//tiro->setGerenciadorColisoes(pGC);
 
 				tempoCooldown = 0;
 			}

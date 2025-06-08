@@ -26,6 +26,7 @@ public:
 	void tratarColisaoInimsProjeteis();
 	void tratarColisaoInimsObstacs();
 	void tratarColisaoProjObstacs();
+	void tratarColisaoProjLimites();
 	void incluirInimigo(Inimigo* pI);
 	void incluirObstaculo(Obstaculo* pO);
 	void incluirProjetil(Projetil* pP);
