@@ -43,7 +43,7 @@ void Plataforma::obstaculizar(Personagem* pPers)
     {
         posPers.y = topoPlat - tamPers.y;
         pPers->setCoords(posPers);
-        //pPers->setVelVertical(0);
+        pPers->setVelVertical(0);
         tocando = true;
     }
     // --- COLISÃO POR BAIXO ---
@@ -51,7 +51,7 @@ void Plataforma::obstaculizar(Personagem* pPers)
     {
         posPers.y = baixoPlat;
         pPers->setCoords(posPers);
-        //pPers->setVelVertical(0);
+        pPers->setVelVertical(0);
     }
     // --- COLISÃO PELA ESQUERDA ---
     else if (direitaPers > esquerdaPlat && esquerdaPers < esquerdaPlat && baixoPers > topoPlat + margem * 2 && topoPers < baixoPlat - margem * 2)
@@ -68,7 +68,6 @@ void Plataforma::obstaculizar(Personagem* pPers)
 
     pPers->setNoChao(tocando);
 }
-
 
 std::string Plataforma::getTextureFile()
 {

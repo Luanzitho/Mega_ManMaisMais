@@ -10,6 +10,7 @@
 #include "Entidades/Personagens/BigEye.h"
 #include "Gerenciadores/Gerenciador_Colisoes.h"
 #include "Entidades/Obstaculos/Plataforma.h"
+#include "Entidades/Obstaculos/Espinho.h"
 
 class Jogo
 {
@@ -19,6 +20,7 @@ private:
 	Megaman* p1, *p2;
 	Plataforma* pl1;
 	Metall* m1;
+	Espinho* es;
 	BigEye* m2;
 	ListaEntidades* LEs;
 	bool inMenu;

@@ -6,7 +6,7 @@
 class Metall:public Inimigo //Equivalente a Inimigo_facil
 {
 private:
-
+	float cooldownEsconder;
 
 public:
 	Metall();

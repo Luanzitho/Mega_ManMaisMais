@@ -12,5 +12,6 @@ public:
 	~Espinho();
 	void executar(float dt);
 	void obstaculizar(Personagem* pPers);
+	std::string getTextureFile();
 };
 

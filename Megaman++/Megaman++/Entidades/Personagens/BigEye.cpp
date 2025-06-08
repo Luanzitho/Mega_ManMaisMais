@@ -3,6 +3,8 @@
 BigEye::BigEye() : direita(false), gravidade(300), velMax(50), aceleracao(150), timerAtaque(0)
 {
 	setNumVidas(20);
+
+	setTamanho(sf::Vector2f(80.f, 100.f));
 }
 
 BigEye::~BigEye()

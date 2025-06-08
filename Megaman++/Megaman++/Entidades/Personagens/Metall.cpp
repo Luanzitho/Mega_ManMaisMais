@@ -3,6 +3,8 @@
 Metall::Metall()
 {
 	setNumVidas(2);
+
+	setTamanho(sf::Vector2f(50.f, 50.f));
 }
 
 Metall::~Metall()

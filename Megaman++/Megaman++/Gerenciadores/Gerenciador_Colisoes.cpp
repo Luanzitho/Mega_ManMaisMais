@@ -27,10 +27,12 @@ void Gerenciador_Colisoes::tratarColisaoMegaObstacs()
 {
     std::list<Obstaculo*>::iterator itObst;
 
-    for (itObst = LOs.begin(); itObst != LOs.end(); itObst++) //Colisão Obstáculo x Alguém
+    for (itObst = LOs.begin(); itObst != LOs.end(); itObst++)
     {
-        if (verificarColisao(p1, *itObst)) {} //Obstáculo x Megaman
+        if (verificarColisao(p1, *itObst)) //Obstáculo x Megaman
+        {
             (*itObst)->obstaculizar(p1);
+        }
     }
 }
 
@@ -41,7 +43,9 @@ void Gerenciador_Colisoes::tratarColisaoMegaInimigos()
     for (itInim = LIs.begin(); itInim != LIs.end(); itInim++) //Colisão Megaman x Inimigo
     {
         if (verificarColisao(p1, *itInim))
+        {
             (*itInim)->danificar(p1);
+        }
     }
 }
 
@@ -51,8 +55,10 @@ void Gerenciador_Colisoes::tratarColisaoMegaProjeteis()
 
     for (itProj = LPs.begin(); itProj != LPs.end(); itProj++) //Colisão Projétil x Alguém
     {
-        if (verificarColisao(p1, *itProj)) {} //Projétil x Megaman
+        if (verificarColisao(p1, *itProj)) //Projétil x Megaman
+        {
             //(*itProj)-> AGIR
+        }
     }
 }
 
@@ -61,12 +67,14 @@ void Gerenciador_Colisoes::tratarColisaoInimsProjeteis()
     std::set<Projetil*>::iterator itProj;
     std::vector<Inimigo*>::iterator itInim;
 
-    for (itProj = LPs.begin(); itProj != LPs.end(); itProj++) //Colisão Projétil x Alguém
+    for (itProj = LPs.begin(); itProj != LPs.end(); itProj++)
     {
         for (itInim = LIs.begin(); itInim != LIs.end(); itInim++) //Projétil x Inimigo
         {
-            if (verificarColisao(*itInim, *itProj)) {}
+            if (verificarColisao(*itInim, *itProj))
+            {
                 //(*itProj)-> AGIR
+            }
         }
     }
 }
@@ -76,12 +84,14 @@ void Gerenciador_Colisoes::tratarColisaoInimsObstacs()
     std::list<Obstaculo*>::iterator itObst;
     std::vector<Inimigo*>::iterator itInim;
 
-    for (itObst = LOs.begin(); itObst != LOs.end(); itObst++) //Colisão Obstáculo x Alguém
+    for (itObst = LOs.begin(); itObst != LOs.end(); itObst++)
     {
         for (itInim = LIs.begin(); itInim != LIs.end(); itInim++) //Obstáculo x Inimigo
         {
-            if (verificarColisao(*itInim, *itObst)) {}
+            if (verificarColisao(*itInim, *itObst))
+            {
                 (*itObst)->obstaculizar(*itInim);
+            }
         }
     }
 }
@@ -91,7 +101,7 @@ void Gerenciador_Colisoes::tratarColisaoProjObstacs()
     std::list<Obstaculo*>::iterator itObst;
     std::set<Projetil*>::iterator itProj;
 
-    for (itProj = LPs.begin(); itProj != LPs.end(); itProj++) //Colisão Projétil x Alguém
+    for (itProj = LPs.begin(); itProj != LPs.end(); itProj++)
     {
         for (itObst = LOs.begin(); itObst != LOs.end(); itObst++) //Projétil x Obstáculo
         {
