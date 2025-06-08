@@ -1,6 +1,6 @@
 #include "Metall.h"
 
-Metall::Metall()
+Metall::Metall(): timerEsconder(0)
 {
 	setNumVidas(2);
 

@@ -6,7 +6,8 @@
 class Metall:public Inimigo //Equivalente a Inimigo_facil
 {
 private:
-	float cooldownEsconder;
+	float timerEsconder;
+	float timerAtirar;
 
 public:
 	Metall();
@@ -14,6 +15,7 @@ public:
 	void executar(float dt);
 	void mover(float dt);
 	void danificar(Megaman* p);
+	//atirar();
 	//void esconder();
 	std::string getTextureFile();
 };

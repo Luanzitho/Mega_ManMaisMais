@@ -2,7 +2,7 @@
 #include "Metall.h"
 #include <iostream>
 
-Megaman::Megaman() : Personagem(20), pontos(0), direita(true), velMax(200), gravidade(300), aceleracao(100), cooldownTiro(0.25), tempoCooldown(0), player1(true), cooldownNoChao(0)
+Megaman::Megaman() : Personagem(20), pontos(0), direita(true), velMax(200), gravidade(300), /*aceleracao(100),*/ cooldownTiro(0.25), tempoCooldown(0), player1(true), cooldownNoChao(0)
 {
 	LE = nullptr;
 	setId(1);
@@ -10,7 +10,7 @@ Megaman::Megaman() : Personagem(20), pontos(0), direita(true), velMax(200), grav
 	setTamanho(sf::Vector2f(70.f, 70.f));
 }
 
-Megaman::Megaman(bool player) : Personagem(20), pontos(0), direita(true), velMax(200), gravidade(300), aceleracao(100), cooldownTiro(0.25), tempoCooldown(0), player1(player), cooldownNoChao(0)
+Megaman::Megaman(bool player) : Personagem(20), pontos(0), direita(true), velMax(200), gravidade(300), /*aceleracao(100),*/ cooldownTiro(0.25), tempoCooldown(0), player1(player), cooldownNoChao(0)
 {
 	LE = nullptr;
 	setId(1);

@@ -1,26 +1,2 @@
-﻿  Ente.cpp
-  Entidade.cpp
-  Espinho.cpp
-  Obstaculo.cpp
-  Plataforma.cpp
-  BigEye.cpp
-C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\BigEye.cpp(26,27): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
-  Inimigo.cpp
-  Megaman.cpp
-C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp(43,28): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
-C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp(61,28): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
-  Metall.cpp
-  Personagem.cpp
-  Projetil.cpp
-  ProjetilMegaman.cpp
-  Fase.cpp
-  Gerenciador_Colisoes.cpp
-  Gerenciador_Grafico.cpp
-  Jogo.cpp
-  ListaEntidades.cpp
-  main.cpp
-  Menu.cpp
-C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Menu.cpp(13,20): warning C4018: '<': incompatibilidade de signed/unsigned
-  Gerando Código...
-C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Megaman++\Menu.cpp(74,1): warning C4715: 'Menu::getTextureFile': nem todos os caminhos de controle retornam um valor
-  Megaman++.vcxproj -> C:\Users\Luanzitho\Documents\GitHub\Jogo-simao\Megaman++\Debug\Megaman++.exe
+﻿  main.cpp
+  Megaman++.vcxproj -> C:\Users\Jambr\OneDrive\Documentos\GitHub\Jogo-simao\Megaman++\Debug\Megaman++.exe

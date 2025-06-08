@@ -12,7 +12,7 @@ private:
 	bool direita;
 	int pontos;
 	float gravidade;
-	float aceleracao;
+	//float aceleracao;
 	float velMax;
 	float cooldownTiro;
 	float tempoCooldown;

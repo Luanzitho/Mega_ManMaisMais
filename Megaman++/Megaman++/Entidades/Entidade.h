@@ -5,6 +5,7 @@
 class Entidade:public Ente
 {
 protected:
+	bool destruido;
 	//float x;
 	//float y;
 	//ostream buffer;
