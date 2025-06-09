@@ -1,8 +1,8 @@
 #include "Plataforma.h"
 
-Plataforma::Plataforma(): altura(100)
+Plataforma::Plataforma(): altura(50)
 {
-	setTamanho(sf::Vector2f(1200.f, float(altura)));
+	setTamanho(sf::Vector2f(50.f, float(altura)));
 }
 
 Plataforma::~Plataforma()

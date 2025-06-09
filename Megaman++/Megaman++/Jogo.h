@@ -18,7 +18,7 @@ private:
 	Gerenciador_Colisoes GC;
 	Gerenciador_Grafico& GG;
 	Megaman* p1, *p2;
-	Plataforma* pl1;
+	Plataforma* pl1, *pl2, *pl3;
 	Metall* m1;
 	Espinho* es;
 	BigEye* m2;
