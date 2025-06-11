@@ -1,4 +1,5 @@
 #include "Gerenciador_Colisoes.h"
+#include <iostream>
 
 Gerenciador_Colisoes::Gerenciador_Colisoes()
 {
@@ -10,6 +11,7 @@ Gerenciador_Colisoes::Gerenciador_Colisoes()
 
 Gerenciador_Colisoes::~Gerenciador_Colisoes()
 {
+
 }
 
 const bool Gerenciador_Colisoes::verificarColisao(Entidade* pe1, Entidade* pe2) //Referência: Giu do PETECO
@@ -32,6 +34,7 @@ void Gerenciador_Colisoes::tratarColisaoMegaObstacs()
         if (verificarColisao(p1, *itObst)) //Obstáculo x Megaman
         {
             (*itObst)->obstaculizar(p1);
+            
         }
     }
 }

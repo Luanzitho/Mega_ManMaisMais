@@ -2,8 +2,8 @@
 #include <iostream>
 Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18), tileCount(180), tilesRects(), GC(), p1(new Megaman), plataformas()
 {
-    p1->setCoords(sf::Vector2f(550.f, 580.f));
-    p1->setGerenciadorGrafico(pGG);
+    p1->setCoords(sf::Vector2f(400.f, 400.f));
+    p1->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
     GC.incluirMegaman(p1);
     //p1->setGerenciadorColisoes(&GC);
 }
@@ -24,9 +24,9 @@ void Fase::criarPlataformas()
     for(int i=0; i< faseJson["layers"][1]["objects"].size();i++)
     {
         Plataforma* p= new Plataforma;
-		p->setGerenciadorGrafico(pGG);
-		p->setCoords(sf::Vector2f(faseJson["layers"][1]["objects"][i]["x"], faseJson["layers"][1]["objects"][i]["y"]));
-		p->setTamanho(sf::Vector2f(faseJson["layers"][1]["objects"][i]["width"], faseJson["layers"][1]["objects"][i]["height"]));
+		p->setGerenciadorGrafico(pGG->getInstancia());
+		p->setCoords(sf::Vector2f((float)(faseJson["layers"][1]["objects"][i]["x"]*3), (float)faseJson["layers"][1]["objects"][i]["y"]*3));
+		p->setTamanho(sf::Vector2f((float)faseJson["layers"][1]["objects"][i]["width"]*3, (float)faseJson["layers"][1]["objects"][i]["height"]*3));
         plataformas.push_back(p);
 		std::cout << "Plataforma criada: " << faseJson["layers"][1]["objects"][i]["x"] << ", " << faseJson["layers"][1]["objects"][i]["y"] << std::endl;
         GC.incluirObstaculo(p);

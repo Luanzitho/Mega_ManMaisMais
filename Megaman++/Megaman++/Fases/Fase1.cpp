@@ -25,8 +25,9 @@ void Fase1::executar(float dt)
 	desenharCenario();
     p1->executar(dt);
     //std::cout << "Fase 1 executando" << std::endl;
-    //p1->desenhar();
-   
+    p1->desenhar();
+   /*for (int i = 0; i< plataformas.size(); i++)
+	   plataformas[i]->desenhar();*/
     GC.executar();
     //criarInimigos();
     //criarChefoes();
