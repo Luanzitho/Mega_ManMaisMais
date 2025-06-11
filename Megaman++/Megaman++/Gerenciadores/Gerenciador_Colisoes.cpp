@@ -105,7 +105,7 @@ void Gerenciador_Colisoes::tratarColisaoInimsObstacs()
     }
 }
 
-void Gerenciador_Colisoes::tratarColisaoProjObstacs()
+void Gerenciador_Colisoes::tratarColisaoProjObstacs() //Acho que essa aqui dá para tirar, os projéteis atravessam as paredes em Megaman
 {
     std::list<Obstaculo*>::iterator itObst;
     std::set<Projetil*>::iterator itProj;
@@ -131,7 +131,8 @@ void Gerenciador_Colisoes::tratarColisaoProjLimites()
     {
         sf::FloatRect rect1((*itProj)->getCoords(), (*itProj)->getTamanho());
         
-        if (rect1.intersects(rect2)) { //Houve colisão
+        if (rect1.intersects(rect2)) //Houve colisão
+        { 
             (*itProj)->destruir();
         }
         //if ((*itProj)->getCoords().x > 800 || (*itProj)->getCoords().x < 500)
