@@ -25,4 +25,5 @@ public:
 	void limparJanela();
 	void mostrarConteudoJanela();
 	void desenhaTexto(sf::Text text);
+	void desenhaSprite(sf::Sprite sprite);
 };

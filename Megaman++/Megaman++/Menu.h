@@ -17,6 +17,7 @@ private:
 	std::vector<const char*> options;
 	std::vector<sf::Text> texts;
 	std::vector<sf::Vector2f> coordsTexts;
+	float cooldown;
 	
 
 public:

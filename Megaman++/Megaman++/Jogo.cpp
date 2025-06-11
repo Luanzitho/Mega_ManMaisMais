@@ -2,9 +2,11 @@
 #include "Entidades/Personagens/Megaman.h"
 #include <SFML/Graphics.hpp>
 
-Jogo::Jogo() : GG(*Gerenciador_Grafico::getInstancia()), inMenu(false), playing(true), p1(new Megaman), p2(new Megaman(false)), m1(new Metall), m2(new BigEye), pl1(new Plataforma), pl2(new Plataforma), pl3(new Plataforma), es(new Espinho), faseA(0)
+Jogo::Jogo() : GG(*Gerenciador_Grafico::getInstancia()), inMenu(true), playing(false), /*p1(new Megaman), p2(new Megaman(false)), m1(new Metall), m2(new BigEye), pl1(new Plataforma), pl2(new Plataforma), pl3(new Plataforma), es(new Espinho),*/ faseA(0), f1(new Fase1), twoPlayers(false)
 {
-	p1->setCoords(sf::Vector2f(550.f, 580.f));
+	f1->setCoords(sf::Vector2f(0.f, 0.f));
+	f1->setGerenciadorGrafico(&GG);
+	/*p1->setCoords(sf::Vector2f(550.f, 580.f));
 	
 	m1->setCoords(sf::Vector2f(900.f, 550.f));
 	
@@ -55,13 +57,13 @@ Jogo::Jogo() : GG(*Gerenciador_Grafico::getInstancia()), inMenu(false), playing(
 	pl1->setGerenciadorColisoes(&GC);
 	es->setGerenciadorColisoes(&GC);*/
 	
-	GC.incluirMegaman(p1);
-	GC.incluirInimigo(m1);
-	GC.incluirInimigo(m2);
-	GC.incluirObstaculo(pl1);
-	GC.incluirObstaculo(pl2);
-	GC.incluirObstaculo(pl3);
-	GC.incluirObstaculo(es);
+	//GC.incluirMegaman(p1);
+	//GC.incluirInimigo(m1);
+	//GC.incluirInimigo(m2);
+	//GC.incluirObstaculo(pl1);
+	//GC.incluirObstaculo(pl2);
+	//GC.incluirObstaculo(pl3);
+	//GC.incluirObstaculo(es);
 }
 
 Jogo::~Jogo()
@@ -91,15 +93,15 @@ void Jogo::executar()
 		{
 			if(faseA==1)
 			{
-			
+				f1->executar(dt);
 			}
 			else if(faseA==2)
 			{
-			
+				
 			}
-			GC.executar();
+			//GC.executar();
 			
-			LEs->percorrer(dt);
+			//LEs->percorrer(dt);
 		}
 		GG.mostrarConteudoJanela();
 	}
@@ -118,9 +120,22 @@ void Jogo::iniciar(int fase)
 
 void Jogo::encerrar()
 {
-	LEs->LEs.limpar();
-	delete LEs;
+	//LEs->LEs.limpar();
+	//delete LEs;
 
+}
+
+void Jogo::setPlayers(bool players)
+{
+	twoPlayers = players;
+	if (twoPlayers)
+	{
+		//p2->setAtivo(true);
+	}
+	else
+	{
+		//p2->setAtivo(false);
+	}
 }
 
 Gerenciador_Grafico* Jogo::getGerenciador()

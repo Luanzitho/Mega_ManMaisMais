@@ -73,3 +73,8 @@ void Gerenciador_Grafico::desenhaTexto(sf::Text text)
 {
 	window.draw(text);
 }
+
+void Gerenciador_Grafico::desenhaSprite(sf::Sprite sprite)
+{
+    window.draw(sprite);
+}

@@ -11,20 +11,23 @@
 #include "Gerenciadores/Gerenciador_Colisoes.h"
 #include "Entidades/Obstaculos/Plataforma.h"
 #include "Entidades/Obstaculos/Espinho.h"
+#include "Fases/Fase1.h"
 
 class Jogo
 {
 private:
 	Gerenciador_Colisoes GC;
 	Gerenciador_Grafico& GG;
-	Megaman* p1, *p2;
-	Plataforma* pl1, *pl2, *pl3;
-	Metall* m1;
-	Espinho* es;
-	BigEye* m2;
-	ListaEntidades* LEs;
+	//Megaman* p1, *p2;
+	//Plataforma* pl1, *pl2, *pl3;
+	//Metall* m1;
+	//Espinho* es;
+	//BigEye* m2;
+	//ListaEntidades* LEs;
+	Fase1* f1;
 	bool inMenu;
 	bool playing;
+	bool twoPlayers;
 	int faseA;
 
 public:
@@ -33,5 +36,6 @@ public:
 	void executar();
 	void iniciar(int fase);
 	void encerrar();
+	void setPlayers(bool players);
 	Gerenciador_Grafico* getGerenciador();
 };
