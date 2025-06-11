@@ -143,6 +143,7 @@
     <ClCompile Include="Entidades\Projeteis\ProjetilMegaman.cpp" />
     <ClCompile Include="Entidades\Projeteis\ProjetilMetall.cpp" />
     <ClCompile Include="Fases\Fase.cpp" />
+    <ClCompile Include="Fases\Fase1.cpp" />
     <ClCompile Include="Gerenciadores\Gerenciador_Colisoes.cpp" />
     <ClCompile Include="Gerenciadores\Gerenciador_Grafico.cpp" />
     <ClCompile Include="Jogo.cpp" />
@@ -165,9 +166,11 @@
     <ClInclude Include="Entidades\Projeteis\ProjetilMegaman.h" />
     <ClInclude Include="Entidades\Projeteis\ProjetilMetall.h" />
     <ClInclude Include="Fases\Fase.h" />
+    <ClInclude Include="Fases\Fase1.h" />
     <ClInclude Include="Gerenciadores\Gerenciador_Colisoes.h" />
     <ClInclude Include="Gerenciadores\Gerenciador_Grafico.h" />
     <ClInclude Include="Jogo.h" />
+    <ClInclude Include="json.hpp" />
     <ClInclude Include="Listas\Lista.h" />
     <ClInclude Include="Listas\ListaEntidades.h" />
     <ClInclude Include="Menu.h" />
