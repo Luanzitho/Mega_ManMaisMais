@@ -5,7 +5,7 @@
 class Entidade:public Ente
 {
 protected:
-	bool destruido;
+	bool vivo;
 	//float x;
 	//float y;
 	//ostream buffer;
@@ -13,6 +13,8 @@ protected:
 public:
 	Entidade();
 	~Entidade();
+	void destruir();
+	const bool getVivo();
 	virtual void executar(float dt) = 0;
 	virtual std::string getTextureFile() = 0;
 	//virtual void salvar() = 0;

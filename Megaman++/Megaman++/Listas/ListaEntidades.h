@@ -13,5 +13,6 @@ public:
 	~ListaEntidades();
 	void incluirEntidade(Entidade* pE);
 	void percorrer(float dt);
+	void verificaAbatidos();
 };
 

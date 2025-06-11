@@ -42,38 +42,47 @@ void Gerenciador_Colisoes::tratarColisaoMegaInimigos()
 
     for (itInim = LIs.begin(); itInim != LIs.end(); itInim++) //Colisão Megaman x Inimigo
     {
-        if (verificarColisao(p1, *itInim))
+        if ((*itInim)->getVivo() && verificarColisao(p1, *itInim)) //Se o Inimigo estiver vivo E houve a colisão
         {
             (*itInim)->danificar(p1);
         }
     }
 }
 
-void Gerenciador_Colisoes::tratarColisaoMegaProjeteis()
+void Gerenciador_Colisoes::tratarColisaoMegaProjeteis() //Projétil do Inimigo colidindo com o Megaman
 {
     std::set<Projetil*>::iterator itProj;
+    ProjetilMetall* aux;
 
-    for (itProj = LPs.begin(); itProj != LPs.end(); itProj++) //Colisão Projétil x Alguém
+    for (itProj = LPs.begin(); itProj != LPs.end(); itProj++) //Colisão Projétil x Megaman
     {
-        if (verificarColisao(p1, *itProj)) //Projétil x Megaman
+        if (!((*itProj)->getDoMega())) //Só entra se não for do Megaman
         {
-            //(*itProj)-> AGIR
+            if ((*itProj)->getVivo() && verificarColisao(p1, *itProj)) //Se o projétil estiver vivo (ativo) && houve a colisão
+            {
+                aux = static_cast<ProjetilMetall*>(*itProj);
+                aux->atingirMegaman(p1);
+            }
         }
     }
 }
 
-void Gerenciador_Colisoes::tratarColisaoInimsProjeteis()
+void Gerenciador_Colisoes::tratarColisaoInimsProjeteis() //Projétil do Megaman colidindo com Inimigo
 {
     std::set<Projetil*>::iterator itProj;
     std::vector<Inimigo*>::iterator itInim;
+    ProjetilMegaman* aux;
 
     for (itProj = LPs.begin(); itProj != LPs.end(); itProj++)
     {
         for (itInim = LIs.begin(); itInim != LIs.end(); itInim++) //Projétil x Inimigo
         {
-            if (verificarColisao(*itInim, *itProj))
-            {
-                //(*itProj)-> AGIR
+            if ((*itProj)->getDoMega()) { //Só entra se for Projétil do Megaman
+                if ((*itProj)->getVivo() && verificarColisao(*itInim, *itProj)) //Se o projétil estiver vivo (ativo) && houve a colisão
+                {
+                    aux = static_cast<ProjetilMegaman*>(*itProj);
+                    aux->atingirInimigo(*itInim);
+                }
             }
         }
     }
@@ -123,10 +132,11 @@ void Gerenciador_Colisoes::tratarColisaoProjLimites()
         sf::FloatRect rect1((*itProj)->getCoords(), (*itProj)->getTamanho());
         
         if (rect1.intersects(rect2)) { //Houve colisão
-            (*itProj)->desativar();
+            (*itProj)->destruir();
         }
+        //if ((*itProj)->getCoords().x > 800 || (*itProj)->getCoords().x < 500)
+            //(*itProj)->destruir();
     }
-
 }
 
 void Gerenciador_Colisoes::incluirInimigo(Inimigo* pI) { if (pI) LIs.push_back(pI); }
@@ -141,9 +151,9 @@ void Gerenciador_Colisoes::executar() //Referência: Giovane do canal Gege++
 {
     tratarColisaoMegaObstacs();
     tratarColisaoMegaInimigos();
-    tratarColisaoProjLimites();
-    //tratarColisaoMegaProjeteis();
-    //tratarColisaoInimsProjeteis();
+    //tratarColisaoProjLimites();
+    tratarColisaoMegaProjeteis();
+    tratarColisaoInimsProjeteis();
     tratarColisaoInimsObstacs();
     //tratarColisaoProjObstacs();
 }

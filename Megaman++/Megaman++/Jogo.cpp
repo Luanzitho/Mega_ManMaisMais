@@ -42,6 +42,10 @@ Jogo::Jogo() : GG(*Gerenciador_Grafico::getInstancia()), inMenu(false), playing(
 	m2->conhecerJogador(p1);
 
 	p1->associaListaEntidades(LEs); //Teste da função atirar
+	p1->associaGerenciadorColisoes(&GC);
+
+	m1->associaListaEntidades(LEs);
+	m1->associaGerenciadorColisoes(&GC);
 	//p2->associaListaEntidades(LEs);
 
 	/*p1->setGerenciadorColisoes(&GC);

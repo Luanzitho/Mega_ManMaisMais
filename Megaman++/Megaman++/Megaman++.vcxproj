@@ -141,6 +141,7 @@
     <ClCompile Include="Entidades\Personagens\Personagem.cpp" />
     <ClCompile Include="Entidades\Projeteis\Projetil.cpp" />
     <ClCompile Include="Entidades\Projeteis\ProjetilMegaman.cpp" />
+    <ClCompile Include="Entidades\Projeteis\ProjetilMetall.cpp" />
     <ClCompile Include="Fases\Fase.cpp" />
     <ClCompile Include="Gerenciadores\Gerenciador_Colisoes.cpp" />
     <ClCompile Include="Gerenciadores\Gerenciador_Grafico.cpp" />
@@ -162,6 +163,7 @@
     <ClInclude Include="Entidades\Personagens\Personagem.h" />
     <ClInclude Include="Entidades\Projeteis\Projetil.h" />
     <ClInclude Include="Entidades\Projeteis\ProjetilMegaman.h" />
+    <ClInclude Include="Entidades\Projeteis\ProjetilMetall.h" />
     <ClInclude Include="Fases\Fase.h" />
     <ClInclude Include="Gerenciadores\Gerenciador_Colisoes.h" />
     <ClInclude Include="Gerenciadores\Gerenciador_Grafico.h" />

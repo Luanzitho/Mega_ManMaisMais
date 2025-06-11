@@ -15,7 +15,7 @@ public:
 
 		void incluir(TE* p) { if (p) pInfo = p; }
 
-		void setProx(Elemento<TE>* pE) { if (pE) pProx = pE; }
+		void setProx(Elemento<TE>* pE) { pProx = pE; }
 
 		Elemento<TE>* getProximo() { return pProx; }
 
@@ -61,11 +61,13 @@ public:
 		Elemento<TL>* temp = pPrimeiro;
 		Elemento<TL>* anteTemp = nullptr;
 			
-		while (temp->getInfo() != p) //Percorre a lista até achar o Elemento a remover
+		while (temp != nullptr && temp->getInfo() != p) //Percorre a lista até achar o Elemento a remover
 		{
 			anteTemp = temp;
 			temp = temp->getProximo();
 		}
+
+		if (!temp) return;
 			
 		if (temp == pPrimeiro) //Remove a primeira
 		{

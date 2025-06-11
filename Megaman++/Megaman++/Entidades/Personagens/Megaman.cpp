@@ -1,16 +1,19 @@
 #include "Megaman.h"
-#include "Metall.h"
+#include "../../Gerenciadores/Gerenciador_Colisoes.h"
+
 #include <iostream>
 
-Megaman::Megaman() : Personagem(20), pontos(0), direita(true), velMax(200), gravidade(300), /*aceleracao(100),*/ cooldownTiro(0.25), tempoCooldown(0), player1(true), cooldownNoChao(0)
+Megaman::Megaman() : Personagem(20), pontos(0), velMax(200), gravidade(300), /*aceleracao(100),*/ cooldownTiro(0.25), tempoCooldown(0), player1(true), cooldownNoChao(0)
 {
 	LE = nullptr;
 	setId(1);
 
+	GC = nullptr;
+
 	setTamanho(sf::Vector2f(70.f, 70.f));
 }
 
-Megaman::Megaman(bool player) : Personagem(20), pontos(0), direita(true), velMax(200), gravidade(300), /*aceleracao(100),*/ cooldownTiro(0.25), tempoCooldown(0), player1(player), cooldownNoChao(0)
+Megaman::Megaman(bool player) : Personagem(20), pontos(0), velMax(200), gravidade(300), /*aceleracao(100),*/ cooldownTiro(0.25), tempoCooldown(0), player1(player), cooldownNoChao(0)
 {
 	LE = nullptr;
 	setId(1);
@@ -21,6 +24,11 @@ Megaman::~Megaman(){}
 void Megaman::associaListaEntidades(ListaEntidades* pLista)
 {
 	LE = pLista;
+}
+
+void Megaman::associaGerenciadorColisoes(Gerenciador_Colisoes* GC)
+{
+	this->GC = GC;
 }
 
 void Megaman::mover(float dt)
@@ -65,7 +73,9 @@ void Megaman::mover(float dt)
 		velocidade = velMax;
 	else if (velocidade < velMax * (-1))
 		velocidade = velMax * (-1);
+
 	cooldownNoChao += dt;
+	
 	if (cooldownNoChao > 0.1 && noChao)// reseta a colisão do chão em um determinado tempo
 	{
 		noChao = false;
@@ -118,12 +128,11 @@ void Megaman::atirar(float dt)
 			{
 				sf::Vector2f pos = getCoords();
 
-				ProjetilMegaman* tiro = new ProjetilMegaman(pos, direita);
+				tiro = new ProjetilMegaman(pos, direita);
 				LE->incluirEntidade(tiro);
-				//pGC->incluirProjetil(tiro);
 				tiro->associaListaEntidades(LE);
 				tiro->setGerenciadorGrafico(pGG);
-				//tiro->setGerenciadorColisoes(pGC);
+				GC->incluirProjetil(tiro);
 
 				tempoCooldown = 0;
 			}

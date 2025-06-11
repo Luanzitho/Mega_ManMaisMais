@@ -3,6 +3,7 @@
 #include "../Entidades/Personagens/Inimigo.h"
 #include "../Entidades/Personagens/Megaman.h"
 #include "../Entidades/Projeteis/Projetil.h"
+#include "../Entidades/Projeteis/ProjetilMetall.h"
 #include "../Entidades/Obstaculos/Obstaculo.h"
 #include <vector>
 #include <list>

@@ -1,6 +1,6 @@
 #include "BigEye.h"
 
-BigEye::BigEye() : direita(false), gravidade(300), velMax(50), aceleracao(150), timerAtaque(0)
+BigEye::BigEye() : gravidade(300), velMax(50), aceleracao(150), timerAtaque(0)
 {
 	setNumVidas(20);
 
@@ -69,7 +69,7 @@ void BigEye::executar(float dt)
 
 void BigEye::danificar(Megaman* p)
 {
-	p->operator--();
+	p->machucar(4);
 }
 
 std::string BigEye::getTextureFile()

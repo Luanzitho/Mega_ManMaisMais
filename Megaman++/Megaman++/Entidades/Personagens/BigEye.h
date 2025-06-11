@@ -8,7 +8,6 @@ private:
 	float gravidade;
 	float aceleracao;
 	float velMax;
-	bool direita;
 	float timerAtaque;
 
 public:

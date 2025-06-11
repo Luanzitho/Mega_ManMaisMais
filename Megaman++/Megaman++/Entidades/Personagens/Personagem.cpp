@@ -1,10 +1,10 @@
 #include "Personagem.h"
 
-Personagem::Personagem(): num_vidas(0), noChao(false), velocidade(0), velVertical(0)
+Personagem::Personagem(): num_vidas(0), noChao(false), direita(true), velocidade(0), velVertical(0)
 {
 }
 
-Personagem::Personagem(int v): num_vidas(v)
+Personagem::Personagem(int v): num_vidas(v) //Acho até q dá pra remover hein
 {
 }
 
@@ -12,14 +12,17 @@ Personagem::~Personagem()
 {
 }
 
-void Personagem::operator++()
+void Personagem::curar(int hp)
 {
-	num_vidas++;
+	num_vidas = num_vidas + hp;
 }
 
-void Personagem::operator--()
+void Personagem::machucar(int dmg)
 {
-	num_vidas--;
+	num_vidas = num_vidas - dmg;
+
+	if (num_vidas <= 0)
+		destruir();
 }
 
 void Personagem::setNumVidas(int v)

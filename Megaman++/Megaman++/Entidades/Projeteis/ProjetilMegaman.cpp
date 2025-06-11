@@ -1,7 +1,10 @@
 #include "ProjetilMegaman.h"
+#include "../Personagens/Inimigo.h"
 
 ProjetilMegaman::ProjetilMegaman(): direcao(0)
 {
+	doMega = true;
+	dano = 1;
 }
 
 ProjetilMegaman::ProjetilMegaman(sf::Vector2f posicao, bool direita): Projetil()
@@ -11,17 +14,28 @@ ProjetilMegaman::ProjetilMegaman(sf::Vector2f posicao, bool direita): Projetil()
 	else
 		direcao = -1;
 
+	doMega = true;
+	dano = 1;
+
 	setCoords(posicao);
-	setTamanho(sf::Vector2f(15.f, 15.f));
+	setTamanho(sf::Vector2f(30.f, 30.f));
 }
 
 ProjetilMegaman::~ProjetilMegaman()
 {
 }
-#include <iostream>
+
+void ProjetilMegaman::atingirInimigo(Inimigo* pI)
+{
+	if (!pI) return;
+
+	pI->machucar(dano);
+	destruir();
+}
+
 void ProjetilMegaman::mover(float dt)
 {
-	if (getAtivo()) {
+	if (getVivo()) {
 		sf::Vector2f posicao;
 		posicao = getCoords();
 
@@ -33,9 +47,6 @@ void ProjetilMegaman::mover(float dt)
 void ProjetilMegaman::executar(float dt)
 {
 	mover(dt);
-	/*if (getCoords().x > 1100 || getCoords().x < 100) {
-		desativar();
-	}*/
 }
 
 std::string ProjetilMegaman::getTextureFile()

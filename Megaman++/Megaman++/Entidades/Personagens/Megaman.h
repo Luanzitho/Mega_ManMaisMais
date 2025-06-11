@@ -5,20 +5,22 @@
 #include "../../Listas/ListaEntidades.h"
 #include <vector>
 
+class Gerenciador_Colisoes;
+
 class Megaman:public Personagem
 {
 private:
 	bool player1;
-	bool direita;
 	int pontos;
 	float gravidade;
 	//float aceleracao;
 	float velMax;
 	float cooldownTiro;
 	float tempoCooldown;
-	ProjetilMegaman tiro;
+	ProjetilMegaman* tiro;
 	//std::vector<ProjetilMegaman*> disparos;
 	ListaEntidades* LE;
+	Gerenciador_Colisoes* GC;
 	float cooldownNoChao;
 
 public:
@@ -26,6 +28,7 @@ public:
 	Megaman(bool player);
 	~Megaman();
 	void associaListaEntidades(ListaEntidades* pLista);
+	void associaGerenciadorColisoes(Gerenciador_Colisoes* GC);
 	void mover(float dt);
 	void atirar(float dt);
 	void executar(float dt);
