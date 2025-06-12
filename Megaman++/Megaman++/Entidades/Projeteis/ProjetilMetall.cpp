@@ -18,7 +18,7 @@ ProjetilMetall::ProjetilMetall(sf::Vector2f posicao, bool direita): Projetil()
 	dano = 2;
 
 	setCoords(posicao);
-	setTamanho(sf::Vector2f(30.f, 30.f));	
+	setTamanho(sf::Vector2f(20.f, 20.f));	
 }
 
 ProjetilMetall::~ProjetilMetall(){}
@@ -45,6 +45,9 @@ void ProjetilMetall::mover(float dt)
 void ProjetilMetall::executar(float dt)
 {
 	mover(dt);
+
+	if (getCoords().x > 1200 || getCoords().x < 100)
+		destruir();
 }
 
 std::string ProjetilMetall::getTextureFile()

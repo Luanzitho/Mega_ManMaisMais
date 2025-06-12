@@ -1,11 +1,33 @@
 #include "Fase.h"
 #include <iostream>
-Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18), tileCount(180), tilesRects(), GC(), p1(new Megaman), plataformas()
+Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18), tileCount(180), tilesRects(), GC(), p1(new Megaman), plataformas(), LEs(new ListaEntidades)
 {
+    met = new Metall();
+    big = new BigEye();
+
     p1->setCoords(sf::Vector2f(400.f, 400.f));
     p1->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
+    p1->associaGerenciadorColisoes(&GC);
+    p1->associaListaEntidades(LEs);
     GC.incluirMegaman(p1);
     //p1->setGerenciadorColisoes(&GC);
+    LEs->incluirEntidade(p1);
+
+    met->setCoords(sf::Vector2f(700.f, 580.f));
+    met->associaListaEntidades(LEs);
+    met->associaGerenciadorColisoes(&GC);
+    met->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
+    met->conhecerJogador(p1);
+
+    big->setCoords(sf::Vector2f(400.f, 50.f));
+    big->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
+    big->conhecerJogador(p1);
+
+    LEs->incluirEntidade(met);
+    LEs->incluirEntidade(big);
+
+    GC.incluirInimigo(met);
+    GC.incluirInimigo(big);
 }
 
 Fase::~Fase()

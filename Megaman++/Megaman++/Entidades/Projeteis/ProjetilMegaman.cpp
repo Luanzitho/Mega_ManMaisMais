@@ -47,6 +47,9 @@ void ProjetilMegaman::mover(float dt)
 void ProjetilMegaman::executar(float dt)
 {
 	mover(dt);
+
+	if (getCoords().x > 1200 || getCoords().x < 100)
+		destruir();
 }
 
 std::string ProjetilMegaman::getTextureFile()

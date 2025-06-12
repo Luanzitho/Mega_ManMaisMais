@@ -1,6 +1,6 @@
 #include "BigEye.h"
 
-BigEye::BigEye() : gravidade(300), velMax(50), aceleracao(150), timerAtaque(0)
+BigEye::BigEye() : velMax(50), aceleracao(150), timerAtaque(0)
 {
 	setNumVidas(20);
 

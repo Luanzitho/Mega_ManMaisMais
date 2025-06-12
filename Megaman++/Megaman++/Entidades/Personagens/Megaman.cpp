@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-Megaman::Megaman() : Personagem(20), pontos(0), velMax(175), gravidade(300), /*aceleracao(100),*/ cooldownTiro(0.25), tempoCooldown(0), player1(true), cooldownNoChao(0)
+Megaman::Megaman() : Personagem(20), pontos(0), velMax(175), /*aceleracao(100),*/ cooldownTiro(0.25), tempoCooldown(0), player1(true), cooldownNoChao(0)
 {
 	LE = nullptr;
 	setId(1);
@@ -13,7 +13,7 @@ Megaman::Megaman() : Personagem(20), pontos(0), velMax(175), gravidade(300), /*a
 	setTamanho(sf::Vector2f(70.f, 70.f));
 }
 
-Megaman::Megaman(bool player) : Personagem(20), pontos(0), velMax(175), gravidade(300), /*aceleracao(100),*/ cooldownTiro(0.25), tempoCooldown(0), player1(player), cooldownNoChao(0)
+Megaman::Megaman(bool player) : Personagem(20), pontos(0), velMax(175), /*aceleracao(100),*/ cooldownTiro(0.25), tempoCooldown(0), player1(player), cooldownNoChao(0)
 {
 	LE = nullptr;
 	setId(1);
@@ -89,7 +89,7 @@ void Megaman::mover(float dt)
 		{
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 			{
-				velVertical = -300.f;
+				velVertical = -350.f;
 				noChao = false;
 				std::cout << "Tenho " << getNumVidas() << " de HP" << std::endl;
 				std::cout << "FPS: " << 1.0 / dt << std::endl;
@@ -119,7 +119,7 @@ void Megaman::mover(float dt)
 void Megaman::atirar(float dt)
 {
 	tempoCooldown += dt;
-
+	
 	if (player1)
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))

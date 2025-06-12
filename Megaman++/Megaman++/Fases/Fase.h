@@ -4,6 +4,8 @@
 #include "../Listas/ListaEntidades.h"
 #include "../Gerenciadores/Gerenciador_Colisoes.h"
 #include "../Entidades/Obstaculos/Plataforma.h"
+#include "../Entidades/Personagens/BigEye.h"
+#include "../Entidades/Personagens/Metall.h"
 
 #include <fstream>
 #include <vector>
@@ -27,6 +29,8 @@ protected:
 	int columns;
 	int tileCount;
 	Megaman* p1;
+	Metall* met; //A REMOVER
+	BigEye* big; //A REMOVER
 	std::vector<Plataforma*> plataformas;
 	//std::vector<Metall*> metalls;
 	//std::vector<Espinho*> espinhos;

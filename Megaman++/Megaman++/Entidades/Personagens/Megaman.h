@@ -12,7 +12,6 @@ class Megaman:public Personagem
 private:
 	bool player1;
 	int pontos;
-	float gravidade;
 	//float aceleracao;
 	float velMax;
 	float cooldownTiro;

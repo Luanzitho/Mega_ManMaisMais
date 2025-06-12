@@ -16,32 +16,38 @@ Fase1::Fase1() : maxChefoes(0)
 	separaSprites();
     criarPlataformas();
 }
+
 Fase1::~Fase1()
 {
 
 }
+
 void Fase1::executar(float dt)
 {
 	desenharCenario();
-    p1->executar(dt);
+    //p1->executar(dt);
     //std::cout << "Fase 1 executando" << std::endl;
-    p1->desenhar();
+    //p1->desenhar();
    /*for (int i = 0; i< plataformas.size(); i++)
 	   plataformas[i]->desenhar();*/
+    LEs->percorrer(dt);
     GC.executar();
     //criarInimigos();
     //criarChefoes();
     //criarObsMedios();
     //criarProjeteis();
 }
+
 void Fase1::criarChefoes()
 {
 
 }
+
 void Fase1::criarObsMedios()
 {
 
 }
+
 void Fase1::criarProjeteis()
 {
 

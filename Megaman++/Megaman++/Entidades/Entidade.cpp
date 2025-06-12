@@ -1,6 +1,6 @@
 #include "Entidade.h"
 
-Entidade::Entidade(): vivo(true)//: x(-1), y(-1)
+Entidade::Entidade(): vivo(true), gravidade(300)//: x(-1), y(-1)
 {
 }
 

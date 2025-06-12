@@ -6,6 +6,7 @@ class Entidade:public Ente
 {
 protected:
 	bool vivo;
+	float gravidade;
 	//float x;
 	//float y;
 	//ostream buffer;
