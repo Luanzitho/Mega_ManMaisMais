@@ -1,0 +1,9 @@
+*.obj
+*.exe
+*.pdb
+*.ipch
+*.sdf
+*.log
+Debug/
+Release/
+.vs/
