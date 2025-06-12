@@ -6,6 +6,7 @@
 #include "../Entidades/Obstaculos/Plataforma.h"
 #include "../Entidades/Personagens/BigEye.h"
 #include "../Entidades/Personagens/Metall.h"
+#include "../Entidades/Obstaculos/Mola.h"
 
 #include <fstream>
 #include <vector>
@@ -24,7 +25,6 @@ protected:
 	sf::Texture imagemTiles;
 	std::vector<sf::IntRect> tilesRects;
 	//std::vector<sf::Texture> tilesTextures;
-	sf::Texture* tilesAtual;
 	int tileWidth;
 	int columns;
 	int tileCount;
@@ -33,9 +33,10 @@ protected:
 	BigEye* big; //A REMOVER
 	std::vector<Plataforma*> plataformas;
 	//std::vector<Metall*> metalls;
-	//std::vector<Espinho*> espinhos;
+	std::vector<Obstaculo*> obstaculos;
 	//std::vector<BigEye*> bigEyes;
 	ListaEntidades* LEs;
+	Mola* mola;
 
 public:
 	Fase();

@@ -4,6 +4,7 @@ Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18)
 {
     met = new Metall();
     big = new BigEye();
+	mola = new Mola();
 
     p1->setCoords(sf::Vector2f(400.f, 400.f));
     p1->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
@@ -43,18 +44,38 @@ void Fase::criarInimigosFaceis()
 
 void Fase::criarPlataformas()
 {
-    for(int i=0; i< faseJson["layers"][1]["objects"].size();i++)
+	int controle = 0;
+    while(faseJson["layers"][controle]["name"]!= "chao")
     {
-        Plataforma* p= new Plataforma;
-		p->setGerenciadorGrafico(pGG->getInstancia());
-		p->setCoords(sf::Vector2f((float)(faseJson["layers"][1]["objects"][i]["x"]*3), (float)faseJson["layers"][1]["objects"][i]["y"]*3));
-		p->setTamanho(sf::Vector2f((float)faseJson["layers"][1]["objects"][i]["width"]*3, (float)faseJson["layers"][1]["objects"][i]["height"]*3));
+		controle++;
+    }
+    for (int i = 0; i < faseJson["layers"][controle]["objects"].size(); i++)
+    {
+        Plataforma* p = new Plataforma;
+        p->setGerenciadorGrafico(pGG->getInstancia());
+        p->setCoords(sf::Vector2f((float)(faseJson["layers"][controle]["objects"][i]["x"] * 3), (float)faseJson["layers"][controle]["objects"][i]["y"] * 3));
+        p->setTamanho(sf::Vector2f((float)faseJson["layers"][controle]["objects"][i]["width"] * 3, (float)faseJson["layers"][controle]["objects"][i]["height"] * 3));
         plataformas.push_back(p);
-		std::cout << "Plataforma criada: " << faseJson["layers"][1]["objects"][i]["x"] << ", " << faseJson["layers"][1]["objects"][i]["y"] << std::endl;
+        //std::cout << "Plataforma criada: " << faseJson["layers"][controle]["objects"][i]["x"] << ", " << faseJson["layers"][1]["objects"][i]["y"] << std::endl;
         GC.incluirObstaculo(p);
         //faseJson["layers"][1]["objects"];
     }
-    
+    controle = 0;
+    while(faseJson["layers"][controle]["name"]!="Mola")
+    {
+        controle++;
+    }
+    for (int i = 0; i < faseJson["layers"][controle]["objects"].size(); i++)
+    {
+        Obstaculo* m = new Mola;
+        m->setGerenciadorGrafico(pGG->getInstancia());
+        m->setCoords(sf::Vector2f((float)(faseJson["layers"][controle]["objects"][i]["x"] * 3), (float)faseJson["layers"][controle]["objects"][i]["y"] * 3));
+        m->setTamanho(sf::Vector2f((float)faseJson["layers"][controle]["objects"][i]["width"] * 3, (float)faseJson["layers"][controle]["objects"][i]["height"] * 3));
+        obstaculos.push_back(m);
+        std::cout << "Plataforma criada: " << faseJson["layers"][controle]["objects"][i]["x"] << ", " << faseJson["layers"][1]["objects"][i]["y"] << std::endl;
+        GC.incluirObstaculo(m);
+    }
+
 }
 
 void Fase::desenharCenario()
