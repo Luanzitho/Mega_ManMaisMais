@@ -12,7 +12,7 @@ public:
 	ListaEntidades();
 	~ListaEntidades();
 	void incluirEntidade(Entidade* pE);
-	void percorrer(float dt);
+	void percorrer(float dt, sf::Vector2f tam);
 	void verificaAbatidos();
 };
 

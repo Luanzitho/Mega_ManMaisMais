@@ -5,8 +5,13 @@ Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18)
     met = new Metall();
     big = new BigEye();
 	mola = new Mola();
+	posPlayer1 = p1->getCoords();
+	setTamanho(sf::Vector2f(1100.f, 720.f));
 
-    p1->setCoords(sf::Vector2f(400.f, 400.f));
+	inimigos.push_back(met);
+	inimigos.push_back(big);
+
+    //p1->setCoords(sf::Vector2f(400.f, 400.f));
     p1->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
     p1->associaGerenciadorColisoes(&GC);
     p1->associaListaEntidades(LEs);
@@ -14,13 +19,13 @@ Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18)
     //p1->setGerenciadorColisoes(&GC);
     LEs->incluirEntidade(p1);
 
-    met->setCoords(sf::Vector2f(700.f, 580.f));
+    //met->setCoords(sf::Vector2f(700.f, 580.f));
     met->associaListaEntidades(LEs);
     met->associaGerenciadorColisoes(&GC);
     met->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
     met->conhecerJogador(p1);
 
-    big->setCoords(sf::Vector2f(400.f, 50.f));
+    //big->setCoords(sf::Vector2f(400.f, 50.f));
     big->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
     big->conhecerJogador(p1);
 
@@ -80,26 +85,10 @@ void Fase::criarPlataformas()
 
 void Fase::desenharCenario()
 {
-    int x;
-    int x2 = 0;
-
-    for (int y = 0; y < faseJson["layers"][0]["height"]; y++)
+    for (int i = 0; i < tilesSprites.size(); i++)
     {
-        if (x2 < tilesGid.size())
-        {
-            for (x = 0; x < faseJson["layers"][0]["width"]; x++, x2++)
-            {
-                int gid = tilesGid[x2]; // valor vindo do mapa
-                if (gid > 0 && gid<tilesRects.size()) {
-                    sf::Sprite sprite;
-                    sprite.setTexture(imagemTiles);
-                    sprite.setTextureRect(tilesRects[gid-1]);
-                    sprite.setPosition((float)(x * 48), (float)(y * 48));
-                    sprite.setScale(3.0f, 3.0f); // Escala para 3x o tamanho original
-                    pGG->desenhaSprite(sprite);
-                }
-            }
-        }
+        if(((tilesSprites[i].getPosition().x*3.f)>0.f) && ((tilesSprites[i].getPosition().x) < 1100.f))
+        pGG->desenhaSprite(tilesSprites[i]);
     }
 }
 
@@ -121,9 +110,56 @@ void Fase::separaSprites()
         tilesRects.push_back(rect);
         //tilesTextures.push_back(recortarTextura(imagemTiles, rect));
     }
+    int x;
+    int x2 = 0;
+
+    for (int y = 0; y < faseJson["layers"][0]["height"]; y++)
+    {
+        if (x2 < tilesGid.size())
+        {
+            for (x = 0; x < faseJson["layers"][0]["width"]; x++, x2++)
+            {
+                int gid = tilesGid[x2]; // valor vindo do mapa
+                if (gid > 0 && gid < tilesRects.size()) {
+                    sf::Sprite sprite;
+                    sprite.setTexture(imagemTiles);
+                    sprite.setTextureRect(tilesRects[gid - 1]);
+                    sprite.setPosition((float)(x * 48), (float)(y * 48));
+                    sprite.setScale(3.0f, 3.0f); // Escala para 3x o tamanho original
+					tilesSprites.push_back(sprite);
+                    //pGG->desenhaSprite(sprite);
+                }
+            }
+        }
+    }
 }
 
 std::string Fase::getTextureFile()//rever o que retornar para desenhar o mapa
 {
     return faseJson["tilesets"][0]["image"];
+}
+
+void Fase::moveMapa()
+{
+    if (posPlayer1.x != p1->getCoords().x) // Exemplo de movimento do personagem
+    {
+        for(int i =0; i<plataformas.size();i++)
+        {
+			plataformas[i]->setCoords(sf::Vector2f(plataformas[i]->getCoords().x + (posPlayer1.x - p1->getCoords().x), plataformas[i]->getCoords().y));
+        }
+        for (int i = 0; i < tilesSprites.size(); i++)
+        {
+            tilesSprites[i].setPosition(tilesSprites[i].getPosition().x + (posPlayer1.x - p1->getCoords().x), tilesSprites[i].getPosition().y);
+        }
+        for(int i=0; i< inimigos.size();i++)
+        {
+            inimigos[i]->setCoords(sf::Vector2f (inimigos[i]->getCoords().x + (posPlayer1.x - p1->getCoords().x), inimigos[i]->getCoords().y));
+        }
+		posPlayer1 = p1->getCoords();
+	}
+}
+
+void Fase::mapaView() 
+{
+
 }

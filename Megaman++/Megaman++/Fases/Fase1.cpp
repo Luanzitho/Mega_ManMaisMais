@@ -15,6 +15,15 @@ Fase1::Fase1() : maxChefoes(0)
     }
 	separaSprites();
     criarPlataformas();
+    int i = 0;
+  
+    while(faseJson["layers"][i]["name"]!= "Spawn Persongem")
+    {
+		i++;
+    }
+    p1->setCoords(sf::Vector2f ((float)(faseJson["layers"][i]["objects"][0]["x"]*3), (float)(faseJson["layers"][i]["objects"][0]["y"]*3)));
+    p1->setExecutando(true);
+    criarInimigos();
 }
 
 Fase1::~Fase1()
@@ -30,7 +39,9 @@ void Fase1::executar(float dt)
     //p1->desenhar();
    /*for (int i = 0; i< plataformas.size(); i++)
 	   plataformas[i]->desenhar();*/
-    LEs->percorrer(dt);
+    LEs->percorrer(dt, getTamanho());
+	moveMapa();
+
     GC.executar();
     //criarInimigos();
     //criarChefoes();
@@ -55,6 +66,15 @@ void Fase1::criarProjeteis()
 
 void Fase1::criarInimigos()
 {
+    int i = 0;
+    while (faseJson["layers"][i]["name"] != "Spawn Inimigos")
+    {
+        i++;
+    }
+    for(int j=0;j<inimigos.size();j++)
+    {
+		inimigos[j]->setCoords(sf::Vector2f((float)(faseJson["layers"][i]["objects"][j]["x"] * 3), (float)(faseJson["layers"][i]["objects"][j]["y"] * 3)));
+    }
 }
 
 void Fase1::criarObstaculos()

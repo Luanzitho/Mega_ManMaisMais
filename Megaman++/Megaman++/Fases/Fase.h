@@ -24,6 +24,7 @@ protected:
 	std::vector<int> tilesGid;
 	sf::Texture imagemTiles;
 	std::vector<sf::IntRect> tilesRects;
+	sf::Vector2f posPlayer1;
 	//std::vector<sf::Texture> tilesTextures;
 	int tileWidth;
 	int columns;
@@ -31,10 +32,10 @@ protected:
 	Megaman* p1;
 	Metall* met; //A REMOVER
 	BigEye* big; //A REMOVER
+	std::vector<sf::Sprite> tilesSprites;
 	std::vector<Plataforma*> plataformas;
-	//std::vector<Metall*> metalls;
+	std::vector<Inimigo*> inimigos;
 	std::vector<Obstaculo*> obstaculos;
-	//std::vector<BigEye*> bigEyes;
 	ListaEntidades* LEs;
 	Mola* mola;
 
@@ -50,6 +51,8 @@ public:
 	void desenharCenario();
 	void separaSprites();
 	std::string getTextureFile();
+	void moveMapa();
+	void mapaView();
 	//sf::Texture recortarTextura(const sf::Texture& original, sf::IntRect recorte);
 	//virtual std::string getMapaFase()=0;
 
