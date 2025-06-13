@@ -7,6 +7,10 @@ class Entidade:public Ente
 protected:
 	bool vivo;
 	float gravidade;
+	bool direita;
+	float velocidade;
+	float velVertical;
+	bool noChao;
 	bool executando;
 	//float x;
 	//float y;
@@ -17,6 +21,12 @@ public:
 	~Entidade();
 	void destruir();
 	const bool getVivo();
+	void setVelocidade(float v);
+	float getVelocidade();
+	void setVelVertical(float v);
+	float getVelVertical();
+	void setNoChao(bool noChao);
+	bool getNoChao();
 	virtual void executar(float dt) = 0;
 	virtual std::string getTextureFile() = 0;
 	bool getExecutando();

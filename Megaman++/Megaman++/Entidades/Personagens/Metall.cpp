@@ -1,11 +1,22 @@
 #include "Metall.h"
+#include <cmath>
 #include "../../Gerenciadores/Gerenciador_Colisoes.h"
 
 Metall::Metall(): timerEsconder(0), timerAtirar(0), LE(nullptr), GC(nullptr)
 {
-	setNumVidas(2);
-
 	setTamanho(sf::Vector2f(50.f, 50.f));
+
+	dano = 1;
+
+	if (nivel_maldade < 3)
+	{
+		setNumVidas(2);
+	}
+
+	else 
+	{
+		setNumVidas(4);
+	}
 }
 
 Metall::~Metall()
@@ -22,7 +33,7 @@ void Metall::associaGerenciadorColisoes(Gerenciador_Colisoes* GC)
 	this->GC = GC;
 }
 
-void Metall::atirar()
+void Metall::atirar(int tipo)
 {
 	sf::Vector2f pos = getCoords();
 
@@ -31,11 +42,21 @@ void Metall::atirar()
 	else
 		direita = false;
 
-	ProjetilMetall* tiro = new ProjetilMetall(pos, direita);
+	ProjetilMetall* tiro = new ProjetilMetall(pos, direita, tipo, nivel_maldade);
 	LE->incluirEntidade(tiro);
 	tiro->associaListaEntidades(LE);
 	tiro->setGerenciadorGrafico(pGG);
 	GC->incluirProjetil(tiro);
+}
+
+void Metall::esconder()
+{
+	escondido = true;
+}
+
+void Metall::revelar()
+{
+	escondido = false;
 }
 
 void Metall::executar(float dt)
@@ -43,25 +64,77 @@ void Metall::executar(float dt)
 	timerAtirar += dt;
 	timerEsconder += dt;
 
-	if (timerAtirar >= 5)
+	mover(dt);
+
+	if (abs(pMega->getCoords().x - getCoords().x) < 200 && timerAtirar >= 3)
 	{
-		atirar();
+		revelar(); //Ele precisa sair antes de atirar
+		atirar(1); //Tiro 1 - Linha reta
+		atirar(2); //Tiro 2 - Diagonal cima
+		atirar(3); //Tiro 3 - Diagonal baixo
 		timerAtirar = 0;
+		timerEsconder = 0;
 	}
-	//esconder()
+	else if (timerEsconder >= 1.5)
+	{
+		esconder();
+	}
 }
 
 void Metall::mover(float dt)
 {
-	return; //Ele não se move no jogo
+	sf::Vector2f posicao = getCoords();
+
+	if (!noChao) //Só se movimenta se estiver no ar
+	{
+		velVertical += gravidade * dt;
+	}
+	else
+	{
+		velVertical = 0;
+	}
+
+	posicao.y += velVertical * dt;
+
+	setCoords(posicao);
 }
 
 void Metall::danificar(Megaman* p)
 {
-	p->machucar(1);
+	p->machucar(dano);
+}
+
+void Metall::machucar(int dmg)
+{
+	if (!escondido)
+	{
+		num_vidas = num_vidas - dmg;
+	}
+
+	if (num_vidas <= 0)
+		destruir();
 }
 
 std::string Metall::getTextureFile()
 {
-	return "Sprites/Inimigos/Metall.png";
+	if (nivel_maldade == 1)
+	{
+		if (!escondido)
+			return "Sprites/Inimigos/Metall.png";
+		return "Sprites/Inimigos/MetallEscondido.png";
+	}
+	
+	else if (nivel_maldade == 2)
+	{
+		if (!escondido)
+			return "Sprites/Inimigos/Metall2.png";
+		return "Sprites/Inimigos/MetallEscondido2.png";
+	}
+
+	else
+	{
+		if (!escondido)
+			return "Sprites/Inimigos/MetallBAD.png";
+		return "Sprites/Inimigos/MetallEscondido2.png";
+	}
 }

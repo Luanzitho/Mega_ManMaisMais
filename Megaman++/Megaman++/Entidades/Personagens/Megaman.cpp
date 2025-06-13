@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-Megaman::Megaman() : Personagem(20), pontos(0), velMax(175), /*aceleracao(100),*/ cooldownTiro(0.25), tempoCooldown(0), player1(true), cooldownNoChao(0)
+Megaman::Megaman() : Personagem(20), pontos(0), velMax(100), teclaApertada(false), tempoCooldown(0), player1(true), cooldownNoChao(0)
 {
 	LE = nullptr;
 	setId(1);
@@ -13,7 +13,7 @@ Megaman::Megaman() : Personagem(20), pontos(0), velMax(175), /*aceleracao(100),*
 	setTamanho(sf::Vector2f(70.f, 70.f));
 }
 
-Megaman::Megaman(bool player) : Personagem(20), pontos(0), velMax(175), /*aceleracao(100),*/ cooldownTiro(0.25), tempoCooldown(0), player1(player), cooldownNoChao(0)
+Megaman::Megaman(bool player) : Personagem(20), pontos(0), velMax(175), teclaApertada(false), tempoCooldown(0), player1(player), cooldownNoChao(0)
 {
 	LE = nullptr;
 	setId(1);
@@ -39,12 +39,12 @@ void Megaman::mover(float dt)
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 		{
-			velocidade -= velMax; //aceleracao * dt;
+			velocidade -= velMax;
 			direita = false;
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 		{
-			velocidade += velMax; //aceleracao* dt;
+			velocidade += velMax;
 			direita = true;
 		}
 		else
@@ -75,12 +75,12 @@ void Megaman::mover(float dt)
 		velocidade = velMax * (-1);
 
 	cooldownNoChao += dt;
-	
-	if (cooldownNoChao > 0.1 && noChao)// reseta a colisão do chão em um determinado tempo
+	if (cooldownNoChao > 0.1 && noChao) //Reseta a colisão do chão em um determinado tempo
 	{
 		noChao = false;
 		cooldownNoChao = 0;
 	}
+
 	if (noChao) //Confere se ele está no chão, se sim, consegue pular, se não, sofre efeito da gravidade
 	{
 		velVertical = 0;
@@ -124,7 +124,7 @@ void Megaman::atirar(float dt)
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 		{
-			if (tempoCooldown >= cooldownTiro)
+			if (!teclaApertada && tempoCooldown >= 0.25)
 			{
 				sf::Vector2f pos = getCoords();
 
@@ -135,7 +135,12 @@ void Megaman::atirar(float dt)
 				GC->incluirProjetil(tiro);
 
 				tempoCooldown = 0;
+				teclaApertada = true;
 			}
+		}
+		else
+		{
+			teclaApertada = false;
 		}
 	}
 
@@ -143,7 +148,7 @@ void Megaman::atirar(float dt)
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))
 		{
-			if (tempoCooldown >= cooldownTiro)
+			if (!teclaApertada && tempoCooldown >= 0.25)
 			{
 				sf::Vector2f pos = getCoords();
 
@@ -152,7 +157,12 @@ void Megaman::atirar(float dt)
 				tiro->setGerenciadorGrafico(pGG);
 
 				tempoCooldown = 0;
+				teclaApertada = true;
 			}
+		}
+		else
+		{
+			teclaApertada = false;
 		}
 	}
 }
@@ -165,7 +175,7 @@ void Megaman::executar(float dt)
 
 std::string Megaman::getTextureFile() 
 {
-	if(player1)
+	if (player1)
 		return "Sprites/Megaman/Parado/Parado1.png";
 	else
 		return "Sprites/Megaman/Parado/Parado2.png";

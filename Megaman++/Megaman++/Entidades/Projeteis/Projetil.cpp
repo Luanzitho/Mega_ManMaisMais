@@ -1,8 +1,12 @@
 #include "Projetil.h"
 
-Projetil::Projetil(): velocidade(500), dano(0), doMega(false)
+Projetil::Projetil(): velocidade(0), dano(0), doMega(false), empuxo(0)
 {
 	LEs = nullptr;
+}
+
+Projetil::Projetil(float vel): velocidade(vel)
+{
 }
 
 Projetil::~Projetil()

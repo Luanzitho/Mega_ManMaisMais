@@ -2,11 +2,13 @@
 
 #include "Personagem.h"
 #include "Megaman.h"
+#include <time.h>
 
 class Inimigo:public Personagem
 {
 protected:
 	int nivel_maldade;
+	int dano;
 	Megaman* pMega;
 
 public:

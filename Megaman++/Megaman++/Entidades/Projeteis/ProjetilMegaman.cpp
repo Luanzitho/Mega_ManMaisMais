@@ -4,10 +4,11 @@
 ProjetilMegaman::ProjetilMegaman(): direcao(0)
 {
 	doMega = true;
+	
 	dano = 1;
 }
 
-ProjetilMegaman::ProjetilMegaman(sf::Vector2f posicao, bool direita): Projetil()
+ProjetilMegaman::ProjetilMegaman(sf::Vector2f posicao, bool direita): Projetil(500)
 {
 	if (direita)
 		direcao = 1;
@@ -16,6 +17,7 @@ ProjetilMegaman::ProjetilMegaman(sf::Vector2f posicao, bool direita): Projetil()
 
 	doMega = true;
 	dano = 1;
+	empuxo = 300;
 
 	setCoords(posicao);
 	setTamanho(sf::Vector2f(30.f, 30.f));
@@ -27,7 +29,7 @@ ProjetilMegaman::~ProjetilMegaman()
 
 void ProjetilMegaman::atingirInimigo(Inimigo* pI)
 {
-	if (!pI) return;
+	if (!pI || pI->getNumVidas() <= 0) return;
 
 	pI->machucar(dano);
 	destruir();
@@ -39,7 +41,11 @@ void ProjetilMegaman::mover(float dt)
 		sf::Vector2f posicao;
 		posicao = getCoords();
 
+		posicao.y += gravidade * dt; //Força da gravidade atuando sobre o projetil
+		posicao.y -= empuxo * dt; //Contrapõe a gravidade
+
 		posicao.x += direcao * velocidade * dt;
+
 		setCoords(posicao);
 	}
 }

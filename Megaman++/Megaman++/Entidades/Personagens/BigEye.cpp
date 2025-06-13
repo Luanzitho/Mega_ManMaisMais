@@ -2,9 +2,25 @@
 
 BigEye::BigEye() : velMax(50), aceleracao(150), timerAtaque(0)
 {
-	setNumVidas(20);
-
 	setTamanho(sf::Vector2f(80.f, 100.f));
+
+	if (nivel_maldade == 1)
+	{
+		dano = 2;
+		setNumVidas(15);
+	}
+
+	else if (nivel_maldade == 2)
+	{
+		dano = 4;
+		setNumVidas(15);
+	}
+
+	else if (nivel_maldade == 3)
+	{
+		dano = 4;
+		setNumVidas(20);
+	}
 }
 
 BigEye::~BigEye()
@@ -16,8 +32,6 @@ void BigEye::mover(float dt)
 	sf::Vector2f posicao = getCoords();
 	sf::Vector2f alvo = pMega->getCoords();
 
-	timerAtaque += dt; //Quando o timer atinge 3.5 o BigEye pode pular
-	
 	if (velocidade > velMax) //Limita a velocidade
 		velocidade = velMax;
 	else if (velocidade < velMax * (-1))
@@ -39,6 +53,8 @@ void BigEye::mover(float dt)
 
 	else //Se estiver no chão, procura o player e pula se o timer estiver em 3.5
 	{
+		timerAtaque += dt; //Quando o timer atinge 3.5 o BigEye pode pular
+
 		velocidade = 0;
 
 		if (alvo.x > getCoords().x) //Só confere as coordenadas do player quando o BigEye está no chão
@@ -56,7 +72,6 @@ void BigEye::mover(float dt)
 		}
 	}
 
-	//posicao.x += velocidade * dt;
 	posicao.y += velVertical * dt;
 
 	setCoords(posicao);
@@ -74,5 +89,12 @@ void BigEye::danificar(Megaman* p)
 
 std::string BigEye::getTextureFile()
 {
-	return "Sprites/Inimigos/BigEye1-blue.png";
+	if(nivel_maldade==1)
+		return "Sprites/Inimigos/BigEye1-blue.png";
+
+	else if (nivel_maldade == 2)
+		return "Sprites/Inimigos/BigEye1-red.png";
+
+	else
+		return "Sprites/Inimigos/BigEye1-BAD.png";
 }

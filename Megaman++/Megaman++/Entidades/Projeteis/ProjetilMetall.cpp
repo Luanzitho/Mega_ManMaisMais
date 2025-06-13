@@ -4,10 +4,11 @@
 ProjetilMetall::ProjetilMetall(): direcao(0)
 {
 	doMega = false;
+	
 	dano = 2;
 }
 
-ProjetilMetall::ProjetilMetall(sf::Vector2f posicao, bool direita): Projetil()
+ProjetilMetall::ProjetilMetall(sf::Vector2f posicao, bool direita, int numTiro, int maldade): Projetil(300)
 {
 	if (direita)
 		direcao = 1;
@@ -15,17 +16,19 @@ ProjetilMetall::ProjetilMetall(sf::Vector2f posicao, bool direita): Projetil()
 		direcao = -1;
 
 	doMega = false;
-	dano = 2;
+	dano = maldade + 1;
+	tipoTiro = numTiro;
+	empuxo = 300;
 
 	setCoords(posicao);
-	setTamanho(sf::Vector2f(20.f, 20.f));	
+	setTamanho(sf::Vector2f(15.f, 15.f));	
 }
 
 ProjetilMetall::~ProjetilMetall(){}
 
 void ProjetilMetall::atingirMegaman(Megaman* p)
 {
-	if (!p) return;
+	if (!p || p->getNumVidas() <= 0) return;
 
 	p->machucar(dano);
 	destruir();
@@ -37,7 +40,26 @@ void ProjetilMetall::mover(float dt)
 		sf::Vector2f posicao;
 		posicao = getCoords();
 
-		posicao.x += direcao * velocidade * dt;
+		posicao.y += gravidade * dt; //Força da gravidade atuando sobre o projetil
+		posicao.y -= empuxo * dt; //Contrapõe a gravidade
+
+		if (tipoTiro == 1) //Tiro em linha reta
+		{
+			posicao.x += direcao * velocidade * dt;
+		}
+
+		else if (tipoTiro == 2) //Diagonal cima
+		{
+			posicao.x += direcao * velocidade * dt;
+			posicao.y -= velocidade * dt;
+		}
+		
+		else //Diagonal baixo
+		{
+			posicao.x += direcao * velocidade * dt;
+			posicao.y += velocidade * dt;
+		}
+		
 		setCoords(posicao);
 	}
 }

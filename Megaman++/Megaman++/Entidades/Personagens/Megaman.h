@@ -12,9 +12,8 @@ class Megaman:public Personagem
 private:
 	bool player1;
 	int pontos;
-	//float aceleracao;
 	float velMax;
-	float cooldownTiro;
+	bool teclaApertada;
 	float tempoCooldown;
 	ProjetilMegaman* tiro;
 	//std::vector<ProjetilMegaman*> disparos;

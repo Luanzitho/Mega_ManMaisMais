@@ -9,11 +9,13 @@ protected:
 	//bool ativo;
 	bool doMega;
 	int dano;
-	float velocidade;
+	float empuxo;
+	const float velocidade;
 	ListaEntidades* LEs;
 
 public:
 	Projetil();
+	Projetil(float vel);
 	~Projetil();
 	//void desativar();
 	//const bool getAtivo();
