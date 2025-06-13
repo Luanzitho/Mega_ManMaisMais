@@ -33,6 +33,9 @@ protected:
 	Metall* met; //A REMOVER
 	BigEye* big; //A REMOVER
 	std::vector<sf::Sprite> tilesSprites;
+	std::vector<sf::Sprite> fundo1;
+	std::vector<sf::Sprite> fundo2;
+	std::vector<sf::Sprite> fundo3;
 	std::vector<Plataforma*> plataformas;
 	std::vector<Inimigo*> inimigos;
 	std::vector<Obstaculo*> obstaculos;
@@ -49,10 +52,10 @@ public:
 	virtual void criarInimigos() = 0;
 	virtual void criarObstaculos() = 0;
 	void desenharCenario();
+	void pegarCamada(int i);
 	void separaSprites();
 	std::string getTextureFile();
 	void moveMapa();
-	void mapaView();
 	//sf::Texture recortarTextura(const sf::Texture& original, sf::IntRect recorte);
 	//virtual std::string getMapaFase()=0;
 

@@ -66,6 +66,22 @@ void Fase::criarPlataformas()
         //faseJson["layers"][1]["objects"];
     }
     controle = 0;
+    while (faseJson["layers"][controle]["name"] != "Obstaculos")
+    {
+        controle++;
+    }
+    for (int i = 0; i < faseJson["layers"][controle]["objects"].size(); i++)
+    {
+        Plataforma* p = new Plataforma;
+        p->setGerenciadorGrafico(pGG->getInstancia());
+        p->setCoords(sf::Vector2f((float)(faseJson["layers"][controle]["objects"][i]["x"] * 3), (float)faseJson["layers"][controle]["objects"][i]["y"] * 3));
+        p->setTamanho(sf::Vector2f((float)faseJson["layers"][controle]["objects"][i]["width"] * 3, (float)faseJson["layers"][controle]["objects"][i]["height"] * 3));
+        plataformas.push_back(p);
+        //std::cout << "Plataforma criada: " << faseJson["layers"][controle]["objects"][i]["x"] << ", " << faseJson["layers"][1]["objects"][i]["y"] << std::endl;
+        GC.incluirObstaculo(p);
+        //faseJson["layers"][1]["objects"];
+    }
+    controle = 0;
     while(faseJson["layers"][controle]["name"]!="Mola")
     {
         controle++;
@@ -91,16 +107,42 @@ void Fase::desenharCenario()
         pGG->desenhaSprite(tilesSprites[i]);
     }
 }
-
+void Fase::pegarCamada(int i)
+{
+    tilesGid = faseJson["layers"][i]["data"].get<std::vector<int>>();
+    int x;
+    int x2 = 0;
+    for (int y = 0; y < faseJson["layers"][i]["height"]; y++)
+    {
+        if (x2 < tilesGid.size())
+        {
+            for (x = 0; x < faseJson["layers"][i]["width"]; x++, x2++)
+            {
+                int gid = tilesGid[x2]; // valor vindo do mapa
+                if (gid > 0 && gid < tilesRects.size()) {
+                    sf::Sprite sprite;
+                    sprite.setTexture(imagemTiles);
+                    sprite.setTextureRect(tilesRects[gid - 1]);
+                    sprite.setPosition((float)(x * 48), (float)(y * 48));
+                    sprite.setScale(3.0f, 3.0f); // Escala para 3x o tamanho original
+                    tilesSprites.push_back(sprite);
+                    //pGG->desenhaSprite(sprite);
+                }
+            }
+        }
+    }
+}
 void Fase::separaSprites()
 {
-    tilesGid = faseJson["layers"][0]["data"].get<std::vector<int>>();
+    //tilesGid = faseJson["layers"][0]["data"].get<std::vector<int>>();
     std::string imagemRelativa = faseJson["tilesets"][0]["image"];
     std::string caminhoImagem = "Mapas/" + imagemRelativa;
     if (!imagemTiles.loadFromFile(caminhoImagem))
     {
         std::cerr << "Erro ao carregar imagem: " << faseJson["tilesets"][0]["image"] << std::endl;
     }
+    columns = faseJson["tilesets"][0]["columns"];
+    tileWidth = faseJson["tilesets"][0]["tilewidth"];
     for (int id = 0; id < faseJson["tilesets"][0]["tilecount"]; ++id) {
 		//std::cout << "entrou" << std::endl;
         int tu = id % columns;     // coluna
@@ -110,28 +152,15 @@ void Fase::separaSprites()
         tilesRects.push_back(rect);
         //tilesTextures.push_back(recortarTextura(imagemTiles, rect));
     }
-    int x;
-    int x2 = 0;
-
-    for (int y = 0; y < faseJson["layers"][0]["height"]; y++)
-    {
-        if (x2 < tilesGid.size())
-        {
-            for (x = 0; x < faseJson["layers"][0]["width"]; x++, x2++)
-            {
-                int gid = tilesGid[x2]; // valor vindo do mapa
-                if (gid > 0 && gid < tilesRects.size()) {
-                    sf::Sprite sprite;
-                    sprite.setTexture(imagemTiles);
-                    sprite.setTextureRect(tilesRects[gid - 1]);
-                    sprite.setPosition((float)(x * 48), (float)(y * 48));
-                    sprite.setScale(3.0f, 3.0f); // Escala para 3x o tamanho original
-					tilesSprites.push_back(sprite);
-                    //pGG->desenhaSprite(sprite);
-                }
-            }
-        }
-    }
+    int i = 0;
+    while (faseJson["layers"][i]["name"] != "BackGround1")i++;
+    pegarCamada(i);
+    i = 0;
+    while (faseJson["layers"][i]["name"] != "BackGround2")i++;
+    pegarCamada(i);
+    i = 0;
+    while (faseJson["layers"][i]["name"] != "BackGround3")i++;
+    pegarCamada(i);
 }
 
 std::string Fase::getTextureFile()//rever o que retornar para desenhar o mapa
@@ -155,11 +184,10 @@ void Fase::moveMapa()
         {
             inimigos[i]->setCoords(sf::Vector2f (inimigos[i]->getCoords().x + (posPlayer1.x - p1->getCoords().x), inimigos[i]->getCoords().y));
         }
+        for (int i = 0; i < obstaculos.size(); i++)
+        {
+            obstaculos[i]->setCoords(sf::Vector2f(obstaculos[i]->getCoords().x + (posPlayer1.x - p1->getCoords().x), obstaculos[i]->getCoords().y));
+        }
 		posPlayer1 = p1->getCoords();
 	}
-}
-
-void Fase::mapaView() 
-{
-
 }
