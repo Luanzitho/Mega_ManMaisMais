@@ -4,6 +4,8 @@
 ProjetilMegaman::ProjetilMegaman(): direcao(0)
 {
 	doMega = true;
+
+	setId(4);
 	
 	dano = 1;
 }
@@ -18,6 +20,8 @@ ProjetilMegaman::ProjetilMegaman(sf::Vector2f posicao, bool direita): Projetil(5
 	doMega = true;
 	dano = 1;
 	empuxo = 300;
+
+	setId(4);
 
 	setCoords(posicao);
 	setTamanho(sf::Vector2f(30.f, 30.f));

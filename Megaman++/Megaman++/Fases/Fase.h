@@ -8,6 +8,7 @@
 #include "../Entidades/Personagens/Metall.h"
 #include "../Entidades/Personagens/CutMan.h"
 #include "../Entidades/Obstaculos/Mola.h"
+#include "../Entidades/Obstaculos/Espinho.h"
 
 #include <fstream>
 #include <vector>
@@ -34,6 +35,7 @@ protected:
 	Metall* met; //A REMOVER
 	BigEye* big; //A REMOVER
 	CutMan* cut; //A REMOVER
+	Espinho* esp; //A REMOVER
 	std::vector<sf::Sprite> tilesSprites;
 	std::vector<sf::Sprite> fundo1;
 	std::vector<sf::Sprite> fundo2;

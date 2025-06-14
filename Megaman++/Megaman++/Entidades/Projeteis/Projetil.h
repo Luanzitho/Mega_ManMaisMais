@@ -6,7 +6,6 @@
 class Projetil:public Entidade
 {
 protected:
-	//bool ativo;
 	bool doMega;
 	int dano;
 	float empuxo;
@@ -17,8 +16,6 @@ public:
 	Projetil();
 	Projetil(float vel);
 	~Projetil();
-	//void desativar();
-	//const bool getAtivo();
 	const bool getDoMega();
 	void associaListaEntidades(ListaEntidades* pLista);
 	virtual void executar(float dt) = 0;

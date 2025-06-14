@@ -24,6 +24,61 @@ void Plataforma::obstaculizar(Personagem* pPers)
     sf::Vector2f tamPers = pPers->getTamanho();
 
     float velY = pPers->getVelVertical();
+    float velX = pPers->getVelocidade();
+
+    float topoPers = rectPers.top;
+    float baixoPers = rectPers.top + rectPers.height;
+    float topoPlat = rectPlat.top;
+    float baixoPlat = rectPlat.top + rectPlat.height;
+    float esquerdaPers = rectPers.left;
+    float direitaPers = rectPers.left + rectPers.width;
+    float esquerdaPlat = rectPlat.left;
+    float direitaPlat = rectPlat.left + rectPlat.width;
+
+    const float margem = 15.f;
+
+    bool tocando = false;
+
+    // --- COLISÃO POR CIMA ---
+    if (velY > 0 && baixoPers - margem < topoPlat && baixoPers > topoPlat && direitaPers > esquerdaPlat + margem && esquerdaPers < direitaPlat - margem)
+    {
+        posPers.y = topoPlat - tamPers.y;
+        pPers->setCoords(posPers);
+        pPers->setVelVertical(0);
+        tocando = true;
+    }
+    // --- COLISÃO POR BAIXO ---
+    else if (velY < 0 && topoPers < baixoPlat && topoPers > baixoPlat - margem && direitaPers > esquerdaPlat + margem && esquerdaPers < direitaPlat - margem)
+    {
+        posPers.y = baixoPlat;
+        pPers->setCoords(posPers);
+        pPers->setVelVertical(0);
+    }
+    // --- COLISÃO PELA ESQUERDA (separação de eixo X) ---
+    else if (velX > 0 && direitaPers > esquerdaPlat && esquerdaPers < esquerdaPlat && baixoPers > topoPlat + margem && topoPers < baixoPlat - margem)
+    {
+        posPers.x = esquerdaPlat - tamPers.x;
+        pPers->setCoords(posPers);
+        pPers->setVelocidade(0);
+    }
+    // --- COLISÃO PELA DIREITA (separação de eixo X) ---
+    else if (velX < 0 && esquerdaPers < direitaPlat && direitaPers > direitaPlat && baixoPers > topoPlat + margem && topoPers < baixoPlat - margem)
+    {
+        posPers.x = direitaPlat;
+        pPers->setCoords(posPers);
+        pPers->setVelocidade(0);
+    }
+
+    pPers->setNoChao(tocando);
+    /*if (!pPers) return; //LÓGICA ANTIGA
+
+    sf::FloatRect rectPers(pPers->getCoords(), pPers->getTamanho());
+    sf::FloatRect rectPlat(getCoords(), getTamanho());
+
+    sf::Vector2f posPers = pPers->getCoords();
+    sf::Vector2f tamPers = pPers->getTamanho();
+
+    float velY = pPers->getVelVertical();
 
     float topoPers = rectPers.top;
     float baixoPers = rectPers.top + rectPers.height;
@@ -66,7 +121,7 @@ void Plataforma::obstaculizar(Personagem* pPers)
         pPers->setCoords(posPers);
     }
 
-    pPers->setNoChao(tocando);
+    pPers->setNoChao(tocando);*/
 }
 
 std::string Plataforma::getTextureFile()

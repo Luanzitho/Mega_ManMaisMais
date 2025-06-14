@@ -142,6 +142,7 @@
     <ClCompile Include="Entidades\Personagens\Metall.cpp" />
     <ClCompile Include="Entidades\Personagens\Personagem.cpp" />
     <ClCompile Include="Entidades\Projeteis\Projetil.cpp" />
+    <ClCompile Include="Entidades\Projeteis\ProjetilCutMan.cpp" />
     <ClCompile Include="Entidades\Projeteis\ProjetilMegaman.cpp" />
     <ClCompile Include="Entidades\Projeteis\ProjetilMetall.cpp" />
     <ClCompile Include="Fases\Fase.cpp" />
@@ -167,6 +168,7 @@
     <ClInclude Include="Entidades\Personagens\Metall.h" />
     <ClInclude Include="Entidades\Personagens\Personagem.h" />
     <ClInclude Include="Entidades\Projeteis\Projetil.h" />
+    <ClInclude Include="Entidades\Projeteis\ProjetilCutMan.h" />
     <ClInclude Include="Entidades\Projeteis\ProjetilMegaman.h" />
     <ClInclude Include="Entidades\Projeteis\ProjetilMetall.h" />
     <ClInclude Include="Fases\Fase.h" />

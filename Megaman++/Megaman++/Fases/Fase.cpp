@@ -6,6 +6,7 @@ Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18)
     big = new BigEye();
     cut = new CutMan();
 	mola = new Mola();
+    esp = new Espinho();
 	posPlayer1 = p1->getCoords();
 	setTamanho(sf::Vector2f(1100.f, 720.f));
 
@@ -33,6 +34,8 @@ Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18)
 
     cut->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
     cut->conhecerJogador(p1);
+    cut->associaListaEntidades(LEs);
+    cut->associaGerenciadorColisoes(&GC);
 
     //LEs->incluirEntidade(met);
     //LEs->incluirEntidade(big);
@@ -104,7 +107,21 @@ void Fase::criarPlataformas()
         std::cout << "Plataforma criada: " << faseJson["layers"][controle]["objects"][i]["x"] << ", " << faseJson["layers"][1]["objects"][i]["y"] << std::endl;
         GC.incluirObstaculo(m);
     }
-
+    controle = 0;
+    while (faseJson["layers"][controle]["name"] != "Espinho") //Num deu :(
+    {
+        controle++;
+    }
+    for (int i = 0; i < faseJson["layers"][controle]["objects"].size(); i++)
+    {
+        Obstaculo* e = new Espinho;
+        e->setGerenciadorGrafico(pGG->getInstancia());
+        e->setCoords(sf::Vector2f((float)(faseJson["layers"][controle]["objects"][i]["x"] * 3), (float)faseJson["layers"][controle]["objects"][i]["y"] * 3));
+        e->setTamanho(sf::Vector2f((float)faseJson["layers"][controle]["objects"][i]["width"] * 3, (float)faseJson["layers"][controle]["objects"][i]["height"] * 3));
+        obstaculos.push_back(e);
+        std::cout << "Plataforma criada: " << faseJson["layers"][controle]["objects"][i]["x"] << ", " << faseJson["layers"][1]["objects"][i]["y"] << std::endl;
+        GC.incluirObstaculo(e);
+    }
 }
 
 void Fase::desenharCenario()

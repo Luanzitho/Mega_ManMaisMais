@@ -4,6 +4,8 @@
 ProjetilMetall::ProjetilMetall(): direcao(0)
 {
 	doMega = false;
+
+	setId(5);
 	
 	dano = 2;
 }
@@ -14,6 +16,8 @@ ProjetilMetall::ProjetilMetall(sf::Vector2f posicao, bool direita, int numTiro, 
 		direcao = 1;
 	else
 		direcao = -1;
+
+	setId(5);
 
 	doMega = false;
 	dano = maldade + 1;

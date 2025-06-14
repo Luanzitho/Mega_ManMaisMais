@@ -1,8 +1,11 @@
 #include "CutMan.h"
+#include "../../Gerenciadores/Gerenciador_Colisoes.h"
 
-CutMan::CutMan(): cooldownNoChao(0), timerAtirar(0), timerPerseguir(0), timerPular(0)
+#include <iostream>
+
+CutMan::CutMan(): cooldownNoChao(0), timerAtirar(0), timerPerseguir(0), timerPular(0), tiro(nullptr), LE(nullptr), GC(nullptr), podeAtirar(true)
 {
-	setTamanho(sf::Vector2f(80.f, 80.f));
+	setTamanho(sf::Vector2f(70.f, 95.f));
 
 	setNumVidas(22 + nivel_maldade * 2);
 
@@ -15,9 +18,40 @@ CutMan::~CutMan()
 {
 }
 
+void CutMan::associaListaEntidades(ListaEntidades* pLista)
+{
+	LE = pLista;
+}
+
+void CutMan::associaGerenciadorColisoes(Gerenciador_Colisoes* GC)
+{
+	this->GC = GC;
+}
+
 void CutMan::atirar()
 {
+	std::cout << "penes\n";
+	sf::Vector2f pos = getCoords();
 
+	if (!GC || !LE) std::cout << "BOOM!\n";
+
+	ProjetilCutMan* tiro = new ProjetilCutMan(pos, nivel_maldade, pMega->getCoords(), this);
+	tiro->associaListaEntidades(LE);
+	tiro->setGerenciadorGrafico(pGG);
+	GC->incluirProjetil(tiro);
+	LE->incluirEntidade(tiro);
+	podeAtirar = false;
+
+	setTamanho(sf::Vector2f(70.f, 70.f));
+	setCoords(sf::Vector2f(getCoords().x, getCoords().y + 25));
+}
+
+void CutMan::possoAtirar()
+{
+	podeAtirar = true;
+
+	setCoords(sf::Vector2f(getCoords().x, getCoords().y - 25));
+	setTamanho(sf::Vector2f(70.f, 95.f));
 }
 
 void CutMan::mover(float dt)
@@ -32,32 +66,29 @@ void CutMan::mover(float dt)
 		cooldownNoChao = 0;
 	}
 
-	if (noChao) 
+	timerPerseguir += dt;
+	timerPular += dt;
+
+	if (timerPerseguir >= 1) 
 	{
-		timerPerseguir += dt;
-		timerPular += dt;
-
-		if (timerPerseguir >= 1) 
+		if (noChao && timerPular >= 3)
 		{
-			if (timerPular >= 3)
-			{
-				velVertical = -300;
-				noChao = false;
-				timerPular = 0;
-			}
-
-			if (alvo.x > posicao.x)
-			{
-				velocidade += velMax;
-			}
-
-			else
-			{
-				velocidade -= velMax;
-			}
-
-			timerPerseguir = 0;
+			velVertical = -300;
+			noChao = false;
+			timerPular = 0;
 		}
+	
+		if (alvo.x > posicao.x)
+		{
+			velocidade += velMax;
+		}
+
+		else
+		{
+			velocidade -= velMax;
+		}
+	
+		timerPerseguir = 0;
 	}
 
 	else
@@ -79,9 +110,19 @@ void CutMan::mover(float dt)
 void CutMan::executar(float dt)
 {
 	mover(dt);
+
+	if (podeAtirar)
+	{ 
+		timerAtirar += dt;
+
+		if (timerAtirar >= 2)
+		{
+			atirar();
+			timerAtirar = 0;
+		}
+	}
 }
 
-#include <iostream>
 void CutMan::danificar(Megaman* p)
 {
 	std::cout << "Colidiu!\n";
@@ -89,5 +130,7 @@ void CutMan::danificar(Megaman* p)
 
 std::string CutMan::getTextureFile()
 {
-	return "Sprites/Inimigos/CutMan1-L.png";
+	if(podeAtirar)
+		return "Sprites/Inimigos/CutMan1-L.png";
+	return "Sprites/Inimigos/CutMan1.png";
 }

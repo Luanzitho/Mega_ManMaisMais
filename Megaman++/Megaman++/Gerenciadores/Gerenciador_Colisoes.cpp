@@ -54,7 +54,6 @@ void Gerenciador_Colisoes::tratarColisaoMegaInimigos()
 void Gerenciador_Colisoes::tratarColisaoMegaProjeteis() //Projétil do Inimigo colidindo com o Megaman
 {
     std::set<Projetil*>::iterator itProj;
-    ProjetilMetall* aux;
 
     for (itProj = LPs.begin(); itProj != LPs.end(); itProj++) //Colisão Projétil x Megaman
     {
@@ -62,8 +61,18 @@ void Gerenciador_Colisoes::tratarColisaoMegaProjeteis() //Projétil do Inimigo co
         {
             if ((*itProj)->getVivo() && verificarColisao(p1, *itProj)) //Se o projétil estiver vivo (ativo) && houve a colisão
             {
-                aux = static_cast<ProjetilMetall*>(*itProj);
-                aux->atingirMegaman(p1);
+                if ((*itProj)->getId() == 5)
+                {
+                    ProjetilMetall* aux;
+                    aux = static_cast<ProjetilMetall*>(*itProj);
+                    aux->atingirMegaman(p1);
+                }
+                else
+                {
+                    ProjetilCutMan* aux;
+                    aux = static_cast<ProjetilCutMan*>(*itProj);
+                    aux->atingirMegaman(p1);
+                }
             }
         }
     }

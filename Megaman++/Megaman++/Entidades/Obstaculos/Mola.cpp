@@ -17,6 +17,61 @@ void Mola::obstaculizar(Personagem* pPers)
     if (!pPers) return;
 
     sf::FloatRect rectPers(pPers->getCoords(), pPers->getTamanho());
+    sf::FloatRect rectMola(getCoords(), getTamanho());
+
+    sf::Vector2f posPers = pPers->getCoords();
+    sf::Vector2f tamPers = pPers->getTamanho();
+
+    float velY = pPers->getVelVertical();
+    float velX = pPers->getVelocidade();
+
+    float topoPers = rectPers.top;
+    float baixoPers = rectPers.top + rectPers.height;
+    float topoMola = rectMola.top;
+    float baixoMola = rectMola.top + rectMola.height;
+    float esquerdaPers = rectPers.left;
+    float direitaPers = rectPers.left + rectPers.width;
+    float esquerdaMola = rectMola.left;
+    float direitaMola = rectMola.left + rectMola.width;
+
+    const float margem = 8.f; // Ajuste conforme necessário
+
+    bool tocando = false;
+
+    // --- COLISÃO POR CIMA ---
+    if (velY > 0 && baixoPers - margem < topoMola && baixoPers > topoMola && direitaPers > esquerdaMola + margem && esquerdaPers < direitaMola - margem)
+    {
+        posPers.y = topoMola - tamPers.y;
+        pPers->setCoords(posPers);
+        pPers->setVelVertical(forca);
+        //tocando = true;
+    }
+    // --- COLISÃO POR BAIXO ---
+    else if (velY < 0 && topoPers < baixoMola && topoPers > baixoMola - margem && direitaPers > esquerdaMola + margem && esquerdaPers < direitaMola - margem)
+    {
+        posPers.y = baixoMola;
+        pPers->setCoords(posPers);
+        pPers->setVelVertical(0);
+    }
+    // --- COLISÃO PELA ESQUERDA (separação de eixo X) ---
+    else if (velX > 0 && direitaPers > esquerdaMola && esquerdaPers < esquerdaMola && baixoPers > topoMola + margem && topoPers < baixoMola - margem)
+    {
+        posPers.x = esquerdaMola - tamPers.x;
+        pPers->setCoords(posPers);
+        pPers->setVelocidade(0);
+    }
+    // --- COLISÃO PELA DIREITA (separação de eixo X) ---
+    else if (velX < 0 && esquerdaPers < direitaMola && direitaPers > direitaMola && baixoPers > topoMola + margem && topoPers < baixoMola - margem)
+    {
+        posPers.x = direitaMola;
+        pPers->setCoords(posPers);
+        pPers->setVelocidade(0);
+    }
+
+    pPers->setNoChao(tocando);
+    /*if (!pPers) return; //LÓGICA ANTIGA
+
+    sf::FloatRect rectPers(pPers->getCoords(), pPers->getTamanho());
     sf::FloatRect rectPlat(getCoords(), getTamanho());
 
     sf::Vector2f posPers = pPers->getCoords();
@@ -65,7 +120,7 @@ void Mola::obstaculizar(Personagem* pPers)
         pPers->setCoords(posPers);
     }
 
-    pPers->setNoChao(tocando);
+    pPers->setNoChao(tocando);*/
 }
 
 std::string Mola::getTextureFile()

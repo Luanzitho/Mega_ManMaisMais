@@ -1,6 +1,6 @@
 #include "Espinho.h"
 
-Espinho::Espinho(): danosidade(1)
+Espinho::Espinho(): danosidade(2)
 {
 	danoso = true;
 
@@ -18,6 +18,62 @@ void Espinho::executar(float dt)
 void Espinho::obstaculizar(Personagem* pPers)
 {
     if (!pPers) return;
+
+    sf::FloatRect rectPers(pPers->getCoords(), pPers->getTamanho());
+    sf::FloatRect rectEspinho(getCoords(), getTamanho());
+
+    sf::Vector2f posPers = pPers->getCoords();
+    sf::Vector2f tamPers = pPers->getTamanho();
+
+    float velY = pPers->getVelVertical();
+    float velX = pPers->getVelocidade();
+
+    float topoPers = rectPers.top;
+    float baixoPers = rectPers.top + rectPers.height;
+    float topoEspinho = rectEspinho.top;
+    float baixoEspinho = rectEspinho.top + rectEspinho.height;
+    float esquerdaPers = rectPers.left;
+    float direitaPers = rectPers.left + rectPers.width;
+    float esquerdaEspinho = rectEspinho.left;
+    float direitaEspinho = rectEspinho.left + rectEspinho.width;
+
+    const float margem = 8.f;
+
+    bool tocando = false;
+
+    // --- COLISÃO POR CIMA ---
+    if (velY > 0 && baixoPers - margem < topoEspinho && baixoPers > topoEspinho && direitaPers > esquerdaEspinho + margem && esquerdaPers < direitaEspinho - margem)
+    {
+        posPers.y = topoEspinho - tamPers.y;
+        pPers->setCoords(posPers);
+        pPers->machucar(danosidade);
+        pPers->setVelVertical(0);
+        tocando = true;
+    }
+    // --- COLISÃO POR BAIXO ---
+    else if (velY < 0 && topoPers < baixoEspinho && topoPers > baixoEspinho - margem && direitaPers > esquerdaEspinho + margem && esquerdaPers < direitaEspinho - margem)
+    {
+        posPers.y = baixoEspinho;
+        pPers->setCoords(posPers);
+        pPers->setVelVertical(0);
+    }
+    // --- COLISÃO PELA ESQUERDA (separação de eixo X) ---
+    else if (velX > 0 && direitaPers > esquerdaEspinho && esquerdaPers < esquerdaEspinho && baixoPers > topoEspinho + margem && topoPers < baixoEspinho - margem)
+    {
+        posPers.x = esquerdaEspinho - tamPers.x;
+        pPers->setCoords(posPers);
+        pPers->setVelocidade(0);
+    }
+    // --- COLISÃO PELA DIREITA (separação de eixo X) ---
+    else if (velX < 0 && esquerdaPers < direitaEspinho && direitaPers > direitaEspinho && baixoPers > topoEspinho + margem && topoPers < baixoEspinho - margem)
+    {
+        posPers.x = direitaEspinho;
+        pPers->setCoords(posPers);
+        pPers->setVelocidade(0);
+    }
+
+    pPers->setNoChao(tocando);
+    /*if (!pPers) return; //LÓGICA ANTIGA
 
     sf::FloatRect rectPers(pPers->getCoords(), pPers->getTamanho());
     sf::FloatRect rectPlat(getCoords(), getTamanho());
@@ -69,7 +125,7 @@ void Espinho::obstaculizar(Personagem* pPers)
         pPers->setCoords(posPers);
     }
 
-    pPers->setNoChao(tocando);
+    pPers->setNoChao(tocando);*/
 }
 
 std::string Espinho::getTextureFile()
