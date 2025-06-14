@@ -1,8 +1,10 @@
 #include "BigEye.h"
 
-BigEye::BigEye() : velMax(50), aceleracao(150), timerAtaque(0)
+BigEye::BigEye() : aceleracao(150), timerAtaque(0)
 {
 	setTamanho(sf::Vector2f(80.f, 100.f));
+
+	velMax = 50;
 
 	if (nivel_maldade == 1)
 	{

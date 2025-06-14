@@ -34,7 +34,7 @@ void Plataforma::obstaculizar(Personagem* pPers)
     float esquerdaPlat = rectPlat.left;
     float direitaPlat = rectPlat.left + rectPlat.width;
 
-    const float margem = 10.f;
+    const float margem = 15.f;
 
     bool tocando = false;
 

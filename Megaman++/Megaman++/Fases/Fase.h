@@ -6,6 +6,7 @@
 #include "../Entidades/Obstaculos/Plataforma.h"
 #include "../Entidades/Personagens/BigEye.h"
 #include "../Entidades/Personagens/Metall.h"
+#include "../Entidades/Personagens/CutMan.h"
 #include "../Entidades/Obstaculos/Mola.h"
 
 #include <fstream>
@@ -32,6 +33,7 @@ protected:
 	Megaman* p1;
 	Metall* met; //A REMOVER
 	BigEye* big; //A REMOVER
+	CutMan* cut; //A REMOVER
 	std::vector<sf::Sprite> tilesSprites;
 	std::vector<sf::Sprite> fundo1;
 	std::vector<sf::Sprite> fundo2;

@@ -4,7 +4,11 @@ class CutMan:public Inimigo
 {
 private:
 	short int forca;
+	float velMax;
 	float timerAtirar;
+	float timerPerseguir;
+	float timerPular;
+	float cooldownNoChao;
 
 public:
 	CutMan();

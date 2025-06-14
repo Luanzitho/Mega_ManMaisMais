@@ -3,19 +3,24 @@
 
 #include <iostream>
 
-Megaman::Megaman() : Personagem(20), pontos(0), velMax(100), teclaApertada(false), tempoCooldown(0), player1(true), cooldownNoChao(0)
+Megaman::Megaman() : Personagem(20), pontos(0), teclaApertada(false), tempoCooldown(0), player1(true), cooldownNoChao(0)
 {
 	LE = nullptr;
 	setId(1);
+
+	velMax = 100;
 
 	GC = nullptr;
 
 	setTamanho(sf::Vector2f(70.f, 70.f));
 }
 
-Megaman::Megaman(bool player) : Personagem(20), pontos(0), velMax(175), teclaApertada(false), tempoCooldown(0), player1(player), cooldownNoChao(0)
+Megaman::Megaman(bool player) : Personagem(20), pontos(0), teclaApertada(false), tempoCooldown(0), player1(player), cooldownNoChao(0)
 {
 	LE = nullptr;
+
+	velMax = 100;
+
 	setId(1);
 }
 
@@ -75,7 +80,7 @@ void Megaman::mover(float dt)
 		velocidade = velMax * (-1);
 
 	cooldownNoChao += dt;
-	if (cooldownNoChao > 0.1 && noChao) //Reseta a colisão do chão em um determinado tempo
+	if (cooldownNoChao > 0.1 && noChao) //Reseta a colisão com o chão de tempo em tempo para evitar o bug de levitação
 	{
 		noChao = false;
 		cooldownNoChao = 0;

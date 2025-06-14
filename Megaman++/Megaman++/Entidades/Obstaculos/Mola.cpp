@@ -2,16 +2,16 @@
 
 Mola::Mola(): forca(-400.f)
 {
-
 }
+
 Mola::~Mola()
 {
-
 }
+
 void Mola::executar(float dt)
 {
-
 }
+
 void Mola::obstaculizar(Personagem* pPers)
 {
     if (!pPers) return;
@@ -36,7 +36,7 @@ void Mola::obstaculizar(Personagem* pPers)
     const float margem = 10.f;
 
     bool tocando = false;
-
+    
     // --- COLISÃO POR CIMA ---
     if (baixoPers - margem < topoPlat && baixoPers > topoPlat && direitaPers > esquerdaPlat + margem && esquerdaPers < direitaPlat - margem)
     {
@@ -59,7 +59,7 @@ void Mola::obstaculizar(Personagem* pPers)
         pPers->setCoords(posPers);
     }
     // --- COLISÃO PELA DIREITA ---
-    else if (esquerdaPers < direitaPlat && direitaPers > direitaPlat && baixoPers > topoPlat + margem * 2 && topoPers < baixoPlat - margem * 2)
+    else if (esquerdaPers < direitaPlat && direitaPers > direitaPlat && baixoPers > topoPlat + margem * 3 && topoPers < baixoPlat - margem * 3)
     {
         posPers.x = direitaPlat;
         pPers->setCoords(posPers);
@@ -67,6 +67,7 @@ void Mola::obstaculizar(Personagem* pPers)
 
     pPers->setNoChao(tocando);
 }
+
 std::string Mola::getTextureFile()
 {
     return "Sprites/Obstaculos/Plataforma1.png";

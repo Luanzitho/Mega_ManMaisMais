@@ -10,6 +10,7 @@ protected:
 	bool direita;
 	float velocidade;
 	float velVertical;
+	float velMax;
 	bool noChao;
 	bool executando;
 	//float x;

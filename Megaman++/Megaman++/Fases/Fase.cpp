@@ -4,12 +4,14 @@ Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18)
 {
     met = new Metall();
     big = new BigEye();
+    cut = new CutMan();
 	mola = new Mola();
 	posPlayer1 = p1->getCoords();
 	setTamanho(sf::Vector2f(1100.f, 720.f));
 
 	inimigos.push_back(met);
 	inimigos.push_back(big);
+    inimigos.push_back(cut);
 
     //p1->setCoords(sf::Vector2f(400.f, 400.f));
     p1->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
@@ -29,16 +31,22 @@ Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18)
     big->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
     big->conhecerJogador(p1);
 
-    LEs->incluirEntidade(met);
-    LEs->incluirEntidade(big);
+    cut->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
+    cut->conhecerJogador(p1);
 
-    GC.incluirInimigo(met);
-    GC.incluirInimigo(big);
+    //LEs->incluirEntidade(met);
+    //LEs->incluirEntidade(big);
+    LEs->incluirEntidade(cut);
+
+    //GC.incluirInimigo(met);
+    //GC.incluirInimigo(big);
+    GC.incluirInimigo(cut);
 }
 
 Fase::~Fase()
 {
 }
+
 void Fase::gerenciarColisoes()
 {
 }
