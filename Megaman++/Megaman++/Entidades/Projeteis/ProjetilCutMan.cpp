@@ -47,10 +47,13 @@ void ProjetilCutMan::atingirMegaman(Megaman* p)
 
 void ProjetilCutMan::perseguir(float dt)
 {
-	sf::Vector2f pos = getCoords();
+	sf::Vector2f posicao = getCoords();
 
-	pos += direcao * velocidade * dt;
-	setCoords(pos);
+	posicao.y += gravidade * dt;
+	posicao.y -= empuxo * dt;
+
+	posicao += direcao * velocidade * dt;
+	setCoords(posicao);
 
 	/*
 	sf::Vector2f posicao = getCoords();
@@ -120,6 +123,9 @@ void ProjetilCutMan::retornar(float dt)
 	direcao /= comprimento;
 
 	posicao += direcao * velocidade * dt;
+
+	posicao.y += gravidade * dt;
+	posicao.y -= empuxo * dt;
 
 	setCoords(posicao);
 
