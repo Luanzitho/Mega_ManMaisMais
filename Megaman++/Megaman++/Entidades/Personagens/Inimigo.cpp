@@ -1,6 +1,6 @@
 #include "Inimigo.h"
 
-Inimigo::Inimigo(): pMega(nullptr), dano(0)
+Inimigo::Inimigo() : pMega(nullptr), dano(0), LE(nullptr), GC(nullptr)
 {
 	srand(time(NULL));
 
@@ -16,4 +16,13 @@ Inimigo::~Inimigo()
 void Inimigo::conhecerJogador(Megaman* p)
 {
 	pMega = p;
+}
+void Inimigo::associaListaEntidades(ListaEntidades* pLista)
+{
+	LE = pLista;
+}
+
+void Inimigo::associaGerenciadorColisoes(Gerenciador_Colisoes* gc)
+{
+	GC = gc;
 }

@@ -161,6 +161,7 @@ void Gerenciador_Colisoes::incluirMegaman(Megaman* pM) { if (pM) p1 = pM; }
 
 void Gerenciador_Colisoes::executar() //Referência: Giovane do canal Gege++
 {
+    //std::cout << "posicao: " << p1->getCoords().x << ", " << p1->getCoords().y << std::endl;
     tratarColisaoMegaObstacs();
     tratarColisaoMegaInimigos();
     //tratarColisaoProjLimites();

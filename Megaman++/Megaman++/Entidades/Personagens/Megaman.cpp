@@ -115,7 +115,12 @@ void Megaman::mover(float dt)
 		velVertical += gravidade * dt;
 	}
 
-	posicao.x += velocidade * dt;
+	//if ((posicao.x + velocidade * dt) < 700.f && (posicao.x + velocidade * dt) > 0.f)
+		//liberar = true; //Se ele estiver dentro do limite, libera o movimento
+	//else liberar = false; //Se ele estiver fora do limite, não libera o movimento
+
+
+	if(posicao.x+ velocidade*dt>0.f)posicao.x += velocidade * dt;
 	posicao.y += velVertical * dt;
 
 	setCoords(posicao);
@@ -184,4 +189,13 @@ std::string Megaman::getTextureFile()
 		return "Sprites/Megaman/Parado/Parado1.png";
 	else
 		return "Sprites/Megaman/Parado/Parado2.png";
+}
+void Megaman::setLibera(bool lib)
+{
+	liberar = lib;
+}
+
+bool Megaman::getLibera()
+{
+	return liberar;
 }

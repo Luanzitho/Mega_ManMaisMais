@@ -6,8 +6,6 @@
 class CutMan:public Inimigo
 {
 private:
-	ListaEntidades* LE;
-	Gerenciador_Colisoes* GC;
 	ProjetilCutMan* tiro;
 	short int forca;
 	bool podeAtirar;
@@ -20,8 +18,6 @@ private:
 public:
 	CutMan();
 	~CutMan();
-	void associaListaEntidades(ListaEntidades* pLista);
-	void associaGerenciadorColisoes(Gerenciador_Colisoes* GC);
 	void atirar();
 	void possoAtirar();
 	void mover(float dt);

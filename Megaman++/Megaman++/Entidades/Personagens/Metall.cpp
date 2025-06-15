@@ -2,8 +2,9 @@
 #include <cmath>
 #include <time.h>
 #include "../../Gerenciadores/Gerenciador_Colisoes.h"
+#include <iostream>
 
-Metall::Metall(): timerEsconder(0), timerAtirar(0), LE(nullptr), GC(nullptr)
+Metall::Metall(): timerEsconder(0), timerAtirar(0)
 {
 	srand(time(NULL));
 
@@ -28,15 +29,14 @@ Metall::~Metall()
 {
 }
 
-void Metall::associaListaEntidades(ListaEntidades* pLista)
+/*void Metall::associaListaEntidades(ListaEntidades* pLista)
 {
 	LE = pLista;
-}
+}*/
 
-void Metall::associaGerenciadorColisoes(Gerenciador_Colisoes* GC)
-{
+/* {
 	this->GC = GC;
-}
+}*/
 
 void Metall::atirar(int tipo)
 {
@@ -48,7 +48,9 @@ void Metall::atirar(int tipo)
 		direita = false;
 
 	ProjetilMetall* tiro = new ProjetilMetall(pos, direita, tipo, nivel_maldade);
+	std::cout << "Atirando Metall: " << std::endl;
 	LE->incluirEntidade(tiro);
+	std::cout << "Atirando Metall: " << std::endl;
 	tiro->associaListaEntidades(LE);
 	tiro->setGerenciadorGrafico(pGG);
 	GC->incluirProjetil(tiro);

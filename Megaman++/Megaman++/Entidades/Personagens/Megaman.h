@@ -19,6 +19,7 @@ private:
 	ListaEntidades* LE;
 	Gerenciador_Colisoes* GC;
 	float cooldownNoChao;
+	bool liberar;
 
 public:
 	Megaman();
@@ -30,5 +31,7 @@ public:
 	void atirar(float dt);
 	void executar(float dt);
 	std::string getTextureFile();
+	void setLibera(bool lib);
+	bool getLibera();
 };
 

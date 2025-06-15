@@ -10,16 +10,19 @@
 #include "../Entidades/Obstaculos/Mola.h"
 #include "../Entidades/Obstaculos/Espinho.h"
 
+#include <random>
 #include <fstream>
 #include <vector>
 #include "../json.hpp"
 
 using namespace nlohmann;
 
-class Fase:public Ente
+class GerenciadorColisoes {};
+
+class Fase :public Ente
 {
 private:
-	
+
 protected:
 	Gerenciador_Colisoes GC;
 	json faseJson;
@@ -27,20 +30,24 @@ protected:
 	sf::Texture imagemTiles;
 	std::vector<sf::IntRect> tilesRects;
 	sf::Vector2f posPlayer1;
+	std::random_device rd;
+
 	//std::vector<sf::Texture> tilesTextures;
 	int tileWidth;
 	int columns;
 	int tileCount;
+	bool travado;
 	Megaman* p1;
-	Metall* met; //A REMOVER
-	BigEye* big; //A REMOVER
-	CutMan* cut; //A REMOVER
-	Espinho* esp; //A REMOVER
+	//Metall* met; //A REMOVER
+	//BigEye* big; //A REMOVER
+	//CutMan* cut; //A REMOVER
+	//Espinho* esp; //A REMOVER
 	std::vector<sf::Sprite> tilesSprites;
 	std::vector<sf::Sprite> fundo1;
 	std::vector<sf::Sprite> fundo2;
 	std::vector<sf::Sprite> fundo3;
 	std::vector<Plataforma*> plataformas;
+	std::vector<Plataforma*> chao;
 	std::vector<Inimigo*> inimigos;
 	std::vector<Obstaculo*> obstaculos;
 	ListaEntidades* LEs;
@@ -59,7 +66,9 @@ public:
 	void pegarCamada(int i);
 	void separaSprites();
 	std::string getTextureFile();
-	void moveMapa();
+	void moveMapa(float dt);
+	void setTravado(bool trava);
+	bool getTravado();
 	//sf::Texture recortarTextura(const sf::Texture& original, sf::IntRect recorte);
 	//virtual std::string getMapaFase()=0;
 

@@ -13,15 +13,15 @@ private:
 	float timerAtirar;
 	bool escondido;
 	int tamanho;
-	ListaEntidades* LE;
-	Gerenciador_Colisoes* GC;
+	//ListaEntidades* LE;
+	//Gerenciador_Colisoes* GC;
 	//ProjetilMetall* tiro;
 
 public:
 	Metall();
 	~Metall();
-	void associaListaEntidades(ListaEntidades* pLista);
-	void associaGerenciadorColisoes(Gerenciador_Colisoes* GC);
+	//void associaListaEntidades(ListaEntidades* pLista);
+	//void associaGerenciadorColisoes(Gerenciador_Colisoes* GC);
 	void atirar(int tipo);
 	void esconder();
 	void revelar();

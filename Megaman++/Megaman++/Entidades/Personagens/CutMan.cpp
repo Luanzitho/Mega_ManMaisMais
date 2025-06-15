@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-CutMan::CutMan(): cooldownNoChao(0), timerAtirar(0), timerPerseguir(0), timerPular(0), tiro(nullptr), LE(nullptr), GC(nullptr), podeAtirar(true)
+CutMan::CutMan(): cooldownNoChao(0), timerAtirar(0), timerPerseguir(0), timerPular(0), tiro(nullptr), podeAtirar(true)
 {
 	setTamanho(sf::Vector2f(70.f, 95.f));
 
@@ -18,15 +18,6 @@ CutMan::~CutMan()
 {
 }
 
-void CutMan::associaListaEntidades(ListaEntidades* pLista)
-{
-	LE = pLista;
-}
-
-void CutMan::associaGerenciadorColisoes(Gerenciador_Colisoes* GC)
-{
-	this->GC = GC;
-}
 
 void CutMan::atirar()
 {
