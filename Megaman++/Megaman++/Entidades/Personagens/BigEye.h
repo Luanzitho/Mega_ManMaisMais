@@ -7,6 +7,7 @@ class BigEye:public Inimigo //Equivalente a inimigo médio
 private:
 	float aceleracao;
 	float timerAtaque;
+	float raio;
 
 public:
 	BigEye();

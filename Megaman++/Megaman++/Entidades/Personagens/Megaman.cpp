@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-Megaman::Megaman() : Personagem(20), pontos(0), teclaApertada(false), tempoCooldown(0), player1(true), cooldownNoChao(0)
+Megaman::Megaman() : Personagem(20), pontos(0), teclaApertada(false), cooldownTiro(0), player1(true), cooldownNoChao(0)
 {
 	LE = nullptr;
 	setId(1);
@@ -15,7 +15,7 @@ Megaman::Megaman() : Personagem(20), pontos(0), teclaApertada(false), tempoCoold
 	setTamanho(sf::Vector2f(70.f, 70.f));
 }
 
-Megaman::Megaman(bool player) : Personagem(20), pontos(0), teclaApertada(false), tempoCooldown(0), player1(player), cooldownNoChao(0)
+Megaman::Megaman(bool player) : Personagem(20), pontos(0), teclaApertada(false), cooldownTiro(0), player1(player), cooldownNoChao(0)
 {
 	LE = nullptr;
 
@@ -123,23 +123,23 @@ void Megaman::mover(float dt)
 
 void Megaman::atirar(float dt)
 {
-	tempoCooldown += dt;
+	cooldownTiro += dt;
 	
 	if (player1)
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 		{
-			if (!teclaApertada && tempoCooldown >= 0.25)
+			if (!teclaApertada && cooldownTiro >= 0.25)
 			{
 				sf::Vector2f pos = getCoords();
 
-				tiro = new ProjetilMegaman(pos, direita);
+				ProjetilMegaman* tiro = new ProjetilMegaman(pos, direita);
 				LE->incluirEntidade(tiro);
 				tiro->associaListaEntidades(LE);
 				tiro->setGerenciadorGrafico(pGG);
 				GC->incluirProjetil(tiro);
 
-				tempoCooldown = 0;
+				cooldownTiro = 0;
 				teclaApertada = true;
 			}
 		}
@@ -153,7 +153,7 @@ void Megaman::atirar(float dt)
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))
 		{
-			if (!teclaApertada && tempoCooldown >= 0.25)
+			if (!teclaApertada && cooldownTiro >= 0.25)
 			{
 				sf::Vector2f pos = getCoords();
 
@@ -161,7 +161,7 @@ void Megaman::atirar(float dt)
 				LE->incluirEntidade(tiro);
 				tiro->setGerenciadorGrafico(pGG);
 
-				tempoCooldown = 0;
+				cooldownTiro = 0;
 				teclaApertada = true;
 			}
 		}

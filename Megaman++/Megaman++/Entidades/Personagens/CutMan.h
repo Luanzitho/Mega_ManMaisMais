@@ -11,7 +11,7 @@ private:
 	ProjetilCutMan* tiro;
 	short int forca;
 	bool podeAtirar;
-	float velMax;
+	//float velMax;
 	float timerAtirar;
 	float timerPerseguir;
 	float timerPular;

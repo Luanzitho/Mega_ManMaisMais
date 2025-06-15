@@ -1,8 +1,11 @@
 #include "BigEye.h"
+#include <time.h>
 
 BigEye::BigEye() : aceleracao(150), timerAtaque(0)
 {
-	setTamanho(sf::Vector2f(80.f, 100.f));
+	raio = rand() % 41 + 80;
+
+	setTamanho(sf::Vector2f(raio, 120.f));
 
 	velMax = 50;
 

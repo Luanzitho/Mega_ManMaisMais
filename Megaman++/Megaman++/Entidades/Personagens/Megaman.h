@@ -13,8 +13,8 @@ private:
 	bool player1;
 	int pontos;
 	bool teclaApertada;
-	float tempoCooldown;
-	ProjetilMegaman* tiro;
+	float cooldownTiro;
+	//ProjetilMegaman* tiro;
 	//std::vector<ProjetilMegaman*> disparos;
 	ListaEntidades* LE;
 	Gerenciador_Colisoes* GC;

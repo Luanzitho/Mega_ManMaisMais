@@ -1,10 +1,15 @@
 #include "Metall.h"
 #include <cmath>
+#include <time.h>
 #include "../../Gerenciadores/Gerenciador_Colisoes.h"
 
 Metall::Metall(): timerEsconder(0), timerAtirar(0), LE(nullptr), GC(nullptr)
 {
-	setTamanho(sf::Vector2f(50.f, 50.f));
+	srand(time(NULL));
+
+	tamanho = rand() % 6 + 50;
+
+	setTamanho(sf::Vector2f(float(tamanho), float(tamanho)));
 
 	dano = 1;
 

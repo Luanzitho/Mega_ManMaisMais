@@ -12,9 +12,10 @@ private:
 	float timerEsconder;
 	float timerAtirar;
 	bool escondido;
+	int tamanho;
 	ListaEntidades* LE;
 	Gerenciador_Colisoes* GC;
-	ProjetilMetall* tiro;
+	//ProjetilMetall* tiro;
 
 public:
 	Metall();
