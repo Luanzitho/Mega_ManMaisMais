@@ -37,12 +37,12 @@ Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18)
     cut->associaListaEntidades(LEs);
     cut->associaGerenciadorColisoes(&GC);
 
-    //LEs->incluirEntidade(met);
-    //LEs->incluirEntidade(big);
+    LEs->incluirEntidade(met);
+    LEs->incluirEntidade(big);
     LEs->incluirEntidade(cut);
 
-    //GC.incluirInimigo(met);
-    //GC.incluirInimigo(big);
+    GC.incluirInimigo(met);
+    GC.incluirInimigo(big);
     GC.incluirInimigo(cut);
 }
 
