@@ -1,49 +1,12 @@
 #include "Fase.h"
 #include <iostream>
-Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18), tileCount(180), tilesRects(), GC(), p1(new Megaman), plataformas(), LEs(new ListaEntidades), travado(false)
+Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18), tileCount(180), tilesRects(), GC(), p1(new Megaman), plataformas(), LEs(new ListaEntidades), travado(false), minIniimigosFaceis(3), jaFoi(), ultimoSprite(), acabou(false)
 {
-    //met = new Metall();
-    //big = new BigEye();
-    //cut = new CutMan();
-    mola = new Mola();
-    //esp = new Espinho();
-    //posPlayer1 = p1->getCoords();
     setTamanho(sf::Vector2f(1280.f, 720.f));
 
-    //inimigos.push_back(met);
-    //inimigos.push_back(big);
-   // inimigos.push_back(cut);
-
-    //p1->setCoords(sf::Vector2f(400.f, 400.f));
     p1->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
     p1->associaGerenciadorColisoes(&GC);
     p1->associaListaEntidades(LEs);
-    //GC.incluirMegaman(p1);
-    //p1->setGerenciadorColisoes(&GC);
-    //LEs->incluirEntidade(p1);
-
-    //met->setCoords(sf::Vector2f(700.f, 580.f));
-    //met->associaListaEntidades(LEs);
-    //met->associaGerenciadorColisoes(&GC);
-    //met->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
-    //met->conhecerJogador(p1);
-
-    //big->setCoords(sf::Vector2f(400.f, 50.f));
-    //big->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
-   // big->conhecerJogador(p1);
-
-    //cut->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
-    //cut->conhecerJogador(p1);
-   // cut->associaListaEntidades(LEs);
-    //cut->associaGerenciadorColisoes(&GC);
-
-    //LEs->incluirEntidade(met);
-   // LEs->incluirEntidade(big);
-   // LEs->incluirEntidade(cut);
-
-    //GC.incluirInimigo(met);
-    //GC.incluirInimigo(big);
-   // GC.incluirInimigo(cut);
 }
 
 Fase::~Fase()
@@ -52,13 +15,39 @@ Fase::~Fase()
 
 void Fase::gerenciarColisoes()
 {
+    GC.executar();
 }
 
 void Fase::criarInimigosFaceis()
 {
+    int i = 0;
+    std::mt19937 gen(rd());                     // motor aleatório (Mersenne Twister)
+    while (faseJson["layers"][i]["name"] != "Spawn Inimigos")
+    {
+        i++;
+    }
+    for (int j = 0; j < minIniimigosFaceis; j++)
+    {
+        int lugar = 0;
+        std::uniform_int_distribution<> quantos(0, faseJson["layers"][i]["objects"].size() - 1);
+        do
+        {
+            lugar = quantos(gen); // gera um número aleatório
+        } while (jaFoi[lugar] != 0);
+        Inimigo* inimigo = new Metall;
+        inimigo->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
+        inimigo->associaListaEntidades(LEs);
+        inimigo->associaGerenciadorColisoes(&GC);
+        inimigo->conhecerJogador(p1);
+        inimigo->setCoords(sf::Vector2f((float)(faseJson["layers"][i]["objects"][lugar]["x"] * 3), (float)(faseJson["layers"][i]["objects"][lugar]["y"] * 3)));
+        inimigos.push_back(inimigo);
+        LEs->incluirEntidade(inimigos[inimigos.size()-1]);
+        GC.incluirInimigo(inimigos[inimigos.size() - 1]);
+
+    }
 }
 
-void Fase::criarPlataformas()
+void Fase::criarChao()
 {
     int controle = 0;
     while (faseJson["layers"][controle]["name"] != "chao")
@@ -72,26 +61,11 @@ void Fase::criarPlataformas()
         p->setCoords(sf::Vector2f((float)(faseJson["layers"][controle]["objects"][i]["x"] * 3), (float)faseJson["layers"][controle]["objects"][i]["y"] * 3));
         p->setTamanho(sf::Vector2f((float)faseJson["layers"][controle]["objects"][i]["width"] * 3, (float)faseJson["layers"][controle]["objects"][i]["height"] * 3));
         chao.push_back(p);
-        //std::cout << "Plataforma criada: " << faseJson["layers"][controle]["objects"][i]["x"] << ", " << faseJson["layers"][1]["objects"][i]["y"] << std::endl;
         GC.incluirObstaculo(p);
-        //faseJson["layers"][1]["objects"];
+        if (chao.size() > 1 && chao[i]->getCoords().x > chao[i - 1]->getCoords().x)ultimoSprite = i;
+        else if (chao.size() == 1)ultimoSprite = i;
     }
-    controle = 0;
-    while (faseJson["layers"][controle]["name"] != "Obstaculos")
-    {
-        controle++;
-    }
-    for (int i = 0; i < faseJson["layers"][controle]["objects"].size(); i++)
-    {
-        Espinho* p = new Espinho;
-        p->setGerenciadorGrafico(pGG->getInstancia());
-        p->setCoords(sf::Vector2f((float)(faseJson["layers"][controle]["objects"][i]["x"] * 3), (float)faseJson["layers"][controle]["objects"][i]["y"] * 3));
-        p->setTamanho(sf::Vector2f((float)faseJson["layers"][controle]["objects"][i]["width"] * 3, (float)faseJson["layers"][controle]["objects"][i]["height"] * 3));
-        obstaculos.push_back(p);
-        //std::cout << "Plataforma criada: " << faseJson["layers"][controle]["objects"][i]["x"] << ", " << faseJson["layers"][1]["objects"][i]["y"] << std::endl;
-        GC.incluirObstaculo(p);
-        //faseJson["layers"][1]["objects"];
-    }
+    
     controle = 0;
     while (faseJson["layers"][controle]["name"] != "Mola")
     {
@@ -128,7 +102,7 @@ void Fase::desenharCenario()
 {
     for (int i = 0; i < tilesSprites.size(); i++)
     {
-        if (((tilesSprites[i].getPosition().x * tilesSprites[i].getScale().x) > getCoords().x) && ((tilesSprites[i].getPosition().x) < getTamanho().x))
+        if (((tilesSprites[i].getPosition().x * tilesSprites[i].getScale().x) > getCoords().x - tilesSprites[i].getScale().x*2) && ((tilesSprites[i].getPosition().x) < getTamanho().x))
             pGG->desenhaSprite(tilesSprites[i]);
     }
 }
@@ -193,36 +167,26 @@ std::string Fase::getTextureFile()//rever o que retornar para desenhar o mapa
     return faseJson["tilesets"][0]["image"];
 }
 
+int Fase::aleatoriza(int limite1, int limite2)
+{
+    std::mt19937 gen(rd());                     // motor aleatório (Mersenne Twister)
+    std::uniform_int_distribution<> dist(limite1, limite2); // faixa
+
+    return dist(gen);
+}
+
 void Fase::moveMapa(float dt)
 {
     sf::FloatRect rect1(p1->getCoords(), p1->getTamanho());
 	
     sf::FloatRect rect2(getCoords(),getTamanho());
     
-    if (rect1.intersects(rect2)) // Movimento do personagem
+
+    if (rect1.intersects(rect2) && chao[ultimoSprite]->getCoords().x + chao[ultimoSprite]->getTamanho().x > getTamanho().x) // Movimento do personagem
     {
         if(rect1.left >= rect2.width/2)
         {
             p1->setCoords(sf::Vector2f(rect2.width / 2, rect1.top));
-        
-            /*bool direita = false;
-            float chaoDireita = chao[chao.size() - 1]->getCoords().x + chao[chao.size() - 1]->getTamanho().x;
-            if ((chao[0]->getCoords().x - p1->getVelocidade() * dt) < chao[0]->getCoords().x && (chao[0]->getCoords().x - p1->getVelocidade() * dt) < 0.f)
-            {
-                p1->setCoords(sf::Vector2f(700.f, p1->getCoords().y));
-            }
-            if (chaoDireita - p1->getVelocidade() *dt > chaoDireita && chaoDireita < getTamanho().x)
-            {
-                std::cout << "velocidade: " << p1->getVelocidade() << std::endl;
-                p1->setLibera(true);
-                direita = true;
-            }*/
-
-            //if (p1->getCoords().x + p1->getTamanho().x >= 700.f)
-        //if()
-        //{
-                //p1->setLibera(false);
-                //std::cout << "velocidade2: " << p1->getVelocidade() << std::endl;
             for (int i = 0; i < chao.size(); i++)
             {
                 chao[i]->setCoords(sf::Vector2f(chao[i]->getCoords().x - p1->getVelocidade() * dt, chao[i]->getCoords().y));
@@ -247,12 +211,27 @@ void Fase::moveMapa(float dt)
     }
 }
 
-void Fase::setTravado(bool trava)
+void Fase::incluirInimigoGC(Inimigo* inimigo)
 {
-    travado = trava;
+    GC.incluirInimigo(inimigo);
 }
 
-bool Fase::getTravado()
+void Fase::incluirMegaGC(Megaman* mega)
 {
-    return travado;
+    GC.incluirMegaman(mega);
+}
+
+void Fase::incluirObstaculoGC(Obstaculo* Obstaculo)
+{
+    GC.incluirObstaculo(Obstaculo);
+}
+
+Gerenciador_Colisoes* Fase::getGC()
+{
+    return &GC;
+}
+
+bool Fase::getAcabou()
+{
+    return acabou;
 }

@@ -4,14 +4,17 @@
 
 class Fase;
 
-class Fase1 : public Fase
+class Fase2 : public Fase
 {
 private:
 	int minInimigosMedios;
+	int maxChefoes;
 public:
-	Fase1();
-	~Fase1();
+	//const int maxChefoes;
+	Fase2();
+	~Fase2();
 	void executar(float dt);
+	void criarChefoes();
 	void criarObsMedios();
 	void criarMinInimigosMedios();
 	void criarProjeteis();

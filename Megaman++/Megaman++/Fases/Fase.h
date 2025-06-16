@@ -22,26 +22,22 @@ class GerenciadorColisoes {};
 class Fase :public Ente
 {
 private:
-
-protected:
+	int minIniimigosFaceis;
 	Gerenciador_Colisoes GC;
+protected:
+	std::vector<int> jaFoi;
 	json faseJson;
 	std::vector<int> tilesGid;
 	sf::Texture imagemTiles;
 	std::vector<sf::IntRect> tilesRects;
 	sf::Vector2f posPlayer1;
 	std::random_device rd;
-
-	//std::vector<sf::Texture> tilesTextures;
 	int tileWidth;
 	int columns;
 	int tileCount;
+	int ultimoSprite;
 	bool travado;
 	Megaman* p1;
-	//Metall* met; //A REMOVER
-	//BigEye* big; //A REMOVER
-	//CutMan* cut; //A REMOVER
-	//Espinho* esp; //A REMOVER
 	std::vector<sf::Sprite> tilesSprites;
 	std::vector<sf::Sprite> fundo1;
 	std::vector<sf::Sprite> fundo2;
@@ -51,7 +47,8 @@ protected:
 	std::vector<Inimigo*> inimigos;
 	std::vector<Obstaculo*> obstaculos;
 	ListaEntidades* LEs;
-	Mola* mola;
+	//Mola* mola;
+	bool acabou;
 
 public:
 	Fase();
@@ -59,16 +56,21 @@ public:
 	virtual void executar(float dt) = 0;
 	void gerenciarColisoes();
 	void criarInimigosFaceis();
-	void criarPlataformas();
+	void criarChao();
 	virtual void criarInimigos() = 0;
 	virtual void criarObstaculos() = 0;
 	void desenharCenario();
 	void pegarCamada(int i);
 	void separaSprites();
 	std::string getTextureFile();
+	int aleatoriza(int limite1, int limite2);
 	void moveMapa(float dt);
-	void setTravado(bool trava);
-	bool getTravado();
+	void incluirInimigoGC(Inimigo* inimigo);
+	void incluirMegaGC(Megaman* mega);
+	void incluirObstaculoGC(Obstaculo* Obstaculo);
+	Gerenciador_Colisoes* getGC();
+	bool getAcabou();
+	
 	//sf::Texture recortarTextura(const sf::Texture& original, sf::IntRect recorte);
 	//virtual std::string getMapaFase()=0;
 

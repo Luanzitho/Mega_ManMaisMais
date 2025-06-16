@@ -12,6 +12,7 @@
 #include "Entidades/Obstaculos/Plataforma.h"
 #include "Entidades/Obstaculos/Espinho.h"
 #include "Fases/Fase1.h"
+#include "Fases/Fase2.h"
 
 class Jogo
 {
@@ -25,6 +26,7 @@ private:
 	//BigEye* m2;
 	//ListaEntidades* LEs;
 	Fase1* f1;
+	Fase2* f2;
 	bool inMenu;
 	bool playing;
 	bool twoPlayers;

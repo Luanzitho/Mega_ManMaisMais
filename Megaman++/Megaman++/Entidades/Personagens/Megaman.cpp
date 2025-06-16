@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-Megaman::Megaman() : Personagem(20), pontos(0), teclaApertada(false), cooldownTiro(0), player1(true), cooldownNoChao(0)
+Megaman::Megaman() : Personagem(20), pontos(0), teclaApertada(false), cooldownTiro(0), player1(true), cooldownNoChao(0), vidas(3)
 {
 	LE = nullptr;
 	setId(1);
@@ -114,11 +114,6 @@ void Megaman::mover(float dt)
 	{
 		velVertical += gravidade * dt;
 	}
-
-	//if ((posicao.x + velocidade * dt) < 700.f && (posicao.x + velocidade * dt) > 0.f)
-		//liberar = true; //Se ele estiver dentro do limite, libera o movimento
-	//else liberar = false; //Se ele estiver fora do limite, não libera o movimento
-
 
 	if(posicao.x+ velocidade*dt>0.f)posicao.x += velocidade * dt;
 	posicao.y += velVertical * dt;

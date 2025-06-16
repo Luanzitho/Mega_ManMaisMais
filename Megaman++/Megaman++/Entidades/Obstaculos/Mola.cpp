@@ -125,5 +125,5 @@ void Mola::obstaculizar(Personagem* pPers)
 
 std::string Mola::getTextureFile()
 {
-    return "Sprites/Obstaculos/Plataforma1.png";
+    return "Sprites/Obstaculos/Mola.png";
 }

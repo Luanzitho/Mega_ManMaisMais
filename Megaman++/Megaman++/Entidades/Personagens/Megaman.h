@@ -20,6 +20,7 @@ private:
 	Gerenciador_Colisoes* GC;
 	float cooldownNoChao;
 	bool liberar;
+	int vidas;
 
 public:
 	Megaman();
