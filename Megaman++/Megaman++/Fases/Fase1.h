@@ -12,7 +12,7 @@ public:
 	Fase1();
 	~Fase1();
 	void executar(float dt);
-	void criarObsMedios();
+	void criarMolas();
 	void criarMinInimigosMedios();
 	void criarProjeteis();
 	void criarInimigos();

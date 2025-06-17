@@ -8,7 +8,7 @@ Megaman::Megaman() : Personagem(20), pontos(0), teclaApertada(false), cooldownTi
 	LE = nullptr;
 	setId(1);
 
-	velMax = 100;
+	velMax = 200;
 
 	GC = nullptr;
 
@@ -19,7 +19,7 @@ Megaman::Megaman(bool player) : Personagem(20), pontos(0), teclaApertada(false),
 {
 	LE = nullptr;
 
-	velMax = 100;
+	velMax = 200;
 
 	setId(1);
 }
@@ -184,13 +184,4 @@ std::string Megaman::getTextureFile()
 		return "Sprites/Megaman/Parado/Parado1.png";
 	else
 		return "Sprites/Megaman/Parado/Parado2.png";
-}
-void Megaman::setLibera(bool lib)
-{
-	liberar = lib;
-}
-
-bool Megaman::getLibera()
-{
-	return liberar;
 }

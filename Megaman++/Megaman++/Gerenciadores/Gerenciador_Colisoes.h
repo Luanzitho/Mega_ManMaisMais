@@ -15,7 +15,7 @@ private:
 	std::vector<Inimigo*> LIs;
 	std::list<Obstaculo*> LOs;
 	std::set<Projetil*> LPs;
-	Megaman* p1;
+	std::vector<Megaman*> pM;
 
 public:
 	Gerenciador_Colisoes();
@@ -31,7 +31,7 @@ public:
 	void incluirInimigo(Inimigo* pI);
 	void incluirObstaculo(Obstaculo* pO);
 	void incluirProjetil(Projetil* pP);
-	void incluirMegaman(Megaman* pM);
+	void incluirMegaman(Megaman* pm);
 	void executar();
 };
 

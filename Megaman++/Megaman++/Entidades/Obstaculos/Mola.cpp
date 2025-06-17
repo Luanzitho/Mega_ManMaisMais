@@ -34,7 +34,7 @@ void Mola::obstaculizar(Personagem* pPers)
     float esquerdaMola = rectMola.left;
     float direitaMola = rectMola.left + rectMola.width;
 
-    const float margem = 8.f; // Ajuste conforme necessário
+    const float margem = 15.f; // Ajuste conforme necessário
 
     bool tocando = false;
 

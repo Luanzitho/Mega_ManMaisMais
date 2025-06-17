@@ -102,7 +102,7 @@ void Menu::selecionar()
 			pJog->setPlayers(false);
 			tela=2;
 		}
-		else if (escolha == 2)
+		else if (escolha == 1)
 		{
 			pJog->setPlayers(true);
 			tela=2;

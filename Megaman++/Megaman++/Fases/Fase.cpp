@@ -1,6 +1,6 @@
 #include "Fase.h"
 #include <iostream>
-Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18), tileCount(180), tilesRects(), GC(), p1(new Megaman), plataformas(), LEs(new ListaEntidades), travado(false), minIniimigosFaceis(3), jaFoi(), ultimoSprite(), acabou(false)
+Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18), tileCount(180), tilesRects(), GC(), p1(new Megaman), plataformas(), LEs(new ListaEntidades), minInimigosFaceis(3), jaFoi(), ultimoSprite(), acabou(false),p2(nullptr)
 {
     setTamanho(sf::Vector2f(1280.f, 720.f));
 
@@ -26,7 +26,7 @@ void Fase::criarInimigosFaceis()
     {
         i++;
     }
-    for (int j = 0; j < minIniimigosFaceis; j++)
+    for (int j = 0; j < minInimigosFaceis; j++)
     {
         int lugar = 0;
         std::uniform_int_distribution<> quantos(0, faseJson["layers"][i]["objects"].size() - 1);
@@ -34,6 +34,7 @@ void Fase::criarInimigosFaceis()
         {
             lugar = quantos(gen); // gera um número aleatório
         } while (jaFoi[lugar] != 0);
+        jaFoi[lugar] = 1; // marca que o ponto já foi usado
         Inimigo* inimigo = new Metall;
         inimigo->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
         inimigo->associaListaEntidades(LEs);
@@ -81,21 +82,6 @@ void Fase::criarChao()
         std::cout << "Plataforma criada: " << faseJson["layers"][controle]["objects"][i]["x"] << ", " << faseJson["layers"][1]["objects"][i]["y"] << std::endl;
         GC.incluirObstaculo(m);
     }
-    controle = 0;
-    /*while (faseJson["layers"][controle]["name"] != "Espinho") //Num deu :(
-    {
-        controle++;
-    }
-    for (int i = 0; i < faseJson["layers"][controle]["objects"].size(); i++)
-    {
-        Obstaculo* e = new Espinho;
-        e->setGerenciadorGrafico(pGG->getInstancia());
-        e->setCoords(sf::Vector2f((float)(faseJson["layers"][controle]["objects"][i]["x"] * 3), (float)faseJson["layers"][controle]["objects"][i]["y"] * 3));
-        e->setTamanho(sf::Vector2f((float)faseJson["layers"][controle]["objects"][i]["width"] * 3, (float)faseJson["layers"][controle]["objects"][i]["height"] * 3));
-        obstaculos.push_back(e);
-        std::cout << "Plataforma criada: " << faseJson["layers"][controle]["objects"][i]["x"] << ", " << faseJson["layers"][1]["objects"][i]["y"] << std::endl;
-        GC.incluirObstaculo(e);
-    }*/
 }
 
 void Fase::desenharCenario()
@@ -234,4 +220,14 @@ Gerenciador_Colisoes* Fase::getGC()
 bool Fase::getAcabou()
 {
     return acabou;
+}
+void Fase::setTwoPlayers()
+{
+	p2 = new Megaman(false);
+	p2->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
+	p2->associaGerenciadorColisoes(&GC);
+	p2->setCoords(p1->getCoords());
+    p2->setExecutando(true);
+	GC.incluirMegaman(p2);
+	LEs->incluirEntidade(p2);
 }

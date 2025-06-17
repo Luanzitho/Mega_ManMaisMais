@@ -7,7 +7,6 @@ class Fase;
 class Fase2 : public Fase
 {
 private:
-	int minInimigosMedios;
 	int maxChefoes;
 public:
 	//const int maxChefoes;

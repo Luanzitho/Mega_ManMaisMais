@@ -22,7 +22,7 @@ class GerenciadorColisoes {};
 class Fase :public Ente
 {
 private:
-	int minIniimigosFaceis;
+	int minInimigosFaceis;
 	Gerenciador_Colisoes GC;
 protected:
 	std::vector<int> jaFoi;
@@ -30,14 +30,12 @@ protected:
 	std::vector<int> tilesGid;
 	sf::Texture imagemTiles;
 	std::vector<sf::IntRect> tilesRects;
-	sf::Vector2f posPlayer1;
 	std::random_device rd;
 	int tileWidth;
 	int columns;
 	int tileCount;
 	int ultimoSprite;
-	bool travado;
-	Megaman* p1;
+	Megaman* p1, *p2;
 	std::vector<sf::Sprite> tilesSprites;
 	std::vector<sf::Sprite> fundo1;
 	std::vector<sf::Sprite> fundo2;
@@ -70,9 +68,7 @@ public:
 	void incluirObstaculoGC(Obstaculo* Obstaculo);
 	Gerenciador_Colisoes* getGC();
 	bool getAcabou();
-	
-	//sf::Texture recortarTextura(const sf::Texture& original, sf::IntRect recorte);
-	//virtual std::string getMapaFase()=0;
+	void setTwoPlayers();
 
 };
 

@@ -19,17 +19,10 @@ class Jogo
 private:
 	Gerenciador_Colisoes GC;
 	Gerenciador_Grafico& GG;
-	//Megaman* p1, *p2;
-	//Plataforma* pl1, *pl2, *pl3;
-	//Metall* m1;
-	//Espinho* es;
-	//BigEye* m2;
-	//ListaEntidades* LEs;
 	Fase1* f1;
 	Fase2* f2;
 	bool inMenu;
 	bool playing;
-	bool twoPlayers;
 	int faseA;
 
 public:

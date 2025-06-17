@@ -43,7 +43,7 @@ void Fase1::executar(float dt)
     if (p1->getCoords().x > 1000)acabou=true;
 }
 
-void Fase1::criarObsMedios()
+void Fase1::criarMolas()
 {
     int i = 0;
     while (faseJson["layers"][i]["name"] != "Obstaculos")
@@ -178,7 +178,7 @@ void Fase1::criarObstaculos()
     {
         jaFoi.push_back(0); // vetor para saber quais pontos já foram usados
     }
-    criarObsMedios();
+    criarMolas();
     for(int j=0; j<sorteado;j++)
     {
         int qualObs = aleatoriza(0, 10); // gera um número aleatório entre 0 e 10

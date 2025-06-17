@@ -3,7 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-Jogo::Jogo() : GG(*Gerenciador_Grafico::getInstancia()), inMenu(true), playing(false), faseA(0), f1(new Fase1), twoPlayers(false), f2(new Fase2)
+Jogo::Jogo() : GG(*Gerenciador_Grafico::getInstancia()), inMenu(true), playing(false), faseA(0), f1(new Fase1), f2(new Fase2)
 {
 	f1->setCoords(sf::Vector2f(0.f, 0.f));
 	f1->setGerenciadorGrafico(&GG);
@@ -69,19 +69,14 @@ void Jogo::encerrar()
 {
 	//LEs->LEs.limpar();
 	//delete LEs;
-
 }
 
 void Jogo::setPlayers(bool players)
 {
-	twoPlayers = players;
-	if (twoPlayers)
+	if (players)
 	{
-		//p2->setAtivo(true);
-	}
-	else
-	{
-		//p2->setAtivo(false);
+		f1->setTwoPlayers();
+		f2->setTwoPlayers();
 	}
 }
 

@@ -2,7 +2,7 @@
 #include <iostream>
 
 
-Fase2::Fase2(): minInimigosMedios(3)
+Fase2::Fase2()
 {
     std::fstream jsonFile("Mapas/mapa2.tmj");
     if (jsonFile.is_open()) {
