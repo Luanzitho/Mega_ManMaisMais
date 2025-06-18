@@ -28,6 +28,7 @@ public:
 	float getVelVertical();
 	void setNoChao(bool noChao);
 	bool getNoChao();
+	void sofrerAcaoDaGravidade(float dt);
 	virtual void executar(float dt) = 0;
 	virtual std::string getTextureFile() = 0;
 	bool getExecutando();

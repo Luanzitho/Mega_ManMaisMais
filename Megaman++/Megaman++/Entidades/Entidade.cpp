@@ -17,6 +17,7 @@ const bool Entidade::getVivo()
 {
 	return vivo;
 }
+
 void Entidade::setVelocidade(float v)
 {
 	velocidade = v;
@@ -45,6 +46,11 @@ void Entidade::setNoChao(bool noChao)
 bool Entidade::getNoChao()
 {
 	return noChao;
+}
+
+void Entidade::sofrerAcaoDaGravidade(float dt)
+{
+	velVertical += gravidade * dt;
 }
 
 bool Entidade::getExecutando()

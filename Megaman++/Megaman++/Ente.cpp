@@ -8,11 +8,14 @@ Ente::Ente(): id(0)
 
 Ente::Ente(sf::Vector2f coordsIni, sf::Vector2f size): coords(coordsIni), tamanho(size), id(0) 
 {
-	pGG = nullptr;
+	delete pGG;
 	//pGC = nullptr;
 }
 
-Ente::~Ente(){}
+Ente::~Ente()
+{
+	pGG = nullptr;
+}
 
 void Ente::setGerenciadorGrafico(Gerenciador_Grafico* p)
 {

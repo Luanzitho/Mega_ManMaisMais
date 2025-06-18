@@ -9,6 +9,8 @@ BigEye::BigEye() : aceleracao(150), timerAtaque(0)
 
 	velMax = 50;
 
+	qtdPontos = 300;
+
 	if (nivel_maldade == 1)
 	{
 		dano = 2;
@@ -46,7 +48,7 @@ void BigEye::mover(float dt)
 
 	if (!noChao) //Só se movimenta se estiver no ar
 	{
-		velVertical += gravidade * dt;
+		//velVertical += gravidade * dt;
 		
 		if (direita)
 			velocidade += velMax;
@@ -85,11 +87,15 @@ void BigEye::mover(float dt)
 void BigEye::executar(float dt)
 {
 	mover(dt);
+
+	if (!noChao)
+		sofrerAcaoDaGravidade(dt);
+	
 }
 
 void BigEye::danificar(Megaman* p)
 {
-	p->machucar(4);
+	p->machucar(dano);
 }
 
 std::string BigEye::getTextureFile()

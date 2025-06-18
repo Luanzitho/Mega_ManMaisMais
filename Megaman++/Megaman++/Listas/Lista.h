@@ -11,7 +11,7 @@ public:
 	public:
 		Elemento() { pProx = nullptr; pInfo = nullptr; }
 
-		~Elemento() {}
+		~Elemento() { pProx = nullptr; pInfo = nullptr; }
 
 		void incluir(TE* p) { if (p) pInfo = p; }
 
@@ -30,7 +30,7 @@ private:
 public:
 	Lista() { pPrimeiro = nullptr; pUltimo = nullptr; tamanho = 0; }
 	
-	~Lista(){}
+	~Lista() { limpar(); }
 
 	void incluir(TL* p)
 	{

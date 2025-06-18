@@ -10,7 +10,7 @@ ProjetilMetall::ProjetilMetall(): direcao(0)
 	dano = 2;
 }
 
-ProjetilMetall::ProjetilMetall(sf::Vector2f posicao, bool direita, int numTiro, int maldade): Projetil(300)
+ProjetilMetall::ProjetilMetall(sf::Vector2f posicao, bool direita, int numTiro, int maldade): Projetil(250)
 {
 	if (direita)
 		direcao = 1;
@@ -22,7 +22,6 @@ ProjetilMetall::ProjetilMetall(sf::Vector2f posicao, bool direita, int numTiro, 
 	doMega = false;
 	dano = maldade + 1;
 	tipoTiro = numTiro;
-	empuxo = 300;
 
 	setCoords(posicao);
 	setTamanho(sf::Vector2f(15.f, 15.f));	
@@ -44,20 +43,18 @@ void ProjetilMetall::mover(float dt)
 		sf::Vector2f posicao;
 		posicao = getCoords();
 
-		posicao.y += gravidade * dt; //Força da gravidade atuando sobre o projetil
+		//posicao.y += gravidade * dt; //Força da gravidade atuando sobre o projetil
 		posicao.y -= empuxo * dt; //Contrapõe a gravidade
 
 		if (tipoTiro == 1) //Tiro em linha reta
 		{
 			posicao.x += direcao * velocidade * dt;
 		}
-
 		else if (tipoTiro == 2) //Diagonal cima
 		{
 			posicao.x += direcao * velocidade * dt;
 			posicao.y -= velocidade * dt;
 		}
-		
 		else //Diagonal baixo
 		{
 			posicao.x += direcao * velocidade * dt;
@@ -71,6 +68,7 @@ void ProjetilMetall::mover(float dt)
 void ProjetilMetall::executar(float dt)
 {
 	mover(dt);
+	sofrerAcaoDaGravidade(dt);
 
 	if (getCoords().x > 1200 || getCoords().x < 100)
 		destruir();

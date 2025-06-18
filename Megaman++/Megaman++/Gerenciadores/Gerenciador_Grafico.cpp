@@ -21,6 +21,34 @@ Gerenciador_Grafico* Gerenciador_Grafico::getInstancia() //Para instanciar um ún
     return instancia; 
 }
 
+sf::Texture& Gerenciador_Grafico::getTextura(const std::string& caminho) {
+    auto it = texturas.find(caminho);
+    if (it == texturas.end()) {
+        sf::Texture textura;
+        textura.loadFromFile(caminho);
+        texturas[caminho] = textura;
+    }
+    return texturas[caminho];
+}
+
+void Gerenciador_Grafico::desenharEnte(Ente* pE)
+{
+    if (!pE) return;
+
+    sf::RectangleShape corpo;
+    const std::string& caminho = pE->getTextureFile();
+    sf::Texture& textura = getTextura(caminho);
+
+    sf::Vector2f tam = pE->getTamanho();
+    sf::Vector2f pos = pE->getCoords();
+
+    corpo.setSize(tam);
+    corpo.setPosition(pos);
+    corpo.setTexture(&textura);
+
+    window.draw(corpo);
+}
+/*
 void Gerenciador_Grafico::desenharEnte(Ente* pE)
 {
     if (!pE) return;
@@ -28,7 +56,7 @@ void Gerenciador_Grafico::desenharEnte(Ente* pE)
     sf::RectangleShape corpo;
 
     sf::Texture textura;
-    textura.loadFromFile(pE->getTextureFile());
+      textura.loadFromFile(pE->getTextureFile());
 
     sf::Vector2f tam = pE->getTamanho();
     sf::Vector2f pos = pE->getCoords();
@@ -39,7 +67,7 @@ void Gerenciador_Grafico::desenharEnte(Ente* pE)
     corpo.setTexture(&textura);
 
     window.draw(corpo);
-}
+}*/
 
 bool Gerenciador_Grafico::janelaEstaAberta()
 {
@@ -66,7 +94,7 @@ void Gerenciador_Grafico::limparJanela()
 
 void Gerenciador_Grafico::mostrarConteudoJanela()
 {
-    window.display();
+      window.display();
 }
 
 void Gerenciador_Grafico::desenhaTexto(sf::Text text)

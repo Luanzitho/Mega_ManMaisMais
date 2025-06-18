@@ -3,31 +3,34 @@
 
 Gerenciador_Colisoes::Gerenciador_Colisoes()
 {
-    //pM = nullptr;
-	pM.clear();
     LIs.clear();
     LOs.clear();
     LPs.clear();
+
+    p1 = nullptr;
+    p2 = nullptr;
 }
 
 Gerenciador_Colisoes::~Gerenciador_Colisoes()
 {
-    /*LIs.clear();
+    LIs.clear();
     LOs.clear();
     LPs.clear();
+
 	p1 = nullptr;
-	delete p1;*/
+    p2 = nullptr;
 }
 
-const bool Gerenciador_Colisoes::verificarColisao(Entidade* pe1, Entidade* pe2) //Referência: Giu do PETECO
+const bool Gerenciador_Colisoes::verificarColisao(Entidade* pE1, Entidade* pE2) //Referência: Giu do PETECO
 {
-    sf::FloatRect rect1(pe1->getCoords(), pe1->getTamanho());
-    sf::FloatRect rect2(pe2->getCoords(), pe2->getTamanho());
+    sf::FloatRect rect1(pE1->getCoords(), pE1->getTamanho());
+    sf::FloatRect rect2(pE2->getCoords(), pE2->getTamanho());
 
-    if (rect1.intersects(rect2)) { //Houve colisão
+    if (rect1.intersects(rect2)) //Se true, houve colisão
+    { 
         return true;
     }
-    return false;
+    return false; //Se chegou aqui, não houve colisão
 }
 
 void Gerenciador_Colisoes::tratarColisaoMegaObstacs()
@@ -36,9 +39,20 @@ void Gerenciador_Colisoes::tratarColisaoMegaObstacs()
 
     for (itObst = LOs.begin(); itObst != LOs.end(); itObst++)
     {
-        if (verificarColisao(p1, *itObst) && p1->getVivo()) //Obstáculo x Megaman
+        if (verificarColisao(p1, *itObst) && p1->getVivo()) //Obstáculo x Megaman player 1
         {
             (*itObst)->obstaculizar(p1);
+        }
+    }
+
+    if (p2) //Só entra se o p2 existir
+    {
+        for (itObst = LOs.begin(); itObst != LOs.end(); itObst++)
+        {
+            if (verificarColisao(p2, *itObst) && p2->getVivo()) //Obstáculo x Megaman player 2
+            {
+                (*itObst)->obstaculizar(p2);
+            }
         }
     }
 }
@@ -54,30 +68,65 @@ void Gerenciador_Colisoes::tratarColisaoMegaInimigos()
             (*itInim)->danificar(p1);
         }
     }
+
+    if (p2) //Só entra se o p2 existir
+    {
+        for (itInim = LIs.begin(); itInim != LIs.end(); itInim++) //Colisão Megaman x Inimigo
+        {
+            if ((*itInim)->getVivo() && verificarColisao(p2, *itInim) && p2->getVivo()) //Se o Inimigo estiver vivo E houve a colisão
+            {
+                (*itInim)->danificar(p2);
+            }
+        }
+    }
 }
 
 void Gerenciador_Colisoes::tratarColisaoMegaProjeteis() //Projétil do Inimigo colidindo com o Megaman
 {
     std::set<Projetil*>::iterator itProj;
-	std::vector<Megaman*>::iterator itMega;
 
     for (itProj = LPs.begin(); itProj != LPs.end(); itProj++) //Colisão Projétil x Megaman
     {
         if (!((*itProj)->getDoMega())) //Só entra se não for do Megaman
         {
-            if ((*itProj)->getVivo() && verificarColisao(*itMega, *itProj) && (*itMega)->getVivo()) //Se o projétil estiver vivo (ativo) && houve a colisão
+            if ((*itProj)->getVivo() && verificarColisao(p1, *itProj) && p1->getVivo()) //Se o projétil estiver vivo (ativo) && houve a colisão
             {
-                if ((*itProj)->getId() == 5)
+                if ((*itProj)->getId() == 5) //ID 5 -> ProjetilMetall
                 {
                     ProjetilMetall* aux;
                     aux = static_cast<ProjetilMetall*>(*itProj);
-                    aux->atingirMegaman(*itMega);
+                    aux->atingirMegaman(p1);
                 }
-                else
+                else //É Projetil, !doMega = false, ID!=5 -> ProjetilCutMan
                 {
                     ProjetilCutMan* aux;
                     aux = static_cast<ProjetilCutMan*>(*itProj);
-                    aux->atingirMegaman(*itMega);
+                    aux->atingirMegaman(p1);
+                }
+            }
+        }
+    }
+
+    if (p2) //Só entra se o p2 existir
+    {
+        for (itProj = LPs.begin(); itProj != LPs.end(); itProj++) //Colisão Projétil x Megaman
+        {
+            if (!((*itProj)->getDoMega())) //Só entra se não for do Megaman
+            {
+                if ((*itProj)->getVivo() && verificarColisao(p2, *itProj) && p2->getVivo()) //Se o projétil estiver vivo (ativo) && houve a colisão
+                {
+                    if ((*itProj)->getId() == 5) //ID 5 - ProjetilMetall
+                    {
+                        ProjetilMetall* aux;
+                        aux = static_cast<ProjetilMetall*>(*itProj);
+                        aux->atingirMegaman(p2);
+                    }
+                    else //Projetil, doMega = false, ID!=5 - ProjetilCutMan
+                    {
+                        ProjetilCutMan* aux;
+                        aux = static_cast<ProjetilCutMan*>(*itProj);
+                        aux->atingirMegaman(p2);
+                    }
                 }
             }
         }
@@ -152,8 +201,6 @@ void Gerenciador_Colisoes::tratarColisaoProjLimites()
         { 
             (*itProj)->destruir();
         }
-        //if ((*itProj)->getCoords().x > 800 || (*itProj)->getCoords().x < 500)
-            //(*itProj)->destruir();
     }
 }
 
@@ -163,7 +210,13 @@ void Gerenciador_Colisoes::incluirObstaculo(Obstaculo* pO) { if (pO) LOs.push_ba
 
 void Gerenciador_Colisoes::incluirProjetil(Projetil* pP) { if (pP) LPs.insert(pP); }
 
-void Gerenciador_Colisoes::incluirMegaman(Megaman* pm) { if (pm) pM.push_back(pm); }
+void Gerenciador_Colisoes::incluirMegaman(Megaman* pm) 
+{ 
+    if (!pm) return;
+
+    if (!p1) p1 = pm;
+    else p2 = pm;
+}
 
 void Gerenciador_Colisoes::executar() //Referência: Giovane do canal Gege++
 {

@@ -1,8 +1,13 @@
 #include "Plataforma.h"
+#include <time.h>
 
-Plataforma::Plataforma(): altura(50)
+Plataforma::Plataforma()
 {
-	setTamanho(sf::Vector2f(50.f, float(altura)));
+    srand(time(NULL));
+    
+    altura = rand() % 51 + 50;
+	
+    setTamanho(sf::Vector2f(50.f, float(altura)));
 }
 
 Plataforma::~Plataforma()

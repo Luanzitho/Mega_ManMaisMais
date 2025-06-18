@@ -3,13 +3,15 @@
 
 #include <iostream>
 
-CutMan::CutMan(): cooldownNoChao(0), timerAtirar(0), timerPerseguir(0), timerPular(0), tiro(nullptr), podeAtirar(true)
+CutMan::CutMan(): cooldownNoChao(0), timerAtirar(0), timerPerseguir(0), timerPular(0), podeAtirar(true)
 {
 	setTamanho(sf::Vector2f(70.f, 95.f));
 
 	setNumVidas(22 + nivel_maldade * 2);
 
 	velMax = 200;
+
+	qtdPontos = 1000;
 
 	forca = 2 + nivel_maldade;
 }
@@ -21,7 +23,7 @@ CutMan::~CutMan()
 
 void CutMan::atirar()
 {
-	std::cout << "penes\n";
+	//std::cout << "POW\n";
 	sf::Vector2f pos = getCoords();
 
 	if (!GC || !LE) std::cout << "BOOM!\n";
@@ -68,12 +70,11 @@ void CutMan::mover(float dt)
 			noChao = false;
 			timerPular = 0;
 		}
-	
+
 		if (alvo.x > posicao.x)
 		{
 			velocidade += velMax;
 		}
-
 		else
 		{
 			velocidade -= velMax;
@@ -82,10 +83,10 @@ void CutMan::mover(float dt)
 		timerPerseguir = 0;
 	}
 
-	else
-	{
-		velVertical += gravidade * dt;
-	}
+	//else
+	//{
+	//	velVertical += gravidade * dt;
+	//}
 
 	if (velocidade > velMax) //Limita a velocidade
 		velocidade = velMax;
@@ -102,6 +103,9 @@ void CutMan::executar(float dt)
 {
 	mover(dt);
 
+	if (!noChao)
+		sofrerAcaoDaGravidade(dt);
+
 	if (podeAtirar)
 	{ 
 		timerAtirar += dt;
@@ -116,7 +120,10 @@ void CutMan::executar(float dt)
 
 void CutMan::danificar(Megaman* p)
 {
-	std::cout << "Colidiu!\n";
+	//std::cout << "Colidiu!\n";
+	if (!p || p->getNumVidas() <= 0) return;
+
+	p->machucar(forca);
 }
 
 std::string CutMan::getTextureFile()

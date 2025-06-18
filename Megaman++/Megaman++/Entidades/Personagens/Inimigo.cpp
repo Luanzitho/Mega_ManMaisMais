@@ -1,6 +1,6 @@
 #include "Inimigo.h"
 
-Inimigo::Inimigo() : pMega(nullptr), dano(0), LE(nullptr), GC(nullptr)
+Inimigo::Inimigo() : pMega(nullptr), dano(0), qtdPontos(0), LE(nullptr), GC(nullptr)
 {
 	srand(time(NULL));
 
@@ -11,12 +11,32 @@ Inimigo::Inimigo() : pMega(nullptr), dano(0), LE(nullptr), GC(nullptr)
 
 Inimigo::~Inimigo()
 {
+	LE = nullptr;
+	GC = nullptr;
+	pMega = nullptr;
 }
 
 void Inimigo::conhecerJogador(Megaman* p)
 {
 	pMega = p;
 }
+
+void Inimigo::machucar(int dmg)
+{
+	num_vidas = num_vidas - dmg;
+
+	if (num_vidas <= 0)
+	{
+		cederPontos();
+		destruir();
+	}
+}
+
+void Inimigo::cederPontos()
+{
+	pMega->addPontos(qtdPontos);
+}
+
 void Inimigo::associaListaEntidades(ListaEntidades* pLista)
 {
 	LE = pLista;

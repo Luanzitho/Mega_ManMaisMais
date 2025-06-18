@@ -5,6 +5,7 @@ class Mola : public Obstaculo
 {
 private:
 	float forca; // Força da mola
+
 public:
 	Mola();
 	~Mola();

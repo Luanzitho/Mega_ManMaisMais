@@ -19,7 +19,6 @@ ProjetilCutMan::ProjetilCutMan(sf::Vector2f posicao, int maldade, sf::Vector2f a
 
 	doMega = false;
 	dano = maldade + 4;
-	empuxo = 300;
 
 	setId(6);
 
@@ -35,21 +34,22 @@ ProjetilCutMan::ProjetilCutMan(sf::Vector2f posicao, int maldade, sf::Vector2f a
 
 ProjetilCutMan::~ProjetilCutMan()
 {
+	mestre = nullptr;
 }
 
 void ProjetilCutMan::atingirMegaman(Megaman* p)
 {
 	if (!p || p->getNumVidas() <= 0) return;
 
-	//p->machucar(dano);
-	std::cout << "Atingido!\n";
+	p->machucar(dano);
+	//std::cout << "Atingido!\n";
 }
 
 void ProjetilCutMan::perseguir(float dt)
 {
 	sf::Vector2f posicao = getCoords();
 
-	posicao.y += gravidade * dt;
+	//posicao.y += gravidade * dt;
 	posicao.y -= empuxo * dt;
 
 	posicao += direcao * velocidade * dt;
@@ -139,6 +139,7 @@ void ProjetilCutMan::retornar(float dt)
 void ProjetilCutMan::executar(float dt)
 {
 	timerRetornar += dt;
+	sofrerAcaoDaGravidade(dt);
 
 	if (timerRetornar < 1 && !limite)
 	{

@@ -24,6 +24,7 @@ class Fase :public Ente
 private:
 	int minInimigosFaceis;
 	Gerenciador_Colisoes GC;
+
 protected:
 	std::vector<int> jaFoi;
 	json faseJson;

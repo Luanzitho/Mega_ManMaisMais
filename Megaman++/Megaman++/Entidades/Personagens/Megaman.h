@@ -11,11 +11,13 @@ class Megaman:public Personagem
 {
 private:
 	bool player1;
-	int pontos;
+	bool invencivel;
+	static int pontos;
 	bool teclaApertada;
+	float timerBotao;
 	float cooldownTiro;
+	float framesInvencibilidade;
 	//ProjetilMegaman* tiro;
-	//std::vector<ProjetilMegaman*> disparos;
 	ListaEntidades* LE;
 	Gerenciador_Colisoes* GC;
 	float cooldownNoChao;
@@ -27,6 +29,8 @@ public:
 	~Megaman();
 	void associaListaEntidades(ListaEntidades* pLista);
 	void associaGerenciadorColisoes(Gerenciador_Colisoes* GC);
+	void addPontos(int pts);
+	void machucar(int dmg);
 	void mover(float dt);
 	void atirar(float dt);
 	void executar(float dt);

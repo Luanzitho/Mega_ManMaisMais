@@ -34,6 +34,10 @@ Menu::~Menu()
 {
 	delete font;
 	delete pGG;
+	delete pJog;
+	options.clear();
+	texts.clear();
+	coordsTexts.clear();
 }
 
 void Menu::executar(float dt)

@@ -67,8 +67,8 @@ void Jogo::iniciar(int fase)
 
 void Jogo::encerrar()
 {
-	//LEs->LEs.limpar();
-	//delete LEs;
+	delete f1;
+	delete f2;
 }
 
 void Jogo::setPlayers(bool players)

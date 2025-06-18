@@ -10,33 +10,18 @@ Metall::Metall(): timerEsconder(0), timerAtirar(0)
 
 	tamanho = rand() % 6 + 50;
 
+	qtdPontos = 100;
+
 	setTamanho(sf::Vector2f(float(tamanho), float(tamanho)));
 
 	dano = 1;
 
-	if (nivel_maldade < 3)
-	{
-		setNumVidas(2);
-	}
-
-	else 
-	{
-		setNumVidas(4);
-	}
+	setNumVidas(nivel_maldade);
 }
 
 Metall::~Metall()
 {
 }
-
-/*void Metall::associaListaEntidades(ListaEntidades* pLista)
-{
-	LE = pLista;
-}*/
-
-/* {
-	this->GC = GC;
-}*/
 
 void Metall::atirar(int tipo)
 {
@@ -48,9 +33,8 @@ void Metall::atirar(int tipo)
 		direita = false;
 
 	ProjetilMetall* tiro = new ProjetilMetall(pos, direita, tipo, nivel_maldade);
-	std::cout << "Atirando Metall: " << std::endl;
+	//std::cout << "Atirando Metall: " << std::endl;
 	LE->incluirEntidade(tiro);
-	std::cout << "Atirando Metall: " << std::endl;
 	tiro->associaListaEntidades(LE);
 	tiro->setGerenciadorGrafico(pGG);
 	GC->incluirProjetil(tiro);
@@ -73,6 +57,9 @@ void Metall::executar(float dt)
 
 	mover(dt);
 
+	if(!noChao)
+		sofrerAcaoDaGravidade(dt);
+
 	if (abs(pMega->getCoords().x - getCoords().x) < 200 && timerAtirar >= 3)
 	{
 		revelar(); //Ele precisa sair antes de atirar
@@ -82,7 +69,7 @@ void Metall::executar(float dt)
 		timerAtirar = 0;
 		timerEsconder = 0;
 	}
-	else if (timerEsconder >= 1.5)
+	else if (timerEsconder >= 2.5)
 	{
 		esconder();
 	}
@@ -91,8 +78,8 @@ void Metall::executar(float dt)
 void Metall::mover(float dt)
 {
 	sf::Vector2f posicao = getCoords();
-
-	if (!noChao) //Só se movimenta se estiver no ar
+	/*
+	if (!noChao)
 	{
 		velVertical += gravidade * dt;
 	}
@@ -100,7 +87,7 @@ void Metall::mover(float dt)
 	{
 		velVertical = 0;
 	}
-
+	*/
 	posicao.y += velVertical * dt;
 
 	setCoords(posicao);
@@ -119,7 +106,10 @@ void Metall::machucar(int dmg)
 	}
 
 	if (num_vidas <= 0)
+	{	
+		cederPontos();
 		destruir();
+	}
 }
 
 std::string Metall::getTextureFile()

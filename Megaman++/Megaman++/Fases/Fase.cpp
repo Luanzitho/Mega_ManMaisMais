@@ -1,6 +1,6 @@
 #include "Fase.h"
 #include <iostream>
-Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18), tileCount(180), tilesRects(), GC(), p1(new Megaman), plataformas(), LEs(new ListaEntidades), minInimigosFaceis(3), jaFoi(), ultimoSprite(), acabou(false),p2(nullptr)
+Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18), tileCount(180), tilesRects(), GC(), p1(new Megaman), plataformas(), LEs(new ListaEntidades), minInimigosFaceis(3), jaFoi(), ultimoSprite(), acabou(false), p2(nullptr)
 {
     setTamanho(sf::Vector2f(1280.f, 720.f));
 
@@ -11,6 +11,21 @@ Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18)
 
 Fase::~Fase()
 {
+    jaFoi.clear();
+    tilesGid.clear();
+    tilesRects.clear();
+    delete p1;
+    delete p2;
+    tilesSprites.clear();
+    fundo1.clear();
+    fundo2.clear();
+    fundo3.clear();
+    plataformas.clear();
+    chao.clear();
+    inimigos.clear();
+    obstaculos.clear();
+    LEs->LEs.limpar();
+    delete LEs;
 }
 
 void Fase::gerenciarColisoes()

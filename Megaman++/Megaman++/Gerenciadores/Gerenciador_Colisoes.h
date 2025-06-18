@@ -15,11 +15,9 @@ private:
 	std::vector<Inimigo*> LIs;
 	std::list<Obstaculo*> LOs;
 	std::set<Projetil*> LPs;
-	std::vector<Megaman*> pM;
+	Megaman* p1;
+	Megaman* p2;
 
-public:
-	Gerenciador_Colisoes();
-	~Gerenciador_Colisoes();
 	const bool verificarColisao(Entidade* pe1, Entidade* pe2);
 	void tratarColisaoMegaObstacs();
 	void tratarColisaoMegaInimigos();
@@ -28,6 +26,10 @@ public:
 	void tratarColisaoInimsObstacs();
 	void tratarColisaoProjObstacs();
 	void tratarColisaoProjLimites();
+
+public:
+	Gerenciador_Colisoes();
+	~Gerenciador_Colisoes();
 	void incluirInimigo(Inimigo* pI);
 	void incluirObstaculo(Obstaculo* pO);
 	void incluirProjetil(Projetil* pP);

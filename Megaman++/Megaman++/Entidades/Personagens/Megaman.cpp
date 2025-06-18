@@ -3,28 +3,36 @@
 
 #include <iostream>
 
-Megaman::Megaman() : Personagem(20), pontos(0), teclaApertada(false), cooldownTiro(0), player1(true), cooldownNoChao(0), vidas(3)
+Megaman::Megaman() : Personagem(20), teclaApertada(false), cooldownTiro(0), player1(true), invencivel(false), timerBotao(0), framesInvencibilidade(0), cooldownNoChao(0), vidas(3)
 {
 	LE = nullptr;
+	GC = nullptr;
+
 	setId(1);
 
 	velMax = 200;
 
+	setTamanho(sf::Vector2f(70.f, 70.f));
+}
+int Megaman::pontos(0);
+
+Megaman::Megaman(bool player) : Personagem(20), teclaApertada(false), cooldownTiro(0), player1(player), invencivel(false), framesInvencibilidade(0), cooldownNoChao(0)
+{
+	LE = nullptr;
 	GC = nullptr;
+
+	setId(1);
+
+	velMax = 200;
 
 	setTamanho(sf::Vector2f(70.f, 70.f));
 }
 
-Megaman::Megaman(bool player) : Personagem(20), pontos(0), teclaApertada(false), cooldownTiro(0), player1(player), cooldownNoChao(0)
+Megaman::~Megaman()
 {
 	LE = nullptr;
-
-	velMax = 200;
-
-	setId(1);
+	GC = nullptr;
 }
-
-Megaman::~Megaman(){}
 
 void Megaman::associaListaEntidades(ListaEntidades* pLista)
 {
@@ -34,6 +42,22 @@ void Megaman::associaListaEntidades(ListaEntidades* pLista)
 void Megaman::associaGerenciadorColisoes(Gerenciador_Colisoes* GC)
 {
 	this->GC = GC;
+}
+
+void Megaman::addPontos(int pts)
+{
+	pontos = pontos + pts;
+}
+
+void Megaman::machucar(int dmg)
+{
+	if (!invencivel)
+		num_vidas = num_vidas - dmg;
+
+	if (num_vidas <= 0)
+		destruir();
+
+	invencivel = true; //Fica invencível por alguns segundos quando toma dano
 }
 
 void Megaman::mover(float dt)
@@ -86,18 +110,21 @@ void Megaman::mover(float dt)
 		cooldownNoChao = 0;
 	}
 
-	if (noChao) //Confere se ele está no chão, se sim, consegue pular, se não, sofre efeito da gravidade
+	//timerBotao += dt;
+
+	if (noChao)
 	{
 		velVertical = 0;
-
+		
 		if (player1) //Se for Player 1 usa seta para cima, se não, usa W
 		{
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 			{
-				velVertical = -350.f;
-				noChao = false;
-				std::cout << "Tenho " << getNumVidas() << " de HP" << std::endl;
-				std::cout << "FPS: " << 1.0 / dt << std::endl;
+					velVertical = -300;
+					noChao = false;
+					std::cout << "Tenho " << getNumVidas() << " de HP" << std::endl;
+					std::cout << "Tenho " << pontos << " pontos" << std::endl;
+					std::cout << "FPS: " << 1.0 / dt << std::endl;
 			}
 		}
 		else
@@ -109,13 +136,14 @@ void Megaman::mover(float dt)
 			}
 		}
 	}
+	
+	//else
+	//{
+	//	velVertical += gravidade * dt;
+	//}
 
-	else
-	{
-		velVertical += gravidade * dt;
-	}
-
-	if(posicao.x+ velocidade*dt>0.f)posicao.x += velocidade * dt;
+	if(posicao.x + velocidade*dt>0.f)
+		posicao.x += velocidade * dt;
 	posicao.y += velVertical * dt;
 
 	setCoords(posicao);
@@ -176,12 +204,28 @@ void Megaman::executar(float dt)
 {
 	mover(dt);
 	atirar(dt);
+
+	if(!noChao)
+		sofrerAcaoDaGravidade(dt);
+
+	if (invencivel)
+	{
+		framesInvencibilidade += dt;
+
+		if (framesInvencibilidade >= 2)
+		{
+			framesInvencibilidade = 0;
+			invencivel = false;
+		}
+	}
 }
 
 std::string Megaman::getTextureFile() 
 {
-	if (player1)
+	if (player1 && !invencivel)
 		return "Sprites/Megaman/Parado/Parado1.png";
+	else if (player1 && invencivel)
+		return "Sprites/Megaman/Parado/Parado1-Invencivel.png";
 	else
 		return "Sprites/Megaman/Parado/Parado2.png";
 }

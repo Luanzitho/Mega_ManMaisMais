@@ -6,6 +6,7 @@ ListaEntidades::ListaEntidades()
 
 ListaEntidades::~ListaEntidades()
 {
+    LEs.limpar();
 }
 
 void ListaEntidades::incluirEntidade(Entidade* pE)
@@ -24,7 +25,8 @@ void ListaEntidades::percorrer(float dt, sf::Vector2f tam)
             Entidade* pEntidade = aux->getInfo();
             sf::FloatRect rect1(pEntidade->getCoords(), pEntidade->getTamanho());
             if(rect1.left>rect2.left && rect1.width + rect1.left< rect2.width+rect2.left)
-            if (pEntidade) { //Houve colisão
+            if (pEntidade) 
+            { 
                 pEntidade->executar(dt);
                 pEntidade->desenhar();
             }
