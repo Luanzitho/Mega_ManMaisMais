@@ -22,7 +22,6 @@ class GerenciadorColisoes {};
 class Fase :public Ente
 {
 private:
-	int minInimigosFaceis;
 	Gerenciador_Colisoes GC;
 
 protected:
@@ -48,6 +47,8 @@ protected:
 	ListaEntidades* LEs;
 	//Mola* mola;
 	bool acabou;
+	int minInimigosFaceis;
+	int minObstaculosFaceis;
 
 public:
 	Fase();
@@ -56,6 +57,7 @@ public:
 	void gerenciarColisoes();
 	void criarInimigosFaceis();
 	void criarChao();
+	void criarPlataformas();
 	virtual void criarInimigos() = 0;
 	virtual void criarObstaculos() = 0;
 	void desenharCenario();

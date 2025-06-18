@@ -16,7 +16,7 @@ Megaman::Megaman() : Personagem(20), teclaApertada(false), cooldownTiro(0), play
 }
 int Megaman::pontos(0);
 
-Megaman::Megaman(bool player) : Personagem(20), teclaApertada(false), cooldownTiro(0), player1(player), invencivel(false), framesInvencibilidade(0), cooldownNoChao(0)
+Megaman::Megaman(bool player) : Personagem(20), teclaApertada(false), cooldownTiro(0), player1(player), invencivel(false), timerBotao(0), framesInvencibilidade(0), cooldownNoChao(0), vidas(3)
 {
 	LE = nullptr;
 	GC = nullptr;
@@ -120,7 +120,7 @@ void Megaman::mover(float dt)
 		{
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 			{
-					velVertical = -300;
+					velVertical = -350;
 					noChao = false;
 					std::cout << "Tenho " << getNumVidas() << " de HP" << std::endl;
 					std::cout << "Tenho " << pontos << " pontos" << std::endl;
@@ -131,7 +131,7 @@ void Megaman::mover(float dt)
 		{
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 			{
-				velVertical = -300.f;
+				velVertical = -350.f;
 				noChao = false;
 			}
 		}
@@ -187,7 +187,9 @@ void Megaman::atirar(float dt)
 
 				ProjetilMegaman* tiro = new ProjetilMegaman(pos, direita);
 				LE->incluirEntidade(tiro);
+				tiro->associaListaEntidades(LE);
 				tiro->setGerenciadorGrafico(pGG);
+				GC->incluirProjetil(tiro);
 
 				cooldownTiro = 0;
 				teclaApertada = true;

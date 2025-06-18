@@ -430,8 +430,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":784.333333333333,
-                 "y":89
+                 "x":757.083333333333,
+                 "y":87.75
                 }, 
                 {
                  "height":0,
@@ -466,8 +466,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":122,
-                 "y":143.666666666667
+                 "x":124,
+                 "y":129
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -501,6 +501,29 @@
         {
          "draworder":"topdown",
          "id":9,
+         "name":"Boss",
+         "objects":[
+                {
+                 "height":0,
+                 "id":44,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":894.5,
+                 "y":90
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":10,
          "name":"Mola",
          "objects":[],
          "opacity":1,
@@ -509,8 +532,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":10,
- "nextobjectid":44,
+ "nextlayerid":11,
+ "nextobjectid":45,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",

@@ -65,7 +65,7 @@ void Gerenciador_Colisoes::tratarColisaoMegaInimigos()
     {
         if ((*itInim)->getVivo() && verificarColisao(p1, *itInim) && p1->getVivo()) //Se o Inimigo estiver vivo E houve a colisão
         {
-            (*itInim)->danificar(p1);
+              (*itInim)->danificar(p1);
         }
     }
 

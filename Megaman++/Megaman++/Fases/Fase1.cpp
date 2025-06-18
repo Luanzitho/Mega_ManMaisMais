@@ -2,7 +2,7 @@
 #include <iostream>
 
 
-Fase1::Fase1(): minInimigosMedios(3)
+Fase1::Fase1(): minInimigosMedios(3), minObsMolas(3)
 {
     std::fstream jsonFile("Mapas/mapa1.tmj");
     if (jsonFile.is_open()) {
@@ -25,8 +25,11 @@ Fase1::Fase1(): minInimigosMedios(3)
     p1->setExecutando(true);
     incluirMegaGC(p1);
 	LEs->incluirEntidade(p1);
+    
     criarInimigos();
+    
     criarObstaculos();
+    
 }
 
 Fase1::~Fase1()
@@ -50,7 +53,7 @@ void Fase1::criarMolas()
     {
         i++;
     }
-    for (int j = 0; j < 3; j++)
+    for (int j = 0; j < minObsMolas; j++)
     {
         int qualObs;
         Obstaculo* p = new Mola;
@@ -68,30 +71,12 @@ void Fase1::criarMolas()
         incluirObstaculoGC(p);
 		LEs->incluirEntidade(obstaculos[obstaculos.size() - 1]);
     }
-    for (int j = 0; j < 3; j++)
-    {
-        int qualObs;
-        Obstaculo* p = new Plataforma;
-
-        do
-        {
-            qualObs = aleatoriza(0, faseJson["layers"][i]["objects"].size() - 1); // gera um número aleatório
-
-        } while (jaFoi[qualObs] != 0);//verifica se o ponto já foi usado
-        jaFoi[qualObs] = 1; // marca que o ponto já foi usado
-        p->setGerenciadorGrafico(pGG->getInstancia());
-        p->setCoords(sf::Vector2f((float)(faseJson["layers"][i]["objects"][qualObs]["x"] * 3), (float)faseJson["layers"][i]["objects"][qualObs]["y"] * 3));
-        p->setTamanho(sf::Vector2f((float)faseJson["layers"][i]["objects"][qualObs]["width"] * 3, (float)faseJson["layers"][i]["objects"][qualObs]["height"] * 3));
-        obstaculos.push_back(p);
-        incluirObstaculoGC(p);
-        LEs->incluirEntidade(obstaculos[obstaculos.size() - 1]);
-    }
+    
 }
 
 void Fase1::criarMinInimigosMedios()
 {
     int i = 0;
-    std::mt19937 gen(rd());                     // motor aleatório (Mersenne Twister)
     while (faseJson["layers"][i]["name"] != "Spawn Inimigos")
     {
         i++;
@@ -99,10 +84,9 @@ void Fase1::criarMinInimigosMedios()
     for (int j = 0; j < minInimigosMedios; j++)
     {
         int lugar = 0;
-        std::uniform_int_distribution<> quantos(0, faseJson["layers"][i]["objects"].size() - 1);
         do
         {
-            lugar = quantos(gen); // gera um número aleatório
+            lugar = aleatoriza(0, faseJson["layers"][i]["objects"].size() - 1); // gera um número aleatório
         } while (jaFoi[lugar] != 0);
 		jaFoi[lugar] = 1; // marca que o ponto já foi usado
         Inimigo* inimigo = new BigEye;
@@ -117,21 +101,17 @@ void Fase1::criarMinInimigosMedios()
     }
 }
 
-void Fase1::criarProjeteis()
-{
-
-}
 
 void Fase1::criarInimigos()
 {
+	
     int sorteado = aleatoriza(0, 4); // gera um número aleatório entre 0 e 4
-
+	jaFoi.clear(); // limpa o vetor de pontos já usados
     int i = 0;
     while (faseJson["layers"][i]["name"] != "Spawn Inimigos")
     {
         i++;
     }
-    //std::vector<int> jaFoi;
     for (int j = 0; j < faseJson["layers"][i]["objects"].size(); j++)
     {
         jaFoi.push_back(0); // vetor para saber quais pontos já foram usados
@@ -140,28 +120,14 @@ void Fase1::criarInimigos()
     for (int j = 0; j < sorteado; j++)
     {
         int qualInimigo = aleatoriza(0, 1); // gera um número aleatório entre 0 e 1
-        Inimigo* inimigo = nullptr;
-        if (qualInimigo)inimigo = new Metall;
-        else inimigo = new BigEye;
-        
-        do
-        {
-            qualInimigo = aleatoriza(0, faseJson["layers"][i]["objects"].size() - 1); // gera um número aleatório
-
-		} while (jaFoi[qualInimigo] != 0);//verifica se o ponto já foi usado
-
-        jaFoi[qualInimigo] = 1; // marca que o ponto já foi usado
-        inimigo->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
-        inimigo->associaListaEntidades(LEs);
-        inimigo->associaGerenciadorColisoes(getGC());
-        inimigo->conhecerJogador(p1);
-        inimigo->setCoords(sf::Vector2f((float)(faseJson["layers"][i]["objects"][qualInimigo]["x"] * 3), (float)(faseJson["layers"][i]["objects"][qualInimigo]["y"] * 3)));
-        inimigos.push_back(inimigo);
-        LEs->incluirEntidade(inimigos[j]);
-        incluirInimigoGC(inimigos[j]);
+		bool eMetall = (qualInimigo == 0); // se for 0, é Metall, senão é BigEye
+		if (eMetall) minInimigosFaceis++; // incrementa o número de Metall se for Metall
+		else minInimigosMedios++; // incrementa o número de BigEye se for BigEye
     }
     criarInimigosFaceis();
+    
     criarMinInimigosMedios();
+    
 }
 
 void Fase1::criarObstaculos()
@@ -178,25 +144,22 @@ void Fase1::criarObstaculos()
     {
         jaFoi.push_back(0); // vetor para saber quais pontos já foram usados
     }
-    criarMolas();
-    for(int j=0; j<sorteado;j++)
+    for(int j=0; j<sorteado; j++)
     {
         int qualObs = aleatoriza(0, 10); // gera um número aleatório entre 0 e 10
-        Obstaculo* p=nullptr;
-        if (qualObs>5)p = new Mola;
-        else p = new Plataforma;
-
+		bool eMola = (qualObs > 5); // se for maior que 5, é mola, senão é plataforma
         do
         {
             qualObs = aleatoriza(0, faseJson["layers"][i]["objects"].size() - 1); // gera um número aleatório
 
         } while (jaFoi[qualObs] != 0);//verifica se o ponto já foi usado
         jaFoi[qualObs] = 1; // marca que o ponto já foi usado
-        p->setGerenciadorGrafico(pGG->getInstancia());
-        p->setCoords(sf::Vector2f((float)(faseJson["layers"][i]["objects"][qualObs]["x"] * 3), (float)faseJson["layers"][i]["objects"][qualObs]["y"] * 3));
-        p->setTamanho(sf::Vector2f((float)faseJson["layers"][i]["objects"][qualObs]["width"] * 3, (float)faseJson["layers"][i]["objects"][qualObs]["height"] * 3));
-        obstaculos.push_back(p);
-        incluirObstaculoGC(p);
-		LEs->incluirEntidade(obstaculos[obstaculos.size() - 1]);
+		if (eMola)minObsMolas++; // incrementa o número de molas se for mola
+		else minObstaculosFaceis++; // incrementa o número de plataformas se for plataforma
     }
+    
+    criarMolas();
+    
+	criarPlataformas();
+    
 }

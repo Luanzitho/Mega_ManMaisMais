@@ -1,6 +1,6 @@
 #include "Fase.h"
 #include <iostream>
-Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18), tileCount(180), tilesRects(), GC(), p1(new Megaman), plataformas(), LEs(new ListaEntidades), minInimigosFaceis(3), jaFoi(), ultimoSprite(), acabou(false), p2(nullptr)
+Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18), tileCount(180), tilesRects(), GC(), p1(new Megaman), plataformas(), LEs(new ListaEntidades), minInimigosFaceis(3), jaFoi(), ultimoSprite(0), acabou(false), p2(nullptr), minObstaculosFaceis(3)
 {
     setTamanho(sf::Vector2f(1280.f, 720.f));
 
@@ -78,8 +78,8 @@ void Fase::criarChao()
         p->setTamanho(sf::Vector2f((float)faseJson["layers"][controle]["objects"][i]["width"] * 3, (float)faseJson["layers"][controle]["objects"][i]["height"] * 3));
         chao.push_back(p);
         GC.incluirObstaculo(p);
-        if (chao.size() > 1 && chao[i]->getCoords().x > chao[i - 1]->getCoords().x)ultimoSprite = i;
-        else if (chao.size() == 1)ultimoSprite = i;
+        if (chao.size() > 1 && chao[i]->getCoords().x + chao[i]->getTamanho().x > chao[ultimoSprite]->getCoords().x + chao[ultimoSprite]->getTamanho().x)ultimoSprite = i;
+        
     }
     
     controle = 0;
@@ -96,6 +96,34 @@ void Fase::criarChao()
         obstaculos.push_back(m);
         std::cout << "Plataforma criada: " << faseJson["layers"][controle]["objects"][i]["x"] << ", " << faseJson["layers"][1]["objects"][i]["y"] << std::endl;
         GC.incluirObstaculo(m);
+    }
+
+}
+
+void Fase::criarPlataformas()
+{
+    int i = 0;
+    while (faseJson["layers"][i]["name"] != "Obstaculos")
+    {
+        i++;
+    }
+    for (int j = 0; j < minObstaculosFaceis; j++)
+    {
+        int qualObs;
+        Obstaculo* p = new Plataforma;
+
+        do
+        {
+            qualObs = aleatoriza(0, faseJson["layers"][i]["objects"].size() - 1); // gera um número aleatório
+
+        } while (jaFoi[qualObs] != 0);//verifica se o ponto já foi usado
+        jaFoi[qualObs] = 1; // marca que o ponto já foi usado
+        p->setGerenciadorGrafico(pGG->getInstancia());
+        p->setCoords(sf::Vector2f((float)(faseJson["layers"][i]["objects"][qualObs]["x"] * 3), (float)faseJson["layers"][i]["objects"][qualObs]["y"] * 3));
+        p->setTamanho(sf::Vector2f((float)faseJson["layers"][i]["objects"][qualObs]["width"] * 3, (float)faseJson["layers"][i]["objects"][qualObs]["height"] * 3));
+        obstaculos.push_back(p);
+        incluirObstaculoGC(p);
+        LEs->incluirEntidade(obstaculos[obstaculos.size() - 1]);
     }
 }
 
@@ -134,7 +162,6 @@ void Fase::pegarCamada(int i)
 }
 void Fase::separaSprites()
 {
-    //tilesGid = faseJson["layers"][0]["data"].get<std::vector<int>>();
     std::string imagemRelativa = faseJson["tilesets"][0]["image"];
     std::string caminhoImagem = "Mapas/" + imagemRelativa;
     if (!imagemTiles.loadFromFile(caminhoImagem))
@@ -144,23 +171,24 @@ void Fase::separaSprites()
     columns = faseJson["tilesets"][0]["columns"];
     tileWidth = faseJson["tilesets"][0]["tilewidth"];
     for (int id = 0; id < faseJson["tilesets"][0]["tilecount"]; ++id) {
-        //std::cout << "entrou" << std::endl;
         int tu = id % columns;     // coluna
         int tv = id / columns;     // linha
 
         sf::IntRect rect(tu * tileWidth, tv * tileWidth, tileWidth, tileWidth);
         tilesRects.push_back(rect);
-        //tilesTextures.push_back(recortarTextura(imagemTiles, rect));
     }
+    
     int i = 0;
     while (faseJson["layers"][i]["name"] != "BackGround1")i++;
     pegarCamada(i);
+
     i = 0;
     while (faseJson["layers"][i]["name"] != "BackGround2")i++;
     pegarCamada(i);
     i = 0;
     while (faseJson["layers"][i]["name"] != "BackGround3")i++;
     pegarCamada(i);
+
 }
 
 std::string Fase::getTextureFile()//rever o que retornar para desenhar o mapa
@@ -183,7 +211,7 @@ void Fase::moveMapa(float dt)
     sf::FloatRect rect2(getCoords(),getTamanho());
     
 
-    if (rect1.intersects(rect2) && chao[ultimoSprite]->getCoords().x + chao[ultimoSprite]->getTamanho().x > getTamanho().x) // Movimento do personagem
+    if (rect1.intersects(rect2) && chao[ultimoSprite]->getCoords().x + chao[ultimoSprite]->getTamanho().x > rect2.width) // Movimento do personagem
     {
         if(rect1.left >= rect2.width/2)
         {
@@ -241,6 +269,7 @@ void Fase::setTwoPlayers()
 	p2 = new Megaman(false);
 	p2->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
 	p2->associaGerenciadorColisoes(&GC);
+    p2->associaListaEntidades(LEs);
 	p2->setCoords(p1->getCoords());
     p2->setExecutando(true);
 	GC.incluirMegaman(p2);

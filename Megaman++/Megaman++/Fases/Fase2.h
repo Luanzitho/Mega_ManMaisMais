@@ -8,15 +8,14 @@ class Fase2 : public Fase
 {
 private:
 	int maxChefoes;
+	int minEspinhos;
 public:
 	//const int maxChefoes;
 	Fase2();
 	~Fase2();
 	void executar(float dt);
 	void criarChefoes();
-	void criarObsMedios();
-	void criarMinInimigosMedios();
-	void criarProjeteis();
+	void criarEspinhos();
 	void criarInimigos();
 	void criarObstaculos();
 };
