@@ -8,17 +8,16 @@
 #include <cmath>
 
 #include <iostream>
-ProjetilCutMan::ProjetilCutMan(): Projetil(350), timerRetornar(0), mestre(nullptr), limite(false)
+ProjetilCutMan::ProjetilCutMan(): timerRetornar(0), mestre(nullptr), limite(false)
 {
 	setId(6);
 }
 
-ProjetilCutMan::ProjetilCutMan(sf::Vector2f posicao, int maldade, sf::Vector2f alvo, CutMan* mestre): Projetil(350), timerRetornar(0), limite(false)
+ProjetilCutMan::ProjetilCutMan(sf::Vector2f posicao, int maldade, sf::Vector2f alvo, CutMan* mestre): Projetil(350, maldade + 4), timerRetornar(0), limite(false)
 {
 	setCoords(posicao);
 
 	doMega = false;
-	dano = maldade + 4;
 
 	setId(6);
 
@@ -50,72 +49,14 @@ void ProjetilCutMan::perseguir(float dt)
 	sf::Vector2f posicao = getCoords();
 
 	//posicao.y += gravidade * dt;
-	posicao.y -= empuxo * dt;
+	velVertical -= empuxo * dt;
 
 	posicao += direcao * velocidade * dt;
 	setCoords(posicao);
-
-	/*
-	sf::Vector2f posicao = getCoords();
-
-	if (alvo.x > posicao.x)
-	{
-		posicao.x += velocidade * dt;
-	}
-
-	else
-	{
-		posicao.x -= velocidade * dt;
-	}
-	
-	if (alvo.y > posicao.y)
-	{
-		posicao.y += velocidade * dt;
-	}
-
-	else
-	{
-		posicao.y -= velocidade * dt;
-	}
-
-	if (alvo == posicao)//.x && alvo.y == posicao.y)
-	{
-		limite = true;
-	}
-
-	setCoords(posicao);*/
 }
 
 void ProjetilCutMan::retornar(float dt)
 {
-
-	/*
-	sf::Vector2f posicao = getCoords();
-	sf::Vector2f posMestre = mestre->getCoords();
-
-
-	if (posMestre.x > posicao.x)
-	{
-		posicao.x += velocidade * dt;
-	}
-
-	else
-	{
-		posicao.x -= velocidade * dt;
-	}
-
-	if (posMestre.y > posicao.y)
-	{
-		posicao.y += velocidade * dt;
-	}
-
-	else
-	{
-		posicao.y -= velocidade * dt;
-	}
-
-	setCoords(posicao);*/
-
 	sf::Vector2f posicao = getCoords();
 
 	direcao = mestre->getCoords() - getCoords(); //Referência normalização de vetor para disparas em 360º - Youtuber Suraj Sharma
@@ -124,8 +65,8 @@ void ProjetilCutMan::retornar(float dt)
 
 	posicao += direcao * velocidade * dt;
 
-	posicao.y += gravidade * dt;
-	posicao.y -= empuxo * dt;
+	//posicao.y += gravidade * dt;
+	velVertical -= empuxo * dt;
 
 	setCoords(posicao);
 
@@ -140,6 +81,9 @@ void ProjetilCutMan::executar(float dt)
 {
 	timerRetornar += dt;
 	sofrerAcaoDaGravidade(dt);
+
+	if (!(mestre->getVivo()))
+		destruir();
 
 	if (timerRetornar < 1 && !limite)
 	{

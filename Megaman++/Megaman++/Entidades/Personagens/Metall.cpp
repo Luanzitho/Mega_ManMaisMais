@@ -10,7 +10,7 @@ Metall::Metall(): timerEsconder(0), timerAtirar(0)
 
 	tamanho = rand() % 6 + 50;
 
-	qtdPontos = 100;
+	qtdPontos += 50;
 
 	setTamanho(sf::Vector2f(float(tamanho), float(tamanho)));
 

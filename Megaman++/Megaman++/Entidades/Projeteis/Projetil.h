@@ -7,14 +7,14 @@ class Projetil:public Entidade
 {
 protected:
 	bool doMega;
-	int dano;
-	float empuxo;
+	const int dano;
+	const float empuxo;
 	const float velocidade;
 	ListaEntidades* LEs;
 
 public:
 	Projetil();
-	Projetil(const float vel);
+	Projetil(const float vel, int dmg);
 	~Projetil();
 	const bool getDoMega();
 	void associaListaEntidades(ListaEntidades* pLista);

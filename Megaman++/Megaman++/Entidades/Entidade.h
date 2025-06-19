@@ -6,7 +6,7 @@ class Entidade:public Ente
 {
 protected:
 	bool vivo;
-	float gravidade;
+	const float gravidade;
 	bool direita;
 	float velocidade;
 	float velVertical;

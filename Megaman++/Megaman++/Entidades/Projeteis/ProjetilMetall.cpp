@@ -6,11 +6,9 @@ ProjetilMetall::ProjetilMetall(): direcao(0)
 	doMega = false;
 
 	setId(5);
-	
-	dano = 2;
 }
 
-ProjetilMetall::ProjetilMetall(sf::Vector2f posicao, bool direita, int numTiro, int maldade): Projetil(250)
+ProjetilMetall::ProjetilMetall(sf::Vector2f posicao, bool direita, int numTiro, int maldade): Projetil(250, maldade + 1)
 {
 	if (direita)
 		direcao = 1;
@@ -20,7 +18,7 @@ ProjetilMetall::ProjetilMetall(sf::Vector2f posicao, bool direita, int numTiro, 
 	setId(5);
 
 	doMega = false;
-	dano = maldade + 1;
+
 	tipoTiro = numTiro;
 
 	setCoords(posicao);
@@ -44,7 +42,7 @@ void ProjetilMetall::mover(float dt)
 		posicao = getCoords();
 
 		//posicao.y += gravidade * dt; //Força da gravidade atuando sobre o projetil
-		posicao.y -= empuxo * dt; //Contrapõe a gravidade
+		velVertical -= empuxo * dt; //Contrapõe a gravidade
 
 		if (tipoTiro == 1) //Tiro em linha reta
 		{

@@ -6,11 +6,9 @@ ProjetilMegaman::ProjetilMegaman(): direcao(0)
 	doMega = true;
 
 	setId(4);
-	
-	dano = 1;
 }
 
-ProjetilMegaman::ProjetilMegaman(sf::Vector2f posicao, bool direita): Projetil(500)
+ProjetilMegaman::ProjetilMegaman(sf::Vector2f posicao, bool direita): Projetil(500, 1)
 {
 	if (direita)
 		direcao = 1;
@@ -18,7 +16,6 @@ ProjetilMegaman::ProjetilMegaman(sf::Vector2f posicao, bool direita): Projetil(5
 		direcao = -1;
 
 	doMega = true;
-	dano = 1;
 
 	setId(4);
 
@@ -45,7 +42,7 @@ void ProjetilMegaman::mover(float dt)
 		posicao = getCoords();
 
 		//posicao.y += gravidade * dt; //Força da gravidade atuando sobre o projetil
-		posicao.y -= empuxo * dt; //Contrapõe a gravidade
+		velVertical -= empuxo * dt; //Contrapõe a gravidade
 
 		posicao.x += direcao * velocidade * dt;
 

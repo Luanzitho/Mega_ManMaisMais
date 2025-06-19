@@ -204,6 +204,53 @@ void Gerenciador_Colisoes::tratarColisaoProjLimites()
     }
 }
 
+void Gerenciador_Colisoes::verificarRemovidos()
+{
+    std::vector<Inimigo*>::iterator itInim = LIs.begin();
+    //std::list<Obstaculo*>::iterator itObst = LOs.begin();
+    std::set<Projetil*>::iterator itProj = LPs.begin();
+
+    while (itInim != LIs.end()) //Percorre o vector de inimigos em busca de ponteiros vazios para remover
+    {
+        if (*itInim == nullptr) 
+        {
+            itInim = LIs.erase(itInim);
+        }
+        else 
+        {
+            ++itInim;
+        }
+    }
+
+    /*while (itObst != LOs.end())
+    {
+        if (*itObst != nullptr && !(*itObst)->getVivo()) 
+        {
+            delete* itObst;
+            itObst = LOs.erase(itObst);
+        }
+        else if (*itObst == nullptr) 
+        {
+            itObst = LOs.erase(itObst);
+        }
+        else {
+            ++itObst;
+        }
+    }*/
+
+    while (itProj != LPs.end()) //Percorre o set de projéteis em busca de ponteiros vazios para remover
+    {
+        if (*itProj == nullptr)
+        {
+            itProj = LPs.erase(itProj);
+        }
+        else
+        {
+            ++itProj;
+        }
+    }
+}
+
 void Gerenciador_Colisoes::incluirInimigo(Inimigo* pI) { if (pI) LIs.push_back(pI); }
 
 void Gerenciador_Colisoes::incluirObstaculo(Obstaculo* pO) { if (pO) LOs.push_back(pO); }
@@ -228,4 +275,6 @@ void Gerenciador_Colisoes::executar() //Referência: Giovane do canal Gege++
     tratarColisaoInimsProjeteis();
     tratarColisaoInimsObstacs();
     //tratarColisaoProjObstacs();
+
+    verificarRemovidos();
 }

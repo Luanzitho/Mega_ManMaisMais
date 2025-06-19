@@ -11,7 +11,7 @@ CutMan::CutMan(): cooldownNoChao(0), timerAtirar(0), timerPerseguir(0), timerPul
 
 	velMax = 200;
 
-	qtdPontos = 1000;
+	qtdPontos += 900;
 
 	forca = 2 + nivel_maldade;
 }

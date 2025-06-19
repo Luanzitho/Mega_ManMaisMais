@@ -9,7 +9,7 @@ BigEye::BigEye() : aceleracao(150), timerAtaque(0)
 
 	velMax = 50;
 
-	qtdPontos = 300;
+	qtdPontos += 200;
 
 	if (nivel_maldade == 1)
 	{

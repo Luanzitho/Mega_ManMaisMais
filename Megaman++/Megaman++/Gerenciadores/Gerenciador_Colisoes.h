@@ -26,6 +26,7 @@ private:
 	void tratarColisaoInimsObstacs();
 	void tratarColisaoProjObstacs();
 	void tratarColisaoProjLimites();
+	void verificarRemovidos();
 
 public:
 	Gerenciador_Colisoes();

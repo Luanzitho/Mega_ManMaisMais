@@ -1,12 +1,14 @@
 #include "Inimigo.h"
 
-Inimigo::Inimigo() : pMega(nullptr), dano(0), qtdPontos(0), LE(nullptr), GC(nullptr)
+Inimigo::Inimigo() : pMega(nullptr), dano(0), LE(nullptr), GC(nullptr)
 {
 	srand(time(NULL));
 
 	setId(2);
 
 	nivel_maldade = rand() % 3 + 1;
+
+	qtdPontos = nivel_maldade * 100; //Cada nível de maldade do inimigo resulta em 100 pontos a mais para a quantidade padrão de cada tipo de inimigo
 }
 
 Inimigo::~Inimigo()
