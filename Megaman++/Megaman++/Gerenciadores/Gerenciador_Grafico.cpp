@@ -3,13 +3,14 @@
 
 Gerenciador_Grafico* Gerenciador_Grafico::instancia = nullptr;
 
-Gerenciador_Grafico::Gerenciador_Grafico(): window(sf::VideoMode(1280, 720), "Megaman++")
+Gerenciador_Grafico::Gerenciador_Grafico(): window(sf::VideoMode(1280, 720), "Mega Man++")
 {
     window.setFramerateLimit(60);
 }
 
 Gerenciador_Grafico::~Gerenciador_Grafico()
 {
+    delete instancia;
 }
 
 Gerenciador_Grafico* Gerenciador_Grafico::getInstancia() //Para instanciar um único Gerenciador_Grafico
@@ -96,7 +97,7 @@ void Gerenciador_Grafico::limparJanela()
 
 void Gerenciador_Grafico::mostrarConteudoJanela()
 {
-      window.display();
+    window.display();
 }
 
 void Gerenciador_Grafico::desenhaTexto(sf::Text text)

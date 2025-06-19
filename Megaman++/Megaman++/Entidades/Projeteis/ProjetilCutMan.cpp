@@ -7,7 +7,6 @@
 
 #include <cmath>
 
-#include <iostream>
 ProjetilCutMan::ProjetilCutMan(): timerRetornar(0), mestre(nullptr), limite(false)
 {
 	setId(6);
@@ -49,7 +48,7 @@ void ProjetilCutMan::perseguir(float dt)
 	sf::Vector2f posicao = getCoords();
 
 	//posicao.y += gravidade * dt;
-	velVertical -= empuxo * dt;
+	//velVertical -= empuxo * dt;
 
 	posicao += direcao * velocidade * dt;
 	setCoords(posicao);
@@ -66,7 +65,7 @@ void ProjetilCutMan::retornar(float dt)
 	posicao += direcao * velocidade * dt;
 
 	//posicao.y += gravidade * dt;
-	velVertical -= empuxo * dt;
+	//velVertical -= empuxo * dt;
 
 	setCoords(posicao);
 
@@ -81,6 +80,7 @@ void ProjetilCutMan::executar(float dt)
 {
 	timerRetornar += dt;
 	sofrerAcaoDaGravidade(dt);
+	velVertical -= empuxo * dt; //Contrapõe a gravidade
 
 	if (!(mestre->getVivo()))
 		destruir();

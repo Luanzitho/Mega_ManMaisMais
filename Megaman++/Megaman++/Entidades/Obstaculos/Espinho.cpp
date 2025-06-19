@@ -13,6 +13,14 @@ Espinho::~Espinho()
 
 void Espinho::executar(float dt)
 {
+    sf::Vector2f posicao = getCoords();
+
+    sofrerAcaoDaGravidade(dt);
+    velVertical -= empuxo * dt; //Contrapõe a gravidade
+
+    posicao.y += velVertical * dt;
+
+    setCoords(posicao);
 }
 
 void Espinho::obstaculizar(Personagem* pPers)

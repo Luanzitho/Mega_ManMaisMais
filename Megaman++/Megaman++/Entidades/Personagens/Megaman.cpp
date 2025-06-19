@@ -8,6 +8,8 @@ Megaman::Megaman() : Personagem(20), teclaApertada(false), cooldownTiro(0), play
 	LE = nullptr;
 	GC = nullptr;
 
+	direita = true;
+
 	setId(1);
 
 	velMax = 200;
@@ -22,6 +24,8 @@ Megaman::Megaman(bool player) : Personagem(20), teclaApertada(false), cooldownTi
 	GC = nullptr;
 
 	setId(1);
+
+	direita = true;
 
 	velMax = 200;
 
@@ -224,10 +228,36 @@ void Megaman::executar(float dt)
 
 std::string Megaman::getTextureFile() 
 {
-	if (player1 && !invencivel)
-		return "Sprites/Megaman/Parado/Parado1.png";
-	else if (player1 && invencivel)
-		return "Sprites/Megaman/Parado/Parado1-Invencivel.png";
+	if (player1)
+	{
+		if (!invencivel)
+		{
+			if (direita)
+				return "Sprites/Megaman/Parado/Parado1-dir.png";
+			
+			return "Sprites/Megaman/Parado/Parado1-esq.png";
+		}
+		else
+		{
+			if(direita)
+				return "Sprites/Megaman/Parado/Parado1-Inv-dir.png";
+			return "Sprites/Megaman/Parado/Parado1-Inv-esq.png";
+		}
+	}
 	else
-		return "Sprites/Megaman/Parado/Parado2.png";
+	{
+		if (!invencivel)
+		{
+			if (direita)
+				return "Sprites/Megaman/Parado/ParadoNH-dir.png";
+
+			return "Sprites/Megaman/Parado/ParadoNH-esq.png";
+		}
+		else
+		{
+			if (direita)
+				return "Sprites/Megaman/Parado/ParadoNH-Inv-dir.png";
+			return "Sprites/Megaman/Parado/ParadoNH-Inv-esq.png";
+		}
+	}
 }

@@ -64,14 +64,14 @@ void BigEye::mover(float dt)
 
 		velocidade = 0;
 
-		if (alvo.x > getCoords().x) //Só confere as coordenadas do player quando o BigEye está no chão
+		if (alvo.x > getCoords().x) //Só confere as coordenadas do player quando o Big Eye está no chão
 			direita = true;
 		else
 			direita = false;
 
-		if (timerAtaque >= 3.5)
+		if (timerAtaque >= 1)
 		{
-			velVertical = 0;
+			//velVertical = 0;
 			velVertical = -350.f;
 			noChao = false;
 
@@ -100,12 +100,22 @@ void BigEye::danificar(Megaman* p)
 
 std::string BigEye::getTextureFile()
 {
-	if(nivel_maldade==1)
-		return "Sprites/Inimigos/BigEye1-blue.png";
-
+	if (nivel_maldade == 1)
+	{
+		if (direita)
+			return "Sprites/Inimigos/BigEye1-blue-dir.png";
+		return "Sprites/Inimigos/BigEye1-blue-esq.png";
+	}
 	else if (nivel_maldade == 2)
-		return "Sprites/Inimigos/BigEye1-red.png";
-
+	{
+		if (direita)
+			return "Sprites/Inimigos/BigEye1-red-dir.png";
+		return "Sprites/Inimigos/BigEye1-red-esq.png";
+	}
 	else
-		return "Sprites/Inimigos/BigEye1-BAD.png";
+	{
+		if (direita)
+			return "Sprites/Inimigos/BigEye1-BAD-dir.png";
+		return "Sprites/Inimigos/BigEye1-BAD-esq.png";
+	}
 }

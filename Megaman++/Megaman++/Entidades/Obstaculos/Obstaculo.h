@@ -7,6 +7,7 @@ class Obstaculo:public Entidade
 {
 protected:
 	bool danoso;
+	const float empuxo;
 
 public:
 	Obstaculo();

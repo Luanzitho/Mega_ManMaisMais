@@ -1,5 +1,5 @@
 #include "Gerenciador_Colisoes.h"
-#include <iostream>
+//#include <iostream>
 
 Gerenciador_Colisoes::Gerenciador_Colisoes()
 {
@@ -63,9 +63,9 @@ void Gerenciador_Colisoes::tratarColisaoMegaInimigos()
 
     for (itInim = LIs.begin(); itInim != LIs.end(); itInim++) //Colisão Megaman x Inimigo
     {
-        if ((*itInim)->getVivo() && verificarColisao(p1, *itInim) && p1->getVivo()) //Se o Inimigo estiver vivo E houve a colisão
+        if (*itInim && verificarColisao(p1, *itInim) && p1) //Se o Inimigo estiver vivo E houve a colisão
         {
-              (*itInim)->danificar(p1);
+               (*itInim)->danificar(p1);
         }
     }
 
@@ -73,7 +73,7 @@ void Gerenciador_Colisoes::tratarColisaoMegaInimigos()
     {
         for (itInim = LIs.begin(); itInim != LIs.end(); itInim++) //Colisão Megaman x Inimigo
         {
-            if ((*itInim)->getVivo() && verificarColisao(p2, *itInim) && p2->getVivo()) //Se o Inimigo estiver vivo E houve a colisão
+            if (*itInim && verificarColisao(p2, *itInim) && p2) //Se o Inimigo estiver vivo E houve a colisão
             {
                 (*itInim)->danificar(p2);
             }
@@ -268,6 +268,8 @@ void Gerenciador_Colisoes::incluirMegaman(Megaman* pm)
 void Gerenciador_Colisoes::executar() //Referência: Giovane do canal Gege++
 {
     //std::cout << "posicao: " << p1->getCoords().x << ", " << p1->getCoords().y << std::endl;
+    verificarRemovidos();
+    
     tratarColisaoMegaObstacs();
     tratarColisaoMegaInimigos();
     //tratarColisaoProjLimites();
@@ -275,6 +277,4 @@ void Gerenciador_Colisoes::executar() //Referência: Giovane do canal Gege++
     tratarColisaoInimsProjeteis();
     tratarColisaoInimsObstacs();
     //tratarColisaoProjObstacs();
-
-    verificarRemovidos();
 }

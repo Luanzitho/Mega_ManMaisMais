@@ -37,23 +37,19 @@ void ProjetilMegaman::atingirInimigo(Inimigo* pI)
 
 void ProjetilMegaman::mover(float dt)
 {
-	if (getVivo()) {
-		sf::Vector2f posicao;
-		posicao = getCoords();
+	sf::Vector2f posicao = getCoords();
 
-		//posicao.y += gravidade * dt; //Força da gravidade atuando sobre o projetil
-		velVertical -= empuxo * dt; //Contrapõe a gravidade
+	posicao.y += velVertical * dt;
+	posicao.x += direcao * velocidade * dt;
 
-		posicao.x += direcao * velocidade * dt;
-
-		setCoords(posicao);
-	}
+	setCoords(posicao);
 }
 
 void ProjetilMegaman::executar(float dt)
 {
 	mover(dt);
 	sofrerAcaoDaGravidade(dt);
+	velVertical -= empuxo * dt; //Contrapõe a gravidade
 
 	if (getCoords().x > 1200 || getCoords().x < 100)
 		destruir();

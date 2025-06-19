@@ -2,7 +2,7 @@
 #include <cmath>
 #include <time.h>
 #include "../../Gerenciadores/Gerenciador_Colisoes.h"
-#include <iostream>
+//#include <iostream>
 
 Metall::Metall(): timerEsconder(0), timerAtirar(0)
 {
@@ -78,16 +78,7 @@ void Metall::executar(float dt)
 void Metall::mover(float dt)
 {
 	sf::Vector2f posicao = getCoords();
-	/*
-	if (!noChao)
-	{
-		velVertical += gravidade * dt;
-	}
-	else
-	{
-		velVertical = 0;
-	}
-	*/
+	
 	posicao.y += velVertical * dt;
 
 	setCoords(posicao);
@@ -117,21 +108,48 @@ std::string Metall::getTextureFile()
 	if (nivel_maldade == 1)
 	{
 		if (!escondido)
-			return "Sprites/Inimigos/Metall.png";
-		return "Sprites/Inimigos/MetallEscondido.png";
+		{
+			if(direita)
+				return "Sprites/Inimigos/Metall-dir.png";
+			return "Sprites/Inimigos/Metall-esq.png";
+		}
+		else
+		{
+			if(direita)
+				return "Sprites/Inimigos/MetallEscondido-dir.png";
+			return "Sprites/Inimigos/MetallEscondido-esq.png";
+		}
 	}
 	
 	else if (nivel_maldade == 2)
 	{
 		if (!escondido)
-			return "Sprites/Inimigos/Metall2.png";
-		return "Sprites/Inimigos/MetallEscondido2.png";
+		{
+			if (direita)
+				return "Sprites/Inimigos/Metall2-dir.png";
+			return "Sprites/Inimigos/Metall2-esq.png";
+		}
+		else
+		{
+			if (direita)
+				return "Sprites/Inimigos/MetallEscondido2-dir.png";
+			return "Sprites/Inimigos/MetallEscondido2-esq.png";
+		}
 	}
 
 	else
 	{
 		if (!escondido)
-			return "Sprites/Inimigos/MetallBAD.png";
-		return "Sprites/Inimigos/MetallEscondido2.png";
+		{
+			if (direita)
+				return "Sprites/Inimigos/MetallBAD-dir.png";
+			return "Sprites/Inimigos/MetallBAD-esq.png";
+		}
+		else
+		{
+			if (direita)
+				return "Sprites/Inimigos/MetallEscondido2-dir.png";
+			return "Sprites/Inimigos/MetallEscondido2-esq.png";
+		}
 	}
 }

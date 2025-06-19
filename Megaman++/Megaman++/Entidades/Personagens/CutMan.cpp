@@ -10,7 +10,7 @@ CutMan::CutMan(): cooldownNoChao(0), timerAtirar(0), timerPerseguir(0), timerPul
 	setNumVidas(22 + nivel_maldade * 2);
 
 	velMax = 200;
-
+	
 	qtdPontos += 900;
 
 	forca = 2 + nivel_maldade;
@@ -73,10 +73,12 @@ void CutMan::mover(float dt)
 
 		if (alvo.x > posicao.x)
 		{
+			direita = true;
 			velocidade += velMax;
 		}
 		else
 		{
+			direita = false;
 			velocidade -= velMax;
 		}
 	
@@ -128,7 +130,16 @@ void CutMan::danificar(Megaman* p)
 
 std::string CutMan::getTextureFile()
 {
-	if(podeAtirar)
-		return "Sprites/Inimigos/CutMan1-L.png";
-	return "Sprites/Inimigos/CutMan1.png";
+	if (podeAtirar)
+	{
+		if (direita)
+			return "Sprites/Inimigos/CutMan1-L-dir.png";
+		return "Sprites/Inimigos/CutMan1-L-esq.png";
+	}
+	else
+	{
+		if (direita)
+			return "Sprites/Inimigos/CutMan1-dir.png";
+		return "Sprites/Inimigos/CutMan1-esq.png";
+	}
 }

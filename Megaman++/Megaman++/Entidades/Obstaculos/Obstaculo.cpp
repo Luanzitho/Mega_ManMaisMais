@@ -1,6 +1,6 @@
 #include "Obstaculo.h"
 
-Obstaculo::Obstaculo(): danoso(false)
+Obstaculo::Obstaculo(): danoso(false), empuxo(300)
 {
 	setId(3);
 }
