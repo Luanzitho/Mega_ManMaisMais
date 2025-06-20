@@ -94,3 +94,8 @@ std::string Plataforma::getTextureFile()
     else
         return "Sprites/Obstaculos/Plataforma3.png";
 }
+
+const float Plataforma::getAltura()
+{
+    return altura;
+}

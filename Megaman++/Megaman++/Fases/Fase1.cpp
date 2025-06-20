@@ -34,7 +34,7 @@ Fase1::Fase1(): minInimigosMedios(3), minObsMolas(3)
 	}
     p1->setExecutando(true);
     if(!p1)std::cout << "Erro ao criar player." << std::endl;
-    incluirMegaGC(p1);
+    GC.incluirMegaman(p1);
 	LEs.incluirEntidade(p1);
     
     criarInimigos();
@@ -54,7 +54,7 @@ void Fase1::executar(float dt)
 	desenharCenario();
     LEs.percorrer(dt, getTamanho());
 	moveMapa(dt);
-    gerenciarColisoes();
+	GC.executar();
     if (p1->getCoords().x > 1000)acabou=true;
 }
 
@@ -86,7 +86,7 @@ void Fase1::criarMolas()
             p->setCoords(sf::Vector2f((float)(faseJson["layers"][i]["objects"][qualObs]["x"] * 3), (float)faseJson["layers"][i]["objects"][qualObs]["y"] * 3));
             p->setTamanho(sf::Vector2f((float)faseJson["layers"][i]["objects"][qualObs]["width"] * 3, (float)faseJson["layers"][i]["objects"][qualObs]["height"] * 3));
             obstaculos.push_back(p);
-            incluirObstaculoGC(p);
+			GC.incluirObstaculo(p);
             LEs.incluirEntidade(obstaculos[obstaculos.size() - 1]);
         }
     }
@@ -118,12 +118,12 @@ void Fase1::criarMinInimigosMedios()
             Inimigo* inimigo = new BigEye;
             inimigo->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
             inimigo->associaListaEntidades(&LEs);
-            inimigo->associaGerenciadorColisoes(getGC());
+            inimigo->associaGerenciadorColisoes(&GC);
             inimigo->conhecerJogador(p1);
             inimigo->setCoords(sf::Vector2f((float)(faseJson["layers"][i]["objects"][lugar]["x"] * 3), (float)(faseJson["layers"][i]["objects"][lugar]["y"] * 3)));
             inimigos.push_back(inimigo);
             LEs.incluirEntidade(inimigos[inimigos.size() - 1]);
-            incluirInimigoGC(inimigos[inimigos.size() - 1]);
+			GC.incluirInimigo(inimigos[inimigos.size() - 1]);
         }
     }
     
@@ -169,7 +169,7 @@ void Fase1::criarInimigos()
 void Fase1::criarObstaculos()
 {
 	jaFoi.clear(); // limpa o vetor de pontos já usados
-    int sorteado = aleatoriza(0, 4); // gera um número aleatório entre 0 e 4
+    int sorteado = aleatoriza(0, 1); // gera um número aleatório entre 0 e 4
 
     int i = 0;
     while (faseJson["layers"][i]["name"] != "Obstaculos" && i<quantidadeLayers)

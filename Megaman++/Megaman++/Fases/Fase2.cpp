@@ -36,7 +36,7 @@ Fase2::Fase2(): maxChefoes(1), minEspinhos(3)
     }
     
     p1->setExecutando(true);
-    incluirMegaGC(p1);
+    GC.incluirMegaman(p1);
 	LEs.incluirEntidade(p1);
    
     criarInimigos();
@@ -61,7 +61,7 @@ void Fase2::executar(float dt)
    
 	moveMapa(dt);
 
-    gerenciarColisoes();
+	GC.executar();
 }
 
 void Fase2::criarChefoes()
@@ -83,13 +83,13 @@ void Fase2::criarChefoes()
             Inimigo* p = new CutMan;
 
             p->setGerenciadorGrafico(pGG->getInstancia());
-            p->associaGerenciadorColisoes(getGC());
+            p->associaGerenciadorColisoes(&GC);
             p->associaListaEntidades(&LEs);
             p->conhecerJogador(p1);
             p->setCoords(sf::Vector2f((float)(faseJson["layers"][i]["objects"][qualObs]["x"] * 3), (float)faseJson["layers"][i]["objects"][qualObs]["y"] * 3));
             //p->setTamanho(sf::Vector2f((float)faseJson["layers"][i]["objects"][qualObs]["width"] * 3, (float)faseJson["layers"][i]["objects"][qualObs]["height"] * 3));
             inimigos.push_back(p);
-            incluirInimigoGC(p);
+			GC.incluirInimigo(p);
             LEs.incluirEntidade(inimigos[inimigos.size() - 1]);
         }
     }
@@ -124,7 +124,7 @@ void Fase2::criarEspinhos()
             p->setCoords(sf::Vector2f((float)(faseJson["layers"][i]["objects"][qualObs]["x"] * 3), (float)faseJson["layers"][i]["objects"][qualObs]["y"] * 3));
             p->setTamanho(sf::Vector2f((float)faseJson["layers"][i]["objects"][qualObs]["width"] * 3, (float)faseJson["layers"][i]["objects"][qualObs]["height"] * 3));
             obstaculos.push_back(p);
-            incluirObstaculoGC(p);
+			GC.incluirObstaculo(p);
             LEs.incluirEntidade(obstaculos[obstaculos.size() - 1]);
         }
     }

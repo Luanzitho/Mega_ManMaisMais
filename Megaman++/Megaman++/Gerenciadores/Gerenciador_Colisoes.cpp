@@ -65,7 +65,7 @@ void Gerenciador_Colisoes::tratarColisaoMegaInimigos()
     {
         if ((*itInim)->getVivo() && verificarColisao(p1, *itInim) && p1->getVivo()) //Se o Inimigo estiver vivo E houve a colisão
         {
-               (*itInim)->danificar(p1);
+                   (*itInim)->danificar(p1);
         }
     }
 
@@ -196,11 +196,11 @@ void Gerenciador_Colisoes::verificarRemovidos()
 
     while (itInim != LIs.end()) //Percorre o vector de inimigos em busca de ponteiros vazios para remover
     {
-        if (*itInim == nullptr) 
+        if (!((*itInim)->getVivo()))
         {
             itInim = LIs.erase(itInim);
         }
-        else 
+        else
         {
             ++itInim;
         }
@@ -208,7 +208,7 @@ void Gerenciador_Colisoes::verificarRemovidos()
 
     while (itProj != LPs.end()) //Percorre o set de projéteis em busca de ponteiros vazios para remover
     {
-        if (*itProj == nullptr)
+        if (!((*itProj)->getVivo()))
         {
             itProj = LPs.erase(itProj);
         }

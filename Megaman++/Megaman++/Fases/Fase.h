@@ -22,9 +22,10 @@ class GerenciadorColisoes {};
 class Fase :public Ente
 {
 private:
-	Gerenciador_Colisoes GC;
+	
 
 protected:
+	Gerenciador_Colisoes GC;
 	std::vector<int> jaFoi;
 	json faseJson;
 	std::vector<int> tilesGid;
@@ -55,7 +56,6 @@ public:
 	Fase();
 	~Fase();
 	virtual void executar(float dt) = 0;
-	void gerenciarColisoes();
 	void criarInimigosFaceis();
 	void criarChao();
 	void criarPlataformas();
@@ -67,10 +67,6 @@ public:
 	std::string getTextureFile();
 	int aleatoriza(int limite1, int limite2);
 	void moveMapa(float dt);
-	void incluirInimigoGC(Inimigo* inimigo);
-	void incluirMegaGC(Megaman* mega);
-	void incluirObstaculoGC(Obstaculo* Obstaculo);
-	Gerenciador_Colisoes* getGC();
 	bool getAcabou();
 	void setTwoPlayers();
 

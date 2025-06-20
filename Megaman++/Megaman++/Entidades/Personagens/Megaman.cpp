@@ -145,7 +145,7 @@ void Megaman::mover(float dt)
 	//}
 
 	//if (posicao.x + velocidade * dt > 0.f)
-	posicao.x += velocidade * dt;
+	if(posicao.x + velocidade * dt >0)posicao.x += velocidade * dt;
 	posicao.y += velVertical * dt;
 
 	setCoords(posicao);

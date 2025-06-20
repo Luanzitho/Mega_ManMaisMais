@@ -30,10 +30,6 @@ Fase::~Fase()
     delete &LEs;
 }
 
-void Fase::gerenciarColisoes()
-{
-    GC.executar();
-}
 
 void Fase::criarInimigosFaceis()
 {
@@ -128,10 +124,10 @@ void Fase::criarPlataformas()
             } while (jaFoi[qualObs] != 0);//verifica se o ponto já foi usado
             jaFoi[qualObs] = 1; // marca que o ponto já foi usado
             p->setGerenciadorGrafico(pGG->getInstancia());
-            p->setCoords(sf::Vector2f((float)(faseJson["layers"][i]["objects"][qualObs]["x"] * 3), (float)faseJson["layers"][i]["objects"][qualObs]["y"] * 3));
+            p->setCoords(sf::Vector2f((float)(faseJson["layers"][i]["objects"][qualObs]["x"] * 3), (float)faseJson["layers"][i]["objects"][qualObs]["y"] * 3 - (p->getTamanho().y-50)));
             //p->setTamanho(sf::Vector2f((float)faseJson["layers"][i]["objects"][qualObs]["width"] * 3, (float)faseJson["layers"][i]["objects"][qualObs]["height"] * 3));
             obstaculos.push_back(p);
-            incluirObstaculoGC(p);
+            GC.incluirObstaculo(p);
             LEs.incluirEntidade(obstaculos[obstaculos.size() - 1]);
         }
     }
@@ -251,25 +247,6 @@ void Fase::moveMapa(float dt)
     }
 }
 
-void Fase::incluirInimigoGC(Inimigo* inimigo)
-{
-    GC.incluirInimigo(inimigo);
-}
-
-void Fase::incluirMegaGC(Megaman* mega)
-{
-    GC.incluirMegaman(mega);
-}
-
-void Fase::incluirObstaculoGC(Obstaculo* Obstaculo)
-{
-    GC.incluirObstaculo(Obstaculo);
-}
-
-Gerenciador_Colisoes* Fase::getGC()
-{
-    return &GC;
-}
 
 bool Fase::getAcabou()
 {
