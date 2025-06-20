@@ -65,7 +65,7 @@ void Gerenciador_Colisoes::tratarColisaoMegaInimigos()
     {
         if ((*itInim)->getVivo() && verificarColisao(p1, *itInim) && p1->getVivo()) //Se o Inimigo estiver vivo E houve a colisão
         {
-                   (*itInim)->danificar(p1);
+              (*itInim)->danificar(p1);
         }
     }
 
@@ -91,13 +91,13 @@ void Gerenciador_Colisoes::tratarColisaoMegaProjeteis() //Projétil do Inimigo co
         {
             if ((*itProj)->getVivo() && verificarColisao(p1, *itProj) && p1->getVivo()) //Se o projétil estiver vivo (ativo) && houve a colisão
             {
-                if ((*itProj)->getId() == 5) //ID 5 -> ProjetilMetall
+                if ((*itProj) && (*(*itProj)) == 5) //ID 5 -> ProjetilMetall
                 {
                     ProjetilMetall* aux;
                     aux = static_cast<ProjetilMetall*>(*itProj);
                     aux->atingirMegaman(p1);
                 }
-                else //É Projetil, !doMega = false, ID!=5 -> ProjetilCutMan
+                else //É Projetil, ID!=5 -> ProjetilCutMan
                 {
                     ProjetilCutMan* aux;
                     aux = static_cast<ProjetilCutMan*>(*itProj);
@@ -115,7 +115,7 @@ void Gerenciador_Colisoes::tratarColisaoMegaProjeteis() //Projétil do Inimigo co
             {
                 if ((*itProj)->getVivo() && verificarColisao(p2, *itProj) && p2->getVivo()) //Se o projétil estiver vivo (ativo) && houve a colisão
                 {
-                    if ((*itProj)->getId() == 5) //ID 5 - ProjetilMetall
+                    if ((*itProj) && (*(*itProj)) == 5) //ID 5 - ProjetilMetall
                     {
                         ProjetilMetall* aux;
                         aux = static_cast<ProjetilMetall*>(*itProj);

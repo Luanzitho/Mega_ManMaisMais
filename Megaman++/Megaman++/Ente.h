@@ -22,6 +22,7 @@ public:
 	void setGerenciadorGrafico(Gerenciador_Grafico* p);
 	//void setGerenciadorColisoes(Gerenciador_Colisoes* p);
 	void setId(const int id);
+	bool operator==(int id) const;
 	const int getId();
 	virtual void executar(float dt) = 0;
 	virtual std::string getTextureFile() = 0;

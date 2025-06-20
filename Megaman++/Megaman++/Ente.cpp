@@ -27,6 +27,13 @@ void Ente::setId(const int id)
 	this->id = id;
 }
 
+bool Ente::operator==(int id) const
+{
+	if (this->id == id)
+		return true;
+	return false;
+}
+
 const int Ente::getId()
 {
 	return id;
