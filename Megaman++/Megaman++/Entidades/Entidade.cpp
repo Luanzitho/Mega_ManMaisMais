@@ -18,7 +18,7 @@ const bool Entidade::getVivo()
 	return vivo;
 }
 
-void Entidade::setVelocidade(float v)
+void Entidade::setVelocidade(const float v)
 {
 	velocidade = v;
 }
@@ -28,7 +28,7 @@ float Entidade::getVelocidade()
 	return velocidade;
 }
 
-void Entidade::setVelVertical(float v)
+void Entidade::setVelVertical(const float v)
 {
 	velVertical = v;
 }
@@ -38,12 +38,12 @@ float Entidade::getVelVertical()
 	return velVertical;
 }
 
-void Entidade::setNoChao(bool noChao)
+void Entidade::setNoChao(const bool noChao)
 {
 	this->noChao = noChao;
 }
 
-bool Entidade::getNoChao()
+const bool Entidade::getNoChao()
 {
 	return noChao;
 }
@@ -53,12 +53,12 @@ void Entidade::sofrerAcaoDaGravidade(float dt)
 	velVertical += gravidade * dt;
 }
 
-bool Entidade::getExecutando()
+const bool Entidade::getExecutando()
 {
 	return executando;
 }
 
-void Entidade::setExecutando(bool exe)
+void Entidade::setExecutando(const bool exe)
 {
 	executando = executando;
 }

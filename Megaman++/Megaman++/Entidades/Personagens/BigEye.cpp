@@ -3,6 +3,8 @@
 
 BigEye::BigEye() : aceleracao(150), timerAtaque(0)
 {
+	srand(time(NULL));
+
 	raio = rand() % 41 + 80;
 
 	setTamanho(sf::Vector2f(raio, 120.f));
@@ -16,28 +18,41 @@ BigEye::BigEye() : aceleracao(150), timerAtaque(0)
 		dano = 2;
 		setNumVidas(15);
 	}
-
 	else if (nivel_maldade == 2)
 	{
 		dano = 4;
 		setNumVidas(15);
 	}
-
 	else if (nivel_maldade == 3)
 	{
 		dano = 4;
 		setNumVidas(20);
 	}
+
+	danoNormal = dano;
 }
 
 BigEye::~BigEye()
 {
 }
 
+void BigEye::saltar() //Salto normal
+{
+	velVertical = -250;
+}
+
+void BigEye::saltar(int i) //Salto carregado (+ dano)
+{
+	velVertical = -400;
+	dano = dano * i; //Dano em dobro no crítico
+}
+
 void BigEye::mover(float dt)
 {
 	sf::Vector2f posicao = getCoords();
 	sf::Vector2f alvo = pMega->getCoords();
+
+	int chanceCritico = rand() % 4 + 1; //Big Eye tem chance de dar um ataque crítico (maior dano)
 
 	if (velocidade > velMax) //Limita a velocidade
 		velocidade = velMax;
@@ -71,8 +86,16 @@ void BigEye::mover(float dt)
 
 		if (timerAtaque >= 1)
 		{
-			//velVertical = 0;
-			velVertical = -350.f;
+			if (chanceCritico == 2)
+			{
+				saltar(chanceCritico);
+			}
+			else
+			{
+				saltar();
+				dano = danoNormal;
+			}
+
 			noChao = false;
 
 			timerAtaque = 0;
@@ -90,7 +113,6 @@ void BigEye::executar(float dt)
 
 	if (!noChao)
 		sofrerAcaoDaGravidade(dt);
-	
 }
 
 void BigEye::danificar(Megaman* p)

@@ -50,7 +50,7 @@ void Menu::executar(float dt)
 		//std::cout << "Menu" << std::endl;
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !isPressed) //movimento da escolha de op��es
 		{
-			if ((tela == 0 || tela==1 || tela==2) && escolha < 2)escolha++;
+			if ((tela == 0 || tela==1 || tela==2) && escolha < 2) escolha++;
 			isPressed = true;
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && !isPressed && escolha > 0)

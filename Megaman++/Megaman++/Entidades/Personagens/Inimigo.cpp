@@ -8,7 +8,7 @@ Inimigo::Inimigo() : pMega(nullptr), dano(0), LE(nullptr), GC(nullptr)
 
 	nivel_maldade = rand() % 3 + 1;
 
-	qtdPontos = nivel_maldade * 100; //Cada nível de maldade do inimigo resulta em 100 pontos a mais para a quantidade padrão de cada tipo de inimigo
+	qtdPontos = nivel_maldade * 100; //Cada nível de maldade do inimigo resulta em 100 pontos a mais para a quantidade padrão de pontos
 }
 
 Inimigo::~Inimigo()
@@ -23,7 +23,7 @@ void Inimigo::conhecerJogador(Megaman* p)
 	pMega = p;
 }
 
-void Inimigo::machucar(int dmg)
+void Inimigo::machucar(const int dmg)
 {
 	num_vidas = num_vidas - dmg;
 
@@ -36,7 +36,7 @@ void Inimigo::machucar(int dmg)
 
 void Inimigo::cederPontos()
 {
-	pMega->addPontos(qtdPontos);
+	(*pMega) += qtdPontos;
 }
 
 void Inimigo::associaListaEntidades(ListaEntidades* pLista)

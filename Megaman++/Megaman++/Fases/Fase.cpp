@@ -7,6 +7,8 @@ Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18)
     p1->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
     p1->associaGerenciadorColisoes(&GC);
     p1->associaListaEntidades(LEs);
+
+    GC.setListaEntidades(LEs);
 }
 
 Fase::~Fase()

@@ -5,9 +5,9 @@ Plataforma::Plataforma()
 {
     srand(time(NULL));
     
-    altura = rand() % 51 + 50;
-	
-    setTamanho(sf::Vector2f(50.f, float(altura)));
+    altura = 50 * (rand() % 3 + 1);
+  
+    setTamanho(sf::Vector2f(50.f, altura));
 }
 
 Plataforma::~Plataforma()
@@ -87,5 +87,10 @@ void Plataforma::obstaculizar(Personagem* pPers)
 
 std::string Plataforma::getTextureFile()
 {
-	return "Sprites/Obstaculos/Plataforma1.png";
+    if (altura == 50)
+        return "Sprites/Obstaculos/Plataforma1.png";
+    else if (altura == 100)
+        return "Sprites/Obstaculos/Plataforma2.png";
+    else
+        return "Sprites/Obstaculos/Plataforma3.png";
 }

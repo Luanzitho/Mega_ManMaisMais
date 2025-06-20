@@ -54,7 +54,8 @@ void Espinho::obstaculizar(Personagem* pPers)
     {
         posPers.y = topoEspinho - tamPers.y;
         pPers->setCoords(posPers);
-        pPers->machucar(danosidade);
+        if(danoso)
+            pPers->machucar(danosidade);
         pPers->setVelVertical(0);
         tocando = true;
     }

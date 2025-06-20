@@ -14,7 +14,7 @@ private:
 	bool invencivel;
 	static int pontos;
 	bool teclaApertada;
-	float timerBotao;
+	//float timerBotao;
 	float cooldownTiro;
 	float framesInvencibilidade;
 	//ProjetilMegaman* tiro;
@@ -29,8 +29,8 @@ public:
 	~Megaman();
 	void associaListaEntidades(ListaEntidades* pLista);
 	void associaGerenciadorColisoes(Gerenciador_Colisoes* GC);
-	void addPontos(int pts);
-	void machucar(int dmg);
+	void operator+=(const int pts);
+	void machucar(const int dmg);
 	void mover(float dt);
 	void atirar(float dt);
 	void executar(float dt);

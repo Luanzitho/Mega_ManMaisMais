@@ -1,7 +1,7 @@
 #include "CutMan.h"
 #include "../../Gerenciadores/Gerenciador_Colisoes.h"
 
-#include <iostream>
+//#include <iostream>
 
 CutMan::CutMan(): cooldownNoChao(0), timerAtirar(0), timerPerseguir(0), timerPular(0), podeAtirar(true)
 {
@@ -26,7 +26,7 @@ void CutMan::atirar()
 	//std::cout << "POW\n";
 	sf::Vector2f pos = getCoords();
 
-	if (!GC || !LE) std::cout << "BOOM!\n";
+	//if (!GC || !LE) std::cout << "BOOM!\n";
 
 	ProjetilCutMan* tiro = new ProjetilCutMan(pos, nivel_maldade, pMega->getCoords(), this);
 	tiro->associaListaEntidades(LE);

@@ -5,7 +5,7 @@ Projetil::Projetil(): velocidade(0), dano(0), doMega(false), empuxo(300)
 	LEs = nullptr;
 }
 
-Projetil::Projetil(const float vel, int dmg): velocidade(vel), dano(dmg), empuxo(300)
+Projetil::Projetil(const float vel, const int dmg): velocidade(vel), dano(dmg), empuxo(300)
 {
 }
 

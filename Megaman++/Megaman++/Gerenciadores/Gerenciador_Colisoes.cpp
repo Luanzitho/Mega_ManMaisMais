@@ -63,7 +63,7 @@ void Gerenciador_Colisoes::tratarColisaoMegaInimigos()
 
     for (itInim = LIs.begin(); itInim != LIs.end(); itInim++) //Colisão Megaman x Inimigo
     {
-        if (*itInim && verificarColisao(p1, *itInim) && p1) //Se o Inimigo estiver vivo E houve a colisão
+        if ((*itInim)->getVivo() && verificarColisao(p1, *itInim) && p1->getVivo()) //Se o Inimigo estiver vivo E houve a colisão
         {
                (*itInim)->danificar(p1);
         }
@@ -71,9 +71,9 @@ void Gerenciador_Colisoes::tratarColisaoMegaInimigos()
 
     if (p2) //Só entra se o p2 existir
     {
-        for (itInim = LIs.begin(); itInim != LIs.end(); itInim++) //Colisão Megaman x Inimigo
+        for (itInim = LIs.begin(); itInim != LIs.end(); itInim++) //Colisão Megaman player 2 x Inimigo
         {
-            if (*itInim && verificarColisao(p2, *itInim) && p2) //Se o Inimigo estiver vivo E houve a colisão
+            if ((*itInim)-> getVivo() && verificarColisao(p1, *itInim) && p2->getVivo()) //Se o Inimigo estiver vivo E houve a colisão
             {
                 (*itInim)->danificar(p2);
             }
@@ -144,7 +144,7 @@ void Gerenciador_Colisoes::tratarColisaoInimsProjeteis() //Projétil do Megaman c
         for (itInim = LIs.begin(); itInim != LIs.end(); itInim++) //Projétil x Inimigo
         {
             if ((*itProj)->getDoMega()) { //Só entra se for Projétil do Megaman
-                if ((*itProj)->getVivo() && verificarColisao(*itInim, *itProj)) //Se o projétil estiver vivo (ativo) && houve a colisão
+                if ((*itProj)->getVivo() && verificarColisao(*itInim, *itProj) && (*itInim)->getVivo()) //Se o projétil estiver vivo (ativo) && houve a colisão
                 {
                     aux = static_cast<ProjetilMegaman*>(*itProj);
                     aux->atingirInimigo(*itInim);
@@ -171,21 +171,6 @@ void Gerenciador_Colisoes::tratarColisaoInimsObstacs()
     }
 }
 
-void Gerenciador_Colisoes::tratarColisaoProjObstacs() //Acho que essa aqui dá para tirar, os projéteis atravessam as paredes em Megaman
-{
-    std::list<Obstaculo*>::iterator itObst;
-    std::set<Projetil*>::iterator itProj;
-
-    for (itProj = LPs.begin(); itProj != LPs.end(); itProj++)
-    {
-        for (itObst = LOs.begin(); itObst != LOs.end(); itObst++) //Projétil x Obstáculo
-        {
-            if (verificarColisao(*itObst, *itProj)) {}
-                //(*itProj)-> AGIR
-        }
-    }
-}
-
 void Gerenciador_Colisoes::tratarColisaoProjLimites()
 {
     
@@ -207,7 +192,6 @@ void Gerenciador_Colisoes::tratarColisaoProjLimites()
 void Gerenciador_Colisoes::verificarRemovidos()
 {
     std::vector<Inimigo*>::iterator itInim = LIs.begin();
-    //std::list<Obstaculo*>::iterator itObst = LOs.begin();
     std::set<Projetil*>::iterator itProj = LPs.begin();
 
     while (itInim != LIs.end()) //Percorre o vector de inimigos em busca de ponteiros vazios para remover
@@ -221,22 +205,6 @@ void Gerenciador_Colisoes::verificarRemovidos()
             ++itInim;
         }
     }
-
-    /*while (itObst != LOs.end())
-    {
-        if (*itObst != nullptr && !(*itObst)->getVivo()) 
-        {
-            delete* itObst;
-            itObst = LOs.erase(itObst);
-        }
-        else if (*itObst == nullptr) 
-        {
-            itObst = LOs.erase(itObst);
-        }
-        else {
-            ++itObst;
-        }
-    }*/
 
     while (itProj != LPs.end()) //Percorre o set de projéteis em busca de ponteiros vazios para remover
     {
@@ -265,10 +233,16 @@ void Gerenciador_Colisoes::incluirMegaman(Megaman* pm)
     else p2 = pm;
 }
 
+void Gerenciador_Colisoes::setListaEntidades(ListaEntidades* pLista)
+{
+    LEs = pLista;
+}
+
 void Gerenciador_Colisoes::executar() //Referência: Giovane do canal Gege++
 {
     //std::cout << "posicao: " << p1->getCoords().x << ", " << p1->getCoords().y << std::endl;
     verificarRemovidos();
+    LEs->verificaAbatidos(); //Para tentar corrigir os erros de acesso inválido
     
     tratarColisaoMegaObstacs();
     tratarColisaoMegaInimigos();
@@ -276,5 +250,5 @@ void Gerenciador_Colisoes::executar() //Referência: Giovane do canal Gege++
     tratarColisaoMegaProjeteis();
     tratarColisaoInimsProjeteis();
     tratarColisaoInimsObstacs();
-    //tratarColisaoProjObstacs();
+
 }

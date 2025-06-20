@@ -21,13 +21,13 @@ public:
 	~Ente();
 	void setGerenciadorGrafico(Gerenciador_Grafico* p);
 	//void setGerenciadorColisoes(Gerenciador_Colisoes* p);
-	void setId(int id);
-	int getId();
+	void setId(const int id);
+	const int getId();
 	virtual void executar(float dt) = 0;
 	virtual std::string getTextureFile() = 0;
 	const sf::Vector2f getTamanho();
-	void setTamanho(sf::Vector2f size);
+	void setTamanho(const sf::Vector2f size);
 	const sf::Vector2f getCoords(); 
-	void setCoords(sf::Vector2f coordenadas);
+	void setCoords(const sf::Vector2f coordenadas);
 	void desenhar();
 };

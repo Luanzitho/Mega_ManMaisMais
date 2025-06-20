@@ -19,13 +19,13 @@ public:
 	~Metall();
 	//void associaListaEntidades(ListaEntidades* pLista);
 	//void associaGerenciadorColisoes(Gerenciador_Colisoes* GC);
-	void atirar(int tipo);
+	void atirar(const int tipo);
 	void esconder();
 	void revelar();
 	void executar(float dt);
 	void mover(float dt);
 	void danificar(Megaman* p);
-	void machucar(int dmg);
+	void machucar(const int dmg);
 	std::string getTextureFile();
 };
 

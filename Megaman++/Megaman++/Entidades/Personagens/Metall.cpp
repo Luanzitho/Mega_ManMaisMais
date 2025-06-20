@@ -23,7 +23,7 @@ Metall::~Metall()
 {
 }
 
-void Metall::atirar(int tipo)
+void Metall::atirar(const int tipo)
 {
 	sf::Vector2f pos = getCoords();
 
@@ -89,7 +89,7 @@ void Metall::danificar(Megaman* p)
 	p->machucar(dano);
 }
 
-void Metall::machucar(int dmg)
+void Metall::machucar(const int dmg)
 {
 	if (!escondido)
 	{

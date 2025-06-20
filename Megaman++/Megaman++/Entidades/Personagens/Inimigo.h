@@ -22,7 +22,7 @@ public:
 	virtual void mover(float dt) = 0;
 	virtual void executar(float dt) = 0;
 	virtual void danificar(Megaman* p) = 0;
-	void machucar(int dmg);
+	void machucar(const int dmg);
 	void cederPontos();
 	virtual std::string getTextureFile() = 0;
 	void associaListaEntidades(ListaEntidades* pLista);

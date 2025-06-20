@@ -22,22 +22,22 @@ void Ente::setGerenciadorGrafico(Gerenciador_Grafico* p)
 	pGG = p;
 }
 
-void Ente::setId(int id)
+void Ente::setId(const int id)
 {
 	this->id = id;
 }
 
-int Ente::getId()
+const int Ente::getId()
 {
 	return id;
 }
 
 const sf::Vector2f Ente::getTamanho() { return tamanho; }
 
-void Ente::setTamanho(sf::Vector2f size) { tamanho = size; }
+void Ente::setTamanho(const sf::Vector2f size) { tamanho = size; }
 
 const sf::Vector2f Ente::getCoords() { return coords; }
 
-void Ente::setCoords(sf::Vector2f coordenadas) { coords = coordenadas; }
+void Ente::setCoords(const sf::Vector2f coordenadas) { coords = coordenadas; }
 
 void Ente::desenhar() { pGG->desenharEnte(this); }

@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-Megaman::Megaman() : Personagem(20), teclaApertada(false), cooldownTiro(0), player1(true), invencivel(false), timerBotao(0), framesInvencibilidade(0), cooldownNoChao(0), vidas(3)
+Megaman::Megaman() : Personagem(20), teclaApertada(false), cooldownTiro(0), player1(true), invencivel(false), framesInvencibilidade(0), cooldownNoChao(0), vidas(3)
 {
 	LE = nullptr;
 	GC = nullptr;
@@ -18,7 +18,7 @@ Megaman::Megaman() : Personagem(20), teclaApertada(false), cooldownTiro(0), play
 }
 int Megaman::pontos(0);
 
-Megaman::Megaman(bool player) : Personagem(20), teclaApertada(false), cooldownTiro(0), player1(player), invencivel(false), timerBotao(0), framesInvencibilidade(0), cooldownNoChao(0), vidas(3)
+Megaman::Megaman(bool player) : Personagem(20), teclaApertada(false), cooldownTiro(0), player1(player), invencivel(false), framesInvencibilidade(0), cooldownNoChao(0), vidas(3)
 {
 	LE = nullptr;
 	GC = nullptr;
@@ -48,12 +48,12 @@ void Megaman::associaGerenciadorColisoes(Gerenciador_Colisoes* GC)
 	this->GC = GC;
 }
 
-void Megaman::addPontos(int pts)
+void Megaman::operator+=(const int pts)
 {
 	pontos = pontos + pts;
 }
 
-void Megaman::machucar(int dmg)
+void Megaman::machucar(const int dmg)
 {
 	if (!invencivel)
 		num_vidas = num_vidas - dmg;
@@ -114,8 +114,6 @@ void Megaman::mover(float dt)
 		cooldownNoChao = 0;
 	}
 
-	//timerBotao += dt;
-
 	if (noChao)
 	{
 		velVertical = 0;
@@ -146,8 +144,8 @@ void Megaman::mover(float dt)
 	//	velVertical += gravidade * dt;
 	//}
 
-	if(posicao.x + velocidade*dt>0.f)
-		posicao.x += velocidade * dt;
+	//if (posicao.x + velocidade * dt > 0.f)
+	posicao.x += velocidade * dt;
 	posicao.y += velVertical * dt;
 
 	setCoords(posicao);

@@ -14,7 +14,7 @@ protected:
 
 public:
 	Projetil();
-	Projetil(const float vel, int dmg);
+	Projetil(const float vel, const int dmg);
 	~Projetil();
 	const bool getDoMega();
 	void associaListaEntidades(ListaEntidades* pLista);

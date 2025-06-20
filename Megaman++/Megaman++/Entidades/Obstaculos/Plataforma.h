@@ -5,7 +5,7 @@
 class Plataforma:public Obstaculo
 {
 private:
-	int altura;
+	float altura;
 
 public:
 	Plataforma();

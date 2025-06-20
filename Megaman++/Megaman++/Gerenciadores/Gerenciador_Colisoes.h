@@ -5,6 +5,7 @@
 #include "../Entidades/Projeteis/ProjetilMetall.h"
 #include "../Entidades/Projeteis/ProjetilCutMan.h"
 #include "../Entidades/Obstaculos/Obstaculo.h"
+#include "../Listas/ListaEntidades.h"
 #include <vector>
 #include <list>
 #include <set>
@@ -15,6 +16,7 @@ private:
 	std::vector<Inimigo*> LIs;
 	std::list<Obstaculo*> LOs;
 	std::set<Projetil*> LPs;
+	ListaEntidades* LEs;
 	Megaman* p1;
 	Megaman* p2;
 
@@ -24,7 +26,6 @@ private:
 	void tratarColisaoMegaProjeteis();
 	void tratarColisaoInimsProjeteis();
 	void tratarColisaoInimsObstacs();
-	void tratarColisaoProjObstacs();
 	void tratarColisaoProjLimites();
 	void verificarRemovidos();
 
@@ -35,6 +36,7 @@ public:
 	void incluirObstaculo(Obstaculo* pO);
 	void incluirProjetil(Projetil* pP);
 	void incluirMegaman(Megaman* pm);
+	void setListaEntidades(ListaEntidades* pLista);
 	void executar();
 };
 

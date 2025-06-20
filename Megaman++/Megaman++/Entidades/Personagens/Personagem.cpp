@@ -12,12 +12,12 @@ Personagem::~Personagem()
 {
 }
 
-void Personagem::curar(int hp)
+void Personagem::curar(const int hp)
 {
 	num_vidas = num_vidas + hp;
 }
 
-void Personagem::machucar(int dmg)
+void Personagem::machucar(const int dmg)
 {
 	num_vidas = num_vidas - dmg;
 
@@ -25,7 +25,7 @@ void Personagem::machucar(int dmg)
 		destruir();
 }
 
-void Personagem::setNumVidas(int v)
+void Personagem::setNumVidas(const int v)
 {
 	num_vidas = v;
 }
