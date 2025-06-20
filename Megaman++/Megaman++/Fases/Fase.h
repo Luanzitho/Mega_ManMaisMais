@@ -69,6 +69,7 @@ public:
 	void moveMapa(float dt);
 	bool getAcabou();
 	void setTwoPlayers();
+	void setOnePlayer();
 
 };
 

@@ -11,11 +11,12 @@ class Menu : public Ente
 private:
 	Jogo* pJog;
 	//Gerenciador_Grafico* pGG;
-	int escolha, tela;
+	int escolha, tela, fase;
 	bool isPressed, enter, start;
+	bool pause;
 	sf::Font* font;
-	std::vector<const char*> options;
-	std::vector<sf::Text> texts;
+	std::vector<const char*> options, optionsPause;
+	std::vector<sf::Text> texts, textsPause;
 	std::vector<sf::Vector2f> coordsTexts;
 	float cooldown;
 	
@@ -29,4 +30,5 @@ public:
 	int getEscolha() { return escolha; };
 	void selecionar();
 	void desenhaInteracao();
+	void setPause(bool pausado);
 };

@@ -13,6 +13,8 @@
 #include "Entidades/Obstaculos/Espinho.h"
 #include "Fases/Fase1.h"
 #include "Fases/Fase2.h"
+#include "json.hpp"
+#include <fstream>
 
 class Jogo
 {
@@ -23,6 +25,7 @@ private:
 	Fase2* f2;
 	bool inMenu;
 	bool playing;
+	bool pausar;
 	int faseA;
 
 public:
@@ -33,4 +36,5 @@ public:
 	void encerrar();
 	void setPlayers(bool players);
 	Gerenciador_Grafico* getGerenciador();
+	void pause();
 };

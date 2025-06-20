@@ -56,6 +56,7 @@ void Fase1::executar(float dt)
 	moveMapa(dt);
 	GC.executar();
     if (p1->getCoords().x > 1000)acabou=true;
+    
 }
 
 void Fase1::criarMolas()

@@ -263,3 +263,8 @@ void Fase::setTwoPlayers()
 	GC.incluirMegaman(p2);
 	LEs.incluirEntidade(p2);
 }
+
+void Fase::setOnePlayer()
+{
+    if(p2)p2->destruir();
+}
