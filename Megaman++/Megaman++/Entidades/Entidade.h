@@ -27,12 +27,12 @@ public:
 	void setVelVertical(float v);
 	float getVelVertical();
 	void setNoChao(bool noChao);
-	bool getNoChao();
+	const bool getNoChao();
 	void sofrerAcaoDaGravidade(float dt);
 	virtual void executar(float dt) = 0;
 	virtual std::string getTextureFile() = 0;
-	bool getExecutando();
-	void setExecutando(bool exe);
+	const bool getExecutando();
+	void setExecutando(const bool exe);
 	//virtual void salvar() = 0;
 
 	//void salvarDataBuffer(); 

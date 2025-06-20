@@ -42,38 +42,45 @@ Menu::~Menu()
 
 void Menu::executar(float dt)
 {
-	//while (!start) //redundante??
-	//{
-		//pGG->eventoFecharJanela();
-		//pGG->limparJanela();
-		pGG->desenharEnte(this);
-		//std::cout << "Menu" << std::endl;
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !isPressed) //movimento da escolha de op��es
+	pGG->desenharEnte(this);
+	cooldown += dt; //cooldown para evitar que o enter seja pressionado muitas vezes
+	
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !isPressed) //movimento da escolha de op��es
+	{
+		if(cooldown>0.25f)
 		{
-			if ((tela == 0 || tela==1 || tela==2) && escolha < 2) escolha++;
+			if ((tela == 0 || tela == 1 || tela == 2) && escolha < 2) escolha++;
 			isPressed = true;
+			cooldown = 0;
 		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && !isPressed && escolha > 0)
+		
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && !isPressed && escolha > 0)
+	{
+		if(cooldown>0.25f)
 		{
 			isPressed = true;
 			escolha--;
+			cooldown = 0;
 		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter) && !isPressed)
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter) && !isPressed)
+	{
+		if(cooldown>0.25f)
 		{
 			isPressed = true;
 			selecionar();
+			cooldown = 0;
 		}
 		
-		desenhaInteracao();
-		//pGG->mostrarConteudoJanela();
-		cooldown += dt; //cooldown para evitar que o enter seja pressionado muitas vezes
-		//std::cout << "Cooldown: " << cooldown << std::endl;
-		if (isPressed && cooldown > 0.5) // conseguir uma forma de saber quando soltou o bot�o
-		{
-			isPressed = false;
-			cooldown = 0.f;
-		}
-	//}
+	}
+	else
+	{
+		isPressed = false;
+	}
+		
+	desenhaInteracao();
+	
 }
 
 void Menu::setGame(Jogo* jog)

@@ -1,14 +1,14 @@
 #include "Fase.h"
 #include <iostream>
-Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18), tileCount(180), tilesRects(), GC(), p1(new Megaman), plataformas(), LEs(new ListaEntidades), minInimigosFaceis(3), jaFoi(), ultimoSprite(0), acabou(false), p2(nullptr), minObstaculosFaceis(3)
+Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18), tileCount(180), tilesRects(), GC(), p1(new Megaman), plataformas(), LEs(), minInimigosFaceis(3), jaFoi(), ultimoSprite(0), acabou(false), p2(nullptr), minObstaculosFaceis(3), quantidadeLayers(0)
 {
     setTamanho(sf::Vector2f(1280.f, 720.f));
 
     p1->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
     p1->associaGerenciadorColisoes(&GC);
-    p1->associaListaEntidades(LEs);
+    p1->associaListaEntidades(&LEs);
 
-    GC.setListaEntidades(LEs);
+    GC.setListaEntidades(&LEs);
 }
 
 Fase::~Fase()
@@ -26,8 +26,8 @@ Fase::~Fase()
     chao.clear();
     inimigos.clear();
     obstaculos.clear();
-    LEs->LEs.limpar();
-    delete LEs;
+	//LEs.LEs.limpar();
+    delete &LEs;
 }
 
 void Fase::gerenciarColisoes()
@@ -54,12 +54,12 @@ void Fase::criarInimigosFaceis()
         jaFoi[lugar] = 1; // marca que o ponto já foi usado
         Inimigo* inimigo = new Metall;
         inimigo->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
-        inimigo->associaListaEntidades(LEs);
+        inimigo->associaListaEntidades(&LEs);
         inimigo->associaGerenciadorColisoes(&GC);
         inimigo->conhecerJogador(p1);
         inimigo->setCoords(sf::Vector2f((float)(faseJson["layers"][i]["objects"][lugar]["x"] * 3), (float)(faseJson["layers"][i]["objects"][lugar]["y"] * 3)));
         inimigos.push_back(inimigo);
-        LEs->incluirEntidade(inimigos[inimigos.size()-1]);
+        LEs.incluirEntidade(inimigos[inimigos.size()-1]);
         GC.incluirInimigo(inimigos[inimigos.size() - 1]);
 
     }
@@ -105,28 +105,37 @@ void Fase::criarChao()
 void Fase::criarPlataformas()
 {
     int i = 0;
-    while (faseJson["layers"][i]["name"] != "Obstaculos")
+    while (faseJson["layers"][i]["name"] != "Obstaculos" && i< quantidadeLayers)
     {
         i++;
     }
-    for (int j = 0; j < minObstaculosFaceis; j++)
+    if(i>=quantidadeLayers)
     {
-        int qualObs;
-        Obstaculo* p = new Plataforma;
-
-        do
-        {
-            qualObs = aleatoriza(0, faseJson["layers"][i]["objects"].size() - 1); // gera um número aleatório
-
-        } while (jaFoi[qualObs] != 0);//verifica se o ponto já foi usado
-        jaFoi[qualObs] = 1; // marca que o ponto já foi usado
-        p->setGerenciadorGrafico(pGG->getInstancia());
-        p->setCoords(sf::Vector2f((float)(faseJson["layers"][i]["objects"][qualObs]["x"] * 3), (float)faseJson["layers"][i]["objects"][qualObs]["y"] * 3));
-        p->setTamanho(sf::Vector2f((float)faseJson["layers"][i]["objects"][qualObs]["width"] * 3, (float)faseJson["layers"][i]["objects"][qualObs]["height"] * 3));
-        obstaculos.push_back(p);
-        incluirObstaculoGC(p);
-        LEs->incluirEntidade(obstaculos[obstaculos.size() - 1]);
+		std::cout << "Camada de Obstáculos não encontrada!" << std::endl;
     }
+    else
+    {
+		
+        for (int j = 0; j < minObstaculosFaceis; j++)
+        {
+            int qualObs;
+            Obstaculo* p = new Plataforma;
+
+            do
+            {
+                qualObs = aleatoriza(0, faseJson["layers"][i]["objects"].size() - 1); // gera um número aleatório
+
+            } while (jaFoi[qualObs] != 0);//verifica se o ponto já foi usado
+            jaFoi[qualObs] = 1; // marca que o ponto já foi usado
+            p->setGerenciadorGrafico(pGG->getInstancia());
+            p->setCoords(sf::Vector2f((float)(faseJson["layers"][i]["objects"][qualObs]["x"] * 3), (float)faseJson["layers"][i]["objects"][qualObs]["y"] * 3));
+            //p->setTamanho(sf::Vector2f((float)faseJson["layers"][i]["objects"][qualObs]["width"] * 3, (float)faseJson["layers"][i]["objects"][qualObs]["height"] * 3));
+            obstaculos.push_back(p);
+            incluirObstaculoGC(p);
+            LEs.incluirEntidade(obstaculos[obstaculos.size() - 1]);
+        }
+    }
+    
 }
 
 void Fase::desenharCenario()
@@ -168,7 +177,7 @@ void Fase::separaSprites()
     std::string caminhoImagem = "Mapas/" + imagemRelativa;
     if (!imagemTiles.loadFromFile(caminhoImagem))
     {
-        std::cerr << "Erro ao carregar imagem: " << faseJson["tilesets"][0]["image"] << std::endl;
+        std::cout << "Erro ao carregar imagem: " << faseJson["tilesets"][0]["image"] << std::endl;
     }
     columns = faseJson["tilesets"][0]["columns"];
     tileWidth = faseJson["tilesets"][0]["tilewidth"];
@@ -271,9 +280,9 @@ void Fase::setTwoPlayers()
 	p2 = new Megaman(false);
 	p2->setGerenciadorGrafico(Gerenciador_Grafico::getInstancia());
 	p2->associaGerenciadorColisoes(&GC);
-    p2->associaListaEntidades(LEs);
+    p2->associaListaEntidades(&LEs);
 	p2->setCoords(p1->getCoords());
     p2->setExecutando(true);
 	GC.incluirMegaman(p2);
-	LEs->incluirEntidade(p2);
+	LEs.incluirEntidade(p2);
 }

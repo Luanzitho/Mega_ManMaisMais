@@ -44,11 +44,12 @@ protected:
 	std::vector<Plataforma*> chao;
 	std::vector<Inimigo*> inimigos;
 	std::vector<Obstaculo*> obstaculos;
-	ListaEntidades* LEs;
+	ListaEntidades LEs;
 	//Mola* mola;
 	bool acabou;
 	int minInimigosFaceis;
 	int minObstaculosFaceis;
+	int quantidadeLayers;
 
 public:
 	Fase();

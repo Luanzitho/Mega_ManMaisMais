@@ -5,7 +5,7 @@
 
 class ListaEntidades
 {
-public: //private:
+private:
 	Lista<Entidade> LEs;
 
 public:
@@ -14,5 +14,6 @@ public:
 	void incluirEntidade(Entidade* pE);
 	void percorrer(float dt, sf::Vector2f tam);
 	void verificaAbatidos();
+	//Lista<> get
 };
 
