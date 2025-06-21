@@ -20,9 +20,7 @@ private:
 public:
 	//Gerenciador_Grafico(); //Padrão luanzin kkkk
 	~Gerenciador_Grafico();
-
 	sf::Texture& getTextura(const std::string& caminho); //Para armazenar as texturas. Em teoria corrige os crashes por chamar toda hora a textura
-
 	static Gerenciador_Grafico* getInstancia();
 	void desenharEnte(Ente* pE);
 	bool janelaEstaAberta();
