@@ -51,26 +51,6 @@ void Gerenciador_Grafico::desenharEnte(Ente* pE)
 
     window.draw(corpo);
 }
-/*
-void Gerenciador_Grafico::desenharEnte(Ente* pE)
-{
-    if (!pE) return;
-    
-    sf::RectangleShape corpo;
-
-    sf::Texture textura;
-      textura.loadFromFile(pE->getTextureFile());
-
-    sf::Vector2f tam = pE->getTamanho();
-    sf::Vector2f pos = pE->getCoords();
-
-
-    corpo.setSize(tam);
-    corpo.setPosition(pos);
-    corpo.setTexture(&textura);
-
-    window.draw(corpo);
-}*/
 
 bool Gerenciador_Grafico::janelaEstaAberta()
 {
@@ -100,12 +80,12 @@ void Gerenciador_Grafico::mostrarConteudoJanela()
     window.display();
 }
 
-void Gerenciador_Grafico::desenhaTexto(sf::Text text)
+void Gerenciador_Grafico::desenhar(sf::Text text)
 {
 	window.draw(text);
 }
 
-void Gerenciador_Grafico::desenhaSprite(sf::Sprite sprite)
+void Gerenciador_Grafico::desenhar(sf::Sprite sprite)
 {
     window.draw(sprite);
 }

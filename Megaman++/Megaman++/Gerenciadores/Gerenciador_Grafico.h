@@ -29,6 +29,6 @@ public:
 	void eventoFecharJanela();
 	void limparJanela();
 	void mostrarConteudoJanela();
-	void desenhaTexto(sf::Text text);
-	void desenhaSprite(sf::Sprite sprite);
+	void desenhar(sf::Text text);
+	void desenhar(sf::Sprite sprite);
 };
