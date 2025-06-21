@@ -7,6 +7,7 @@
 Metall::Metall(): timerEsconder(0), timerAtirar(0)
 {
 	srand(time(NULL));
+	setId(3);
 
 	tamanho = rand() % 6 + 50;
 
@@ -152,4 +153,13 @@ std::string Metall::getTextureFile()
 			return "Sprites/Inimigos/MetallEscondido2-esq.png";
 		}
 	}
+}
+
+void Metall::salvar()
+{
+	int lugar = getId();
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["timerEsconder"] = timerEsconder;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["timerAtirar"] = timerAtirar;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["escondido"] = escondido;
+	Inimigo::salvar();
 }

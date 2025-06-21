@@ -4,7 +4,7 @@
 BigEye::BigEye() : aceleracao(150), timerAtaque(0)
 {
 	srand(time(NULL));
-
+	setId(4);
 	raio = rand() % 41 + 80;
 
 	setTamanho(sf::Vector2f(raio, 120.f));
@@ -140,4 +140,15 @@ std::string BigEye::getTextureFile()
 			return "Sprites/Inimigos/BigEye1-BAD-dir.png";
 		return "Sprites/Inimigos/BigEye1-BAD-esq.png";
 	}
+}
+
+void BigEye::salvar()
+{
+	int lugar = getId();
+	//dadosSalvos["id"][lugar].push_back({});
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["aceleracao"] = aceleracao;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["timerAtaque"] = timerAtaque;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["danoNormal"] = danoNormal;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["raio"] = raio;
+	Inimigo::salvar();
 }

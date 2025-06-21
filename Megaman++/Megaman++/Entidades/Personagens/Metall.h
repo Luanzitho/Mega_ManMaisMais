@@ -27,5 +27,6 @@ public:
 	void danificar(Megaman* p);
 	void machucar(const int dmg);
 	std::string getTextureFile();
+	void salvar();
 };
 

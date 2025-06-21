@@ -1,7 +1,9 @@
 #include "Mola.h"
 
-Mola::Mola(): forca(-400.f)
+Mola::Mola(): elasticidade(-200.f)
 {
+    setId(10);
+	elasticidade = elasticidade*(rand()%3+1); // Força de impulso da mola
 }
 
 Mola::~Mola()
@@ -51,7 +53,7 @@ void Mola::obstaculizar(Personagem* pPers)
     {
         posPers.y = topoMola - tamPers.y;
         pPers->setCoords(posPers);
-        pPers->setVelVertical(forca);
+        pPers->setVelVertical(elasticidade);
         //tocando = true;
     }
     // --- COLISÃO POR BAIXO ---
@@ -134,4 +136,11 @@ void Mola::obstaculizar(Personagem* pPers)
 std::string Mola::getTextureFile()
 {
     return "Sprites/Obstaculos/Mola.png";
+}
+
+void Mola::salvar()
+{
+    int lugar = getId();
+    dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["elasticidade"] = elasticidade;
+    Obstaculo::salvar();
 }

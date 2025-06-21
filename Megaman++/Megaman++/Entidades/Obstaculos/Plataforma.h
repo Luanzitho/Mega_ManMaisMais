@@ -14,5 +14,6 @@ public:
 	void obstaculizar(Personagem* pPers);
 	std::string getTextureFile();
 	const float getAltura();
+	void salvar();
 };
 

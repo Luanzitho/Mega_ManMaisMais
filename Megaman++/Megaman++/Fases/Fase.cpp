@@ -139,7 +139,7 @@ void Fase::desenharCenario()
     for (int i = 0; i < tilesSprites.size(); i++)
     {
         if (((tilesSprites[i].getPosition().x * tilesSprites[i].getScale().x) > getCoords().x - tilesSprites[i].getScale().x*2) && ((tilesSprites[i].getPosition().x) < getTamanho().x))
-            pGG->desenhaSprite(tilesSprites[i]);
+            pGG->desenhar(tilesSprites[i]);
     }
 }
 void Fase::pegarCamada(int i)
@@ -267,4 +267,9 @@ void Fase::setTwoPlayers()
 void Fase::setOnePlayer()
 {
     if(p2)p2->destruir();
+}
+
+void Fase::salvar()
+{
+    
 }

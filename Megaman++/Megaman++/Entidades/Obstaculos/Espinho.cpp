@@ -3,7 +3,7 @@
 Espinho::Espinho(): danosidade(2)
 {
 	danoso = true;
-
+    setId(11);
     setTamanho(sf::Vector2f(64.f, 64.f));
 }
 
@@ -140,4 +140,11 @@ void Espinho::obstaculizar(Personagem* pPers)
 std::string Espinho::getTextureFile()
 {
     return "Sprites/Obstaculos/Espinho1.png";
+}
+
+void Espinho::salvar()
+{
+    int lugar = getId();
+    dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["danosidade"] = danosidade;
+    Obstaculo::salvar();
 }

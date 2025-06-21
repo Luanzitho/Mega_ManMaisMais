@@ -14,6 +14,7 @@ public:
 	void incluirEntidade(Entidade* pE);
 	void percorrer(float dt, sf::Vector2f tam);
 	void verificaAbatidos();
+	void salvarEntidades();
 	//Lista<> get
 };
 

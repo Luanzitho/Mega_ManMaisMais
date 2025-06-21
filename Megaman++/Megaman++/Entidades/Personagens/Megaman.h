@@ -14,14 +14,11 @@ private:
 	bool invencivel;
 	static int pontos;
 	bool teclaApertada;
-	//float timerBotao;
 	float cooldownTiro;
 	float framesInvencibilidade;
-	//ProjetilMegaman* tiro;
 	ListaEntidades* LE;
 	Gerenciador_Colisoes* GC;
 	float cooldownNoChao;
-	int vidas;
 
 public:
 	Megaman();
@@ -35,7 +32,6 @@ public:
 	void atirar(float dt);
 	void executar(float dt);
 	std::string getTextureFile();
-	void setLibera(bool lib);
-	bool getLibera();
+	void salvar();
 };
 

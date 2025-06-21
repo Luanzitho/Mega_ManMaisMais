@@ -17,4 +17,5 @@ public:
 	void criarMinInimigosMedios();
 	void criarInimigos();
 	void criarObstaculos();
+	void salvar();
 };

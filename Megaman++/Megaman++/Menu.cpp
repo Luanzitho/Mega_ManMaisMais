@@ -1,21 +1,21 @@
 ﻿#include "Menu.h"
 #include <iostream>
 
-Menu::Menu() : escolha(0), tela(0), enter(false), isPressed(false), start(false), cooldown(0.f), fase(0)
+Menu::Menu() : escolha(0), tela(0), enter(false), isPressed(false), start(false), cooldown(0.f), fase(0), pause(false)
 {
+	setId(12);
 	pJog = nullptr;
 	pGG = Gerenciador_Grafico::getInstancia();
 	font = new sf::Font();
 	font->loadFromFile("Fontes/Pixelify_Sans/static/PixelifySans-Regular.ttf");
 	options = { "Jogar", "Ranking", "Sair",
 				"1 Jogador", "2 Jogadores", "Voltar",
-				"Fase 1", "Fase 2", "Voltar",
+				"Continuar","Fase 1", "Fase 2", "Voltar",
 				"Continuar", "Salvar","Voltar ao menu"
 				};
-	//optionsPause = {"Continuar", "Salvar","Voltar ao menu"};
-	coordsTexts = { {500.f, 400.f},{440.f, 500.f}, {540.f,600.f}, 
+	coordsTexts = { {500.f, 400.f},{440.f, 500.f}, {540.f,600.f},
 					{440.f, 400.f},{440.f, 500.f}, {440.f, 600.f},
-					{440.f, 400.f},{440.f, 500.f}, {440.f, 600.f},
+					{240.f, 400.f},{440.f, 500.f}, {440.f, 600.f},{840.f, 400.f},
 					{ 440.f, 400.f },{440.f, 500.f}, {440.f, 600.f}
 					};
 	texts.resize(options.size());
@@ -52,7 +52,8 @@ void Menu::executar(float dt)
 	{
 		if(cooldown>0.25f)
 		{
-			if ((tela == 0 || tela == 1 || tela == 2 || tela == 3) && escolha < 2) escolha++;
+			if ((tela == 0 || tela == 1 || tela == 3) && escolha < 2) escolha++;
+			else if (tela == 2 && escolha < 3)escolha++;
 			isPressed = true;
 			cooldown = 0;
 		}
@@ -130,16 +131,16 @@ void Menu::selecionar()
 	}
 	else if(tela==2)
 	{
-		/*if (escolha == 0) { //Continuar
+		if (escolha == 0) { //Continuar
 
-		}*/
-		if (escolha == 0 || escolha == 1) { //fase selecionada
-			pJog->iniciar(escolha + 1);
-			fase = escolha + 1;
+		}
+		if (escolha == 1 || escolha == 2) { //fase selecionada
+			pJog->iniciar(escolha);
+			fase = escolha;
 			//start = true; //iniciar o jogo
 			tela = 0;//limpa a variave para quando voltar para o menu
 		}
-		else if (escolha == 2)
+		else if (escolha == 3)
 		{
 			tela = 1;//voltar
 		}
@@ -153,11 +154,13 @@ void Menu::selecionar()
 		}
 		else if (escolha == 1)// salvar
 		{
-			
+			salvar();
+			pJog->salvar();
 		}
 		else if (escolha == 2)//voltar para o menu principal
 		{
 			pause = false;
+			pJog->reiniciarFases();
 			tela = 0;//voltar
 		}
 		escolha = 0; //limpa a variavel para quando voltar para o menu
@@ -172,7 +175,7 @@ void Menu::desenhaInteracao()
 		{
 			if (i == escolha)texts[i].setOutlineThickness(3.f);
 			else texts[i].setOutlineThickness(0);
-			pGG->desenhaTexto(texts[i]);
+			pGG->desenhar(texts[i]);
 		}
 	}
 	else if (tela == 1)
@@ -181,25 +184,25 @@ void Menu::desenhaInteracao()
 		{
 			if (i == escolha + 3)texts[i].setOutlineThickness(3.f);
 			else texts[i].setOutlineThickness(0);
-			pGG->desenhaTexto(texts[i]);
+			pGG->desenhar(texts[i]);
 		}
 	}
 	else if (tela == 2)
 	{
-		for (int i = 6; i < 9; i++)
+		for (int i = 6; i < 10; i++)
 		{
 			if (i == escolha + 6)texts[i].setOutlineThickness(3.f);
 			else texts[i].setOutlineThickness(0);
-			pGG->desenhaTexto(texts[i]);
+			pGG->desenhar(texts[i]);
 		}
 	}
 	else if(tela == 3)
 	{
-		for (int i = 9; i < 12; i++)
+		for (int i = 10; i < 13; i++)
 		{
-			if (i == escolha + 9)texts[i].setOutlineThickness(3.f);
+			if (i == escolha + 10)texts[i].setOutlineThickness(3.f);
 			else texts[i].setOutlineThickness(0);
-			pGG->desenhaTexto(texts[i]);
+			pGG->desenhar(texts[i]);
 		}
 	}
 }
@@ -207,4 +210,12 @@ void Menu::desenhaInteracao()
 void Menu::setPause(bool pausado)
 {
 	pause = pausado;
+}
+
+void Menu::salvar()
+{
+	int lugar = getId();
+	dadosSalvos= json::object({});
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["fase"] = fase;
+	Ente::salvar();
 }

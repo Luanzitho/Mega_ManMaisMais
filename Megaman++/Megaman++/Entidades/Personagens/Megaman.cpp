@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-Megaman::Megaman() : Personagem(20), teclaApertada(false), cooldownTiro(0), player1(true), invencivel(false), framesInvencibilidade(0), cooldownNoChao(0), vidas(3)
+Megaman::Megaman() : Personagem(20), teclaApertada(false), cooldownTiro(0), player1(true), invencivel(false), framesInvencibilidade(0), cooldownNoChao(0)
 {
 	LE = nullptr;
 	GC = nullptr;
@@ -18,12 +18,12 @@ Megaman::Megaman() : Personagem(20), teclaApertada(false), cooldownTiro(0), play
 }
 int Megaman::pontos(0);
 
-Megaman::Megaman(bool player) : Personagem(20), teclaApertada(false), cooldownTiro(0), player1(player), invencivel(false), framesInvencibilidade(0), cooldownNoChao(0), vidas(3)
+Megaman::Megaman(bool player) : Personagem(20), teclaApertada(false), cooldownTiro(0), player1(player), invencivel(false), framesInvencibilidade(0), cooldownNoChao(0)
 {
 	LE = nullptr;
 	GC = nullptr;
 
-	setId(1);
+	setId(2);
 
 	direita = true;
 
@@ -258,4 +258,17 @@ std::string Megaman::getTextureFile()
 			return "Sprites/Megaman/Parado/ParadoNH-Inv-esq.png";
 		}
 	}
+}
+
+void Megaman::salvar()
+{
+	int lugar = getId();
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["player1"] = player1;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["invencivel"] = invencivel;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["pontos"] = pontos;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["teclaApertada"] = teclaApertada;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["cooldownTiro"] = cooldownTiro;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["framesInvencibilidade"] = framesInvencibilidade;
+	
+	Personagem::salvar();
 }

@@ -5,7 +5,7 @@ ProjetilMegaman::ProjetilMegaman(): direcao(0)
 {
 	doMega = true;
 
-	setId(4);
+	setId(7);
 }
 
 ProjetilMegaman::ProjetilMegaman(sf::Vector2f posicao, bool direita): Projetil(500, 1)
@@ -17,7 +17,7 @@ ProjetilMegaman::ProjetilMegaman(sf::Vector2f posicao, bool direita): Projetil(5
 
 	doMega = true;
 
-	setId(4);
+	setId(7);
 
 	setCoords(posicao);
 	setTamanho(sf::Vector2f(30.f, 30.f));
@@ -58,4 +58,11 @@ void ProjetilMegaman::executar(float dt)
 std::string ProjetilMegaman::getTextureFile()
 {
 	return "Sprites/Projeteis/ProjetilMegaman.png";
+}
+
+void ProjetilMegaman::salvar()
+{
+	int lugar = getId();
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["direcao"] = direcao;
+	Projetil::salvar();
 }

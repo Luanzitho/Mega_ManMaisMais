@@ -19,5 +19,6 @@ public:
 	void executar(float dt);
 	void danificar(Megaman* p);
 	std::string getTextureFile();
+	void salvar();
 };
 

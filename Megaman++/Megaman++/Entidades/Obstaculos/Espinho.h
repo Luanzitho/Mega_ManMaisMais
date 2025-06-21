@@ -13,5 +13,6 @@ public:
 	void executar(float dt);
 	void obstaculizar(Personagem* pPers);
 	std::string getTextureFile();
+	void salvar();
 };
 

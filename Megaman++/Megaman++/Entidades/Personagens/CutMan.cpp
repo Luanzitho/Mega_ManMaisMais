@@ -6,7 +6,7 @@
 CutMan::CutMan(): cooldownNoChao(0), timerAtirar(0), timerPerseguir(0), timerPular(0), podeAtirar(true)
 {
 	setTamanho(sf::Vector2f(70.f, 95.f));
-
+	setId(8);
 	setNumVidas(22 + nivel_maldade * 2);
 
 	velMax = 200;
@@ -142,4 +142,17 @@ std::string CutMan::getTextureFile()
 			return "Sprites/Inimigos/CutMan1-dir.png";
 		return "Sprites/Inimigos/CutMan1-esq.png";
 	}
+}
+
+void CutMan::salvar()
+{
+	int lugar = getId();
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["forca"] = forca;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["podeAtirar"] = podeAtirar;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["timerAtirar"] = timerAtirar;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["timerPerseguir"] = timerPerseguir;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["timerPular"] = timerPular;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["timerPular"] = timerPular;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["cooldownNoChao"] = cooldownNoChao;
+	Inimigo::salvar();
 }

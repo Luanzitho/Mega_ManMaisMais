@@ -8,3 +8,10 @@ Obstaculo::Obstaculo(): danoso(false), empuxo(300)
 Obstaculo::~Obstaculo()
 {
 }
+
+void Obstaculo::salvar() 
+{
+	int lugar = getId();
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["danoso"] = danoso;
+	Entidade::salvar();
+}

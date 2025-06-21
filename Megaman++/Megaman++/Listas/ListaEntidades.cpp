@@ -66,4 +66,22 @@ void ListaEntidades::verificaAbatidos()
     }
 }
 
+void ListaEntidades::salvarEntidades()
+{
+    if (LEs.getpPrimeiro()) {
+        Lista<Entidade>::Elemento<Entidade>* aux = LEs.getpPrimeiro();
+        while (aux != nullptr)
+        {
+            Entidade* pEntidade = aux->getInfo();
+                
+            if (pEntidade )
+            {
+                pEntidade->salvar();
+            }
+            aux = aux->getProximo();
+        }
+    }
+    //verificaAbatidos();
+}
+
 

@@ -17,5 +17,6 @@ public:
 	void mover(float dt);
 	void executar(float dt);
 	std::string getTextureFile();
+	void salvar();
 };
 

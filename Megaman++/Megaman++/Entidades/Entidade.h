@@ -13,6 +13,7 @@ protected:
 	float velMax;
 	bool noChao;
 	bool executando;
+	static int qualEntidade;
 	//float x;
 	//float y;
 	//ostream buffer;
@@ -33,6 +34,7 @@ public:
 	virtual std::string getTextureFile() = 0;
 	const bool getExecutando();
 	void setExecutando(const bool exe);
+	virtual void salvar();
 	//virtual void salvar() = 0;
 
 	//void salvarDataBuffer(); 

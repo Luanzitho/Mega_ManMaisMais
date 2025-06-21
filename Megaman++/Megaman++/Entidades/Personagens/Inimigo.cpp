@@ -4,12 +4,13 @@ Inimigo::Inimigo() : pMega(nullptr), dano(0), LE(nullptr), GC(nullptr)
 {
 	srand(time(NULL));
 
-	setId(2);
+	//setId(2);
 
 	nivel_maldade = rand() % 3 + 1;
 
 	qtdPontos = nivel_maldade * 100; //Cada nível de maldade do inimigo resulta em 100 pontos a mais para a quantidade padrão de pontos
 }
+int Inimigo::qualInimigo = 0;
 
 Inimigo::~Inimigo()
 {
@@ -47,4 +48,19 @@ void Inimigo::associaListaEntidades(ListaEntidades* pLista)
 void Inimigo::associaGerenciadorColisoes(Gerenciador_Colisoes* gc)
 {
 	GC = gc;
+}
+
+void Inimigo::salvar()
+{
+	int lugar = getId();
+	if (lugar < 0 || lugar >= dadosSalvos["id"].size())
+	{
+		//std::cerr << "Erro: ID do inimigo fora dos limites do vetor de dados salvos." << std::endl;
+		return;
+	}
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["qtdPontos"] = qtdPontos;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["nivel_maldade"] = nivel_maldade;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["dano"] = dano;
+
+	Personagem::salvar();
 }

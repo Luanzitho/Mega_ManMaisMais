@@ -23,3 +23,10 @@ void Projetil::associaListaEntidades(ListaEntidades* pLista)
 {
 	LEs = pLista;
 }
+
+void Projetil::salvar()
+{
+	int lugar = getId();
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["doMega"] = doMega;
+	Entidade::salvar();
+}

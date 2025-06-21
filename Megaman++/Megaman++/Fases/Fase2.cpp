@@ -196,3 +196,8 @@ void Fase2::criarObstaculos()
     }
    
 }
+void Fase2::salvar()
+{
+    LEs.salvarEntidades();
+    Fase::salvar();
+}

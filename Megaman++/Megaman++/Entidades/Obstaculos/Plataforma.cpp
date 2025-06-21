@@ -4,7 +4,7 @@
 Plataforma::Plataforma()
 {
     srand(time(NULL));
-    
+    setId(9);
     altura = 50 * (rand() % 3 + 1);
   
     setTamanho(sf::Vector2f(50.f, altura));
@@ -98,4 +98,11 @@ std::string Plataforma::getTextureFile()
 const float Plataforma::getAltura()
 {
     return altura;
+}
+
+void Plataforma::salvar()
+{
+    int lugar = getId();
+    dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["altura"] = altura;
+	Obstaculo::salvar();
 }

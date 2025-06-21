@@ -70,6 +70,7 @@ public:
 	bool getAcabou();
 	void setTwoPlayers();
 	void setOnePlayer();
+	virtual void salvar() = 0;
 
 };
 

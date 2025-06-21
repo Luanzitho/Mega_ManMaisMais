@@ -15,8 +15,8 @@ private:
 	bool isPressed, enter, start;
 	bool pause;
 	sf::Font* font;
-	std::vector<const char*> options, optionsPause;
-	std::vector<sf::Text> texts, textsPause;
+	std::vector<const char*> options;
+	std::vector<sf::Text> texts;
 	std::vector<sf::Vector2f> coordsTexts;
 	float cooldown;
 	
@@ -31,4 +31,5 @@ public:
 	void selecionar();
 	void desenhaInteracao();
 	void setPause(bool pausado);
+	void salvar();
 };

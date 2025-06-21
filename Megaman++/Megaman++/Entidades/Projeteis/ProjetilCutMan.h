@@ -23,4 +23,5 @@ public:
 	void retornar(float dt);
 	void executar(float dt);
 	std::string getTextureFile();
+	void salvar();
 };

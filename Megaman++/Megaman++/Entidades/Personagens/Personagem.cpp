@@ -8,6 +8,8 @@ Personagem::Personagem(int v): num_vidas(v) //Acho até q dá pra remover hein
 {
 }
 
+int Personagem::qualPersonagem = 0;
+
 Personagem::~Personagem()
 {
 }
@@ -33,4 +35,12 @@ void Personagem::setNumVidas(const int v)
 int Personagem::getNumVidas()
 {
 	return num_vidas;
+}
+
+void Personagem::salvar()
+{
+	int lugar = getId();
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["numVidas"] = getNumVidas();
+
+	Entidade::salvar();
 }

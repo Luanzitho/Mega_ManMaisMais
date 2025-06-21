@@ -100,3 +100,15 @@ std::string ProjetilCutMan::getTextureFile()
 {
 	return "Sprites/Projeteis/ProjetilCutMan1.png";
 }
+void ProjetilCutMan::salvar()
+{
+	int lugar = getId();
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["timerRetornar"] = timerRetornar;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["limite"] = limite;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["alvo"]["x"] = alvo.x;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["alvo"]["y"] = alvo.y;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["mestre"]["id"] = mestre->getId(); // Aqui é necessário salvar o ID do mestre, não o ponteiro
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["mestre"]["position"]["x"] = mestre->getCoords().x; // posicao do mestre para achar na hora que puxar o save
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["mestre"]["position"]["y"] = mestre->getCoords().y; // posicao do mestre para achar na hora que puxar o save
+	Projetil::salvar();
+}

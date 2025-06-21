@@ -1,0 +1,317 @@
+{
+    "id": [
+        null,
+        [
+            {
+                "cooldownTiro": 11.82376480102539,
+                "direita": true,
+                "executando": false,
+                "framesInvencibilidade": 1.9524130821228027,
+                "invencivel": true,
+                "noChao": true,
+                "numVidas": 13,
+                "player1": true,
+                "pontos": 0,
+                "posicao": {
+                    "x": 729.8648681640625,
+                    "y": 363.494140625
+                },
+                "tamanho": {
+                    "x": 70.0,
+                    "y": 70.0
+                },
+                "teclaApertada": false,
+                "velMax": 200.0,
+                "velVertical": 0.0,
+                "velocidade": 12.922163963317871
+            }
+        ],
+        null,
+        [
+            {
+                "dano": 1,
+                "direita": false,
+                "escondido": true,
+                "executando": false,
+                "nivel_maldade": 2,
+                "noChao": true,
+                "numVidas": 2,
+                "posicao": {
+                    "x": -726.124755859375,
+                    "y": 384.0
+                },
+                "qtdPontos": 250,
+                "tamanho": {
+                    "x": 51.0,
+                    "y": 51.0
+                },
+                "timerAtirar": 5.531764984130859,
+                "timerEsconder": 5.531764984130859,
+                "velMax": 0.0,
+                "velVertical": 0.0,
+                "velocidade": 0.0
+            },
+            {
+                "dano": 1,
+                "direita": false,
+                "escondido": true,
+                "executando": false,
+                "nivel_maldade": 2,
+                "noChao": true,
+                "numVidas": 2,
+                "posicao": {
+                    "x": -537.1251831054688,
+                    "y": 192.75
+                },
+                "qtdPontos": 250,
+                "tamanho": {
+                    "x": 51.0,
+                    "y": 51.0
+                },
+                "timerAtirar": 4.755083084106445,
+                "timerEsconder": 4.755083084106445,
+                "velMax": 0.0,
+                "velVertical": 0.0,
+                "velocidade": 0.0
+            },
+            {
+                "dano": 1,
+                "direita": false,
+                "escondido": false,
+                "executando": false,
+                "nivel_maldade": 2,
+                "noChao": false,
+                "numVidas": 2,
+                "posicao": {
+                    "x": 491.8760681152344,
+                    "y": 382.494140625
+                },
+                "qtdPontos": 250,
+                "tamanho": {
+                    "x": 51.0,
+                    "y": 51.0
+                },
+                "timerAtirar": 2.4766409397125244,
+                "timerEsconder": 2.4766409397125244,
+                "velMax": 0.0,
+                "velVertical": 0.0,
+                "velocidade": 0.0
+            }
+        ],
+        null,
+        [
+            {
+                "direcao": -1,
+                "direita": false,
+                "doMega": false,
+                "executando": false,
+                "noChao": false,
+                "posicao": {
+                    "x": 219.28219604492188,
+                    "y": 382.494140625
+                },
+                "tamanho": {
+                    "x": 15.0,
+                    "y": 15.0
+                },
+                "tipoTiro": 1,
+                "velMax": 0.0,
+                "velVertical": 0.0,
+                "velocidade": 0.0
+            },
+            {
+                "direcao": -1,
+                "direita": false,
+                "doMega": false,
+                "executando": false,
+                "noChao": false,
+                "posicao": {
+                    "x": 219.28219604492188,
+                    "y": 1005.775390625
+                },
+                "tamanho": {
+                    "x": 15.0,
+                    "y": 15.0
+                },
+                "tipoTiro": 3,
+                "velMax": 0.0,
+                "velVertical": 0.0,
+                "velocidade": 0.0
+            }
+        ],
+        null,
+        null,
+        [
+            {
+                "cooldownNoChao": 0.06667400151491165,
+                "dano": 0,
+                "direita": false,
+                "executando": false,
+                "forca": 4,
+                "nivel_maldade": 2,
+                "noChao": true,
+                "numVidas": 26,
+                "podeAtirar": true,
+                "posicao": {
+                    "x": 966.2257690429688,
+                    "y": 338.494140625
+                },
+                "qtdPontos": 1100,
+                "tamanho": {
+                    "x": 70.0,
+                    "y": 95.0
+                },
+                "timerAtirar": 1.4696542024612427,
+                "timerPerseguir": 0.4613190293312073,
+                "timerPular": 1.4696542024612427,
+                "velMax": 200.0,
+                "velVertical": 0.0,
+                "velocidade": -200.0
+            }
+        ],
+        [
+            {
+                "altura": 100.0,
+                "danoso": false,
+                "direita": false,
+                "executando": false,
+                "noChao": false,
+                "posicao": {
+                    "x": -84.12432861328125,
+                    "y": 142.0
+                },
+                "tamanho": {
+                    "x": 50.0,
+                    "y": 100.0
+                },
+                "velMax": 0.0,
+                "velVertical": 0.0,
+                "velocidade": 0.0
+            },
+            {
+                "altura": 100.0,
+                "danoso": false,
+                "direita": false,
+                "executando": false,
+                "noChao": false,
+                "posicao": {
+                    "x": -36.1240348815918,
+                    "y": 240.0
+                },
+                "tamanho": {
+                    "x": 50.0,
+                    "y": 100.0
+                },
+                "velMax": 0.0,
+                "velVertical": 0.0,
+                "velocidade": 0.0
+            },
+            {
+                "altura": 100.0,
+                "danoso": false,
+                "direita": false,
+                "executando": false,
+                "noChao": false,
+                "posicao": {
+                    "x": -132.12413024902344,
+                    "y": 478.0
+                },
+                "tamanho": {
+                    "x": 50.0,
+                    "y": 100.0
+                },
+                "velMax": 0.0,
+                "velVertical": 0.0,
+                "velocidade": 0.0
+            },
+            {
+                "altura": 100.0,
+                "danoso": false,
+                "direita": false,
+                "executando": false,
+                "noChao": false,
+                "posicao": {
+                    "x": -87.1243896484375,
+                    "y": 478.0
+                },
+                "tamanho": {
+                    "x": 50.0,
+                    "y": 100.0
+                },
+                "velMax": 0.0,
+                "velVertical": 0.0,
+                "velocidade": 0.0
+            }
+        ],
+        null,
+        [
+            {
+                "danosidade": 2,
+                "danoso": true,
+                "direita": false,
+                "executando": false,
+                "noChao": false,
+                "posicao": {
+                    "x": 584.8763427734375,
+                    "y": 385.125
+                },
+                "tamanho": {
+                    "x": 49.875,
+                    "y": 46.875
+                },
+                "velMax": 0.0,
+                "velVertical": 0.0,
+                "velocidade": 0.0
+            },
+            {
+                "danosidade": 2,
+                "danoso": true,
+                "direita": false,
+                "executando": false,
+                "noChao": false,
+                "posicao": {
+                    "x": -1092.124267578125,
+                    "y": 384.54547119140625
+                },
+                "tamanho": {
+                    "x": 48.54545593261719,
+                    "y": 46.90909194946289
+                },
+                "velMax": 0.0,
+                "velVertical": 0.0,
+                "velocidade": 0.0
+            },
+            {
+                "danosidade": 2,
+                "danoso": true,
+                "direita": false,
+                "executando": false,
+                "noChao": false,
+                "posicao": {
+                    "x": 539.8759765625,
+                    "y": 384.75
+                },
+                "tamanho": {
+                    "x": 43.875,
+                    "y": 46.125
+                },
+                "velMax": 0.0,
+                "velVertical": 0.0,
+                "velocidade": 0.0
+            }
+        ],
+        [
+            {
+                "fase": 2,
+                "posicao": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "tamanho": {
+                    "x": 1280.0,
+                    "y": 720.0
+                }
+            }
+        ]
+    ]
+}

@@ -25,7 +25,6 @@ private:
 	Fase2* f2;
 	bool inMenu;
 	bool playing;
-	bool pausar;
 	int faseA;
 
 public:
@@ -36,5 +35,6 @@ public:
 	void encerrar();
 	void setPlayers(bool players);
 	Gerenciador_Grafico* getGerenciador();
-	void pause();
+	void reiniciarFases();
+	void salvar();
 };

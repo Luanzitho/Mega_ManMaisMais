@@ -18,4 +18,5 @@ public:
 	void criarEspinhos();
 	void criarInimigos();
 	void criarObstaculos();
+	void salvar();
 };

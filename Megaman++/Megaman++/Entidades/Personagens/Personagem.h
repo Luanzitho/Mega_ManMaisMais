@@ -8,7 +8,7 @@ class Personagem:public Entidade
 {
 protected:
 	int num_vidas;
-	
+	static int qualPersonagem;
 public:
 	Personagem();
 	Personagem(int v);
@@ -20,4 +20,5 @@ public:
 	virtual void mover(float dt) = 0;
 	virtual void executar(float dt) = 0;
 	virtual std::string getTextureFile() = 0;
+	virtual void salvar();
 };

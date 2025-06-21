@@ -89,3 +89,4 @@ void Gerenciador_Grafico::desenhar(sf::Sprite sprite)
 {
     window.draw(sprite);
 }
+

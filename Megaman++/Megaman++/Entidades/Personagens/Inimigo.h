@@ -13,6 +13,7 @@ protected:
 	Megaman* pMega;
 	ListaEntidades* LE;
 	Gerenciador_Colisoes* GC;
+	static int qualInimigo;
 
 public:
 	Inimigo();
@@ -27,4 +28,5 @@ public:
 	virtual std::string getTextureFile() = 0;
 	void associaListaEntidades(ListaEntidades* pLista);
 	void associaGerenciadorColisoes(Gerenciador_Colisoes* gc);
+	virtual void salvar();
 };

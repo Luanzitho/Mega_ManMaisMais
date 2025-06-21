@@ -3,7 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-Jogo::Jogo() : GG(*Gerenciador_Grafico::getInstancia()), inMenu(true), playing(false),pausar(false), faseA(0), f1(new Fase1), f2(new Fase2)
+Jogo::Jogo() : GG(*Gerenciador_Grafico::getInstancia()), inMenu(true), playing(false), faseA(0), f1(new Fase1), f2(new Fase2)
 {
 	f1->setCoords(sf::Vector2f(0.f, 0.f));
 	f1->setGerenciadorGrafico(&GG);
@@ -53,11 +53,9 @@ void Jogo::executar()
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
 			{
-				//inMenu = false;
 				playing = false;
 				inMenu= true;
 				menu->setPause(true);
-				//menu->executar(dt);
 			}
 		}
 		
@@ -101,7 +99,24 @@ Gerenciador_Grafico* Jogo::getGerenciador()
 	return &GG;
 }
 
-void Jogo::pause()
+void Jogo::reiniciarFases()
 {
+	//delete f1;
+	//delete f2;
+	f1 = new Fase1;
+	f2 = new Fase2;
+	f1->setCoords(sf::Vector2f(0.f, 0.f));
+	f1->setGerenciadorGrafico(&GG);
 
+	f2->setCoords(sf::Vector2f(0.f, 0.f));
+	f2->setGerenciadorGrafico(&GG);
+}
+
+void Jogo::salvar()
+{
+	if (faseA == 1)
+		f1->salvar();
+	else if (faseA == 2)
+		f2->salvar();
+	// salvar as variaveis que precisar
 }

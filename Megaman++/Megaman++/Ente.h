@@ -3,7 +3,10 @@
 #include "Gerenciadores/Gerenciador_Grafico.h"
 //#include "Gerenciadores/Gerenciador_Colisoes.h"
 #include <string>
+#include <fstream>
+#include "json.hpp"
 
+using namespace nlohmann;
 class Gerenciador_Grafico;
 
 class Ente
@@ -14,6 +17,19 @@ protected:
 	//Gerenciador_Colisoes* pGC;
 	sf::Vector2f coords;
 	sf::Vector2f tamanho;
+	static json dadosSalvos;
+	/*static int qualEnte1;
+	static int qualEnte2;
+	static int qualEnte3;
+	static int qualEnte4;
+	static int qualEnte5;
+	static int qualEnte6;
+	static int qualEnte7;
+	static int qualEnte8;
+	static int qualEnte9;
+	static int qualEnte10;
+	static int qualEnte11;*/
+	
 
 public:
 	Ente();
@@ -31,4 +47,5 @@ public:
 	const sf::Vector2f getCoords(); 
 	void setCoords(const sf::Vector2f coordenadas);
 	void desenhar();
+	virtual void salvar();
 };

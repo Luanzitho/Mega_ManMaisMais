@@ -74,3 +74,11 @@ std::string ProjetilMetall::getTextureFile()
 {
 	return "Sprites/Projeteis/ProjetilMetall.png";
 }
+
+void ProjetilMetall::salvar()
+{
+	int lugar = getId();
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["direcao"] = direcao;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["tipoTiro"] = tipoTiro;
+	Projetil::salvar();
+}
