@@ -12,6 +12,8 @@ ProjetilCutMan::ProjetilCutMan(): timerRetornar(0), mestre(nullptr), limite(fals
 	setId(6);
 }
 
+int ProjetilCutMan::indiceProCut = -1;
+
 ProjetilCutMan::ProjetilCutMan(sf::Vector2f posicao, int maldade, sf::Vector2f alvo, CutMan* mestre): Projetil(350, maldade + 4), timerRetornar(0), limite(false)
 {
 	setCoords(posicao);
@@ -112,3 +114,25 @@ void ProjetilCutMan::salvar()
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["mestre"]["position"]["y"] = mestre->getCoords().y; // posicao do mestre para achar na hora que puxar o save
 	Projetil::salvar();
 }
+
+void ProjetilCutMan::carregar()
+{
+	int lugar = getId();
+	indiceAtual = ++indiceProCut;
+	timerRetornar = dadosSalvos["id"][lugar][indiceAtual]["timerRetornar"];
+	limite = dadosSalvos["id"][lugar][indiceAtual]["limite"];
+	alvo.x = dadosSalvos["id"][lugar][indiceAtual]["alvo"]["x"];
+	alvo.y = dadosSalvos["id"][lugar][indiceAtual]["alvo"]["y"];
+
+	Projetil::carregar();
+	
+}
+
+void ProjetilCutMan::procuraMestre(CutMan* ini)
+{
+	if (!ini)return;
+	if (ini->getCoords().x == dadosSalvos["id"][getId()][indiceAtual]["mestre"]["position"]["x"])
+		if (ini->getCoords().y == dadosSalvos["id"][getId()][indiceAtual]["mestre"]["position"]["y"])
+				mestre = ini;
+}
+

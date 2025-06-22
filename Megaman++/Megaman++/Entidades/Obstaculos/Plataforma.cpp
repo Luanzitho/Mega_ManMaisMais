@@ -10,6 +10,8 @@ Plataforma::Plataforma()
     setTamanho(sf::Vector2f(50.f, altura));
 }
 
+int Plataforma::indicePlataforma = -1;
+
 Plataforma::~Plataforma()
 {
 }
@@ -105,4 +107,12 @@ void Plataforma::salvar()
     int lugar = getId();
     dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["altura"] = altura;
 	Obstaculo::salvar();
+}
+
+void Plataforma::carregar()
+{
+    int lugar = getId();
+    indiceAtual = ++indicePlataforma;
+    altura = dadosSalvos["id"][lugar][indiceAtual]["altura"];
+    Obstaculo::carregar();
 }

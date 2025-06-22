@@ -8,6 +8,8 @@ ProjetilMetall::ProjetilMetall(): direcao(0)
 	setId(5);
 }
 
+int ProjetilMetall::indiceProMetall = -1;
+
 ProjetilMetall::ProjetilMetall(sf::Vector2f posicao, bool direita, int numTiro, int maldade): Projetil(250, maldade + 1)
 {
 	if (direita)
@@ -81,4 +83,13 @@ void ProjetilMetall::salvar()
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["direcao"] = direcao;
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["tipoTiro"] = tipoTiro;
 	Projetil::salvar();
+}
+
+void ProjetilMetall::carregar()
+{
+	int lugar = getId();
+	indiceAtual = ++indiceProMetall;
+	direcao = dadosSalvos["id"][lugar][indiceAtual]["direcao"];
+	tipoTiro= dadosSalvos["id"][lugar][indiceAtual]["tipoTiro"];
+	Projetil::carregar();
 }

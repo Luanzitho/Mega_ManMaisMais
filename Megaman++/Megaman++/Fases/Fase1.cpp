@@ -4,6 +4,7 @@
 
 Fase1::Fase1(): minInimigosMedios(3), minObsMolas(3)
 {
+    setId(13);
     std::fstream jsonFile("Mapas/mapa1.tmj");
     if (jsonFile.is_open()) {
         jsonFile >> faseJson;
@@ -205,6 +206,14 @@ void Fase1::criarObstaculos()
 
 void Fase1::salvar()
 {
-    LEs.salvarEntidades();
+    int lugar = getId();
+    
+    dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["minInimigosMedios"] = minInimigosMedios;
+    dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["minObsMolas"] = minObsMolas;
     Fase::salvar();
+}
+
+void Fase1::carregar()
+{
+    Fase::carregar();
 }

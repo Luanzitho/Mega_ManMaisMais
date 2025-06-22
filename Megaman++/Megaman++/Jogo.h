@@ -32,9 +32,11 @@ public:
 	~Jogo();
 	void executar();
 	void iniciar(int fase);
+	void iniciar(int fase, bool carregar);
 	void encerrar();
 	void setPlayers(bool players);
 	Gerenciador_Grafico* getGerenciador();
 	void reiniciarFases();
 	void salvar();
+	
 };

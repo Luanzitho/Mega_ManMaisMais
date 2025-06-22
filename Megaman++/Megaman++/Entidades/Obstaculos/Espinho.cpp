@@ -7,6 +7,8 @@ Espinho::Espinho(): danosidade(2)
     setTamanho(sf::Vector2f(64.f, 64.f));
 }
 
+int Espinho::indiceEspinho = -1;
+
 Espinho::~Espinho()
 {
 }
@@ -147,4 +149,12 @@ void Espinho::salvar()
     int lugar = getId();
     dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["danosidade"] = danosidade;
     Obstaculo::salvar();
+}
+
+void Espinho::carregar()
+{
+    int lugar = getId();
+    indiceAtual = ++indiceEspinho;
+    danosidade = dadosSalvos["id"][lugar][indiceAtual]["danosidade"];
+    Obstaculo::carregar();
 }

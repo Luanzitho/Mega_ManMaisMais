@@ -76,3 +76,16 @@ void Entidade::salvar()
 
 	Ente::salvar();
 }
+
+void Entidade::carregar()
+{
+	int lugar = getId();
+	direita = dadosSalvos["id"][lugar][indiceAtual]["direita"];
+	velocidade = dadosSalvos["id"][lugar][indiceAtual]["velocidade"];
+	velVertical=dadosSalvos["id"][lugar][indiceAtual]["velVertical"];
+	velMax=dadosSalvos["id"][lugar][indiceAtual]["velMax"];
+	noChao=dadosSalvos["id"][lugar][indiceAtual]["noChao"];
+	executando=dadosSalvos["id"][lugar][indiceAtual]["executando"];
+
+	Ente::carregar();
+}

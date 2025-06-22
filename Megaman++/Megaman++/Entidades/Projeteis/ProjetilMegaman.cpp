@@ -8,6 +8,8 @@ ProjetilMegaman::ProjetilMegaman(): direcao(0)
 	setId(7);
 }
 
+int ProjetilMegaman::indiceProMega = -1;
+
 ProjetilMegaman::ProjetilMegaman(sf::Vector2f posicao, bool direita): Projetil(500, 1)
 {
 	if (direita)
@@ -65,4 +67,12 @@ void ProjetilMegaman::salvar()
 	int lugar = getId();
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["direcao"] = direcao;
 	Projetil::salvar();
+}
+
+void ProjetilMegaman::carregar()
+{
+	int lugar = getId();
+	indiceAtual = ++indiceProMega;
+	direcao = dadosSalvos["id"][lugar][indiceAtual]["direcao"];
+	Projetil::carregar();
 }

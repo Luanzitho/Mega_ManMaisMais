@@ -12,6 +12,7 @@ private:
 	float timerPerseguir;
 	float timerPular;
 	float cooldownNoChao;
+	static int indiceCutMan;
 
 public:
 	CutMan();
@@ -23,5 +24,7 @@ public:
 	void danificar(Megaman* p);
 	std::string getTextureFile();
 	void salvar();
+	void carregar();
+	bool getPossoAtirar();
 };
 

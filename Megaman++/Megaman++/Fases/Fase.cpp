@@ -1,6 +1,6 @@
 #include "Fase.h"
 #include <iostream>
-Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18), tileCount(180), tilesRects(), GC(), p1(new Megaman), plataformas(), LEs(), minInimigosFaceis(3), jaFoi(), ultimoSprite(0), acabou(false), p2(nullptr), minObstaculosFaceis(3), quantidadeLayers(0)
+Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18), tileCount(180), tilesRects(), GC(), p1(new Megaman), LEs(), minInimigosFaceis(3), jaFoi(), ultimoSprite(0), acabou(false), p2(nullptr), minObstaculosFaceis(3), quantidadeLayers(0)
 {
     setTamanho(sf::Vector2f(1280.f, 720.f));
 
@@ -22,7 +22,6 @@ Fase::~Fase()
     fundo1.clear();
     fundo2.clear();
     fundo3.clear();
-    plataformas.clear();
     chao.clear();
     inimigos.clear();
     obstaculos.clear();
@@ -227,10 +226,6 @@ void Fase::moveMapa(float dt)
             {
                 chao[i]->setCoords(sf::Vector2f(chao[i]->getCoords().x - p1->getVelocidade() * dt, chao[i]->getCoords().y));
             }
-            for (int i = 0; i < plataformas.size(); i++)
-            {
-                plataformas[i]->setCoords(sf::Vector2f(plataformas[i]->getCoords().x - p1->getVelocidade() * dt, plataformas[i]->getCoords().y));
-            }
             for (int i = 0; i < tilesSprites.size(); i++)
             {
                 tilesSprites[i].setPosition(tilesSprites[i].getPosition().x - p1->getVelocidade() * dt, tilesSprites[i].getPosition().y);
@@ -271,5 +266,182 @@ void Fase::setOnePlayer()
 
 void Fase::salvar()
 {
+    int lugar = getId();
+    LEs.salvarEntidades();
+
+    dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["acabou"] = acabou;
+    dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["ultimoSprite"] = ultimoSprite;
+    dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["minInimigosFaceis"] = minInimigosFaceis;
+    dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["minObstaculosFaceis"] = minObstaculosFaceis;
+    dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["quantidadeLayers"] = quantidadeLayers;
+
+    for(int i=0; i< tilesSprites.size(); i++)
+    {
+        dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["tilesSprites"][i]["position"]["x"] = tilesSprites[i].getPosition().x;
+        dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["tilesSprites"][i]["position"]["y"] = tilesSprites[i].getPosition().y;
+    }
+
+
     
+    Ente::salvar();
+}
+
+void Fase::carregar()
+{
+    int lugar = getId();
+    int tamanho;
+
+    LEs.limpar();
+    GC.limpar();
+    //players
+    tamanho = dadosSalvos["id"][1].size();
+    for (int i = 0; i < tamanho; i++)
+    {
+        //Player1
+        Megaman* pM = new Megaman;
+        p1 = pM;
+        //delete pM;
+        p1->associaGerenciadorColisoes(&GC);
+        p1->setGerenciadorGrafico(pGG);
+        p1->associaListaEntidades(&LEs);
+        LEs.incluirEntidade(p1);
+        GC.incluirMegaman(p1);
+        p1->carregar();
+        
+    }
+    tamanho = dadosSalvos["id"][2].size();
+    for (int i = 0; i < tamanho; i++)
+    {
+        //Player2
+        p2->carregar();
+        p2->associaGerenciadorColisoes(&GC);
+        p2->setGerenciadorGrafico(pGG);
+        p2->associaListaEntidades(&LEs);
+        LEs.incluirEntidade(p2);
+        GC.incluirMegaman(p2);
+    }
+    //Inimigos
+    inimigos.clear();
+    std::cout << "limpou inimigos" << std::endl;
+    tamanho = dadosSalvos["id"][3].size();
+    for (int i = 0; i < tamanho; i++)
+    {
+        //Metalls
+        Metall* pM = new Metall;
+        pM->carregar();
+        pM->associaGerenciadorColisoes(&GC);
+        pM->setGerenciadorGrafico(pGG);
+        pM->associaListaEntidades(&LEs);
+        pM->conhecerJogador(p1);
+        LEs.incluirEntidade(pM);
+        GC.incluirInimigo(pM);
+        inimigos.push_back(pM);
+    }
+    tamanho = dadosSalvos["id"][4].size();
+    for (int i = 0; i < tamanho; i++)
+    {
+        //BigEyes
+        BigEye* pB = new BigEye;
+        pB->carregar();
+        pB->associaGerenciadorColisoes(&GC);
+        pB->setGerenciadorGrafico(pGG);
+        pB->associaListaEntidades(&LEs);
+        LEs.incluirEntidade(pB);
+        pB->conhecerJogador(p1);
+        GC.incluirInimigo(pB);
+        inimigos.push_back(pB);
+    }
+    tamanho = dadosSalvos["id"][8].size();
+    std::vector<CutMan*> cuts;
+    for (int i = 0; i < tamanho; i++)
+    {
+        //CutMans
+        CutMan* pC = new CutMan;
+        pC->carregar();
+        pC->associaGerenciadorColisoes(&GC);
+        pC->setGerenciadorGrafico(pGG);
+        pC->associaListaEntidades(&LEs);
+        LEs.incluirEntidade(pC);
+        pC->conhecerJogador(p1);
+        cuts.push_back(pC);
+        GC.incluirInimigo(pC);
+        inimigos.push_back(pC);
+    }
+    //Projeteis
+    tamanho = dadosSalvos["id"][5].size();
+    for (int i = 0; i < tamanho; i++)
+    {
+        //Projeteis Metall
+        ProjetilMetall* pPM = new ProjetilMetall;
+        pPM->carregar();
+        pPM->setGerenciadorGrafico(pGG);
+        pPM->associaListaEntidades(&LEs);
+        LEs.incluirEntidade(pPM);
+        GC.incluirProjetil(pPM);
+    }
+    tamanho = dadosSalvos["id"][6].size();
+    for (int i = 0; i < tamanho; i++)
+    {
+        //Projeteis CutMan
+        ProjetilCutMan* pPC = new ProjetilCutMan;
+        pPC->carregar();
+        for(int j=0; j<cuts.size(); j++)
+        {
+            pPC->procuraMestre(cuts[i]);
+        }
+        pPC->setGerenciadorGrafico(pGG);
+        pPC->associaListaEntidades(&LEs);
+        LEs.incluirEntidade(pPC);
+        GC.incluirProjetil(pPC);
+    }
+    tamanho = dadosSalvos["id"][7].size();
+    for (int i = 0; i < tamanho; i++)
+    {
+        //Projeteis Megaman
+        ProjetilMegaman* pPM = new ProjetilMegaman;
+        pPM->carregar();
+        pPM->setGerenciadorGrafico(pGG);
+        pPM->associaListaEntidades(&LEs);
+        LEs.incluirEntidade(pPM);
+        GC.incluirProjetil(pPM);
+    }
+    //Obstaculos
+    obstaculos.clear();
+    tamanho = dadosSalvos["id"][9].size();
+    for (int i = 0; i < tamanho; i++)
+    {
+        //Plataforma
+        Plataforma* pP = new Plataforma;
+        pP->carregar();
+        pP->setGerenciadorGrafico(pGG);
+        GC.incluirObstaculo(pP);
+        obstaculos.push_back(pP);
+    }
+    tamanho = dadosSalvos["id"][10].size();
+    for (int i = 0; i < tamanho; i++)
+    {
+        //Mola
+        Mola* pM = new Mola;
+        pM->carregar();
+        pM->setGerenciadorGrafico(pGG);
+        GC.incluirObstaculo(pM);
+        obstaculos.push_back(pM);
+    }
+    tamanho = dadosSalvos["id"][11].size();
+    for (int i = 0; i < tamanho; i++)
+    {
+        //Espinho
+        Espinho* pE = new Espinho;
+        pE->carregar();
+        pE->setGerenciadorGrafico(pGG);
+        GC.incluirObstaculo(pE);
+        obstaculos.push_back(pE);
+    }
+    tamanho = dadosSalvos["id"][lugar][0]["tilesSprites"].size();
+    for(int i =0; i<tilesSprites.size(); i++)
+    {
+        tilesSprites[i].setPosition(sf::Vector2f(dadosSalvos["id"][lugar][0]["tilesSprites"][i]["position"]["x"], dadosSalvos["id"][lugar][0]["tilesSprites"][i]["position"]["y"]));
+    }
+    for (int i = 0; i < chao.size(); i++)GC.incluirObstaculo(chao[i]);
+    Ente::carregar();
 }

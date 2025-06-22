@@ -13,6 +13,7 @@ private:
 	float timerAtirar;
 	bool escondido;
 	int tamanho;
+	static int indiceMetall;
 
 public:
 	Metall();
@@ -28,5 +29,6 @@ public:
 	void machucar(const int dmg);
 	std::string getTextureFile();
 	void salvar();
+	void carregar();
 };
 

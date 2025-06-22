@@ -3,18 +3,18 @@
         null,
         [
             {
-                "cooldownTiro": 11.82376480102539,
-                "direita": true,
+                "cooldownTiro": 9.067524909973145,
+                "direita": false,
                 "executando": false,
-                "framesInvencibilidade": 1.9524130821228027,
-                "invencivel": true,
+                "framesInvencibilidade": 0.0,
+                "invencivel": false,
                 "noChao": true,
-                "numVidas": 13,
+                "numVidas": 20,
                 "player1": true,
                 "pontos": 0,
                 "posicao": {
-                    "x": 729.8648681640625,
-                    "y": 363.494140625
+                    "x": 563.4742431640625,
+                    "y": 605.0
                 },
                 "tamanho": {
                     "x": 70.0,
@@ -23,7 +23,7 @@
                 "teclaApertada": false,
                 "velMax": 200.0,
                 "velVertical": 0.0,
-                "velocidade": 12.922163963317871
+                "velocidade": -0.2358037829399109
             }
         ],
         null,
@@ -37,16 +37,16 @@
                 "noChao": true,
                 "numVidas": 2,
                 "posicao": {
-                    "x": -726.124755859375,
-                    "y": 384.0
+                    "x": 361.3734436035156,
+                    "y": 621.0
                 },
                 "qtdPontos": 250,
                 "tamanho": {
-                    "x": 51.0,
-                    "y": 51.0
+                    "x": 54.0,
+                    "y": 54.0
                 },
-                "timerAtirar": 5.531764984130859,
-                "timerEsconder": 5.531764984130859,
+                "timerAtirar": 5.802502155303955,
+                "timerEsconder": 5.802502155303955,
                 "velMax": 0.0,
                 "velVertical": 0.0,
                 "velocidade": 0.0
@@ -60,16 +60,16 @@
                 "noChao": true,
                 "numVidas": 2,
                 "posicao": {
-                    "x": -537.1251831054688,
-                    "y": 192.75
+                    "x": 787.3743286132813,
+                    "y": 333.0
                 },
                 "qtdPontos": 250,
                 "tamanho": {
-                    "x": 51.0,
-                    "y": 51.0
+                    "x": 54.0,
+                    "y": 54.0
                 },
-                "timerAtirar": 4.755083084106445,
-                "timerEsconder": 4.755083084106445,
+                "timerAtirar": 2.5848615169525146,
+                "timerEsconder": 2.5848615169525146,
                 "velMax": 0.0,
                 "velVertical": 0.0,
                 "velocidade": 0.0
@@ -83,22 +83,141 @@
                 "noChao": false,
                 "numVidas": 2,
                 "posicao": {
-                    "x": 491.8760681152344,
-                    "y": 382.494140625
+                    "x": 2257.373291015625,
+                    "y": 435.0
                 },
                 "qtdPontos": 250,
                 "tamanho": {
-                    "x": 51.0,
-                    "y": 51.0
+                    "x": 54.0,
+                    "y": 54.0
                 },
-                "timerAtirar": 2.4766409397125244,
-                "timerEsconder": 2.4766409397125244,
+                "timerAtirar": 0.0,
+                "timerEsconder": 0.0,
+                "velMax": 0.0,
+                "velVertical": 0.0,
+                "velocidade": 0.0
+            },
+            {
+                "dano": 1,
+                "direita": false,
+                "escondido": false,
+                "executando": false,
+                "nivel_maldade": 2,
+                "noChao": false,
+                "numVidas": 2,
+                "posicao": {
+                    "x": 1720.373291015625,
+                    "y": 399.0
+                },
+                "qtdPontos": 250,
+                "tamanho": {
+                    "x": 54.0,
+                    "y": 54.0
+                },
+                "timerAtirar": 0.0,
+                "timerEsconder": 0.0,
+                "velMax": 0.0,
+                "velVertical": 0.0,
+                "velocidade": 0.0
+            },
+            {
+                "dano": 1,
+                "direita": false,
+                "escondido": true,
+                "executando": false,
+                "nivel_maldade": 2,
+                "noChao": false,
+                "numVidas": 2,
+                "posicao": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "qtdPontos": 250,
+                "tamanho": {
+                    "x": 54.0,
+                    "y": 54.0
+                },
+                "timerAtirar": 3.685084104537964,
+                "timerEsconder": 3.685084104537964,
                 "velMax": 0.0,
                 "velVertical": 0.0,
                 "velocidade": 0.0
             }
         ],
-        null,
+        [
+            {
+                "aceleracao": 150.0,
+                "dano": 4,
+                "danoNormal": 4,
+                "direita": false,
+                "executando": false,
+                "nivel_maldade": 2,
+                "noChao": false,
+                "numVidas": 15,
+                "posicao": {
+                    "x": 1477.3740234375,
+                    "y": 405.0
+                },
+                "qtdPontos": 400,
+                "raio": 91.0,
+                "tamanho": {
+                    "x": 91.0,
+                    "y": 120.0
+                },
+                "timerAtaque": 0.0,
+                "velMax": 50.0,
+                "velVertical": 0.0,
+                "velocidade": 0.0
+            },
+            {
+                "aceleracao": 150.0,
+                "dano": 4,
+                "danoNormal": 4,
+                "direita": false,
+                "executando": false,
+                "nivel_maldade": 2,
+                "noChao": false,
+                "numVidas": 15,
+                "posicao": {
+                    "x": 994.3741455078125,
+                    "y": 73.5
+                },
+                "qtdPontos": 400,
+                "raio": 91.0,
+                "tamanho": {
+                    "x": 91.0,
+                    "y": 120.0
+                },
+                "timerAtaque": 0.0,
+                "velMax": 50.0,
+                "velVertical": 4.827000141143799,
+                "velocidade": 0.0
+            },
+            {
+                "aceleracao": 150.0,
+                "dano": 4,
+                "danoNormal": 4,
+                "direita": false,
+                "executando": false,
+                "nivel_maldade": 2,
+                "noChao": false,
+                "numVidas": 15,
+                "posicao": {
+                    "x": 2047.3734130859375,
+                    "y": 264.0
+                },
+                "qtdPontos": 400,
+                "raio": 91.0,
+                "tamanho": {
+                    "x": 91.0,
+                    "y": 120.0
+                },
+                "timerAtaque": 0.0,
+                "velMax": 50.0,
+                "velVertical": 0.0,
+                "velocidade": 0.0
+            }
+        ],
         [
             {
                 "direcao": -1,
@@ -107,8 +226,8 @@
                 "executando": false,
                 "noChao": false,
                 "posicao": {
-                    "x": 219.28219604492188,
-                    "y": 382.494140625
+                    "x": 137.00271606445313,
+                    "y": 333.0
                 },
                 "tamanho": {
                     "x": 15.0,
@@ -126,8 +245,27 @@
                 "executando": false,
                 "noChao": false,
                 "posicao": {
-                    "x": 219.28219604492188,
-                    "y": 1005.775390625
+                    "x": 137.00271606445313,
+                    "y": -317.37188720703125
+                },
+                "tamanho": {
+                    "x": 15.0,
+                    "y": 15.0
+                },
+                "tipoTiro": 2,
+                "velMax": 0.0,
+                "velVertical": 0.0,
+                "velocidade": 0.0
+            },
+            {
+                "direcao": -1,
+                "direita": false,
+                "doMega": false,
+                "executando": false,
+                "noChao": false,
+                "posicao": {
+                    "x": 137.00271606445313,
+                    "y": 983.3717651367188
                 },
                 "tamanho": {
                     "x": 15.0,
@@ -141,102 +279,113 @@
         ],
         null,
         null,
+        null,
         [
             {
-                "cooldownNoChao": 0.06667400151491165,
-                "dano": 0,
+                "altura": 100.0,
+                "danoso": false,
                 "direita": false,
                 "executando": false,
-                "forca": 4,
-                "nivel_maldade": 2,
-                "noChao": true,
-                "numVidas": 26,
-                "podeAtirar": true,
+                "noChao": false,
                 "posicao": {
-                    "x": 966.2257690429688,
-                    "y": 338.494140625
+                    "x": 1618.373779296875,
+                    "y": 481.0
                 },
-                "qtdPontos": 1100,
                 "tamanho": {
-                    "x": 70.0,
-                    "y": 95.0
+                    "x": 50.0,
+                    "y": 100.0
                 },
-                "timerAtirar": 1.4696542024612427,
-                "timerPerseguir": 0.4613190293312073,
-                "timerPular": 1.4696542024612427,
-                "velMax": 200.0,
+                "velMax": 0.0,
                 "velVertical": 0.0,
-                "velocidade": -200.0
+                "velocidade": 0.0
+            },
+            {
+                "altura": 100.0,
+                "danoso": false,
+                "direita": false,
+                "executando": false,
+                "noChao": false,
+                "posicao": {
+                    "x": -112.62639617919922,
+                    "y": 479.0
+                },
+                "tamanho": {
+                    "x": 50.0,
+                    "y": 100.0
+                },
+                "velMax": 0.0,
+                "velVertical": 0.0,
+                "velocidade": 0.0
+            },
+            {
+                "altura": 100.0,
+                "danoso": false,
+                "direita": false,
+                "executando": false,
+                "noChao": false,
+                "posicao": {
+                    "x": 2095.373291015625,
+                    "y": 288.0
+                },
+                "tamanho": {
+                    "x": 50.0,
+                    "y": 100.0
+                },
+                "velMax": 0.0,
+                "velVertical": 0.0,
+                "velocidade": 0.0
             }
         ],
         [
             {
-                "altura": 100.0,
                 "danoso": false,
                 "direita": false,
+                "elasticidade": -200.0,
                 "executando": false,
                 "noChao": false,
                 "posicao": {
-                    "x": -84.12432861328125,
-                    "y": 142.0
+                    "x": 2047.3734130859375,
+                    "y": 528.0
                 },
                 "tamanho": {
-                    "x": 50.0,
-                    "y": 100.0
+                    "x": 49.0,
+                    "y": 47.0
                 },
                 "velMax": 0.0,
                 "velVertical": 0.0,
                 "velocidade": 0.0
             },
             {
-                "altura": 100.0,
                 "danoso": false,
                 "direita": false,
+                "elasticidade": -400.0,
                 "executando": false,
                 "noChao": false,
                 "posicao": {
-                    "x": -36.1240348815918,
-                    "y": 240.0
+                    "x": 946.3741455078125,
+                    "y": 337.5
                 },
                 "tamanho": {
-                    "x": 50.0,
-                    "y": 100.0
+                    "x": 48.0,
+                    "y": 46.5
                 },
                 "velMax": 0.0,
                 "velVertical": 0.0,
                 "velocidade": 0.0
             },
             {
-                "altura": 100.0,
                 "danoso": false,
                 "direita": false,
+                "elasticidade": -200.0,
                 "executando": false,
                 "noChao": false,
                 "posicao": {
-                    "x": -132.12413024902344,
-                    "y": 478.0
+                    "x": 946.3741455078125,
+                    "y": 144.0
                 },
                 "tamanho": {
-                    "x": 50.0,
-                    "y": 100.0
-                },
-                "velMax": 0.0,
-                "velVertical": 0.0,
-                "velocidade": 0.0
-            },
-            {
-                "altura": 100.0,
-                "danoso": false,
-                "direita": false,
-                "executando": false,
-                "noChao": false,
-                "posicao": {
-                    "x": -87.1243896484375,
-                    "y": 478.0
-                },
-                "tamanho": {
-                    "x": 50.0,
-                    "y": 100.0
+                    "x": 48.0,
+                    "y": 46.0
                 },
                 "velMax": 0.0,
                 "velVertical": 0.0,
@@ -246,63 +395,7 @@
         null,
         [
             {
-                "danosidade": 2,
-                "danoso": true,
-                "direita": false,
-                "executando": false,
-                "noChao": false,
-                "posicao": {
-                    "x": 584.8763427734375,
-                    "y": 385.125
-                },
-                "tamanho": {
-                    "x": 49.875,
-                    "y": 46.875
-                },
-                "velMax": 0.0,
-                "velVertical": 0.0,
-                "velocidade": 0.0
-            },
-            {
-                "danosidade": 2,
-                "danoso": true,
-                "direita": false,
-                "executando": false,
-                "noChao": false,
-                "posicao": {
-                    "x": -1092.124267578125,
-                    "y": 384.54547119140625
-                },
-                "tamanho": {
-                    "x": 48.54545593261719,
-                    "y": 46.90909194946289
-                },
-                "velMax": 0.0,
-                "velVertical": 0.0,
-                "velocidade": 0.0
-            },
-            {
-                "danosidade": 2,
-                "danoso": true,
-                "direita": false,
-                "executando": false,
-                "noChao": false,
-                "posicao": {
-                    "x": 539.8759765625,
-                    "y": 384.75
-                },
-                "tamanho": {
-                    "x": 43.875,
-                    "y": 46.125
-                },
-                "velMax": 0.0,
-                "velVertical": 0.0,
-                "velocidade": 0.0
-            }
-        ],
-        [
-            {
-                "fase": 2,
+                "fase": 1,
                 "posicao": {
                     "x": 0.0,
                     "y": 0.0
@@ -311,6 +404,4557 @@
                     "x": 1280.0,
                     "y": 720.0
                 }
+            }
+        ],
+        [
+            {
+                "acabou": false,
+                "minInimigosFaceis": 5,
+                "minInimigosMedios": 3,
+                "minObsMolas": 3,
+                "minObstaculosFaceis": 3,
+                "posicao": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "quantidadeLayers": 8,
+                "tamanho": {
+                    "x": 1280.0,
+                    "y": 720.0
+                },
+                "tilesSprites": [
+                    {
+                        "position": {
+                            "x": 34.373626708984375,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 82.37352752685547,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 130.3734893798828,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 178.3735809326172,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 274.3734436035156,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 322.3735656738281,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 370.3733825683594,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 418.3734130859375,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 466.3735046386719,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 514.37353515625,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1090.3740234375,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1138.3740234375,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 34.373626708984375,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 82.37352752685547,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 130.3734893798828,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 178.3735809326172,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 274.3734436035156,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 322.3735656738281,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 370.3733825683594,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 418.3734130859375,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 466.3735046386719,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 514.37353515625,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1090.3740234375,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1138.3740234375,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 34.373626708984375,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 82.37352752685547,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 130.3734893798828,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 178.3735809326172,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 274.3734436035156,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 322.3735656738281,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 370.3733825683594,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 418.3734130859375,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 466.3735046386719,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 514.37353515625,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1090.3740234375,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1138.3740234375,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 34.373626708984375,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 82.37352752685547,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 130.3734893798828,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 178.3735809326172,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 274.3734436035156,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 322.3735656738281,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 370.3733825683594,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 418.3734130859375,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 466.3735046386719,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 514.37353515625,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1090.3740234375,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1138.3740234375,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 34.373626708984375,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 82.37352752685547,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 130.3734893798828,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 178.3735809326172,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 274.3734436035156,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 322.3735656738281,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 370.3733825683594,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 418.3734130859375,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 466.3735046386719,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 514.37353515625,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 898.3743896484375,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 946.3741455078125,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 994.3739624023438,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1042.3740234375,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1090.3740234375,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1138.3740234375,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 34.373626708984375,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 82.37352752685547,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 130.3734893798828,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 178.3735809326172,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 322.3735656738281,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 370.3733825683594,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 418.3734130859375,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 466.3735046386719,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 514.37353515625,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1042.3740234375,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1090.3740234375,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1138.3740234375,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 34.373626708984375,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 82.37352752685547,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 130.3734893798828,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 178.3735809326172,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 322.3735656738281,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 370.3733825683594,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 418.3734130859375,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 466.3735046386719,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 514.37353515625,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1090.3740234375,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1138.3740234375,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 34.373626708984375,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 82.37352752685547,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 130.3734893798828,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 178.3735809326172,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 322.3735656738281,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 370.3733825683594,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 418.3734130859375,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 466.3735046386719,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 514.37353515625,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1090.3740234375,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1138.3740234375,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 34.373626708984375,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 82.37352752685547,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 130.3734893798828,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 178.3735809326172,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 322.3735656738281,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 370.3733825683594,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 418.3734130859375,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 466.3735046386719,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 514.37353515625,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1090.3740234375,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1138.3740234375,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 34.373626708984375,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 82.37352752685547,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 130.3734893798828,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 178.3735809326172,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 322.3735656738281,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 370.3733825683594,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 418.3734130859375,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 466.3735046386719,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 514.37353515625,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1090.3740234375,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1138.3740234375,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 34.373626708984375,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 82.37352752685547,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 130.3734893798828,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 178.3735809326172,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 322.3735656738281,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 370.3733825683594,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 418.3734130859375,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 466.3735046386719,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 514.37353515625,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1090.3740234375,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1138.3740234375,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 34.373626708984375,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 82.37352752685547,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 130.3734893798828,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 178.3735809326172,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 322.3735656738281,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 370.3733825683594,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 418.3734130859375,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 466.3735046386719,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 514.37353515625,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1090.3740234375,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1138.3740234375,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 34.373626708984375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 82.37352752685547,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 130.3734893798828,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 178.3735809326172,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 226.37353515625,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 274.3734436035156,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 322.3735656738281,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 370.3733825683594,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 418.3734130859375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 466.3735046386719,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 514.37353515625,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 706.3741455078125,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 754.3743286132813,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 802.3742065429688,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 850.3741455078125,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 898.3743896484375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 946.3741455078125,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 994.3739624023438,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1090.3740234375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1138.3740234375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 34.373626708984375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 82.37352752685547,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 130.3734893798828,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 178.3735809326172,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 226.37353515625,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 274.3734436035156,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 322.3735656738281,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 370.3733825683594,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 418.3734130859375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 466.3735046386719,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 514.37353515625,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 706.3741455078125,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 754.3743286132813,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 802.3742065429688,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 850.3741455078125,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 898.3743896484375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 946.3741455078125,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 994.3739624023438,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1090.3740234375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1138.3740234375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 34.373626708984375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 82.37352752685547,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 130.3734893798828,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 178.3735809326172,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 226.37353515625,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 274.3734436035156,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 322.3735656738281,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 370.3733825683594,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 418.3734130859375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 466.3735046386719,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 514.37353515625,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 706.3741455078125,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 754.3743286132813,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 802.3742065429688,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 850.3741455078125,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 898.3743896484375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 946.3741455078125,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 994.3739624023438,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1090.3740234375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1138.3740234375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -301.6264343261719,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -253.6264190673828,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -205.62637329101563,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -157.6263427734375,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 706.3741455078125,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1282.3740234375,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1330.3740234375,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1954.37353515625,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2002.37353515625,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2050.373291015625,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2098.373291015625,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2146.373291015625,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2194.373291015625,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2242.373291015625,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2290.373291015625,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2338.373291015625,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2386.373291015625,
+                            "y": 0.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -301.6264343261719,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -253.6264190673828,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -205.62637329101563,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -157.6263427734375,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 706.3741455078125,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1282.3740234375,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1330.3740234375,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1954.37353515625,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2002.37353515625,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2050.373291015625,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2098.373291015625,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2146.373291015625,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2194.373291015625,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2242.373291015625,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2290.373291015625,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2338.373291015625,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2386.373291015625,
+                            "y": 48.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -301.6264343261719,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -253.6264190673828,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -205.62637329101563,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -157.6263427734375,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 706.3741455078125,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1282.3740234375,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1330.3740234375,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1954.37353515625,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2002.37353515625,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2050.373291015625,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2098.373291015625,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2146.373291015625,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2194.373291015625,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2242.373291015625,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2290.373291015625,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2338.373291015625,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2386.373291015625,
+                            "y": 96.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -301.6264343261719,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -253.6264190673828,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -205.62637329101563,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -157.6263427734375,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 706.3741455078125,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1282.3740234375,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1330.3740234375,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1954.37353515625,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2002.37353515625,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2050.373291015625,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2098.373291015625,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2146.373291015625,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2194.373291015625,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2242.373291015625,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2290.373291015625,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2338.373291015625,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2386.373291015625,
+                            "y": 144.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -301.6264343261719,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -253.6264190673828,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -205.62637329101563,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -157.6263427734375,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 706.3741455078125,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1282.3740234375,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1330.3740234375,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1954.37353515625,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2002.37353515625,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2050.373291015625,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2098.373291015625,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2146.373291015625,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2194.373291015625,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2242.373291015625,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2290.373291015625,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2338.373291015625,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2386.373291015625,
+                            "y": 192.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -301.6264343261719,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -253.6264190673828,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -205.62637329101563,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -157.6263427734375,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 706.3741455078125,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1282.3740234375,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1330.3740234375,
+                            "y": 240.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -301.6264343261719,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -253.6264190673828,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -205.62637329101563,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -157.6263427734375,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 706.3741455078125,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1282.3740234375,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1330.3740234375,
+                            "y": 288.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -301.6264343261719,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -253.6264190673828,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -205.62637329101563,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -157.6263427734375,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 706.3741455078125,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1282.3740234375,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1330.3740234375,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -301.6264343261719,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -253.6264190673828,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -205.62637329101563,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -157.6263427734375,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 706.3741455078125,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1282.3740234375,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1330.3740234375,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -301.6264343261719,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -253.6264190673828,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -205.62637329101563,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -157.6263427734375,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 706.3741455078125,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1282.3740234375,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1330.3740234375,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -301.6264343261719,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -253.6264190673828,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -205.62637329101563,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -157.6263427734375,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 706.3741455078125,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1282.3740234375,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1330.3740234375,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -301.6264343261719,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -253.6264190673828,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -205.62637329101563,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -157.6263427734375,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 706.3741455078125,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1282.3740234375,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1330.3740234375,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 946.3741455078125,
+                            "y": 336.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 706.3741455078125,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 754.3743286132813,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 802.3742065429688,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 850.3741455078125,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 898.3743896484375,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 946.3741455078125,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 994.3739624023438,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1042.3740234375,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1090.3740234375,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1138.3740234375,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2002.37353515625,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2050.373291015625,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2098.373291015625,
+                            "y": 384.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -445.6263427734375,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -397.62640380859375,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -349.62640380859375,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -301.6264343261719,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -253.6264190673828,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -205.62637329101563,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -157.6263427734375,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -109.62641906738281,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -61.626346588134766,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -13.626399993896484,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 34.373626708984375,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 82.37352752685547,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 130.3734893798828,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 178.3735809326172,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 226.37353515625,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 274.3734436035156,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 322.3735656738281,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 370.3733825683594,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 418.3734130859375,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 466.3735046386719,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 514.37353515625,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 706.3741455078125,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 754.3743286132813,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 802.3742065429688,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 850.3741455078125,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 898.3743896484375,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 946.3741455078125,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 994.3739624023438,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1042.3740234375,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1090.3740234375,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1138.3740234375,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 432.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -445.6263427734375,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -397.62640380859375,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -349.62640380859375,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -301.6264343261719,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -253.6264190673828,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -205.62637329101563,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -157.6263427734375,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -109.62641906738281,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -61.626346588134766,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -13.626399993896484,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 34.373626708984375,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 82.37352752685547,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 130.3734893798828,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 178.3735809326172,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 226.37353515625,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 274.3734436035156,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 322.3735656738281,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 370.3733825683594,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 418.3734130859375,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 466.3735046386719,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 514.37353515625,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 706.3741455078125,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 754.3743286132813,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 802.3742065429688,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 850.3741455078125,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 898.3743896484375,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 946.3741455078125,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 994.3739624023438,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1042.3740234375,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1090.3740234375,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1138.3740234375,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 480.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -445.6263427734375,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -397.62640380859375,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -349.62640380859375,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -301.6264343261719,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -253.6264190673828,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -205.62637329101563,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -157.6263427734375,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -109.62641906738281,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -61.626346588134766,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -13.626399993896484,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 34.373626708984375,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 82.37352752685547,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 130.3734893798828,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 178.3735809326172,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 226.37353515625,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 274.3734436035156,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 322.3735656738281,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 370.3733825683594,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 418.3734130859375,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 466.3735046386719,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 514.37353515625,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 706.3741455078125,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 754.3743286132813,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 802.3742065429688,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 850.3741455078125,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 898.3743896484375,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 946.3741455078125,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 994.3739624023438,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1042.3740234375,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1090.3740234375,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1138.3740234375,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 528.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -445.6263427734375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -397.62640380859375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -349.62640380859375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -301.6264343261719,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -253.6264190673828,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -205.62637329101563,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -157.6263427734375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -109.62641906738281,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -61.626346588134766,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -13.626399993896484,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 34.373626708984375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 82.37352752685547,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 130.3734893798828,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 178.3735809326172,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 226.37353515625,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 706.3741455078125,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 754.3743286132813,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 802.3742065429688,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 850.3741455078125,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 898.3743896484375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 946.3741455078125,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 994.3739624023438,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1042.3740234375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1090.3740234375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1138.3740234375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1282.3740234375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1330.3740234375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1378.3740234375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1426.3740234375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1474.3740234375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1522.3740234375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1570.3740234375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1618.373779296875,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1666.37353515625,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1714.3734130859375,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1762.373291015625,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1810.373291015625,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1858.373291015625,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1906.37353515625,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1954.37353515625,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2002.37353515625,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2050.373291015625,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2098.373291015625,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2146.373291015625,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2194.373291015625,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2242.373291015625,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2290.373291015625,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2338.373291015625,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2386.373291015625,
+                            "y": 576.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -445.6263427734375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -397.62640380859375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -349.62640380859375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -301.6264343261719,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -253.6264190673828,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -205.62637329101563,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -157.6263427734375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -109.62641906738281,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -61.626346588134766,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -13.626399993896484,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 34.373626708984375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 82.37352752685547,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 130.3734893798828,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 178.3735809326172,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 226.37353515625,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 418.3734130859375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 706.3741455078125,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 754.3743286132813,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 802.3742065429688,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 850.3741455078125,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 898.3743896484375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 946.3741455078125,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 994.3739624023438,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1042.3740234375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1090.3740234375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1138.3740234375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1282.3740234375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1330.3740234375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1378.3740234375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1426.3740234375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1474.3740234375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1522.3740234375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1570.3740234375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1618.373779296875,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1666.37353515625,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1714.3734130859375,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1762.373291015625,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1810.373291015625,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1858.373291015625,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1906.37353515625,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1954.37353515625,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2002.37353515625,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2050.373291015625,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2098.373291015625,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2146.373291015625,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2194.373291015625,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2242.373291015625,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2290.373291015625,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2338.373291015625,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2386.373291015625,
+                            "y": 624.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -445.6263427734375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -397.62640380859375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -349.62640380859375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -301.6264343261719,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -253.6264190673828,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -205.62637329101563,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -157.6263427734375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -109.62641906738281,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -61.626346588134766,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -13.626399993896484,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 34.373626708984375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 82.37352752685547,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 130.3734893798828,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 178.3735809326172,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 226.37353515625,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 274.3734436035156,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 322.3735656738281,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 370.3733825683594,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 418.3734130859375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 466.3735046386719,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 514.37353515625,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 562.37353515625,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 610.373779296875,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 658.3740234375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 706.3741455078125,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 754.3743286132813,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 802.3742065429688,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 850.3741455078125,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 898.3743896484375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 946.3741455078125,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 994.3739624023438,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1042.3740234375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1090.3740234375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1138.3740234375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1186.3740234375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1234.3740234375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1282.3740234375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1330.3740234375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1378.3740234375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1426.3740234375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1474.3740234375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1522.3740234375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1570.3740234375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1618.373779296875,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1666.37353515625,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1714.3734130859375,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1762.373291015625,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1810.373291015625,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1858.373291015625,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1906.37353515625,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1954.37353515625,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2002.37353515625,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2050.373291015625,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2098.373291015625,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2146.373291015625,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2194.373291015625,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2242.373291015625,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2290.373291015625,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2338.373291015625,
+                            "y": 672.0
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 2386.373291015625,
+                            "y": 672.0
+                        }
+                    }
+                ],
+                "ultimoSprite": 6
             }
         ]
     ]

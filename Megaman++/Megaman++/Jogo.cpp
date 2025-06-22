@@ -42,6 +42,7 @@ void Jogo::executar()
 			if(faseA==1 && !f1->getAcabou())
 			{
 				f1->executar(dt);
+				std::cout << "executando fase 1" << std::endl;
 			}
 			else if(faseA==1 && f1->getAcabou())
 			{
@@ -70,6 +71,20 @@ void Jogo::iniciar(int fase)
 		inMenu = false;
 		playing = true;
 		faseA = fase;
+	}
+}
+
+void Jogo::iniciar(int fase, bool carregar)
+{
+	if (inMenu && carregar)
+	{
+		inMenu = false;
+		playing = true;
+		faseA = fase;
+		if (fase == 1)
+			f1->carregar();
+		else
+			f2->carregar();
 	}
 }
 
@@ -103,6 +118,8 @@ void Jogo::reiniciarFases()
 {
 	//delete f1;
 	//delete f2;
+	free(f1);
+	free(f2);
 	f1 = new Fase1;
 	f2 = new Fase2;
 	f1->setCoords(sf::Vector2f(0.f, 0.f));
@@ -120,3 +137,5 @@ void Jogo::salvar()
 		f2->salvar();
 	// salvar as variaveis que precisar
 }
+
+

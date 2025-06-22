@@ -32,6 +32,7 @@ private:
 public:
 	Gerenciador_Colisoes();
 	~Gerenciador_Colisoes();
+	void limpar();
 	void incluirInimigo(Inimigo* pI);
 	void incluirObstaculo(Obstaculo* pO);
 	void incluirProjetil(Projetil* pP);

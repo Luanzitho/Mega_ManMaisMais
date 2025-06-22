@@ -29,4 +29,5 @@ public:
 	void associaListaEntidades(ListaEntidades* pLista);
 	void associaGerenciadorColisoes(Gerenciador_Colisoes* gc);
 	virtual void salvar();
+	virtual void carregar();
 };

@@ -2,8 +2,9 @@
 #include <iostream>
 
 
-Fase2::Fase2(): maxChefoes(1), minEspinhos(3)
+Fase2::Fase2(): maxChefoes(3), minEspinhos(3)
 {
+    setId(14);
     std::cout << "Fase 2 executando" << std::endl;
     std::fstream jsonFile("Mapas/mapa2.tmj");
     if (jsonFile.is_open()) {
@@ -93,6 +94,38 @@ void Fase2::criarChefoes()
             LEs.incluirEntidade(inimigos[inimigos.size() - 1]);
         }
     }
+    i = 0;
+    while (faseJson["layers"][i]["name"] != "Spawn Inimigos" && i < quantidadeLayers)
+    {
+        i++;
+    }
+    if (i >= quantidadeLayers)
+    {
+        std::cout << "Erro tentar acaha camada Boss." << std::endl;
+    }
+    else
+    {
+        for (int j = 1; j < maxChefoes; j++)
+        {
+            int qualObs = 0;
+            Inimigo* p = new CutMan;
+            do
+            {
+                qualObs = aleatoriza(0, faseJson["layers"][i]["objects"].size() - 1); // gera um número aleatório
+
+            } while (jaFoi[qualObs] != 0);//verifica se o ponto já foi usado
+            jaFoi[qualObs] = 1; // marca que o ponto já foi usado
+            p->setGerenciadorGrafico(pGG->getInstancia());
+            p->associaGerenciadorColisoes(&GC);
+            p->associaListaEntidades(&LEs);
+            p->conhecerJogador(p1);
+            p->setCoords(sf::Vector2f((float)(faseJson["layers"][i]["objects"][qualObs]["x"] * 3), (float)faseJson["layers"][i]["objects"][qualObs]["y"] * 3));
+            //p->setTamanho(sf::Vector2f((float)faseJson["layers"][i]["objects"][qualObs]["width"] * 3, (float)faseJson["layers"][i]["objects"][qualObs]["height"] * 3));
+            inimigos.push_back(p);
+            GC.incluirInimigo(p);
+            LEs.incluirEntidade(inimigos[inimigos.size() - 1]);
+        }
+    }
     
 }
 
@@ -133,7 +166,7 @@ void Fase2::criarEspinhos()
 
 void Fase2::criarInimigos()
 {
-    int sorteado = aleatoriza(0,4); // gera um número aleatório entre 3 e 10
+    int sorteado = aleatoriza(0,1); // gera um número aleatório entre 3 e 10
 	jaFoi.clear(); // limpa o vetor de pontos já usados
     int i = 0;
     while (faseJson["layers"][i]["name"] != "Spawn Inimigos" && i < quantidadeLayers)
@@ -156,6 +189,7 @@ void Fase2::criarInimigos()
             int qualInimigo = aleatoriza(0, 10); // gera um número aleatório entre 0 e 10
             bool eMetall = (qualInimigo < 5); // se for menor que 5, é Metall
             if (eMetall)minInimigosFaceis++;
+			else maxChefoes++;
         }
     }
     
@@ -198,6 +232,14 @@ void Fase2::criarObstaculos()
 }
 void Fase2::salvar()
 {
-    LEs.salvarEntidades();
+    int lugar = getId();
+    dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["maxChefoes"] = maxChefoes;
+    dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["minEspinhos"] = minEspinhos;
     Fase::salvar();
+}
+
+void Fase2::carregar()
+{
+    
+    Fase::carregar();
 }

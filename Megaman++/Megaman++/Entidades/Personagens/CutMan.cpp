@@ -16,6 +16,8 @@ CutMan::CutMan(): cooldownNoChao(0), timerAtirar(0), timerPerseguir(0), timerPul
 	forca = 2 + nivel_maldade;
 }
 
+int CutMan::indiceCutMan = -1;
+
 CutMan::~CutMan()
 {
 }
@@ -152,7 +154,25 @@ void CutMan::salvar()
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["timerAtirar"] = timerAtirar;
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["timerPerseguir"] = timerPerseguir;
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["timerPular"] = timerPular;
-	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["timerPular"] = timerPular;
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["cooldownNoChao"] = cooldownNoChao;
 	Inimigo::salvar();
+}
+
+void CutMan::carregar()
+{
+	int lugar = getId();
+	indiceAtual = ++indiceCutMan;
+	forca = dadosSalvos["id"][lugar][indiceAtual]["forca"];
+	podeAtirar = dadosSalvos["id"][lugar][indiceAtual]["podeAtirar"];
+	timerAtirar = dadosSalvos["id"][lugar][indiceAtual]["timerAtirar"];
+	timerPerseguir = dadosSalvos["id"][lugar][indiceAtual]["timerPerseguir"];
+	timerPular = dadosSalvos["id"][lugar][indiceAtual]["timerPular"];
+	cooldownNoChao = dadosSalvos["id"][lugar][indiceAtual]["cooldownNoChao"];
+
+	Inimigo::carregar();
+}
+
+bool CutMan::getPossoAtirar()
+{
+	return podeAtirar;
 }

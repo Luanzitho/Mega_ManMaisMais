@@ -132,7 +132,9 @@ void Menu::selecionar()
 	else if(tela==2)
 	{
 		if (escolha == 0) { //Continuar
-
+			carregar();
+			pJog->iniciar(fase, true);
+			tela = 0;
 		}
 		if (escolha == 1 || escolha == 2) { //fase selecionada
 			pJog->iniciar(escolha);
@@ -218,4 +220,13 @@ void Menu::salvar()
 	dadosSalvos= json::object({});
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["fase"] = fase;
 	Ente::salvar();
+}
+
+void Menu::carregar()
+{
+	int lugar = getId();
+	indiceAtual = dadosSalvos["id"][lugar].size()-1;
+	
+	fase = dadosSalvos["id"][lugar][indiceAtual]["fase"];
+	Ente::carregar();
 }

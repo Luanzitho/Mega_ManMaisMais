@@ -16,5 +16,6 @@ public:
 	virtual void obstaculizar(Personagem* pPers) = 0;
 	virtual std::string getTextureFile() = 0;
 	virtual void salvar();
+	virtual void carregar();
 };
 

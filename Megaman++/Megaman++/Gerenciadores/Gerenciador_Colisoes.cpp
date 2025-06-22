@@ -252,3 +252,12 @@ void Gerenciador_Colisoes::executar() //Referência: Giovane do canal Gege++
     tratarColisaoInimsObstacs();
 
 }
+void Gerenciador_Colisoes::limpar()
+{
+    LIs.clear();
+    LOs.clear();
+    LPs.clear();
+
+    p1 = nullptr;
+    p2 = nullptr;
+}

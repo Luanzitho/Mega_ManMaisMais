@@ -20,6 +20,8 @@ Metall::Metall(): timerEsconder(0), timerAtirar(0)
 	setNumVidas(nivel_maldade);
 }
 
+int Metall::indiceMetall = -1;
+
 Metall::~Metall()
 {
 }
@@ -161,5 +163,16 @@ void Metall::salvar()
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["timerEsconder"] = timerEsconder;
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["timerAtirar"] = timerAtirar;
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["escondido"] = escondido;
+	Inimigo::salvar();
+}
+
+void Metall::carregar()
+{
+	int lugar = getId();
+	indiceAtual = ++indiceMetall;
+	timerEsconder=dadosSalvos["id"][lugar][indiceAtual]["timerEsconder"];
+	timerAtirar=dadosSalvos["id"][lugar][indiceAtual]["timerAtirar"];
+	escondido=dadosSalvos["id"][lugar][indiceAtual]["escondido"];
+
 	Inimigo::salvar();
 }

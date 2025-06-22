@@ -6,7 +6,7 @@ class Plataforma:public Obstaculo
 {
 private:
 	float altura;
-
+	static int indicePlataforma;
 public:
 	Plataforma();
 	~Plataforma();
@@ -15,5 +15,6 @@ public:
 	std::string getTextureFile();
 	const float getAltura();
 	void salvar();
+	void carregar();
 };
 

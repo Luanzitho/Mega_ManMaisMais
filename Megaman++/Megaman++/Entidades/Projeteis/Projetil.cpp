@@ -30,3 +30,10 @@ void Projetil::salvar()
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["doMega"] = doMega;
 	Entidade::salvar();
 }
+
+void Projetil::carregar()
+{
+	int lugar = getId();
+	doMega = dadosSalvos["id"][lugar][indiceAtual]["doMega"];
+	Entidade::carregar();
+}

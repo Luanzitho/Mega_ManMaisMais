@@ -11,10 +11,12 @@ private:
 public:
 	ListaEntidades();
 	~ListaEntidades();
+	void limpar();
 	void incluirEntidade(Entidade* pE);
 	void percorrer(float dt, sf::Vector2f tam);
 	void verificaAbatidos();
 	void salvarEntidades();
+	void carregaEntidades();
 	//Lista<> get
 };
 

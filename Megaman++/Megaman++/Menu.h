@@ -19,6 +19,7 @@ private:
 	std::vector<sf::Text> texts;
 	std::vector<sf::Vector2f> coordsTexts;
 	float cooldown;
+	//int quantidadeMenus;
 	
 
 public:
@@ -32,4 +33,5 @@ public:
 	void desenhaInteracao();
 	void setPause(bool pausado);
 	void salvar();
+	void carregar();
 };

@@ -35,6 +35,7 @@ public:
 	const bool getExecutando();
 	void setExecutando(const bool exe);
 	virtual void salvar();
+	virtual void carregar();
 	//virtual void salvar() = 0;
 
 	//void salvarDataBuffer(); 

@@ -5,6 +5,7 @@ class Mola : public Obstaculo
 {
 private:
 	float elasticidade; // Força da mola
+	static int indiceMola;
 
 public:
 	Mola();
@@ -13,5 +14,6 @@ public:
 	void obstaculizar(Personagem* pPers);
 	std::string getTextureFile();
 	void salvar();
+	void carregar();
 };
 

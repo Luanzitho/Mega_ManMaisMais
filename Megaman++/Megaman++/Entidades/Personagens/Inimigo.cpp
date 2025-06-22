@@ -64,3 +64,13 @@ void Inimigo::salvar()
 
 	Personagem::salvar();
 }
+
+void Inimigo::carregar()
+{
+	int lugar = getId();
+	qtdPontos = dadosSalvos["id"][lugar][indiceAtual]["qtdPontos"];
+	nivel_maldade = dadosSalvos["id"][lugar][indiceAtual]["nivel_maldade"];
+	dano = dadosSalvos["id"][lugar][indiceAtual]["dano"];
+
+	Personagem::carregar();
+}

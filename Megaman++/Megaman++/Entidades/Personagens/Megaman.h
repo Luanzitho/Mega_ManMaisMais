@@ -33,5 +33,6 @@ public:
 	void executar(float dt);
 	std::string getTextureFile();
 	void salvar();
+	void carregar();
 };
 

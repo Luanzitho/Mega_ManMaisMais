@@ -6,6 +6,8 @@ Mola::Mola(): elasticidade(-200.f)
 	elasticidade = elasticidade*(rand()%3+1); // Força de impulso da mola
 }
 
+int Mola::indiceMola = -1;
+
 Mola::~Mola()
 {
 }
@@ -143,4 +145,12 @@ void Mola::salvar()
     int lugar = getId();
     dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["elasticidade"] = elasticidade;
     Obstaculo::salvar();
+}
+
+void Mola::carregar()
+{
+    int lugar = getId();
+    indiceAtual = ++indiceMola;
+    elasticidade = dadosSalvos["id"][lugar][indiceAtual]["elasticidade"];
+    Obstaculo::carregar();
 }

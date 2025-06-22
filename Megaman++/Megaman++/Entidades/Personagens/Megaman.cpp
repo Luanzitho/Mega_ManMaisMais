@@ -272,3 +272,16 @@ void Megaman::salvar()
 	
 	Personagem::salvar();
 }
+
+void Megaman::carregar()
+{
+	int lugar = getId();
+	player1 = dadosSalvos["id"][lugar][0]["player1"];
+	invencivel= dadosSalvos["id"][lugar][0]["invencivel"];
+	pontos=dadosSalvos["id"][lugar][0]["pontos"];
+	teclaApertada=dadosSalvos["id"][lugar][0]["teclaApertada"];
+	cooldownTiro=dadosSalvos["id"][lugar][0]["cooldownTiro"];
+	framesInvencibilidade= dadosSalvos["id"][lugar][0]["framesInvencibilidade"];
+
+	Personagem::carregar();
+}

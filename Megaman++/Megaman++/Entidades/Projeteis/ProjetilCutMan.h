@@ -13,6 +13,7 @@ private:
 	CutMan* mestre;
 	sf::Vector2f alvo;
 	sf::Vector2f direcao;
+	static int indiceProCut;
 
 public:
 	ProjetilCutMan();
@@ -24,4 +25,6 @@ public:
 	void executar(float dt);
 	std::string getTextureFile();
 	void salvar();
+	void carregar();
+	void procuraMestre(CutMan* ini);
 };

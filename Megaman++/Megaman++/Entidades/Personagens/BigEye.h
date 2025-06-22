@@ -9,6 +9,7 @@ private:
 	float timerAtaque;
 	int danoNormal;
 	float raio;
+	static int indiceBig;
 
 public:
 	BigEye();
@@ -20,5 +21,6 @@ public:
 	void danificar(Megaman* p);
 	std::string getTextureFile();
 	void salvar();
+	void carregar();
 };
 

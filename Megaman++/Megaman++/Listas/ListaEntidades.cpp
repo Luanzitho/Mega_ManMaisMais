@@ -8,6 +8,10 @@ ListaEntidades::~ListaEntidades()
 {
     LEs.limpar();
 }
+void ListaEntidades::limpar()
+{
+    LEs.limpar();
+}
 
 void ListaEntidades::incluirEntidade(Entidade* pE)
 {
@@ -82,6 +86,23 @@ void ListaEntidades::salvarEntidades()
         }
     }
     //verificaAbatidos();
+}
+
+void ListaEntidades::carregaEntidades()
+{
+    if (LEs.getpPrimeiro()) {
+        Lista<Entidade>::Elemento<Entidade>* aux = LEs.getpPrimeiro();
+        while (aux != nullptr)
+        {
+            Entidade* pEntidade = aux->getInfo();
+
+            if (pEntidade && pEntidade->getId()==4)
+            {
+                pEntidade->carregar();
+            }
+            aux = aux->getProximo();
+        }
+    }
 }
 
 

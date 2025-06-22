@@ -44,3 +44,10 @@ void Personagem::salvar()
 
 	Entidade::salvar();
 }
+
+void Personagem::carregar()
+{
+	int lugar = getId();
+	num_vidas=dadosSalvos["id"][lugar][indiceAtual]["numVidas"];
+	Entidade::carregar();
+}

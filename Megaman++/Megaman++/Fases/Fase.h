@@ -41,7 +41,6 @@ protected:
 	std::vector<sf::Sprite> fundo1;
 	std::vector<sf::Sprite> fundo2;
 	std::vector<sf::Sprite> fundo3;
-	std::vector<Plataforma*> plataformas;
 	std::vector<Plataforma*> chao;
 	std::vector<Inimigo*> inimigos;
 	std::vector<Obstaculo*> obstaculos;
@@ -70,7 +69,8 @@ public:
 	bool getAcabou();
 	void setTwoPlayers();
 	void setOnePlayer();
-	virtual void salvar() = 0;
+	virtual void salvar();
+	virtual void carregar();
 
 };
 

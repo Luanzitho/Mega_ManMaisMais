@@ -36,6 +36,8 @@ BigEye::~BigEye()
 {
 }
 
+int BigEye::indiceBig = -1;// inicia os indices para carregar o save
+
 void BigEye::saltar() //Salto normal
 {
 	velVertical = -250;
@@ -145,10 +147,22 @@ std::string BigEye::getTextureFile()
 void BigEye::salvar()
 {
 	int lugar = getId();
-	//dadosSalvos["id"][lugar].push_back({});
+	//salva os dados pertinentes a classe atual
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["aceleracao"] = aceleracao;
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["timerAtaque"] = timerAtaque;
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["danoNormal"] = danoNormal;
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["raio"] = raio;
 	Inimigo::salvar();
+}
+
+void BigEye::carregar()
+{
+	int lugar = getId();
+	indiceAtual = ++indiceBig;
+	//carrega os atributos da classe atual
+	aceleracao=dadosSalvos["id"][lugar][indiceAtual]["aceleracao"];
+	timerAtaque=dadosSalvos["id"][lugar][indiceAtual]["timerAtaque"];
+	danoNormal=dadosSalvos["id"][lugar][indiceAtual]["danoNormal"];
+	raio=dadosSalvos["id"][lugar][indiceAtual]["raio"] = raio;
+	Inimigo::carregar();
 }

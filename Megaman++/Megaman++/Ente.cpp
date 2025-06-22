@@ -1,7 +1,7 @@
 #include "Ente.h"
 #include <iostream>
 
-Ente::Ente(): id(0)
+Ente::Ente(): id(0), indiceAtual(0)
 {
 	pGG = nullptr;
 	std::fstream jsonFile("Saves/save1.json");
@@ -28,18 +28,7 @@ Ente::Ente(): id(0)
 	
 	//pGC = nullptr;
 }
-json Ente::dadosSalvos = json::object(); // Inicializa o objeto JSON vazio
-/*int Ente::qualEnte1 = 0;
-int Ente::qualEnte2 = 0;
-int Ente::qualEnte3 = 0;
-int Ente::qualEnte4 = 0;
-int Ente::qualEnte5 = 0;
-int Ente::qualEnte6 = 0;
-int Ente::qualEnte7 = 0;
-int Ente::qualEnte8 = 0;
-int Ente::qualEnte9 = 0;
-int Ente::qualEnte10 = 0;
-int Ente::qualEnte11 = 0;*/
+json Ente::dadosSalvos; // Inicializa o objeto JSON vazio
 
 Ente::Ente(sf::Vector2f coordsIni, sf::Vector2f size): coords(coordsIni), tamanho(size), id(0)
 {
@@ -90,18 +79,6 @@ void Ente::salvar()
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["posicao"]["y"] = getCoords().y;
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["tamanho"]["x"] = getTamanho().x;
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["tamanho"]["y"] = getTamanho().y;
-	/*if (lugar == 1)qualEnte1++;
-	else if (lugar == 2)qualEnte2++;
-	else if (lugar == 3)qualEnte3++;
-	else if (lugar == 4)qualEnte4++;
-	else if (lugar == 5)qualEnte5++;
-	else if (lugar == 6)qualEnte6++;
-	else if (lugar == 7)qualEnte7++;
-	else if (lugar == 8)qualEnte8++;
-	else if (lugar == 9)qualEnte9++;
-	else if (lugar == 10)qualEnte10++;
-	else if (lugar == 11)qualEnte11++;
-	//std::cout << "criando novo arquivo..." << std::endl;*/
 
 	std::ofstream novoArquivo("Saves/save1.json");
 	if (novoArquivo.is_open()) {
@@ -112,4 +89,13 @@ void Ente::salvar()
 	else {
 		std::cout << "Erro ao criar o arquivo JSON!" << std::endl;
 	}
+}
+
+void Ente::carregar()
+{
+	int lugar = getId();
+	//carregando os atributos de Ente dos dados salvos
+	setCoords(sf::Vector2f(dadosSalvos["id"][lugar][indiceAtual]["posicao"]["x"], dadosSalvos["id"][lugar][indiceAtual]["posicao"]["y"]));
+	setTamanho(sf::Vector2f(dadosSalvos["id"][lugar][indiceAtual]["tamanho"]["x"], dadosSalvos["id"][lugar][indiceAtual]["tamanho"]["y"]));
+
 }

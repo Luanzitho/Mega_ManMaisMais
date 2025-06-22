@@ -8,6 +8,7 @@ class ProjetilMegaman:public Projetil
 {
 private:
 	float direcao;
+	static int indiceProMega;
 
 public:
 	ProjetilMegaman();
@@ -18,5 +19,6 @@ public:
 	void executar(float dt);
 	std::string getTextureFile();
 	void salvar();
+	void carregar();
 };
 

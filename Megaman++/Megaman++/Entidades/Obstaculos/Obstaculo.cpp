@@ -15,3 +15,10 @@ void Obstaculo::salvar()
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["danoso"] = danoso;
 	Entidade::salvar();
 }
+
+void Obstaculo::carregar()
+{
+	int lugar = getId();
+	danoso = dadosSalvos["id"][lugar][indiceAtual]["danoso"];
+	Entidade::carregar();
+}
