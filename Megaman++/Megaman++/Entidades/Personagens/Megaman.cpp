@@ -285,3 +285,8 @@ void Megaman::carregar()
 
 	Personagem::carregar();
 }
+
+const int Megaman::getPontos()
+{
+	return pontos;
+}

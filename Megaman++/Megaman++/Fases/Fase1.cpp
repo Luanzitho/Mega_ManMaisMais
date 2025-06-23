@@ -55,8 +55,9 @@ void Fase1::executar(float dt)
 	desenharCenario();
     LEs.percorrer(dt, getTamanho());
 	moveMapa(dt);
+    pontuacao = p1->getPontos();
 	GC.executar();
-    if (p1->getCoords().x > 1000)acabou=true;
+    if (p1->getCoords().x > 1100)acabou=true;
     
 }
 

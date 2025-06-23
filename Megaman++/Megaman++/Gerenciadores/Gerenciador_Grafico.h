@@ -18,6 +18,7 @@ private:
 	Gerenciador_Grafico(); //Padrão singleton, vídeo do Burda
 
 public:
+	std::string* textoDigitado;
 	//Gerenciador_Grafico(); //Padrão luanzin kkkk
 	~Gerenciador_Grafico();
 	sf::Texture& getTextura(const std::string& caminho); //Para armazenar as texturas. Em teoria corrige os crashes por chamar toda hora a textura
@@ -29,4 +30,5 @@ public:
 	void mostrarConteudoJanela();
 	void desenhar(sf::Text text);
 	void desenhar(sf::Sprite sprite);
+	std::string digitar(std::string entradaUsuario);
 };

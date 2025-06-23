@@ -40,7 +40,7 @@ Fase2::Fase2(): maxChefoes(3), minEspinhos(3)
     GC.incluirMegaman(p1);
 	LEs.incluirEntidade(p1);
    
-    criarInimigos();
+   // criarInimigos();
     std::cout << "criou inimigos 2." << std::endl;
     criarObstaculos();
     std::cout << "criou obstaculos 2." << std::endl;
@@ -61,8 +61,10 @@ void Fase2::executar(float dt)
     LEs.percorrer(dt, getTamanho());
    
 	moveMapa(dt);
-
+    pontuacao = p1->getPontos();
+    if (!p1->getVivo())morreu = true;
 	GC.executar();
+    if (p1->getCoords().x > 1100)acabou = true;
 }
 
 void Fase2::criarChefoes()

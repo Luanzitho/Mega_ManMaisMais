@@ -34,5 +34,6 @@ public:
 	std::string getTextureFile();
 	void salvar();
 	void carregar();
+	const int getPontos();
 };
 

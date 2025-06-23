@@ -50,6 +50,8 @@ protected:
 	int minInimigosFaceis;
 	int minObstaculosFaceis;
 	int quantidadeLayers;
+	static int pontuacao;
+	static bool morreu;
 
 public:
 	Fase();
@@ -71,6 +73,8 @@ public:
 	void setOnePlayer();
 	virtual void salvar();
 	virtual void carregar();
+	const int getPontuacao();
+	const bool getMorreu();
 
 };
 

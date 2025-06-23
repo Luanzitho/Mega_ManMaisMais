@@ -11,6 +11,9 @@ Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18)
     GC.setListaEntidades(&LEs);
 }
 
+int Fase::pontuacao = 0;
+bool Fase::morreu = false;
+
 Fase::~Fase()
 {
     jaFoi.clear();
@@ -444,4 +447,14 @@ void Fase::carregar()
     }
     for (int i = 0; i < chao.size(); i++)GC.incluirObstaculo(chao[i]);
     Ente::carregar();
+}
+
+const int Fase::getPontuacao()
+{
+    return pontuacao;
+}
+
+const bool Fase::getMorreu()
+{
+    return morreu;
 }

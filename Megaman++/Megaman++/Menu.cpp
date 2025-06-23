@@ -1,22 +1,24 @@
 ﻿#include "Menu.h"
 #include <iostream>
 
-Menu::Menu() : escolha(0), tela(0), enter(false), isPressed(false), start(false), cooldown(0.f), fase(0), pause(false)
+Menu::Menu() : escolha(0), tela(0), enter(false), isPressed(false), start(false), cooldown(0.f), fase(0), pause(false), pontuacao(0), terminou(false), entradaUsuario("-")
 {
 	setId(12);
 	pJog = nullptr;
 	pGG = Gerenciador_Grafico::getInstancia();
 	font = new sf::Font();
-	font->loadFromFile("Fontes/Pixelify_Sans/static/PixelifySans-Regular.ttf");
-	options = { "Jogar", "Ranking", "Sair",
+	font->loadFromFile("Fontes/Pixelify_Sans/static/PixelifySans-Regular.ttf"); // fonte do google: 
+	options = { "Jogar", "Ranking", "Sair", //marco 
 				"1 Jogador", "2 Jogadores", "Voltar",
 				"Continuar","Fase 1", "Fase 2", "Voltar",
-				"Continuar", "Salvar","Voltar ao menu"
+				"Continuar", "Salvar","Voltar ao menu",
+				"Digite seu nome", ""
 				};
 	coordsTexts = { {500.f, 400.f},{440.f, 500.f}, {540.f,600.f},
 					{440.f, 400.f},{440.f, 500.f}, {440.f, 600.f},
 					{240.f, 400.f},{440.f, 500.f}, {440.f, 600.f},{840.f, 400.f},
-					{ 440.f, 400.f },{440.f, 500.f}, {440.f, 600.f}
+					{ 440.f, 400.f },{440.f, 500.f}, {440.f, 600.f}, 
+					{ 440.f, 400.f },{440.f, 500.f}
 					};
 	texts.resize(options.size());
 	for (int i = 0; i < options.size(); i++)
@@ -46,8 +48,10 @@ Menu::~Menu()
 void Menu::executar(float dt)
 {
 	pGG->desenharEnte(this);
+	//entradaUsuario = pGG->digitar(entradaUsuario);
 	cooldown += dt; //cooldown para evitar que o enter seja pressionado muitas vezes
 	if (pause)tela = 3;
+	if (terminou)tela = 4;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !isPressed) //movimento da escolha de op��es
 	{
 		if(cooldown>0.25f)
@@ -107,7 +111,7 @@ void Menu::selecionar()
 		else if (escolha == 1)
 			tela = 3; // ranking
 		else if (escolha == 2) {
-			tela = 4; //sair
+			//tela = 4; //sair
 			pJog->encerrar(); //rever esse encerrar, para fechar o programa corretamente
 		}
 		escolha = 0;
@@ -207,6 +211,14 @@ void Menu::desenhaInteracao()
 			pGG->desenhar(texts[i]);
 		}
 	}
+	else if(tela==4)
+	{
+		//sf::Keyboard::isKeyPressed(sf::Keyboard::);
+		
+		texts[texts.size()-1].setString(entradaUsuario);
+		pGG->desenhar(texts[texts.size() - 2]);
+		pGG->desenhar(texts[texts.size() - 1]);
+	}
 }
 
 void Menu::setPause(bool pausado)
@@ -229,4 +241,9 @@ void Menu::carregar()
 	
 	fase = dadosSalvos["id"][lugar][indiceAtual]["fase"];
 	Ente::carregar();
+}
+
+void Menu::setTerminou(bool termi)
+{
+	terminou = termi;
 }
