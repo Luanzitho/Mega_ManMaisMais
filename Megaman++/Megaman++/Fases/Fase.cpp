@@ -283,6 +283,13 @@ void Fase::salvar()
         dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["tilesSprites"][i]["position"]["x"] = tilesSprites[i].getPosition().x;
         dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["tilesSprites"][i]["position"]["y"] = tilesSprites[i].getPosition().y;
     }
+    for (int i = 0; i < chao.size(); i++)
+    {
+        dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["chao"][i]["position"]["x"] = chao[i]->getCoords().x;
+        dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["chao"][i]["position"]["y"] = chao[i]->getCoords().y;
+        dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["chao"][i]["tamanho"]["y"] = chao[i]->getTamanho().y;
+        dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["chao"][i]["tamanho"]["x"] = chao[i]->getTamanho().x;
+    }
 
 
     
@@ -445,7 +452,12 @@ void Fase::carregar()
     {
         tilesSprites[i].setPosition(sf::Vector2f(dadosSalvos["id"][lugar][0]["tilesSprites"][i]["position"]["x"], dadosSalvos["id"][lugar][0]["tilesSprites"][i]["position"]["y"]));
     }
-    for (int i = 0; i < chao.size(); i++)GC.incluirObstaculo(chao[i]);
+    for (int i = 0; i < chao.size(); i++)
+    {
+        chao[i]->setCoords(sf::Vector2f(dadosSalvos["id"][lugar][0]["chao"][i]["position"]["x"], dadosSalvos["id"][lugar][0]["chao"][i]["position"]["y"]));
+        chao[i]->setTamanho(sf::Vector2f(dadosSalvos["id"][lugar][0]["chao"][i]["tamanho"]["x"], dadosSalvos["id"][lugar][0]["chao"][i]["tamanho"]["y"]));
+        GC.incluirObstaculo(chao[i]);
+    }
     Ente::carregar();
 }
 
