@@ -35,7 +35,6 @@ BigEye::BigEye() : aceleracao(150), timerAtaque(0)
 BigEye::~BigEye()
 {
 }
-
 int BigEye::indiceBig = -1;// inicia os indices para carregar o save
 
 void BigEye::saltar() //Salto normal
@@ -43,10 +42,10 @@ void BigEye::saltar() //Salto normal
 	velVertical = -250;
 }
 
-void BigEye::saltar(int i) //Salto carregado (+ dano)
+void BigEye::saltar(int chance) //Salto carregado (+ dano)
 {
 	velVertical = -400;
-	dano = dano * i; //Dano em dobro no crítico
+	dano = dano * chance; //Dano em dobro no crítico
 }
 
 void BigEye::mover(float dt)
@@ -54,7 +53,7 @@ void BigEye::mover(float dt)
 	sf::Vector2f posicao = getCoords();
 	sf::Vector2f alvo = pMega->getCoords();
 
-	int chanceCritico = rand() % 4 + 1; //Big Eye tem chance de dar um ataque crítico (maior dano)
+	int chanceCritico = rand() % 5; //Big Eye tem chance de dar um ataque crítico (maior dano)
 
 	if (velocidade > velMax) //Limita a velocidade
 		velocidade = velMax;

@@ -114,5 +114,7 @@ void Plataforma::carregar()
     int lugar = getId();
     indiceAtual = ++indicePlataforma;
     altura = dadosSalvos["id"][lugar][indiceAtual]["altura"];
+    setTamanho(sf::Vector2f(50.f, altura));
+    
     Obstaculo::carregar();
 }

@@ -26,12 +26,14 @@ Gerenciador_Grafico* Gerenciador_Grafico::getInstancia() //Para instanciar um ún
 sf::Texture& Gerenciador_Grafico::getTextura(const std::string& caminho) 
 {
     auto it = texturas.find(caminho);
+    
     if (it == texturas.end()) 
     {
         sf::Texture textura;
         textura.loadFromFile(caminho);
         texturas[caminho] = textura;
     }
+
     return texturas[caminho];
 }
 

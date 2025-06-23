@@ -232,16 +232,19 @@ void Fase2::criarObstaculos()
     }
    
 }
-void Fase2::salvar()
-{
+
+void Fase2::salvar() {
     int lugar = getId();
-    dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["maxChefoes"] = maxChefoes;
-    dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["minEspinhos"] = minEspinhos;
+    int idx = dadosSalvos["id"][lugar].size();
+    dadosSalvos["id"][lugar][idx]["maxChefoes"] = maxChefoes;
+    dadosSalvos["id"][lugar][idx]["minEspinhos"] = minEspinhos;
     Fase::salvar();
 }
 
-void Fase2::carregar()
-{
-    
+void Fase2::carregar() {
+    int lugar = getId();
+    int idx = dadosSalvos["id"][lugar].size() - 1;
+    maxChefoes = dadosSalvos["id"][lugar][idx]["maxChefoes"];
+    minEspinhos = dadosSalvos["id"][lugar][idx]["minEspinhos"];
     Fase::carregar();
 }

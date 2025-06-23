@@ -174,5 +174,5 @@ void Metall::carregar()
 	timerAtirar=dadosSalvos["id"][lugar][indiceAtual]["timerAtirar"];
 	escondido=dadosSalvos["id"][lugar][indiceAtual]["escondido"];
 
-	Inimigo::salvar();
+	Inimigo::carregar();
 }

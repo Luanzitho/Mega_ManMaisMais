@@ -1,12 +1,13 @@
 #include "Projetil.h"
 
-Projetil::Projetil(): velocidade(0), dano(0), doMega(false), empuxo(300)
+Projetil::Projetil(): dano(0), doMega(false), empuxo(300)
 {
 	LEs = nullptr;
 }
 
-Projetil::Projetil(const float vel, const int dmg): velocidade(vel), dano(dmg), empuxo(300)
+Projetil::Projetil(const float vel, const int dmg): dano(dmg), empuxo(300)
 {
+	velocidade = vel;
 }
 
 Projetil::~Projetil()
@@ -28,6 +29,9 @@ void Projetil::salvar()
 {
 	int lugar = getId();
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["doMega"] = doMega;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["dano"] = dano;
+	//dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["velocidade"] = velocidade;
+
 	Entidade::salvar();
 }
 
@@ -35,5 +39,8 @@ void Projetil::carregar()
 {
 	int lugar = getId();
 	doMega = dadosSalvos["id"][lugar][indiceAtual]["doMega"];
+	dano = dadosSalvos["id"][lugar][indiceAtual]["dano"];
+	//velocidade = dadosSalvos["id"][lugar][indiceAtual]["velocidade"];
+
 	Entidade::carregar();
 }

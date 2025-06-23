@@ -3,7 +3,7 @@
 Mola::Mola(): elasticidade(-200.f)
 {
     setId(10);
-	elasticidade = elasticidade*(rand()%3+1); // Força de impulso da mola
+    elasticidade = elasticidade * (rand() % 2 + 2); // Força de impulso da mola
 }
 
 int Mola::indiceMola = -1;

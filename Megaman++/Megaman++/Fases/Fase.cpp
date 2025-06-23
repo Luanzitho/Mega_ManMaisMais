@@ -322,7 +322,9 @@ void Fase::carregar()
     tamanho = dadosSalvos["id"][2].size();
     for (int i = 0; i < tamanho; i++)
     {
-        //Player2
+        if (!p2)
+            p2 = new Megaman(false); // ou conforme seu construtor
+
         p2->carregar();
         p2->associaGerenciadorColisoes(&GC);
         p2->setGerenciadorGrafico(pGG);
@@ -425,6 +427,7 @@ void Fase::carregar()
         pP->carregar();
         pP->setGerenciadorGrafico(pGG);
         GC.incluirObstaculo(pP);
+        LEs.incluirEntidade(pP);
         obstaculos.push_back(pP);
     }
     tamanho = dadosSalvos["id"][10].size();
@@ -435,6 +438,7 @@ void Fase::carregar()
         pM->carregar();
         pM->setGerenciadorGrafico(pGG);
         GC.incluirObstaculo(pM);
+        LEs.incluirEntidade(pM);
         obstaculos.push_back(pM);
     }
     tamanho = dadosSalvos["id"][11].size();
@@ -445,6 +449,7 @@ void Fase::carregar()
         pE->carregar();
         pE->setGerenciadorGrafico(pGG);
         GC.incluirObstaculo(pE);
+        LEs.incluirEntidade(pE);
         obstaculos.push_back(pE);
     }
     tamanho = dadosSalvos["id"][lugar][0]["tilesSprites"].size();

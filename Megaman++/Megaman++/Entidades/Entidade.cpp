@@ -60,13 +60,15 @@ const bool Entidade::getExecutando()
 
 void Entidade::setExecutando(const bool exe)
 {
-	executando = executando;
+	executando = exe;
 }
+
 void Entidade::salvar()
 {
 	int lugar = getId();
 	if (lugar < 0 || lugar >= dadosSalvos["id"].size()) return; // Verifica se o lugar é válido
 	
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["vivo"] = vivo;
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["direita"] = direita;
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["velocidade"] = velocidade;
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["velVertical"] = velVertical;
@@ -80,12 +82,13 @@ void Entidade::salvar()
 void Entidade::carregar()
 {
 	int lugar = getId();
+	vivo = dadosSalvos["id"][lugar][indiceAtual]["vivo"];
 	direita = dadosSalvos["id"][lugar][indiceAtual]["direita"];
 	velocidade = dadosSalvos["id"][lugar][indiceAtual]["velocidade"];
-	velVertical=dadosSalvos["id"][lugar][indiceAtual]["velVertical"];
-	velMax=dadosSalvos["id"][lugar][indiceAtual]["velMax"];
-	noChao=dadosSalvos["id"][lugar][indiceAtual]["noChao"];
-	executando=dadosSalvos["id"][lugar][indiceAtual]["executando"];
+	velVertical = dadosSalvos["id"][lugar][indiceAtual]["velVertical"];
+	velMax = dadosSalvos["id"][lugar][indiceAtual]["velMax"];
+	noChao = dadosSalvos["id"][lugar][indiceAtual]["noChao"];
+	executando = dadosSalvos["id"][lugar][indiceAtual]["executando"];
 
 	Ente::carregar();
 }

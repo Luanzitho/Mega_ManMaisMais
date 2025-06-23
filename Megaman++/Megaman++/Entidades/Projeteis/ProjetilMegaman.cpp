@@ -53,7 +53,7 @@ void ProjetilMegaman::executar(float dt)
 	sofrerAcaoDaGravidade(dt);
 	velVertical -= empuxo * dt; //Contrapõe a gravidade
 
-	if (getCoords().x > 1200 || getCoords().x < 100)
+	if (getCoords().x > 1300 || getCoords().x < -100)
 		destruir();
 }
 

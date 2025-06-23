@@ -78,7 +78,7 @@ void ListaEntidades::salvarEntidades()
         {
             Entidade* pEntidade = aux->getInfo();
                 
-            if (pEntidade )
+            if (pEntidade)
             {
                 pEntidade->salvar();
             }
@@ -96,7 +96,7 @@ void ListaEntidades::carregaEntidades()
         {
             Entidade* pEntidade = aux->getInfo();
 
-            if (pEntidade && pEntidade->getId()==4)
+            if (pEntidade)// && pEntidade->getId()==4)
             {
                 pEntidade->carregar();
             }
@@ -104,5 +104,3 @@ void ListaEntidades::carregaEntidades()
         }
     }
 }
-
-

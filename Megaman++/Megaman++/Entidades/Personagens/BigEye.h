@@ -15,7 +15,7 @@ public:
 	BigEye();
 	~BigEye();
 	void saltar();
-	void saltar(int i);
+	void saltar(int chance);
 	void mover(float dt);
 	void executar(float dt);
 	void danificar(Megaman* p);

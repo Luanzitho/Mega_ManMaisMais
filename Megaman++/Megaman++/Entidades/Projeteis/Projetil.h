@@ -7,9 +7,9 @@ class Projetil:public Entidade
 {
 protected:
 	bool doMega;
-	const int dano;
+	int dano;
 	const float empuxo;
-	const float velocidade;
+	//float velocidade;
 	ListaEntidades* LEs;
 
 public:
