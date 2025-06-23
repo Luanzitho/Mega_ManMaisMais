@@ -40,7 +40,7 @@ Fase2::Fase2(): maxChefoes(3), minEspinhos(3)
     GC.incluirMegaman(p1);
 	LEs.incluirEntidade(p1);
    
-   // criarInimigos();
+    criarInimigos();
     std::cout << "criou inimigos 2." << std::endl;
     criarObstaculos();
     std::cout << "criou obstaculos 2." << std::endl;

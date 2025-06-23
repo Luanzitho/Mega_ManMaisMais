@@ -24,7 +24,6 @@ void Jogo::executar()
 	menu->setCoords(sf::Vector2f(0.f, 0.f));
 	menu->setTamanho(sf::Vector2f(1280.f, 720.f));
 	menu->setGame(this);
-	GG.textoDigitado = &menu->entradaUsuario;
 
 	sf::Clock tempo;
 	float dt;
@@ -43,7 +42,6 @@ void Jogo::executar()
 			if(faseA==1 && !f1->getAcabou())
 			{
 				f1->executar(dt);
-				//std::cout << "executando fase 1" << std::endl;
 			}
 			else if(faseA==1 && f1->getAcabou())
 			{
@@ -53,11 +51,12 @@ void Jogo::executar()
 			{
 				f2->executar(dt);
 			}
-			else if(faseA==2 && f2->getAcabou())
+			if((faseA==2 && f2->getAcabou()) || f1->getMorreu() || f2->getMorreu())
 			{
 				inMenu = true;
 				playing = false;
-				menu->setTerminou(true);
+				menu->setTerminou(true, f2->getPontuacao());
+				GG.limpaTexto();
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
 			{

@@ -1,7 +1,7 @@
 ﻿#include "Menu.h"
 #include <iostream>
 
-Menu::Menu() : escolha(0), tela(0), enter(false), isPressed(false), start(false), cooldown(0.f), fase(0), pause(false), pontuacao(0), terminou(false), entradaUsuario("-")
+Menu::Menu() : escolha(0), tela(0), enter(false), isPressed(false), start(false), cooldown(0.f), fase(0), pause(false), pontuacao(0), terminou(false), rankingNomes(), rankingPontos()
 {
 	setId(12);
 	pJog = nullptr;
@@ -12,13 +12,13 @@ Menu::Menu() : escolha(0), tela(0), enter(false), isPressed(false), start(false)
 				"1 Jogador", "2 Jogadores", "Voltar",
 				"Continuar","Fase 1", "Fase 2", "Voltar",
 				"Continuar", "Salvar","Voltar ao menu",
-				"Digite seu nome", ""
+				"Digite seu nome", "", ""
 				};
 	coordsTexts = { {500.f, 400.f},{440.f, 500.f}, {540.f,600.f},
 					{440.f, 400.f},{440.f, 500.f}, {440.f, 600.f},
 					{240.f, 400.f},{440.f, 500.f}, {440.f, 600.f},{840.f, 400.f},
 					{ 440.f, 400.f },{440.f, 500.f}, {440.f, 600.f}, 
-					{ 440.f, 400.f },{440.f, 500.f}
+					{ 40.f, 400.f },{40.f, 500.f}, {40.f, 600.f}
 					};
 	texts.resize(options.size());
 	for (int i = 0; i < options.size(); i++)
@@ -32,6 +32,24 @@ Menu::Menu() : escolha(0), tela(0), enter(false), isPressed(false), start(false)
 	}
 	if (!font->loadFromFile("Fontes/Pixelify_Sans/static/PixelifySans-Regular.ttf")) {
 		std::cout << "Erro ao carregar fonte!" << std::endl;
+	}
+	for (int i = 0; i < dadosSalvos["id"][getId()][0]["ranking"]["nomes"].size(); i++)
+	{
+		
+		rankingNomes.push_back(dadosSalvos["id"][getId()][0]["ranking"]["nomes"][i]);
+		rankingPontos.push_back(dadosSalvos["id"][getId()][0]["ranking"]["pontos"][i]);
+		
+	}
+	ranking.resize(dadosSalvos["id"][getId()][0]["ranking"]["nomes"].size());
+	for (int i = 0; i < rankingPontos.size(); i++)
+	{
+		ranking[i].setCharacterSize(100);
+		ranking[i].setString(std::to_string(i + 1) + ". " + rankingNomes[i] + " - " + std::to_string(rankingPontos[i]));
+		ranking[i].setFillColor(sf::Color::White);
+		ranking[i].setFont(*font);
+		ranking[i].setPosition(sf::Vector2f(40.f, coordsTexts[i>=2?i%2:i].y));
+		//texts[i].setOutlineColor(sf::Color::Black);
+		//pGG->desenhar(texto);
 	}
 }
 
@@ -58,6 +76,7 @@ void Menu::executar(float dt)
 		{
 			if ((tela == 0 || tela == 1 || tela == 3) && escolha < 2) escolha++;
 			else if (tela == 2 && escolha < 3)escolha++;
+			else if (tela == 5 && escolha < 5)escolha++;
 			isPressed = true;
 			cooldown = 0;
 		}
@@ -109,7 +128,7 @@ void Menu::selecionar()
 		if (escolha == 0)
 			tela = 1; // tela para escolher a fase
 		else if (escolha == 1)
-			tela = 3; // ranking
+			tela = 5; // ranking
 		else if (escolha == 2) {
 			//tela = 4; //sair
 			pJog->encerrar(); //rever esse encerrar, para fechar o programa corretamente
@@ -131,7 +150,6 @@ void Menu::selecionar()
 		{
 			tela = 0;//voltar
 		}
-		escolha = 0; //limpa a variavel para quando voltar para o menu
 	}
 	else if(tela==2)
 	{
@@ -150,7 +168,6 @@ void Menu::selecionar()
 		{
 			tela = 1;//voltar
 		}
-		escolha = 0; //limpa a variavel para quando voltar para o menu
 	}
 	else if(tela == 3)// menu de pause
 	{
@@ -169,13 +186,56 @@ void Menu::selecionar()
 			pJog->reiniciarFases();
 			tela = 0;//voltar
 		}
-		escolha = 0; //limpa a variavel para quando voltar para o menu
 	}
+	else if(tela == 4)// tela de fim
+	{ 
+		rankingNomes.push_back(pGG->getTexto());
+		rankingPontos.push_back(pontuacao);
+		for(int i=0; i<rankingPontos.size(); i++)
+		{
+			if(rankingPontos[rankingPontos.size()-1]>rankingPontos[i])
+			{
+				std::string swpN = rankingNomes[i];
+				int swpP = rankingPontos[i];
+				rankingPontos[i] = rankingPontos[rankingPontos.size() - 1];
+				rankingNomes[i] = rankingNomes[rankingNomes.size() - 1];
+				rankingPontos[rankingPontos.size() - 1] = swpP;
+				rankingNomes[rankingNomes.size() - 1] = swpN;
+			}
+			if(i<=10)
+			{
+				dadosSalvos["id"][getId()][dadosSalvos["id"][getId()].size() - 1]["ranking"]["nomes"][i] = rankingNomes[i];
+				dadosSalvos["id"][getId()][dadosSalvos["id"][getId()].size() - 1]["ranking"]["pontos"][i] = rankingPontos[i];
+			}
+			
+		}
+		ranking.resize(dadosSalvos["id"][getId()][0]["ranking"]["nomes"].size());
+		for (int i = 0; i < rankingPontos.size(); i++)
+		{
+			ranking[i].setCharacterSize(100);
+			ranking[i].setString(std::to_string(i + 1) + ". " + rankingNomes[i] + " - " + std::to_string(rankingPontos[i]));
+			ranking[i].setFillColor(sf::Color::White);
+			ranking[i].setFont(*font);
+			ranking[i].setPosition(sf::Vector2f(40.f, coordsTexts[i >= 2 ? i % 2 : i].y));
+			//texts[i].setOutlineColor(sf::Color::Black);
+			//pGG->desenhar(texto);
+		}
+		salvar();
+		terminou = false;
+		pJog->reiniciarFases();
+		tela = 0;
+		
+	}
+	else if (tela == 5 && escolha == 5)// tela de ranking
+	{
+		tela = 0;
+	}
+	escolha = 0; //limpa a variavel para quando voltar para o menu
 }
 
 void Menu::desenhaInteracao()
 {
-	if (tela == 0)
+	if (tela == 0)// menu principal
 	{
 		for (int i = 0; i < 3; i++)
 		{
@@ -184,7 +244,7 @@ void Menu::desenhaInteracao()
 			pGG->desenhar(texts[i]);
 		}
 	}
-	else if (tela == 1)
+	else if (tela == 1)// quantidade de jogadores
 	{
 		for (int i = 3; i < 6; i++)
 		{
@@ -193,7 +253,7 @@ void Menu::desenhaInteracao()
 			pGG->desenhar(texts[i]);
 		}
 	}
-	else if (tela == 2)
+	else if (tela == 2)//escolha da fase
 	{
 		for (int i = 6; i < 10; i++)
 		{
@@ -202,7 +262,7 @@ void Menu::desenhaInteracao()
 			pGG->desenhar(texts[i]);
 		}
 	}
-	else if(tela == 3)
+	else if(tela == 3)// menu de pause
 	{
 		for (int i = 10; i < 13; i++)
 		{
@@ -211,13 +271,29 @@ void Menu::desenhaInteracao()
 			pGG->desenhar(texts[i]);
 		}
 	}
-	else if(tela==4)
+	else if(tela==4)// tela de fim
 	{
-		//sf::Keyboard::isKeyPressed(sf::Keyboard::);
-		
-		texts[texts.size()-1].setString(entradaUsuario);
+		texts[texts.size()-2].setString(pGG->getTexto());
+		texts[texts.size()-1].setString("Sua pontução foi de: " + std::to_string(pontuacao));
+		pGG->desenhar(texts[texts.size() - 3]);
 		pGG->desenhar(texts[texts.size() - 2]);
 		pGG->desenhar(texts[texts.size() - 1]);
+	}
+	else if(tela==5)// ranking
+	{
+		for (int i = 0; i < 2; i++)
+		{
+			if(i+escolha*2<=ranking.size()-1 && "" && i+escolha*2<=10)
+			{
+				pGG->desenhar(ranking[i + escolha * 2]);
+			}
+			else if(i+escolha*2>10)
+			{
+				texts[5].setOutlineThickness(3.f);
+				pGG->desenhar(texts[5]);
+			}
+				
+		}
 	}
 }
 
@@ -231,6 +307,11 @@ void Menu::salvar()
 	int lugar = getId();
 	dadosSalvos= json::object({});
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["fase"] = fase;
+	for (int i = 0; i < rankingPontos.size(); i++)
+	{
+		dadosSalvos["id"][getId()][dadosSalvos["id"][getId()].size() - 1]["ranking"]["nomes"][i] = rankingNomes[i];
+		dadosSalvos["id"][getId()][dadosSalvos["id"][getId()].size() - 1]["ranking"]["pontos"][i] = rankingPontos[i];
+	}
 	Ente::salvar();
 }
 
@@ -240,10 +321,17 @@ void Menu::carregar()
 	indiceAtual = dadosSalvos["id"][lugar].size()-1;
 	
 	fase = dadosSalvos["id"][lugar][indiceAtual]["fase"];
+
+	for (int i = 0; i < rankingPontos.size(); i++)
+	{
+		rankingNomes[i] = dadosSalvos["id"][getId()][indiceAtual]["ranking"]["nomes"][i];
+		rankingPontos[i] = dadosSalvos["id"][getId()][indiceAtual]["ranking"]["pontos"][i];
+	}
 	Ente::carregar();
 }
 
-void Menu::setTerminou(bool termi)
+void Menu::setTerminou(bool termi, int pontos)
 {
 	terminou = termi;
+	pontuacao = pontos;
 }

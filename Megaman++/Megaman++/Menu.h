@@ -18,13 +18,17 @@ private:
 	sf::Font* font;
 	std::vector<const char*> options;
 	std::vector<sf::Text> texts;
+	std::vector<sf::Text> ranking;
 	std::vector<sf::Vector2f> coordsTexts;
 	float cooldown;
+	std::vector<std::string> rankingNomes;
+	std::vector<int> rankingPontos;
+
 	//int quantidadeMenus;
 	
 
 public:
-	std::string entradaUsuario;
+	
 	Menu();
 	~Menu();
 	void executar(float dt);
@@ -36,5 +40,6 @@ public:
 	void setPause(bool pausado);
 	void salvar();
 	void carregar();
-	void setTerminou(bool termi);
+	void setTerminou(bool termi, int pontos);
+	//void carregaRanking();
 };

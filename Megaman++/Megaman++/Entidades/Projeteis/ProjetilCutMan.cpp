@@ -131,8 +131,9 @@ void ProjetilCutMan::carregar()
 void ProjetilCutMan::procuraMestre(CutMan* ini)
 {
 	if (!ini)return;
-	if (ini->getCoords().x == dadosSalvos["id"][getId()][indiceAtual]["mestre"]["position"]["x"])
+	if (!ini->getPossoAtirar())mestre = ini;
+	/*if (ini->getCoords().x == dadosSalvos["id"][getId()][indiceAtual]["mestre"]["position"]["x"])
 		if (ini->getCoords().y == dadosSalvos["id"][getId()][indiceAtual]["mestre"]["position"]["y"])
-				mestre = ini;
+				mestre = ini;*/
 }
 

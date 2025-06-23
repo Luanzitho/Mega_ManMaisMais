@@ -75,15 +75,15 @@ void Gerenciador_Grafico::eventoFecharJanela()
         // Captura as teclas digitadas (caracteres válidos)
         if (evento.type == sf::Event::TextEntered) {
             // Ignora teclas de controle (ex.: backspace, enter, etc)
-            //std::cout << "entrou" << std::endl;
+            
             if (evento.text.unicode < 128 && evento.text.unicode >= 32) {
-                //std::cout << "entrou2" << std::endl;
+                std::cout << "entrou2" << std::endl;
                 textoDigitado += static_cast<char>(evento.text.unicode);
             }
 
             // Se quiser, pode adicionar tratamento de Backspace:
-            if (evento.text.unicode == 8 && !textoDigitado->empty()) { // 8 = Backspace
-                textoDigitado->pop_back();
+            if (evento.text.unicode == 8 && !textoDigitado.empty()) { // 8 = Backspace
+                textoDigitado.pop_back();
             }
         }
     }
@@ -109,28 +109,13 @@ void Gerenciador_Grafico::desenhar(sf::Sprite sprite)
     window.draw(sprite);
 }
 
-std::string Gerenciador_Grafico::digitar(std::string entradaUsuario)
+std::string Gerenciador_Grafico::getTexto()
 {
-    sf::Event event;
-    while (window.pollEvent(event)) {
-        // Fecha a janela
-        
-        std::cout << "entrou" << std::endl;
-        // Captura as teclas digitadas (caracteres válidos)
-        if (event.type == sf::Event::TextEntered) {
-            // Ignora teclas de controle (ex.: backspace, enter, etc)
-            if (event.text.unicode < 128 && event.text.unicode >= 32) {
-                entradaUsuario += static_cast<char>(event.text.unicode);
-            }
+    return textoDigitado;
+}
 
-            // Se quiser, pode adicionar tratamento de Backspace:
-            if (event.text.unicode == 8 && !entradaUsuario.empty()) { // 8 = Backspace
-                entradaUsuario.pop_back();
-            }
-        }
-    }
-    return entradaUsuario;
-    // Atualiza o texto SFML com a string do usuário
-    //texto.setString(entradaUsuario);
+void Gerenciador_Grafico::limpaTexto()
+{
+    textoDigitado.clear();
 }
 

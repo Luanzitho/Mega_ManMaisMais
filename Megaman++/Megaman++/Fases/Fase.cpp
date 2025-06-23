@@ -397,6 +397,7 @@ void Fase::carregar()
         //Projeteis CutMan
         ProjetilCutMan* pPC = new ProjetilCutMan;
         pPC->carregar();
+        
         for(int j=0; j<cuts.size(); j++)
         {
             pPC->procuraMestre(cuts[i]);
