@@ -43,7 +43,7 @@ void Jogo::executar()
 			if(faseA==1 && !f1->getAcabou())
 			{
 				f1->executar(dt);
-				std::cout << "executando fase 1" << std::endl;
+				//std::cout << "executando fase 1" << std::endl;
 			}
 			else if(faseA==1 && f1->getAcabou())
 			{

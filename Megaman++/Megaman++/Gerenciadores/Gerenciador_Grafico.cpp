@@ -73,9 +73,9 @@ void Gerenciador_Grafico::eventoFecharJanela()
         // Captura as teclas digitadas (caracteres válidos)
         if (evento.type == sf::Event::TextEntered) {
             // Ignora teclas de controle (ex.: backspace, enter, etc)
-            std::cout << "entrou" << std::endl;
+            //std::cout << "entrou" << std::endl;
             if (evento.text.unicode < 128 && evento.text.unicode >= 32) {
-                std::cout << "entrou2" << std::endl;
+                //std::cout << "entrou2" << std::endl;
                 textoDigitado += static_cast<char>(evento.text.unicode);
             }
 

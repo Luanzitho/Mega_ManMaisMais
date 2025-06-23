@@ -5,12 +5,12 @@ Ente::Ente(): id(0), indiceAtual(0)
 {
 	pGG = nullptr;
 	std::fstream jsonFile("Saves/save1.json");
-	if(jsonFile.is_open())
+	if(jsonFile.is_open() && dadosSalvos== nullptr)
 	{
 		jsonFile >> dadosSalvos;
 		jsonFile.close();
 	}
-	else
+	else if(!jsonFile.is_open())
 	{
 		std::cout << "criando novo arquivo..." << std::endl;
 
