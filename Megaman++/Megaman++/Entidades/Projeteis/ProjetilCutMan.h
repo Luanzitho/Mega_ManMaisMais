@@ -26,5 +26,5 @@ public:
 	std::string getTextureFile();
 	void salvar();
 	void carregar();
-	void procuraMestre(CutMan* ini);
+	void procurarMestre(CutMan* cut);
 };

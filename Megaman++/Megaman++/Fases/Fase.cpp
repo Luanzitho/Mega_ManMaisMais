@@ -216,15 +216,27 @@ int Fase::aleatoriza(int limite1, int limite2)
 void Fase::moveMapa(float dt)
 {
     sf::FloatRect rect1(p1->getCoords(), p1->getTamanho());
-	
-    sf::FloatRect rect2(getCoords(),getTamanho());
-    
 
+
+    sf::FloatRect rect2(getCoords(), getTamanho());
+    if (p2)
+    {
+        sf::FloatRect rect3(p2->getCoords(), p2->getTamanho());
+        if (!p1->getVivo() && p2->getVivo())p1 = p2;
+        else if (rect3.intersects(rect2) && chao[ultimoSprite]->getCoords().x + chao[ultimoSprite]->getTamanho().x > rect2.width)
+        {
+            if (rect3.left >= rect2.width / 2)
+                p2->setCoords(sf::Vector2f(rect2.width / 2, rect3.top));
+        }
+    }
     if (rect1.intersects(rect2) && chao[ultimoSprite]->getCoords().x + chao[ultimoSprite]->getTamanho().x > rect2.width) // Movimento do personagem
     {
-        if(rect1.left >= rect2.width/2)
+        if (rect1.left >= rect2.width / 2)
         {
             p1->setCoords(sf::Vector2f(rect2.width / 2, rect1.top));
+            if (p2)
+                if (p2->getCoords().x - p1->getVelocidade() > 0)p2->setCoords(sf::Vector2f(p2->getCoords().x - p1->getVelocidade() * dt, p2->getCoords().y));
+
             for (int i = 0; i < chao.size(); i++)
             {
                 chao[i]->setCoords(sf::Vector2f(chao[i]->getCoords().x - p1->getVelocidade() * dt, chao[i]->getCoords().y));
@@ -391,17 +403,23 @@ void Fase::carregar()
         LEs.incluirEntidade(pPM);
         GC.incluirProjetil(pPM);
     }
+    std::vector<CutMan*> cutsDisponiveis;
+    for (CutMan* cut : cuts) {
+        if (!cut->getPossoAtirar())
+            cutsDisponiveis.push_back(cut);
+    }
+
     tamanho = dadosSalvos["id"][6].size();
     for (int i = 0; i < tamanho; i++)
     {
-        //Projeteis CutMan
         ProjetilCutMan* pPC = new ProjetilCutMan;
         pPC->carregar();
-        
-        for(int j=0; j<cuts.size(); j++)
-        {
-            pPC->procuraMestre(cuts[i]);
+
+        if (!cutsDisponiveis.empty()) {
+            pPC->procurarMestre(cutsDisponiveis.front());
+            cutsDisponiveis.erase(cutsDisponiveis.begin());
         }
+
         pPC->setGerenciadorGrafico(pGG);
         pPC->associaListaEntidades(&LEs);
         LEs.incluirEntidade(pPC);

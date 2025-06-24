@@ -62,9 +62,9 @@ void Fase2::executar(float dt)
    
 	moveMapa(dt);
     pontuacao = p1->getPontos();
-    if (!p1->getVivo())morreu = true;
+    if ((!p1->getVivo() && !p2) || (!p1->getVivo() && !p2->getVivo())) morreu = true;
 	GC.executar();
-    if (p1->getCoords().x > 1100)acabou = true;
+    if (p1->getCoords().x > 1100) acabou = true;
 }
 
 void Fase2::criarChefoes()

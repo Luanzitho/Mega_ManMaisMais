@@ -73,7 +73,7 @@ void Gerenciador_Colisoes::tratarColisaoMegaInimigos()
     {
         for (itInim = LIs.begin(); itInim != LIs.end(); itInim++) //Colisão Megaman player 2 x Inimigo
         {
-            if ((*itInim)-> getVivo() && verificarColisao(p1, *itInim) && p2->getVivo()) //Se o Inimigo estiver vivo E houve a colisão
+            if ((*itInim)-> getVivo() && verificarColisao(p2, *itInim) && p2->getVivo()) //Se o Inimigo estiver vivo E houve a colisão
             {
                 (*itInim)->danificar(p2);
             }

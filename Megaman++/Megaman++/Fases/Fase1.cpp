@@ -56,7 +56,8 @@ void Fase1::executar(float dt)
     LEs.percorrer(dt, getTamanho());
 	moveMapa(dt);
     pontuacao = p1->getPontos();
-    if (!p1->getVivo())morreu = true;
+
+    if ((!p1->getVivo() && !p2) || (!p1->getVivo() && !p2->getVivo())) morreu = true;
 	GC.executar();
     if (p1->getCoords().x > 1100)acabou=true;
     

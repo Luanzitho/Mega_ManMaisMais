@@ -84,15 +84,15 @@ void ProjetilCutMan::executar(float dt)
 	sofrerAcaoDaGravidade(dt);
 	velVertical -= empuxo * dt; //Contrapõe a gravidade
 
-	if (!(mestre->getVivo()))
+	if (mestre && !(mestre->getVivo()))
 		destruir();
 
-	if (timerRetornar < 1 && !limite)
+	if (mestre && timerRetornar < 1 && !limite)
 	{
 		perseguir(dt);
 	}
 
-	if (timerRetornar >= 1 || limite)
+	if (mestre && timerRetornar >= 1 || limite)
 	{
 		retornar(dt);
 	}
@@ -128,10 +128,11 @@ void ProjetilCutMan::carregar()
 	
 }
 
-void ProjetilCutMan::procuraMestre(CutMan* ini)
+void ProjetilCutMan::procurarMestre(CutMan* cut)
 {
-	if (!ini)return;
-	if (!ini->getPossoAtirar())mestre = ini;
+	if (!cut) return;
+
+	if (!cut->getPossoAtirar()) mestre = cut;
 	/*if (ini->getCoords().x == dadosSalvos["id"][getId()][indiceAtual]["mestre"]["position"]["x"])
 		if (ini->getCoords().y == dadosSalvos["id"][getId()][indiceAtual]["mestre"]["position"]["y"])
 				mestre = ini;*/
