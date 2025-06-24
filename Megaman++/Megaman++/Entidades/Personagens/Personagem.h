@@ -9,6 +9,7 @@ class Personagem:public Entidade
 protected:
 	int num_vidas;
 	static int qualPersonagem;
+
 public:
 	Personagem();
 	Personagem(int v);

@@ -2,7 +2,7 @@
 #include <iostream>
 
 
-Fase2::Fase2(): maxChefoes(3), minEspinhos(3)
+Fase2::Fase2(): maxCutMan(3), minEspinhos(3)
 {
     setId(14);
     std::cout << "Fase 2 executando" << std::endl;
@@ -67,7 +67,7 @@ void Fase2::executar(float dt)
     if (p1->getCoords().x > 1100) acabou = true;
 }
 
-void Fase2::criarChefoes()
+void Fase2::criarCutMan()
 {
     int i = 0;
     while (faseJson["layers"][i]["name"] != "Boss" && i < quantidadeLayers)
@@ -80,7 +80,7 @@ void Fase2::criarChefoes()
     }
     else
     {
-        for (int j = 0; j < maxChefoes; j++)
+        for (int j = 0; j < maxCutMan; j++)
         {
             int qualObs = 0;
             Inimigo* p = new CutMan;
@@ -107,7 +107,7 @@ void Fase2::criarChefoes()
     }
     else
     {
-        for (int j = 1; j < maxChefoes; j++)
+        for (int j = 1; j < maxCutMan; j++)
         {
             int qualObs = 0;
             Inimigo* p = new CutMan;
@@ -190,14 +190,14 @@ void Fase2::criarInimigos()
         {
             int qualInimigo = aleatoriza(0, 10); // gera um número aleatório entre 0 e 10
             bool eMetall = (qualInimigo < 5); // se for menor que 5, é Metall
-            if (eMetall)minInimigosFaceis++;
-			else maxChefoes++;
+            if (eMetall) minMetalls++;
+			else maxCutMan++;
         }
     }
     
     
-    criarInimigosFaceis();
-	criarChefoes();
+    criarMetalls();
+    criarCutMan();
 }
 
 void Fase2::criarObstaculos()
@@ -224,8 +224,8 @@ void Fase2::criarObstaculos()
             int qualObs = aleatoriza(0, 1); // gera um número aleatório entre 0 e 1
             bool eEspinho = (qualObs == 0); // se for 0, é espinho; se for 1, é plataforma
 
-            if (eEspinho)minEspinhos++;
-            else minObstaculosFaceis++;
+            if (eEspinho) minEspinhos++;
+            else minPlataformas++;
         }
         criarPlataformas();
         criarEspinhos();
@@ -236,7 +236,7 @@ void Fase2::criarObstaculos()
 void Fase2::salvar() {
     int lugar = getId();
     int idx = dadosSalvos["id"][lugar].size();
-    dadosSalvos["id"][lugar][idx]["maxChefoes"] = maxChefoes;
+    dadosSalvos["id"][lugar][idx]["maxChefoes"] = maxCutMan;
     dadosSalvos["id"][lugar][idx]["minEspinhos"] = minEspinhos;
     Fase::salvar();
 }
@@ -244,7 +244,7 @@ void Fase2::salvar() {
 void Fase2::carregar() {
     int lugar = getId();
     int idx = dadosSalvos["id"][lugar].size() - 1;
-    maxChefoes = dadosSalvos["id"][lugar][idx]["maxChefoes"];
+    maxCutMan = dadosSalvos["id"][lugar][idx]["maxChefoes"];
     minEspinhos = dadosSalvos["id"][lugar][idx]["minEspinhos"];
     Fase::carregar();
 }

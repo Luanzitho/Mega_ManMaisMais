@@ -9,7 +9,6 @@ protected:
 	bool doMega;
 	int dano;
 	const float empuxo;
-	//float velocidade;
 	ListaEntidades* LEs;
 
 public:

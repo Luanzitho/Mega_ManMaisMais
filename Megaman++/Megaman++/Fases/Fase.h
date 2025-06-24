@@ -47,8 +47,8 @@ protected:
 	ListaEntidades LEs;
 	//Mola* mola;
 	bool acabou;
-	int minInimigosFaceis;
-	int minObstaculosFaceis;
+	int minMetalls;
+	int minPlataformas;
 	int quantidadeLayers;
 	static int pontuacao;
 	static bool morreu;
@@ -57,7 +57,7 @@ public:
 	Fase();
 	~Fase();
 	virtual void executar(float dt) = 0;
-	void criarInimigosFaceis();
+	void criarMetalls();
 	void criarChao();
 	void criarPlataformas();
 	virtual void criarInimigos() = 0;

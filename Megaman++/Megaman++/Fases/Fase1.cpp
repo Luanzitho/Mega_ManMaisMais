@@ -2,7 +2,7 @@
 #include <iostream>
 
 
-Fase1::Fase1(): minInimigosMedios(3), minObsMolas(3)
+Fase1::Fase1(): minBigEyes(3), minMolas(3)
 {
     setId(13);
     std::fstream jsonFile("Mapas/mapa1.tmj");
@@ -76,7 +76,7 @@ void Fase1::criarMolas()
     }
     else
     {
-        for (int j = 0; j < minObsMolas; j++)
+        for (int j = 0; j < minMolas; j++)
         {
             int qualObs;
             Obstaculo* p = new Mola;
@@ -99,7 +99,7 @@ void Fase1::criarMolas()
     
 }
 
-void Fase1::criarMinInimigosMedios()
+void Fase1::criarBigEyes()
 {
     int i = 0;
     while (faseJson["layers"][i]["name"] != "Spawn Inimigos" && i< quantidadeLayers)
@@ -112,7 +112,7 @@ void Fase1::criarMinInimigosMedios()
     }
     else
     {
-        for (int j = 0; j < minInimigosMedios; j++)
+        for (int j = 0; j < minBigEyes; j++)
         {
             int lugar = 0;
             do
@@ -160,12 +160,12 @@ void Fase1::criarInimigos()
         {
             int qualInimigo = aleatoriza(0, 1); // gera um número aleatório entre 0 e 1
             bool eMetall = (qualInimigo == 0); // se for 0, é Metall, senão é BigEye
-            if (eMetall) minInimigosFaceis++; // incrementa o número de Metall se for Metall
-            else minInimigosMedios++; // incrementa o número de BigEye se for BigEye
+            if (eMetall) minMetalls++; // incrementa o número de Metall se for Metall
+            else minBigEyes++; // incrementa o número de BigEye se for BigEye
         }
-        criarInimigosFaceis();
+        criarMetalls();
 
-        criarMinInimigosMedios();
+        criarBigEyes();
     }
     
     
@@ -196,8 +196,8 @@ void Fase1::criarObstaculos()
             int qualObs = aleatoriza(0, 10); // gera um número aleatório entre 0 e 10
             bool eMola = (qualObs > 5); // se for maior que 5, é mola, senão é plataforma
             
-            if (eMola)minObsMolas++; // incrementa o número de molas se for mola
-            else minObstaculosFaceis++; // incrementa o número de plataformas se for plataforma
+            if (eMola) minMolas++; // incrementa o número de molas se for mola
+            else minPlataformas++; // incrementa o número de plataformas se for plataforma
         }
 		
         criarMolas();
@@ -211,8 +211,8 @@ void Fase1::salvar()
 {
     int lugar = getId();
     
-    dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["minInimigosMedios"] = minInimigosMedios;
-    dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["minObsMolas"] = minObsMolas;
+    dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["minInimigosMedios"] = minBigEyes;
+    dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["minObsMolas"] = minMolas;
     Fase::salvar();
 }
 

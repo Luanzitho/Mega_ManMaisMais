@@ -26,7 +26,6 @@ private:
 	void tratarColisaoMegaProjeteis();
 	void tratarColisaoInimsProjeteis();
 	void tratarColisaoInimsObstacs();
-	void tratarColisaoProjLimites();
 	void verificarRemovidos();
 
 public:

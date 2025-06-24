@@ -7,6 +7,7 @@ class Plataforma:public Obstaculo
 private:
 	float altura;
 	static int indicePlataforma;
+
 public:
 	Plataforma();
 	~Plataforma();

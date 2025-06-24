@@ -171,24 +171,6 @@ void Gerenciador_Colisoes::tratarColisaoInimsObstacs()
     }
 }
 
-void Gerenciador_Colisoes::tratarColisaoProjLimites()
-{
-    
-    std::set<Projetil*>::iterator itProj;
-    sf::FloatRect rect2(sf::Vector2f(0,0), sf::Vector2f(1180.f, 720.f));
-
-
-    for (itProj = LPs.begin(); itProj != LPs.end(); itProj++)
-    {
-        sf::FloatRect rect1((*itProj)->getCoords(), (*itProj)->getTamanho());
-        
-        if (rect1.intersects(rect2)) //Houve colisão
-        { 
-            (*itProj)->destruir();
-        }
-    }
-}
-
 void Gerenciador_Colisoes::verificarRemovidos()
 {
     std::vector<Inimigo*>::iterator itInim = LIs.begin();
@@ -246,7 +228,6 @@ void Gerenciador_Colisoes::executar() //Referência: Giovane do canal Gege++
     
     tratarColisaoMegaObstacs();
     tratarColisaoMegaInimigos();
-    //tratarColisaoProjLimites();
     tratarColisaoMegaProjeteis();
     tratarColisaoInimsProjeteis();
     tratarColisaoInimsObstacs();

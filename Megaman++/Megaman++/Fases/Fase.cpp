@@ -1,6 +1,6 @@
 #include "Fase.h"
 #include <iostream>
-Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18), tileCount(180), tilesRects(), GC(), p1(new Megaman), LEs(), minInimigosFaceis(3), jaFoi(), ultimoSprite(0), acabou(false), p2(nullptr), minObstaculosFaceis(3), quantidadeLayers(0)
+Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18), tileCount(180), tilesRects(), GC(), p1(new Megaman), LEs(), minMetalls(3), jaFoi(), ultimoSprite(0), acabou(false), p2(nullptr), minPlataformas(3), quantidadeLayers(0)
 {
     setTamanho(sf::Vector2f(1280.f, 720.f));
 
@@ -33,7 +33,7 @@ Fase::~Fase()
 }
 
 
-void Fase::criarInimigosFaceis()
+void Fase::criarMetalls()
 {
     int i = 0;
     std::mt19937 gen(rd());                     // motor aleatório (Mersenne Twister)
@@ -41,7 +41,7 @@ void Fase::criarInimigosFaceis()
     {
         i++;
     }
-    for (int j = 0; j < minInimigosFaceis; j++)
+    for (int j = 0; j < minMetalls; j++)
     {
         int lugar = 0;
         std::uniform_int_distribution<> quantos(0, faseJson["layers"][i]["objects"].size() - 1);
@@ -114,7 +114,7 @@ void Fase::criarPlataformas()
     else
     {
 		
-        for (int j = 0; j < minObstaculosFaceis; j++)
+        for (int j = 0; j < minPlataformas; j++)
         {
             int qualObs;
             Obstaculo* p = new Plataforma;
@@ -286,8 +286,8 @@ void Fase::salvar()
 
     dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["acabou"] = acabou;
     dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["ultimoSprite"] = ultimoSprite;
-    dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["minInimigosFaceis"] = minInimigosFaceis;
-    dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["minObstaculosFaceis"] = minObstaculosFaceis;
+    dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["minInimigosFaceis"] = minMetalls;
+    dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["minObstaculosFaceis"] = minPlataformas;
     dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["quantidadeLayers"] = quantidadeLayers;
 
     for(int i=0; i< tilesSprites.size(); i++)

@@ -13,13 +13,10 @@ private:
 	sf::RenderWindow window;
 	std::map<std::string, sf::Texture> texturas;
 	std::string textoDigitado;
-	//sf::RectangleShape* corpo;
-	//sf::Texture textura;
-	//sf::Sprite* sprite;
+	
 	Gerenciador_Grafico(); //Padrão singleton, vídeo do Burda
 
 public:
-	
 	//Gerenciador_Grafico(); //Padrão luanzin kkkk
 	~Gerenciador_Grafico();
 	sf::Texture& getTextura(const std::string& caminho); //Para armazenar as texturas. Em teoria corrige os crashes por chamar toda hora a textura
