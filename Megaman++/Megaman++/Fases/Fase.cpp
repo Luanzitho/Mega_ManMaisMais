@@ -96,6 +96,7 @@ void Fase::criarChao()
         obstaculos.push_back(m);
         std::cout << "Plataforma criada: " << faseJson["layers"][controle]["objects"][i]["x"] << ", " << faseJson["layers"][1]["objects"][i]["y"] << std::endl;
         GC.incluirObstaculo(m);
+        LEs.incluirEntidade(m);
     }
 
 }
