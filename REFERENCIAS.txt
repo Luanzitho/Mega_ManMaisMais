@@ -1,0 +1,38 @@
+# AGRADECIMENTOS PROFISSIONAIS:
+
+Gostaríamos de expressar nosso sincero agradecimento ao pessoal do PETECO, por todo o apoio com as oficinas ao longo desse projeto como um todo.
+Em especial, agradecemos a Giulia de Souza Leite e Julia Mariano Torres da Silva, pela oficina sobre Gerenciador de Gráfico e Gerenciador de Colisões, que foi a parte mais importante para que o projeto criasse vida como um verdadeiro software.
+
+# REFERÊNCIAS CITADAS NO PROJETO:
+
+	SIMÃO, J. M. Site das Disciplina de Fundamentos de Programação 2, Curitiba – PR, Brasil.
+http://www.dainf.ct.utfpr.edu.br/~jeansimao/Fundamentos2/Fundamentos2.htm.
+
+# REFERÊNCIAS UTILIZADAS NO DESENVOLVIMENTO:
+
+ 	ALVEZ, Felipe. 04. Lista Template - Tutorial Jogo SFML. YouTube, Acessado em 29/05/2025 às 23:22 - https://www.youtube.com/watch?v=VG3bjNontjs.
+
+	BURDA, Matheus. 5 - Gerenciador Gráfico - Parte 1 - Tutorial Jogo SFML. YouTube, Acessado em 28/05/2025 às 23:45 - https://youtu.be/RFSOXXsm4Ug?feature=shared.
+
+	BURDA, Matheus. 6 - Gerenciador Gráfico - Parte 2 - Tutorial Jogo SFML. YouTube, Acessado em 29/05/2025 às 10:52 - https://www.youtube.com/watch?v=NODjfdL2Uv0.
+
+	BURDA, Matheus. 8 - Lista Template - Tutorial Jogo SFML. YouTube, Acessado em 29/05/2025 às 11:04 - https://www.youtube.com/watch?v=l5mBXfdTkY0.
+
+	CraftPix - Free Simple Platformer Game Kit Pixel Art - Acessado em 16/06/2025, às 15:20 - https://craftpix.net/freebies/free-simple-platformer-game-kit-pixel-art/?num=1&count=18&sq=mola&pos=8.
+
+	LIMAS, Giovane. #4 - Criando um Gerenciador Gráfico e Padrão de Projeto Singleton. YouTube, Acessado em 29/05/2025 às 22:01 - https://www.youtube.com/watch?v=RXmFcBGD8T8.
+
+	OLIVEIRA, Marcos. Como Criar um Game MENU com C++ e SFML  - Acessado em 20/06/2025, às 11:03 -https://www.youtube.com/watch?v=h8-Q4eu3Qt4&t=919s .
+
+	SHARMA, Suraj. SFML C++ Tutorial 10 | 2D shooter game with 360 degree shooting! Made easy with vectors!. YouTube, Acessado em 31/05/2025 às 14:45 - https://www.youtube.com/watch?v=SkdtijMqpD4.
+
+	Sprites INC - Sprites Mega Man 2 (NES) - Acessado em 07/06/2025, às 12:21 - https://www.sprites-inc.co.uk/sprite.php?local=Classic/MM2.
+
+	The Spriters Resource - Sprites de Mega Man (NES) - Acessado em 20/06/2025, às 20:45 - https://www.spriters-resource.com/nes/mm/.
+
+	The Spriters Resource - Sprites Player 2 - Acessado em 30/05/2025, às 11:08 - https://www.spriters-resource.com/wii/mm10/sheet/184234/.
+
+
+# AVISO SOBRE DIREITOS AUTORAIS:
+
+Todos os personagens, sprites e nomes utilizados relacionados à franquia Mega Man™ são de propriedade intelectual da empresa Capcom® Co., Ltd., sendo utilizados neste projeto apenas com fins educacionais e acadêmicos, sem intenção de uso comercial.
