@@ -32,7 +32,7 @@ json Ente::dadosSalvos; // Inicializa o objeto JSON vazio
 
 Ente::Ente(sf::Vector2f coordsIni, sf::Vector2f size): coords(coordsIni), tamanho(size), id(0)
 {
-	delete pGG;
+	pGG = nullptr;
 	//pGC = nullptr;
 }
 

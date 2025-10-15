@@ -30,4 +30,5 @@ public:
 	void desenhar(sf::Sprite sprite);
 	std::string getTexto();
 	void limpaTexto();
+	void fecharJanela();
 };

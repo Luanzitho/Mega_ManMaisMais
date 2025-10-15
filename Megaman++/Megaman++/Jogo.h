@@ -26,6 +26,7 @@ private:
 	bool inMenu;
 	bool playing;
 	int faseA;
+	bool fechar;
 
 public:
 	Jogo();
@@ -38,5 +39,5 @@ public:
 	Gerenciador_Grafico* getGerenciador();
 	void reiniciarFases();
 	void salvar();
-	
+	void setFechar(bool fe);
 };

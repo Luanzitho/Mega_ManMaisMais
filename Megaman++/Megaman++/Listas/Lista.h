@@ -98,8 +98,8 @@ public:
 		{
 			Elemento<TL>* auxProx = aux->getProximo();
 
-			if (aux->getInfo())
-				delete aux->getInfo();  // deleta a entidade apontada
+			//if (aux->getInfo())
+				//delete aux->getInfo();  // deleta a entidade apontada
 
 			delete aux;  // deleta o elemento da lista
 

@@ -56,8 +56,8 @@ Menu::Menu() : escolha(0), tela(0), enter(false), isPressed(false), start(false)
 Menu::~Menu()
 {
 	delete font;
-	delete pGG;
-	delete pJog;
+	//delete pGG;
+	//delete pJog;
 	options.clear();
 	texts.clear();
 	coordsTexts.clear();
@@ -131,7 +131,7 @@ void Menu::selecionar()
 			tela = 5; // ranking
 		else if (escolha == 2) {
 			//tela = 4; //sair
-			pJog->encerrar(); //rever esse encerrar, para fechar o programa corretamente
+			pJog->setFechar(true); //rever esse encerrar, para fechar o programa corretamente
 		}
 		escolha = 0;
 	}

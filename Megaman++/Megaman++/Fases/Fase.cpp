@@ -29,7 +29,7 @@ Fase::~Fase()
     inimigos.clear();
     obstaculos.clear();
 	//LEs.LEs.limpar();
-    delete &LEs;
+    //delete &LEs;
 }
 
 

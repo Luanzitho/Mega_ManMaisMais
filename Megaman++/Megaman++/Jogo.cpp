@@ -3,7 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-Jogo::Jogo() : GG(*Gerenciador_Grafico::getInstancia()), inMenu(true), playing(false), faseA(0), f1(new Fase1), f2(new Fase2)
+Jogo::Jogo() : GG(*Gerenciador_Grafico::getInstancia()), inMenu(true), playing(false), faseA(0), f1(new Fase1), f2(new Fase2), fechar(false)
 {
 	f1->setCoords(sf::Vector2f(0.f, 0.f));
 	f1->setGerenciadorGrafico(&GG);
@@ -14,7 +14,7 @@ Jogo::Jogo() : GG(*Gerenciador_Grafico::getInstancia()), inMenu(true), playing(f
 
 Jogo::~Jogo()
 {
-	encerrar();
+	//encerrar();
 }
 
 void Jogo::executar()
@@ -67,7 +67,16 @@ void Jogo::executar()
 		}
 		
 		GG.mostrarConteudoJanela();
+		if(fechar)
+		{
+			GG.fecharJanela();
+			std::cout << "Fechando o jogo...\n";
+			
+			break;
+		}
 	}
+	encerrar();
+	std::cout << "Jogo encerrado.\n";
 }
 
 void Jogo::iniciar(int fase)
@@ -97,8 +106,9 @@ void Jogo::iniciar(int fase, bool carregar)
 
 void Jogo::encerrar()
 {
-	delete f1;
-	delete f2;
+	if (f1) { delete f1; f1 = nullptr; }
+	if (f2) { delete f2; f2 = nullptr; }
+	//GG.fecharJanela();
 }
 
 void Jogo::setPlayers(bool players)
@@ -142,6 +152,11 @@ void Jogo::salvar()
 	else if (faseA == 2)
 		f2->salvar();
 	// salvar as variaveis que precisar
+}
+
+void Jogo::setFechar(bool fe)
+{
+	fechar = fe;
 }
 
 

@@ -11,7 +11,7 @@ Gerenciador_Grafico::Gerenciador_Grafico(): window(sf::VideoMode(1280, 720), "Me
 
 Gerenciador_Grafico::~Gerenciador_Grafico()
 {
-    delete instancia;
+    //delete instancia;
 }
 
 Gerenciador_Grafico* Gerenciador_Grafico::getInstancia() //Para instanciar um único Gerenciador_Grafico
@@ -117,5 +117,10 @@ std::string Gerenciador_Grafico::getTexto()
 void Gerenciador_Grafico::limpaTexto()
 {
     textoDigitado.clear();
+}
+
+void Gerenciador_Grafico::fecharJanela()
+{
+	window.close();
 }
 
