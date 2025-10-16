@@ -1,1 +1,13 @@
-﻿  Megaman++.vcxproj -> C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Debug\Megaman++.exe
+﻿  Jogo.cpp
+  Menu.cpp
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Menu.cpp(26,20): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Menu.cpp(38,20): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Menu.cpp(46,20): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Menu.cpp(205,17): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Menu.cpp(224,21): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Menu.cpp(301,18): warning C4018: '<=': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Menu.cpp(333,20): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Menu.cpp(349,20): warning C4018: '<': incompatibilidade de signed/unsigned
+  main.cpp
+  Gerando Código...
+  Megaman++.vcxproj -> C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Debug\Megaman++.exe

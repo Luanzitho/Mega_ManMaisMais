@@ -1,7 +1,7 @@
 ﻿#include "Menu.h"
 #include <iostream>
 
-Menu::Menu() : escolha(0), tela(0), enter(false), isPressed(false), start(false), cooldown(0.f), fase(0), pause(false), pontuacao(0), terminou(false), rankingNomes(), rankingPontos()
+Menu::Menu() : escolha(0), tela(0), enter(false), isPressed(false), start(false), cooldown(0.f), fase(0), pause(false), pontuacao(0), terminou(false), rankingNomes(), rankingPontos(), twoPlayers(false), twoPlayersSalvo(false)
 {
 	setId(12);
 	pJog = nullptr;
@@ -12,12 +12,14 @@ Menu::Menu() : escolha(0), tela(0), enter(false), isPressed(false), start(false)
 				"1 Jogador", "2 Jogadores", "Voltar",
 				"Continuar","Fase 1", "Fase 2", "Voltar",
 				"Continuar", "Salvar","Voltar ao menu",
-				"Digite seu nome", "", ""
+				"Digite seu nome", "", "",
+				"Quantidade de jogadores incompativel", "", "Voltar"
 				};
 	coordsTexts = { {500.f, 400.f},{440.f, 500.f}, {540.f,600.f},
 					{440.f, 400.f},{440.f, 500.f}, {440.f, 600.f},
 					{240.f, 400.f},{440.f, 500.f}, {440.f, 600.f},{840.f, 400.f},
 					{ 440.f, 400.f },{440.f, 500.f}, {440.f, 600.f}, 
+					{ 40.f, 400.f },{40.f, 500.f}, {40.f, 600.f},
 					{ 40.f, 400.f },{40.f, 500.f}, {40.f, 600.f}
 					};
 	texts.resize(options.size());
@@ -139,11 +141,13 @@ void Menu::selecionar()
 	{
 		if (escolha == 0) { //quantidade de jogadores
 			pJog->setPlayers(false);
+			twoPlayers = false;
 			tela=2;
 		}
 		else if (escolha == 1)
 		{
 			pJog->setPlayers(true);
+			twoPlayers = true;
 			tela=2;
 		}
 		else if (escolha == 2)
@@ -155,8 +159,15 @@ void Menu::selecionar()
 	{
 		if (escolha == 0) { //Continuar
 			carregar();
-			pJog->iniciar(fase, true);
-			tela = 0;
+			if(twoPlayers!=twoPlayersSalvo)
+			{
+				tela = 6;//voltar para o menu de escolha de jogadores
+			}
+			else
+			{
+				pJog->iniciar(fase, true);
+				tela = 0;
+			}
 		}
 		if (escolha == 1 || escolha == 2) { //fase selecionada
 			pJog->iniciar(escolha);
@@ -230,6 +241,10 @@ void Menu::selecionar()
 	{
 		tela = 0;
 	}
+	else if(tela==6)
+	{
+		tela = 1;
+	}
 	escolha = 0; //limpa a variavel para quando voltar para o menu
 }
 
@@ -295,6 +310,13 @@ void Menu::desenhaInteracao()
 				
 		}
 	}
+	else if(tela==6)
+	{
+			texts[16].setOutlineThickness(0);
+			texts[18].setOutlineThickness(3.f);
+			pGG->desenhar(texts[16]);
+			pGG->desenhar(texts[18]);
+	}
 }
 
 void Menu::setPause(bool pausado)
@@ -307,6 +329,7 @@ void Menu::salvar()
 	int lugar = getId();
 	dadosSalvos= json::object({});
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["fase"] = fase;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["twoPlayers"] = twoPlayers;
 	for (int i = 0; i < rankingPontos.size(); i++)
 	{
 		dadosSalvos["id"][getId()][dadosSalvos["id"][getId()].size() - 1]["ranking"]["nomes"][i] = rankingNomes[i];
@@ -321,6 +344,7 @@ void Menu::carregar()
 	indiceAtual = dadosSalvos["id"][lugar].size()-1;
 	
 	fase = dadosSalvos["id"][lugar][indiceAtual]["fase"];
+	twoPlayersSalvo = dadosSalvos["id"][lugar][indiceAtual]["twoPlayers"];
 
 	for (int i = 0; i < rankingPontos.size(); i++)
 	{

@@ -23,7 +23,8 @@ private:
 	float cooldown;
 	std::vector<std::string> rankingNomes;
 	std::vector<int> rankingPontos;
-
+	bool twoPlayers;
+	bool twoPlayersSalvo;
 	//int quantidadeMenus;
 	
 
