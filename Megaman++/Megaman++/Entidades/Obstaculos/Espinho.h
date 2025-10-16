@@ -16,5 +16,6 @@ public:
 	std::string getTextureFile();
 	void salvar();
 	void carregar();
+	static void resetIndice() { indiceEspinho = -1; }
 };
 

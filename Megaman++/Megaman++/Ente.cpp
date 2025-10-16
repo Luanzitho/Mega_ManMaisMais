@@ -84,7 +84,7 @@ void Ente::salvar()
 	if (novoArquivo.is_open()) {
 		novoArquivo << dadosSalvos.dump(4);
 		novoArquivo.close();
-		std::cout << "Arquivo JSON criado com sucesso!" << std::endl;
+		std::cout << "Arquivo JSON salvo com sucesso!" << std::endl;
 	}
 	else {
 		std::cout << "Erro ao criar o arquivo JSON!" << std::endl;

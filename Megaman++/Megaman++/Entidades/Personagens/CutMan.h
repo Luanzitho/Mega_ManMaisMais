@@ -26,5 +26,6 @@ public:
 	void salvar();
 	void carregar();
 	bool getPossoAtirar();
+	static void resetIndice() { indiceCutMan = -1; }
 };
 

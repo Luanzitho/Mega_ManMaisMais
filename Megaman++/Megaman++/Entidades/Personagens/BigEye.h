@@ -22,5 +22,6 @@ public:
 	std::string getTextureFile();
 	void salvar();
 	void carregar();
+	static void resetIndice() { indiceBig = -1; }
 };
 

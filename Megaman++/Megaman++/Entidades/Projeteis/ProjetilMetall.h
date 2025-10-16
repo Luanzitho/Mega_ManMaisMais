@@ -21,5 +21,6 @@ public:
 	std::string getTextureFile();
 	void salvar();
 	void carregar();
+	static void resetIndice() { indiceProMetall = -1; }
 };
 

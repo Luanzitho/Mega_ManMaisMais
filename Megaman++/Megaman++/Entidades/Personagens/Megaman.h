@@ -35,5 +35,6 @@ public:
 	void salvar();
 	void carregar();
 	const int getPontos();
+	static void resetIndice(){ }
 };
 

@@ -314,6 +314,16 @@ void Fase::carregar()
     int lugar = getId();
     int tamanho;
 
+	Metall::resetIndice();
+	ProjetilMetall::resetIndice();
+    ProjetilMegaman::resetIndice();
+    ProjetilCutMan::resetIndice();
+    CutMan::resetIndice();
+    BigEye::resetIndice();
+    Mola::resetIndice();
+    Plataforma::resetIndice();
+    Espinho::resetIndice();
+
     LEs.limpar();
     GC.limpar();
     //players

@@ -17,5 +17,6 @@ public:
 	const float getAltura();
 	void salvar();
 	void carregar();
+	static void resetIndice() { indicePlataforma = -1; }
 };
 

@@ -27,4 +27,5 @@ public:
 	void salvar();
 	void carregar();
 	void procurarMestre(CutMan* cut);
+	static void resetIndice() { indiceProCut = -1; }
 };
