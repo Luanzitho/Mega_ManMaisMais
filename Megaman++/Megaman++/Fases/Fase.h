@@ -71,6 +71,8 @@ public:
 	bool getAcabou();
 	void setTwoPlayers();
 	void setOnePlayer();
+	int getPlayerHP(bool p2);
+	int getPlayerPoints();
 	virtual void salvar();
 	virtual void carregar();
 	const int getPontuacao();

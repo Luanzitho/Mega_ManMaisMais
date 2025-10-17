@@ -117,16 +117,16 @@ void Megaman::mover(float dt)
 	if (noChao)
 	{
 		velVertical = 0;
-		
+
 		if (player1) //Se for Player 1 usa seta para cima, se não, usa W
 		{
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 			{
-					velVertical = -350;
-					noChao = false;
-					std::cout << "Tenho " << getNumVidas() << " de HP" << std::endl;
-					std::cout << "Tenho " << pontos << " pontos" << std::endl;
-					std::cout << "FPS: " << 1.0 / dt << std::endl;
+				velVertical = -350;
+				noChao = false;
+				//std::cout << "Tenho " << getNumVidas() << " de HP" << std::endl;
+				//std::cout << "Tenho " << pontos << " pontos" << std::endl;
+				//std::cout << "FPS: " << 1.0 / dt << std::endl;
 			}
 		}
 		else
@@ -138,14 +138,14 @@ void Megaman::mover(float dt)
 			}
 		}
 	}
-	
+
 	//else
 	//{
 	//	velVertical += gravidade * dt;
 	//}
 
 	//if (posicao.x + velocidade * dt > 0.f)
-	if(posicao.x + velocidade * dt >0)posicao.x += velocidade * dt;
+	if (posicao.x + velocidade * dt > 0)posicao.x += velocidade * dt;
 	posicao.y += velVertical * dt;
 
 	setCoords(posicao);
@@ -154,7 +154,7 @@ void Megaman::mover(float dt)
 void Megaman::atirar(float dt)
 {
 	cooldownTiro += dt;
-	
+
 	if (player1)
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
@@ -209,7 +209,7 @@ void Megaman::executar(float dt)
 	mover(dt);
 	atirar(dt);
 
-	if(!noChao)
+	if (!noChao)
 		sofrerAcaoDaGravidade(dt);
 
 	if (invencivel)
@@ -224,7 +224,7 @@ void Megaman::executar(float dt)
 	}
 }
 
-std::string Megaman::getTextureFile() 
+std::string Megaman::getTextureFile()
 {
 	if (player1)
 	{
@@ -232,12 +232,12 @@ std::string Megaman::getTextureFile()
 		{
 			if (direita)
 				return "Sprites/Megaman/Parado/Parado1-dir.png";
-			
+
 			return "Sprites/Megaman/Parado/Parado1-esq.png";
 		}
 		else
 		{
-			if(direita)
+			if (direita)
 				return "Sprites/Megaman/Parado/Parado1-Inv-dir.png";
 			return "Sprites/Megaman/Parado/Parado1-Inv-esq.png";
 		}
@@ -264,12 +264,12 @@ void Megaman::salvar()
 {
 	int lugar = getId();
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["player1"] = player1;
-	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["invencivel"] = invencivel;
-	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["pontos"] = pontos;
-	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["teclaApertada"] = teclaApertada;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["invencivel"] = invencivel;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["pontos"] = pontos;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["teclaApertada"] = teclaApertada;
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["cooldownTiro"] = cooldownTiro;
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["framesInvencibilidade"] = framesInvencibilidade;
-	
+
 	Personagem::salvar();
 }
 
@@ -277,11 +277,11 @@ void Megaman::carregar()
 {
 	int lugar = getId();
 	player1 = dadosSalvos["id"][lugar][0]["player1"];
-	invencivel= dadosSalvos["id"][lugar][0]["invencivel"];
-	pontos=dadosSalvos["id"][lugar][0]["pontos"];
-	teclaApertada=dadosSalvos["id"][lugar][0]["teclaApertada"];
-	cooldownTiro=dadosSalvos["id"][lugar][0]["cooldownTiro"];
-	framesInvencibilidade= dadosSalvos["id"][lugar][0]["framesInvencibilidade"];
+	invencivel = dadosSalvos["id"][lugar][0]["invencivel"];
+	pontos = dadosSalvos["id"][lugar][0]["pontos"];
+	teclaApertada = dadosSalvos["id"][lugar][0]["teclaApertada"];
+	cooldownTiro = dadosSalvos["id"][lugar][0]["cooldownTiro"];
+	framesInvencibilidade = dadosSalvos["id"][lugar][0]["framesInvencibilidade"];
 
 	Personagem::carregar();
 }

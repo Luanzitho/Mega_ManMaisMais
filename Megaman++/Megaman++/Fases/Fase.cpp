@@ -230,29 +230,55 @@ void Fase::moveMapa(float dt)
                 p2->setCoords(sf::Vector2f(rect2.width / 2, rect3.top));
         }
     }
-    if (rect1.intersects(rect2) && chao[ultimoSprite]->getCoords().x + chao[ultimoSprite]->getTamanho().x > rect2.width) // Movimento do personagem
+    if (chao[ultimoSprite]->getCoords().x + chao[ultimoSprite]->getTamanho().x > rect2.width) // Movimento do personagem
     {
         if (rect1.left >= rect2.width / 2)
         {
             p1->setCoords(sf::Vector2f(rect2.width / 2, rect1.top));
-            if (p2)
+            /*if (p2)
                 if (p2->getCoords().x - p1->getVelocidade() > 0)p2->setCoords(sf::Vector2f(p2->getCoords().x - p1->getVelocidade() * dt, p2->getCoords().y));
+                */
+            if (p2) {
+                sf::FloatRect rect3(p2->getCoords(), p2->getTamanho());
+                if (rect3.left >= rect2.width / 2) 
+                {
+                    p2->setCoords(sf::Vector2f(rect2.width / 2, rect3.top));
 
-            for (int i = 0; i < chao.size(); i++)
+                    for (int i = 0; i < chao.size(); i++)
+                    {
+                        chao[i]->setCoords(sf::Vector2f(chao[i]->getCoords().x - p1->getVelocidade() * dt, chao[i]->getCoords().y));
+                    }
+                    for (int i = 0; i < tilesSprites.size(); i++)
+                    {
+                        tilesSprites[i].setPosition(tilesSprites[i].getPosition().x - p1->getVelocidade() * dt, tilesSprites[i].getPosition().y);
+                    }
+                    for (int i = 0; i < inimigos.size(); i++)
+                    {
+                        inimigos[i]->setCoords(sf::Vector2f(inimigos[i]->getCoords().x - p1->getVelocidade() * dt, inimigos[i]->getCoords().y));
+                    }
+                    for (int i = 0; i < obstaculos.size(); i++)
+                    {
+                        obstaculos[i]->setCoords(sf::Vector2f(obstaculos[i]->getCoords().x - p1->getVelocidade() * dt, obstaculos[i]->getCoords().y));
+                    }
+                }
+            }else
             {
-                chao[i]->setCoords(sf::Vector2f(chao[i]->getCoords().x - p1->getVelocidade() * dt, chao[i]->getCoords().y));
-            }
-            for (int i = 0; i < tilesSprites.size(); i++)
-            {
-                tilesSprites[i].setPosition(tilesSprites[i].getPosition().x - p1->getVelocidade() * dt, tilesSprites[i].getPosition().y);
-            }
-            for (int i = 0; i < inimigos.size(); i++)
-            {
-                inimigos[i]->setCoords(sf::Vector2f(inimigos[i]->getCoords().x - p1->getVelocidade() * dt, inimigos[i]->getCoords().y));
-            }
-            for (int i = 0; i < obstaculos.size(); i++)
-            {
-                obstaculos[i]->setCoords(sf::Vector2f(obstaculos[i]->getCoords().x - p1->getVelocidade() * dt, obstaculos[i]->getCoords().y));
+                for (int i = 0; i < chao.size(); i++)
+                {
+                    chao[i]->setCoords(sf::Vector2f(chao[i]->getCoords().x - p1->getVelocidade() * dt, chao[i]->getCoords().y));
+                }
+                for (int i = 0; i < tilesSprites.size(); i++)
+                {
+                    tilesSprites[i].setPosition(tilesSprites[i].getPosition().x - p1->getVelocidade() * dt, tilesSprites[i].getPosition().y);
+                }
+                for (int i = 0; i < inimigos.size(); i++)
+                {
+                    inimigos[i]->setCoords(sf::Vector2f(inimigos[i]->getCoords().x - p1->getVelocidade() * dt, inimigos[i]->getCoords().y));
+                }
+                for (int i = 0; i < obstaculos.size(); i++)
+                {
+                    obstaculos[i]->setCoords(sf::Vector2f(obstaculos[i]->getCoords().x - p1->getVelocidade() * dt, obstaculos[i]->getCoords().y));
+                }
             }
         }
     }
@@ -278,6 +304,16 @@ void Fase::setTwoPlayers()
 void Fase::setOnePlayer()
 {
     if(p2)p2->destruir();
+}
+
+int Fase::getPlayerHP(bool p2)
+{
+    return (p2 ? this->p2->getNumVidas() : this->p1->getNumVidas());
+}
+
+int Fase::getPlayerPoints()
+{
+    return p1->getPontos();
 }
 
 void Fase::salvar()

@@ -27,6 +27,8 @@ private:
 	bool playing;
 	int faseA;
 	bool fechar;
+	bool twoPlayers;
+	float timer;
 
 public:
 	Jogo();

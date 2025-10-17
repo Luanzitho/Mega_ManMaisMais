@@ -39,9 +39,23 @@ void Jogo::executar()
 		}	
 		else if (playing)
 		{
+			timer += dt;
+
 			if(faseA==1 && !f1->getAcabou())
 			{
 				f1->executar(dt);
+
+				if (timer > 0.3)
+				{
+					system("cls");
+					std::cout << "Player 1 HP: " << f1->getPlayerHP(false) << std::endl;
+					if (twoPlayers)
+						std::cout << "Player 2 HP: " << f1->getPlayerHP(true) << std::endl;
+					std::cout << "Pontos: " << f1->getPlayerPoints() << std::endl;
+					std::cout << "FPS: " << 1.0 / dt << std::endl;
+
+					timer = 0;
+				}
 			}
 			else if(faseA==1 && f1->getAcabou())
 			{
@@ -50,6 +64,18 @@ void Jogo::executar()
 			else if(faseA==2 && !f2->getAcabou())
 			{
 				f2->executar(dt);
+
+				if (timer > 0.3)
+				{
+					system("cls");
+					std::cout << "Player 1 HP: " << f2->getPlayerHP(false) << std::endl;
+					if (twoPlayers)
+						std::cout << "Player 2 HP: " << f2->getPlayerHP(true) << std::endl;
+					std::cout << "Pontos: " << f2->getPlayerPoints() << std::endl;
+					std::cout << "FPS: " << 1.0 / dt << std::endl;
+
+					timer = 0;
+				}
 			}
 			if((faseA==2 && f2->getAcabou()) || f1->getMorreu() || f2->getMorreu())
 			{
@@ -117,11 +143,13 @@ void Jogo::setPlayers(bool players)
 	{
 		f1->setTwoPlayers();
 		f2->setTwoPlayers();
+		twoPlayers = true;
 	}
 	else 
 	{
 		f1->setOnePlayer();
 		f2->setOnePlayer();
+		twoPlayers = false;
 	}
 }
 

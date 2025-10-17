@@ -1,2 +1,6 @@
-﻿  Ente.cpp
+﻿  Megaman.cpp
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp(84,28): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp(102,28): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
+  Jogo.cpp
+  Gerando Código...
   Megaman++.vcxproj -> C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Debug\Megaman++.exe
