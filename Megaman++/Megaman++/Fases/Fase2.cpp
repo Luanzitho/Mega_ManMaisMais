@@ -1,5 +1,6 @@
 #include "Fase2.h"
 #include <iostream>
+#include <random>
 
 
 Fase2::Fase2(): maxCutMan(3), minEspinhos(3)
@@ -29,7 +30,7 @@ Fase2::Fase2(): maxCutMan(3), minEspinhos(3)
     }
     if (i >= quantidadeLayers)
     {
-        std::cout << "Erro tentar acaha camada Spawn Player." << std::endl;
+        std::cout << "Erro tentar achar a camada Spawn Player." << std::endl;
     }
     else
     {
@@ -51,12 +52,10 @@ Fase2::Fase2(): maxCutMan(3), minEspinhos(3)
 
 Fase2::~Fase2()
 {
-
 }
 
 void Fase2::executar(float dt)
 {
-	
 	desenharCenario();
     LEs.percorrer(dt, getTamanho());
    
@@ -76,59 +75,39 @@ void Fase2::criarCutMan()
     }
     if (i >= quantidadeLayers)
     {
-        std::cout << "Erro tentar acaha camada Boss." << std::endl;
+        std::cout << "Erro tentar achar a camada Boss." << std::endl;
+        return;
     }
-    else
-    {
-        for (int j = 0; j < maxCutMan; j++)
-        {
-            int qualObs = 0;
-            Inimigo* p = new CutMan;
 
-            p->setGerenciadorGrafico(pGG->getInstancia());
-            p->associaGerenciadorColisoes(&GC);
-            p->associaListaEntidades(&LEs);
-            p->conhecerJogador(p1);
-            p->setCoords(sf::Vector2f((float)(faseJson["layers"][i]["objects"][qualObs]["x"] * 3), (float)faseJson["layers"][i]["objects"][qualObs]["y"] * 3));
-            //p->setTamanho(sf::Vector2f((float)faseJson["layers"][i]["objects"][qualObs]["width"] * 3, (float)faseJson["layers"][i]["objects"][qualObs]["height"] * 3));
-            inimigos.push_back(p);
-			GC.incluirInimigo(p);
-            LEs.incluirEntidade(inimigos[inimigos.size() - 1]);
-        }
+    auto &objects = faseJson["layers"][i]["objects"];
+    int objCount = static_cast<int>(objects.size());
+    if (objCount == 0) {
+        std::cout << "Nenhum ponto de spawn definido na camada Boss." << std::endl;
+        return;
     }
-    i = 0;
-    while (faseJson["layers"][i]["name"] != "Spawn Inimigos" && i < quantidadeLayers)
-    {
-        i++;
-    }
-    if (i >= quantidadeLayers)
-    {
-        std::cout << "Erro tentar acaha camada Boss." << std::endl;
-    }
-    else
-    {
-        for (int j = 1; j < maxCutMan; j++)
-        {
-            int qualObs = 0;
-            Inimigo* p = new CutMan;
-            do
-            {
-                qualObs = aleatoriza(0, faseJson["layers"][i]["objects"].size() - 1); // gera um número aleatório
 
-            } while (jaFoi[qualObs] != 0);//verifica se o ponto já foi usado
-            jaFoi[qualObs] = 1; // marca que o ponto já foi usado
-            p->setGerenciadorGrafico(pGG->getInstancia());
-            p->associaGerenciadorColisoes(&GC);
-            p->associaListaEntidades(&LEs);
-            p->conhecerJogador(p1);
-            p->setCoords(sf::Vector2f((float)(faseJson["layers"][i]["objects"][qualObs]["x"] * 3), (float)faseJson["layers"][i]["objects"][qualObs]["y"] * 3));
-            //p->setTamanho(sf::Vector2f((float)faseJson["layers"][i]["objects"][qualObs]["width"] * 3, (float)faseJson["layers"][i]["objects"][qualObs]["height"] * 3));
-            inimigos.push_back(p);
-            GC.incluirInimigo(p);
-            LEs.incluirEntidade(inimigos[inimigos.size() - 1]);
-        }
+    int toCreate = std::min(maxCutMan, objCount);
+
+    std::vector<int> indices(objCount);
+    for (int k = 0; k < objCount; ++k) indices[k] = k;
+    std::mt19937 gen(rd());
+    std::shuffle(indices.begin(), indices.end(), gen);
+
+    for (int k = 0; k < toCreate; ++k)
+    {
+        int qualObs = indices[k];
+        Inimigo* p = new CutMan;
+
+        p->setGerenciadorGrafico(pGG->getInstancia());
+        p->associaGerenciadorColisoes(&GC);
+        p->associaListaEntidades(&LEs);
+        p->conhecerJogador(p1);
+        p->setCoords(sf::Vector2f((float)(objects[qualObs]["x"] * 3), (float)(objects[qualObs]["y"] * 3)));
+        //p->setTamanho(sf::Vector2f((float)objects[qualObs]["width"] * 3, (float)objects[qualObs]["height"] * 3));
+        inimigos.push_back(p);
+        GC.incluirInimigo(p);
+        LEs.incluirEntidade(inimigos.back());
     }
-    
 }
 
 void Fase2::criarEspinhos()
@@ -140,7 +119,7 @@ void Fase2::criarEspinhos()
     }
     if (i >= quantidadeLayers)
     {
-        std::cout << "Erro tentar acaha camada Obstaculos." << std::endl;
+        std::cout << "Erro tentar achar a camada Obstaculos." << std::endl;
     }
     else
     {
@@ -177,7 +156,7 @@ void Fase2::criarInimigos()
     }
     if (i >= quantidadeLayers)
     {
-        std::cout << "Erro tentar acaha camada Spawn Inimigos." << std::endl;
+        std::cout << "Erro tentar achar a camada Spawn Inimigos." << std::endl;
     } 
     else
     {

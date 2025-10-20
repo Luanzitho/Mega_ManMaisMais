@@ -29,7 +29,6 @@ private:
 	
 
 public:
-	
 	Menu();
 	~Menu();
 	void executar(float dt);

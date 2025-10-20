@@ -56,6 +56,10 @@ Menu::Menu() : escolha(0), tela(0), enter(false), isPressed(false), start(false)
 		pGS->pararMusica();
 		pGS->carregarMusica("Sound/Music/menu.wav");
 		pGS->tocarMusica();
+
+		pGS->carregarEfeito("select", "Sound/Effects/select.wav");
+		pGS->carregarEfeito("confirm", "Sound/Effects/confirm.wav");
+		pGS->setVolumeEfeitos(100.f);
 	}
 }
 
@@ -80,6 +84,8 @@ void Menu::executar(float dt)
 	{
 		if(cooldown>0.25f)
 		{
+			pGS->tocarEfeito("select");
+
 			if ((tela == 0 || tela == 1 || tela == 3) && escolha < 2) escolha++;
 			else if (tela == 2 && escolha < 3)escolha++;
 			else if (tela == 5 && escolha < 5)escolha++;
@@ -92,6 +98,8 @@ void Menu::executar(float dt)
 	{
 		if(cooldown>0.25f)
 		{
+			pGS->tocarEfeito("select");
+
 			isPressed = true;
 			escolha--;
 			cooldown = 0;
@@ -101,6 +109,8 @@ void Menu::executar(float dt)
 	{
 		if(cooldown>0.25f)
 		{
+			pGS->tocarEfeito("confirm");
+
 			isPressed = true;
 			selecionar();
 			cooldown = 0;

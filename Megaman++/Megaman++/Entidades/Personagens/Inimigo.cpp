@@ -39,7 +39,10 @@ void Inimigo::machucar(const int dmg)
 		destruir();
 
 		if (id == 8) //Som de derrota para o CutMan
+		{
 			pGS->tocarEfeito("Defeat");
+			//std::cout << "CutMan derrotado!\n";
+		}
 	}
 }
 

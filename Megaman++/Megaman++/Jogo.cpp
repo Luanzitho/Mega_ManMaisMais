@@ -14,6 +14,10 @@ Jogo::Jogo() : GG(*Gerenciador_Grafico::getInstancia()), inMenu(true), playing(f
 
 	GS = AudioManager::getInstancia();
 	GS->setVolumeMusica(75.f);
+
+	GS->carregarEfeito("victory", "Sound/Effects/victory.wav");
+	GS->carregarEfeito("gameover", "Sound/Effects/gameover.wav");
+	GS->setVolumeEfeitos(100.f);
 }
 
 Jogo::~Jogo()
@@ -31,14 +35,30 @@ void Jogo::executar()
 
 	sf::Clock tempo;
 	float dt;
+	bool delay = false;
 
 	while (GG.janelaEstaAberta())
 	{
 		dt = tempo.restart().asSeconds();
 		GG.eventoFecharJanela();
 		GG.limparJanela();
+
 		if (inMenu)
 		{
+			if (delay) //Para não tocar uma música por cima da outra
+			{
+				timer += dt;
+
+				if (timer >= 5.f)
+				{
+					delay = false;
+					//timer = 0;
+					GS->pararMusica();
+					GS->carregarMusica("Sound/Music/menu.wav");
+					GS->tocarMusica();
+				}
+			}
+
 			menu->executar(dt);
 		}	
 		else if (playing)
@@ -49,7 +69,7 @@ void Jogo::executar()
 			{
 				f1->executar(dt);
 
-				if (timer > 0.3)
+				if (timer > 0.2)
 				{
 					system("cls");
 					std::cout << "Player 1 HP: " << f1->getPlayerHP(false) << std::endl;
@@ -72,7 +92,7 @@ void Jogo::executar()
 			{
 				f2->executar(dt);
 
-				if (timer > 0.3)
+				if (timer > 0.2)
 				{
 					system("cls");
 					std::cout << "Player 1 HP: " << f2->getPlayerHP(false) << std::endl;
@@ -91,9 +111,18 @@ void Jogo::executar()
 				menu->setTerminou(true, f2->getPontuacao());
 				GG.limpaTexto();
 
-				GS->pararMusica();
-				GS->carregarMusica("Sound/Music/menu.wav");
-				GS->tocarMusica();
+				if (f1->getMorreu() || f2->getMorreu())
+				{	
+					GS->pararMusica();
+					GS->tocarEfeito("gameover");
+				}
+				else
+				{
+					GS->pararMusica();
+					GS->tocarEfeito("victory");
+				}
+
+				delay = true;
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
 			{

@@ -173,6 +173,8 @@ void Megaman::atirar(float dt)
 			if (!teclaApertada && cooldownTiro >= 0.25)
 			{
 				sf::Vector2f pos = getCoords();
+				pos.x += (direita ? 10.f : 15.f);
+				pos.y += getTamanho().y / 4;
 
 				ProjetilMegaman* tiro = new ProjetilMegaman(pos, direita);
 				LE->incluirEntidade(tiro);
@@ -199,6 +201,8 @@ void Megaman::atirar(float dt)
 			if (!teclaApertada && cooldownTiro >= 0.25)
 			{
 				sf::Vector2f pos = getCoords();
+				pos.x += (direita ? 10.f : 15.f);
+				pos.y += getTamanho().y / 4;
 
 				ProjetilMegaman* tiro = new ProjetilMegaman(pos, direita);
 				LE->incluirEntidade(tiro);
