@@ -2,6 +2,7 @@
 #include "Entidades/Personagens/Megaman.h"
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "Gerenciadores/Gerenciador_Sonoro.h"
 
 Jogo::Jogo() : GG(*Gerenciador_Grafico::getInstancia()), inMenu(true), playing(false), faseA(0), f1(new Fase1), f2(new Fase2), fechar(false)
 {
@@ -10,6 +11,9 @@ Jogo::Jogo() : GG(*Gerenciador_Grafico::getInstancia()), inMenu(true), playing(f
 
 	f2->setCoords(sf::Vector2f(0.f, 0.f));
 	f2->setGerenciadorGrafico(&GG);
+
+	GS = AudioManager::getInstancia();
+	GS->setVolumeMusica(75.f);
 }
 
 Jogo::~Jogo()
@@ -60,6 +64,9 @@ void Jogo::executar()
 			else if(faseA==1 && f1->getAcabou())
 			{
 				faseA = 2;
+				GS->pararMusica();
+				GS->carregarMusica("Sound/Music/boss.wav");
+				GS->tocarMusica();
 			}
 			else if(faseA==2 && !f2->getAcabou())
 			{
@@ -83,12 +90,20 @@ void Jogo::executar()
 				playing = false;
 				menu->setTerminou(true, f2->getPontuacao());
 				GG.limpaTexto();
+
+				GS->pararMusica();
+				GS->carregarMusica("Sound/Music/menu.wav");
+				GS->tocarMusica();
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
 			{
 				playing = false;
-				inMenu= true;
+				inMenu = true;
 				menu->setPause(true);
+
+				GS->pararMusica();
+				GS->carregarMusica("Sound/Music/menu.wav");
+				GS->tocarMusica();
 			}
 		}
 		
@@ -112,6 +127,18 @@ void Jogo::iniciar(int fase)
 		inMenu = false;
 		playing = true;
 		faseA = fase;
+		if (fase == 1)
+		{
+			GS->pararMusica();
+			GS->carregarMusica("Sound/Music/lvl1.wav");
+			GS->tocarMusica();
+		}
+		else if (fase == 2)
+		{
+			GS->pararMusica();
+			GS->carregarMusica("Sound/Music/boss.wav");
+			GS->tocarMusica();
+		}
 	}
 }
 
@@ -123,9 +150,19 @@ void Jogo::iniciar(int fase, bool carregar)
 		playing = true;
 		faseA = fase;
 		if (fase == 1)
+		{
 			f1->carregar();
+			GS->pararMusica();
+			GS->carregarMusica("Sound/Music/lvl1.wav");
+			GS->tocarMusica();
+		}
 		else
+		{
 			f2->carregar();
+			GS->pararMusica();
+			GS->carregarMusica("Sound/Music/boss.wav");
+			GS->tocarMusica();
+		}
 	}
 }
 

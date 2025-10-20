@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <map>
 #include "../Ente.h"
+#include "../Consoleconfig.h"
 
 class Ente;
 

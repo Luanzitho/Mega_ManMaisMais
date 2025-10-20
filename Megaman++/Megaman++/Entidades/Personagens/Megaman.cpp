@@ -15,6 +15,11 @@ Megaman::Megaman() : Personagem(20), teclaApertada(false), cooldownTiro(0), play
 	velMax = 200;
 
 	setTamanho(sf::Vector2f(70.f, 70.f));
+
+	pGS->carregarEfeito("tiroMegaman", "Sound/Effects/megabuster.wav");
+	pGS->carregarEfeito("megamanDMG", "Sound/Effects/megamandmg.wav");
+	pGS->carregarEfeito("megamanDefeat", "Sound/Effects/defeat.wav");
+	pGS->setVolumeEfeitos(100.f);
 }
 int Megaman::pontos(0);
 
@@ -56,10 +61,16 @@ void Megaman::operator+=(const int pts)
 void Megaman::machucar(const int dmg)
 {
 	if (!invencivel)
+	{
 		num_vidas = num_vidas - dmg;
+		pGS->tocarEfeito("megamanDMG");
+	}
 
 	if (num_vidas <= 0)
+	{
 		destruir();
+		pGS->tocarEfeito("megamanDefeat");
+	}
 
 	invencivel = true; //Fica invencível por alguns segundos quando toma dano
 }
@@ -169,6 +180,9 @@ void Megaman::atirar(float dt)
 				tiro->setGerenciadorGrafico(pGG);
 				GC->incluirProjetil(tiro);
 
+				//pGS->carregarEfeito("tiroMegaman", "Sound/Effects/megabuster.wav");
+				pGS->tocarEfeito("tiroMegaman");
+
 				cooldownTiro = 0;
 				teclaApertada = true;
 			}
@@ -178,7 +192,6 @@ void Megaman::atirar(float dt)
 			teclaApertada = false;
 		}
 	}
-
 	else
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))
@@ -192,6 +205,9 @@ void Megaman::atirar(float dt)
 				tiro->associaListaEntidades(LE);
 				tiro->setGerenciadorGrafico(pGG);
 				GC->incluirProjetil(tiro);
+
+				//pGS->carregarEfeito("tiroMegaman", "Sound/Effects/megabuster.wav");
+				pGS->tocarEfeito("tiroMegaman");
 
 				cooldownTiro = 0;
 				teclaApertada = true;

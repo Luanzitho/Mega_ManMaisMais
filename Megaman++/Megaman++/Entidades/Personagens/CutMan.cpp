@@ -14,6 +14,8 @@ CutMan::CutMan(): cooldownNoChao(0), timerAtirar(0), timerPerseguir(0), timerPul
 	qtdPontos += 900;
 
 	forca = 2 + nivel_maldade;
+
+	pGS->carregarEfeito("CutManAtirar", "Sound/Effects/RollingCutter.wav");
 }
 
 int CutMan::indiceCutMan = -1;
@@ -25,7 +27,6 @@ CutMan::~CutMan()
 
 void CutMan::atirar()
 {
-	//std::cout << "POW\n";
 	sf::Vector2f pos = getCoords();
 
 	//if (!GC || !LE) std::cout << "BOOM!\n";
@@ -36,6 +37,8 @@ void CutMan::atirar()
 	GC->incluirProjetil(tiro);
 	LE->incluirEntidade(tiro);
 	podeAtirar = false;
+
+	pGS->tocarEfeito("CutManAtirar");
 
 	setTamanho(sf::Vector2f(70.f, 70.f));
 	setCoords(sf::Vector2f(getCoords().x, getCoords().y + 25));

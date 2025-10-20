@@ -30,6 +30,9 @@ BigEye::BigEye() : aceleracao(150), timerAtaque(0)
 	}
 
 	danoNormal = dano;
+
+	pGS->carregarEfeito("BigEye", "Sound/Effects/bigeye.wav");
+	pGS->setVolumeEfeitos(100.f);
 }
 
 BigEye::~BigEye()
@@ -96,6 +99,7 @@ void BigEye::mover(float dt)
 				saltar();
 				dano = danoNormal;
 			}
+			pGS->tocarEfeito("BigEye");
 
 			noChao = false;
 

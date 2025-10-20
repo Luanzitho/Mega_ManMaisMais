@@ -9,6 +9,10 @@ Inimigo::Inimigo() : pMega(nullptr), dano(0), LE(nullptr), GC(nullptr)
 	nivel_maldade = rand() % 3 + 1;
 
 	qtdPontos = nivel_maldade * 100; //Cada nível de maldade do inimigo resulta em 100 pontos a mais para a quantidade padrão de pontos
+
+	pGS->carregarEfeito("EnemyDMG", "Sound/Effects/enemydmg.wav");
+	pGS->carregarEfeito("Defeat", "Sound/Effects/defeat.wav");
+	pGS->setVolumeEfeitos(100.f);
 }
 int Inimigo::qualInimigo = 0;
 
@@ -27,11 +31,15 @@ void Inimigo::conhecerJogador(Megaman* p)
 void Inimigo::machucar(const int dmg)
 {
 	num_vidas = num_vidas - dmg;
+	pGS->tocarEfeito("EnemyDMG");
 
 	if (num_vidas <= 0)
 	{
 		cederPontos();
 		destruir();
+
+		if (id == 8) //Som de derrota para o CutMan
+			pGS->tocarEfeito("Defeat");
 	}
 }
 

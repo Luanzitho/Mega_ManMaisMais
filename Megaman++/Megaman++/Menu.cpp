@@ -52,6 +52,10 @@ Menu::Menu() : escolha(0), tela(0), enter(false), isPressed(false), start(false)
 		ranking[i].setPosition(sf::Vector2f(40.f, coordsTexts[i>=2?i%2:i].y));
 		//texts[i].setOutlineColor(sf::Color::Black);
 		//pGG->desenhar(texto);
+
+		pGS->pararMusica();
+		pGS->carregarMusica("Sound/Music/menu.wav");
+		pGS->tocarMusica();
 	}
 }
 
@@ -109,7 +113,6 @@ void Menu::executar(float dt)
 	}
 		
 	desenhaInteracao();
-	
 }
 
 
@@ -120,7 +123,7 @@ void Menu::setGame(Jogo* jog)
 
 std::string Menu::getTextureFile()
 {
-		return "Sprites/Menu/Menu1.png";
+	return "Sprites/Menu/Menu1.png";
 }
 
 void Menu::selecionar()

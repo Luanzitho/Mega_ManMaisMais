@@ -18,6 +18,9 @@ Metall::Metall(): timerEsconder(0), timerAtirar(0)
 	dano = 1;
 
 	setNumVidas(nivel_maldade);
+
+	pGS->carregarEfeito("MetallAtirar", "Sound/Effects/enemyshoot.wav");
+	pGS->carregarEfeito("MetallBlock", "Sound/Effects/block.wav");
 }
 
 int Metall::indiceMetall = -1;
@@ -29,6 +32,8 @@ Metall::~Metall()
 void Metall::atirar(const int tipo)
 {
 	sf::Vector2f pos = getCoords();
+
+	pGS->tocarEfeito("MetallAtirar");
 
 	if (pMega->getCoords().x > pos.x)
 		direita = true;
@@ -96,8 +101,11 @@ void Metall::machucar(const int dmg)
 {
 	if (!escondido)
 	{
+		pGS->tocarEfeito("EnemyDMG");
 		num_vidas = num_vidas - dmg;
 	}
+	else
+		pGS->tocarEfeito("MetallBlock");
 
 	if (num_vidas <= 0)
 	{	

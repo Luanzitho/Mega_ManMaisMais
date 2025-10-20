@@ -21,6 +21,7 @@ class Jogo
 private:
 	Gerenciador_Colisoes GC;
 	Gerenciador_Grafico& GG;
+	AudioManager* GS;
 	Fase1* f1;
 	Fase2* f2;
 	bool inMenu;

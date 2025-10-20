@@ -7,6 +7,8 @@ Gerenciador_Grafico* Gerenciador_Grafico::instancia = nullptr;
 Gerenciador_Grafico::Gerenciador_Grafico(): window(sf::VideoMode(1280, 720), "Mega Man++")
 {
     window.setFramerateLimit(60);
+
+    posicionarConsole(1700, 100); //Posiciona o console ao lado da janela do jogo
 }
 
 Gerenciador_Grafico::~Gerenciador_Grafico()

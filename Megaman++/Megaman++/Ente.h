@@ -5,6 +5,7 @@
 #include <string>
 #include <fstream>
 #include "json.hpp"
+#include "Gerenciadores/Gerenciador_Sonoro.h"
 
 using namespace nlohmann;
 class Gerenciador_Grafico;
@@ -14,6 +15,7 @@ class Ente
 protected:
 	int id;
 	Gerenciador_Grafico* pGG;
+	AudioManager* pGS;
 	//Gerenciador_Colisoes* pGC;
 	sf::Vector2f coords;
 	sf::Vector2f tamanho;
