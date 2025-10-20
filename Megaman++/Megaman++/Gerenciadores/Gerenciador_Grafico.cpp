@@ -8,6 +8,16 @@ Gerenciador_Grafico::Gerenciador_Grafico(): window(sf::VideoMode(1280, 720), "Me
 {
     window.setFramerateLimit(60);
 
+    sf::Image icone;
+    //icone.loadFromFile("Sprites/Menu/icone.png");
+
+    if (!icone.loadFromFile("Sprites/Menu/icone.png"))
+    {
+        std::cout << "Falha ao carregar icone!" << std::endl;
+    }
+
+    window.setIcon(icone.getSize().x, icone.getSize().y, icone.getPixelsPtr());
+
     posicionarConsole(1700, 100); //Posiciona o console ao lado da janela do jogo
 }
 

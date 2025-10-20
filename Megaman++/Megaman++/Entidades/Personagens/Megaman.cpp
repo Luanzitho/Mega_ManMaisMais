@@ -18,7 +18,7 @@ Megaman::Megaman() : Personagem(20), teclaApertada(false), cooldownTiro(0), play
 
 	pGS->carregarEfeito("tiroMegaman", "Sound/Effects/megabuster.wav");
 	pGS->carregarEfeito("megamanDMG", "Sound/Effects/megamandmg.wav");
-	pGS->carregarEfeito("megamanDefeat", "Sound/Effects/defeat.wav");
+	pGS->carregarEfeito("Defeat", "Sound/Effects/defeat.wav");
 	pGS->setVolumeEfeitos(100.f);
 }
 int Megaman::pontos(0);
@@ -69,7 +69,7 @@ void Megaman::machucar(const int dmg)
 	if (num_vidas <= 0)
 	{
 		destruir();
-		pGS->tocarEfeito("megamanDefeat");
+		pGS->tocarEfeito("Defeat");
 	}
 
 	invencivel = true; //Fica invencível por alguns segundos quando toma dano
