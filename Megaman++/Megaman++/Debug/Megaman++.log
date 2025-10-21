@@ -1,6 +1,103 @@
-﻿  Megaman.cpp
-C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp(84,28): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
-C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\Megaman.cpp(102,28): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
-  Jogo.cpp
+﻿  Ente.cpp
+C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Ente.cpp')
+  
+  Entidade.cpp
+C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Entidades/Entidade.cpp')
+  
+  Espinho.cpp
+C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Entidades/Obstaculos/Espinho.cpp')
+  
+  Mola.cpp
+C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Entidades/Obstaculos/Mola.cpp')
+  
+  Obstaculo.cpp
+C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Entidades/Obstaculos/Obstaculo.cpp')
+  
+  Plataforma.cpp
+C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Entidades/Obstaculos/Plataforma.cpp')
+  
+  BigEye.cpp
+C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Entidades/Personagens/BigEye.cpp')
+  
+  CutMan.cpp
+C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Entidades/Personagens/CutMan.cpp')
+  
+  Inimigo.cpp
+C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Entidades/Personagens/Inimigo.cpp')
+  
+  Megaman.cpp
+C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Entidades/Personagens/Megaman.cpp')
+  
+  Metall.cpp
+C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Entidades/Personagens/Metall.cpp')
+  
+  Personagem.cpp
+C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Entidades/Personagens/Personagem.cpp')
+  
+  Projetil.cpp
+C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Entidades/Projeteis/Projetil.cpp')
+  
+  ProjetilCutMan.cpp
+C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Entidades/Projeteis/ProjetilCutMan.cpp')
+  
+  ProjetilMegaman.cpp
+C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Entidades/Projeteis/ProjetilMegaman.cpp')
+  
+  ProjetilMetall.cpp
+C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Entidades/Projeteis/ProjetilMetall.cpp')
+  
+  Fase.cpp
+C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Fases/Fase.cpp')
+  
+  Fase1.cpp
+C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Fases/Fase1.cpp')
+  
+  Fase2.cpp
+C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Fases/Fase2.cpp')
+  
+  Gerenciador_Colisoes.cpp
+C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Gerenciadores/Gerenciador_Colisoes.cpp')
+  
   Gerando Código...
-  Megaman++.vcxproj -> C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Debug\Megaman++.exe
+  Compilando...
+  Gerenciador_Grafico.cpp
+C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Gerenciadores/Gerenciador_Grafico.cpp')
+  
+  Jogo.cpp
+C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Jogo.cpp')
+  
+  ListaEntidades.cpp
+C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Listas/ListaEntidades.cpp')
+  
+  main.cpp
+C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'main.cpp')
+  
+  Menu.cpp
+C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+  (compilando o arquivo fonte 'Menu.cpp')
+  
+  Gerando Código...

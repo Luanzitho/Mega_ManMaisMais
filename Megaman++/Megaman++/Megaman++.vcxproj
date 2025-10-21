@@ -108,10 +108,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Jambr\Documents\SFML-2.6.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Jambr\Documents\SFML-2.6.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;sfml-network-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -122,15 +125,20 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Jambr\Documents\SFML-2.6.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Jambr\Documents\SFML-2.6.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-audio.lib;sfml-window.lib;sfml-system.lib;sfml-graphics.lib;sfml-network.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Ente.cpp" />
     <ClCompile Include="Entidades\Entidade.cpp" />
+    <ClCompile Include="Entidades\Itens\Item.cpp" />
+    <ClCompile Include="Entidades\Itens\Regen.cpp" />
     <ClCompile Include="Entidades\Obstaculos\Espinho.cpp" />
     <ClCompile Include="Entidades\Obstaculos\Mola.cpp" />
     <ClCompile Include="Entidades\Obstaculos\Obstaculo.cpp" />
@@ -150,6 +158,7 @@
     <ClCompile Include="Fases\Fase2.cpp" />
     <ClCompile Include="Gerenciadores\Gerenciador_Colisoes.cpp" />
     <ClCompile Include="Gerenciadores\Gerenciador_Grafico.cpp" />
+    <ClCompile Include="Gerenciadores\Gerenciador_Sonoro.cpp" />
     <ClCompile Include="Jogo.cpp" />
     <ClCompile Include="Listas\ListaEntidades.cpp" />
     <ClCompile Include="main.cpp" />
@@ -158,6 +167,8 @@
   <ItemGroup>
     <ClInclude Include="Ente.h" />
     <ClInclude Include="Entidades\Entidade.h" />
+    <ClInclude Include="Entidades\Itens\Item.h" />
+    <ClInclude Include="Entidades\Itens\Regen.h" />
     <ClInclude Include="Entidades\Obstaculos\Espinho.h" />
     <ClInclude Include="Entidades\Obstaculos\Mola.h" />
     <ClInclude Include="Entidades\Obstaculos\Obstaculo.h" />
@@ -177,6 +188,7 @@
     <ClInclude Include="Fases\Fase2.h" />
     <ClInclude Include="Gerenciadores\Gerenciador_Colisoes.h" />
     <ClInclude Include="Gerenciadores\Gerenciador_Grafico.h" />
+    <ClInclude Include="Gerenciadores\Gerenciador_Sonoro.h" />
     <ClInclude Include="Jogo.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="Listas\Lista.h" />
