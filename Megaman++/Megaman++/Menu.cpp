@@ -13,11 +13,11 @@ Menu::Menu() : escolha(0), tela(0), enter(false), isPressed(false), start(false)
 				"Continuar","Fase 1", "Fase 2", "Voltar",
 				"Continuar", "Salvar","Voltar ao menu",
 				"Digite seu nome", "", "",
-				"Quantidade de jogadores incompativel", "", "Voltar"
+				"Quantidade invalida", "", "Voltar"
 				};
-	coordsTexts = { {500.f, 400.f},{440.f, 500.f}, {540.f,600.f},
+	coordsTexts = { {500.f, 400.f},{450.f, 500.f}, {540.f,600.f},
 					{440.f, 400.f},{440.f, 500.f}, {440.f, 600.f},
-					{240.f, 400.f},{440.f, 500.f}, {440.f, 600.f},{840.f, 400.f},
+					{360.f, 300.f},{440.f, 400.f}, {440.f, 500.f},{440.f, 600.f},
 					{ 440.f, 400.f },{440.f, 500.f}, {440.f, 600.f}, 
 					{ 40.f, 400.f },{40.f, 500.f}, {40.f, 600.f},
 					{ 40.f, 400.f },{40.f, 500.f}, {40.f, 600.f}
@@ -152,20 +152,21 @@ void Menu::selecionar()
 	}
 	else if (tela == 1)
 	{
-		if (escolha == 0) { //quantidade de jogadores
+		if (escolha == 0) //quantidade de jogadores
+		{
 			pJog->setPlayers(false);
 			twoPlayers = false;
-			tela=2;
+			tela = 2;
 		}
 		else if (escolha == 1)
 		{
 			pJog->setPlayers(true);
 			twoPlayers = true;
-			tela=2;
+			tela = 2;
 		}
 		else if (escolha == 2)
 		{
-			tela = 0;//voltar
+			tela = 0; //voltar
 		}
 	}
 	else if(tela==2)
@@ -288,6 +289,7 @@ void Menu::desenhaInteracao()
 			if (i == escolha + 6)texts[i].setOutlineThickness(3.f);
 			else texts[i].setOutlineThickness(0);
 			pGG->desenhar(texts[i]);
+			//std::cout << "teste";
 		}
 	}
 	else if(tela == 3)// menu de pause
@@ -301,9 +303,10 @@ void Menu::desenhaInteracao()
 	}
 	else if(tela==4)// tela de fim
 	{
-		texts[texts.size()-2].setString(pGG->getTexto());
-		texts[texts.size()-1].setString("Sua pontução foi de: " + std::to_string(pontuacao));
-		pGG->desenhar(texts[texts.size() - 3]);
+		texts[texts.size() - 2].setString(pGG->getTexto());
+		texts[texts.size() - 1].setString("Sua pontução foi de: " + std::to_string(pontuacao));
+		texts[texts.size() - 1].setOutlineThickness(0);
+		pGG->desenhar(texts[texts.size() - 6]);
 		pGG->desenhar(texts[texts.size() - 2]);
 		pGG->desenhar(texts[texts.size() - 1]);
 	}

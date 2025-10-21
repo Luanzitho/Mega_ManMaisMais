@@ -4,7 +4,7 @@
 
 Gerenciador_Grafico* Gerenciador_Grafico::instancia = nullptr;
 
-Gerenciador_Grafico::Gerenciador_Grafico(): window(sf::VideoMode(1280, 720), "Mega Man++")
+Gerenciador_Grafico::Gerenciador_Grafico(): window(sf::VideoMode(1280, 720), "Mega Man++", sf::Style::Titlebar | sf::Style::Close)
 {
     window.setFramerateLimit(60);
 
