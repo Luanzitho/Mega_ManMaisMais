@@ -14,7 +14,7 @@ public:
 	Personagem();
 	Personagem(int v);
 	~Personagem();
-	void curar(const int hp);
+	virtual void curar(const int hp);
 	virtual void machucar(const int dmg);
 	void setNumVidas(const int v);
 	int getNumVidas();

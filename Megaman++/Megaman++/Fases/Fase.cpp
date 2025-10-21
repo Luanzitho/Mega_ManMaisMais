@@ -1,5 +1,6 @@
 #include "Fase.h"
 #include <iostream>
+
 Fase::Fase() : tilesGid(), imagemTiles(), faseJson(), tileWidth(16), columns(18), tileCount(180), tilesRects(), GC(), p1(new Megaman), LEs(), minMetalls(3), jaFoi(), ultimoSprite(0), acabou(false), p2(nullptr), minPlataformas(3), quantidadeLayers(0)
 {
     setTamanho(sf::Vector2f(1280.f, 720.f));
@@ -31,7 +32,6 @@ Fase::~Fase()
 	//LEs.LEs.limpar();
     //delete &LEs;
 }
-
 
 void Fase::criarMetalls()
 {
@@ -284,11 +284,11 @@ void Fase::moveMapa(float dt)
     }
 }
 
-
 bool Fase::getAcabou()
 {
     return acabou;
 }
+
 void Fase::setTwoPlayers()
 {
 	p2 = new Megaman(false);
@@ -303,7 +303,7 @@ void Fase::setTwoPlayers()
 
 void Fase::setOnePlayer()
 {
-    if(p2)p2->destruir();
+    if(p2) p2->destruir();
 }
 
 int Fase::getPlayerHP(bool p2)

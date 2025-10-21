@@ -4,6 +4,7 @@
 Gerenciador_Colisoes::Gerenciador_Colisoes()
 {
     LIs.clear();
+	Litens.clear();
     LOs.clear();
     LPs.clear();
 
@@ -14,6 +15,7 @@ Gerenciador_Colisoes::Gerenciador_Colisoes()
 Gerenciador_Colisoes::~Gerenciador_Colisoes()
 {
     LIs.clear();
+	Litens.clear();
     LOs.clear();
     LPs.clear();
 
@@ -23,6 +25,8 @@ Gerenciador_Colisoes::~Gerenciador_Colisoes()
 
 const bool Gerenciador_Colisoes::verificarColisao(Entidade* pE1, Entidade* pE2) //Referência: Giu do PETECO
 {
+    if(!pE1 || !pE2) return false;
+
     sf::FloatRect rect1(pE1->getCoords(), pE1->getTamanho());
     sf::FloatRect rect2(pE2->getCoords(), pE2->getTamanho());
 
@@ -133,6 +137,26 @@ void Gerenciador_Colisoes::tratarColisaoMegaProjeteis() //Projétil do Inimigo co
     }
 }
 
+void Gerenciador_Colisoes::tratarColisaoMegaItens()
+{
+    std::list<Item*>::iterator itIte;
+
+    for (itIte = Litens.begin(); itIte != Litens.end(); itIte++) //Colisão Item x Megaman
+    {
+        if (verificarColisao(p1, *itIte) && p1->getVivo()) //Se houve a colisão
+        {
+            (*itIte)->serPego(p1);
+        }
+    }
+    if (p2)
+    {
+        if (verificarColisao(p2, *itIte) && p2 && p2->getVivo()) //Se houve a colisão e o p2 existir
+        {
+            (*itIte)->serPego(p2);
+        }
+    }
+}
+
 void Gerenciador_Colisoes::tratarColisaoInimsProjeteis() //Projétil do Megaman colidindo com Inimigo
 {
     std::set<Projetil*>::iterator itProj;
@@ -171,10 +195,27 @@ void Gerenciador_Colisoes::tratarColisaoInimsObstacs()
     }
 }
 
+void Gerenciador_Colisoes::tratarColisaoItemsObstacs()
+{
+    std::list<Obstaculo*>::iterator itObst;
+    std::list<Item*>::iterator itIte;
+    for (itObst = LOs.begin(); itObst != LOs.end(); itObst++)
+    {
+        for (itIte = Litens.begin(); itIte != Litens.end(); itIte++) //Obstáculo x Item
+        {
+            if (verificarColisao(*itIte, *itObst))
+            {
+                (*itObst)->obstaculizar(*itIte);
+            }
+        }
+    }
+}
+
 void Gerenciador_Colisoes::verificarRemovidos()
 {
     std::vector<Inimigo*>::iterator itInim = LIs.begin();
     std::set<Projetil*>::iterator itProj = LPs.begin();
+	std::list<Item*>::iterator itIte = Litens.begin();
 
     while (itInim != LIs.end()) //Percorre o vector de inimigos em busca de ponteiros vazios para remover
     {
@@ -199,9 +240,23 @@ void Gerenciador_Colisoes::verificarRemovidos()
             ++itProj;
         }
     }
+
+    while (itIte != Litens.end()) //Percorre a lista de itens em busca de ponteiros vazios para remover
+    {
+        if (!((*itIte)->getVivo()))
+        {
+            itIte = Litens.erase(itIte);
+        }
+        else
+        {
+            ++itIte;
+        }
+	}
 }
 
 void Gerenciador_Colisoes::incluirInimigo(Inimigo* pI) { if (pI) LIs.push_back(pI); }
+
+void Gerenciador_Colisoes::incluirItem(Item* pI) { if (pI) Litens.push_back(pI); }
 
 void Gerenciador_Colisoes::incluirObstaculo(Obstaculo* pO) { if (pO) LOs.push_back(pO); }
 
@@ -229,13 +284,16 @@ void Gerenciador_Colisoes::executar() //Referência: Giovane do canal Gege++
     tratarColisaoMegaObstacs();
     tratarColisaoMegaInimigos();
     tratarColisaoMegaProjeteis();
+	tratarColisaoMegaItens();
     tratarColisaoInimsProjeteis();
     tratarColisaoInimsObstacs();
+    tratarColisaoItemsObstacs();
 
 }
 void Gerenciador_Colisoes::limpar()
 {
     LIs.clear();
+	Litens.clear();
     LOs.clear();
     LPs.clear();
 

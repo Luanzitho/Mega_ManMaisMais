@@ -28,25 +28,25 @@ void Plataforma::executar(float dt)
     setCoords(posicao);
 }
 
-void Plataforma::obstaculizar(Personagem* pPers)
+void Plataforma::obstaculizar(Entidade* pEnti)
 {
-    if (!pPers) return;
+    if (!pEnti) return;
 
-    sf::FloatRect rectPers(pPers->getCoords(), pPers->getTamanho());
+    sf::FloatRect rectEnti(pEnti->getCoords(), pEnti->getTamanho());
     sf::FloatRect rectPlat(getCoords(), getTamanho());
 
-    sf::Vector2f posPers = pPers->getCoords();
-    sf::Vector2f tamPers = pPers->getTamanho();
+    sf::Vector2f posEnti = pEnti->getCoords();
+    sf::Vector2f tamEnti = pEnti->getTamanho();
 
-    float velY = pPers->getVelVertical();
-    float velX = pPers->getVelocidade();
+    float velY = pEnti->getVelVertical();
+    float velX = pEnti->getVelocidade();
 
-    float topoPers = rectPers.top;
-    float baixoPers = rectPers.top + rectPers.height;
+    float topoEnti = rectEnti.top;
+    float baixoEnti = rectEnti.top + rectEnti.height;
     float topoPlat = rectPlat.top;
     float baixoPlat = rectPlat.top + rectPlat.height;
-    float esquerdaPers = rectPers.left;
-    float direitaPers = rectPers.left + rectPers.width;
+    float esquerdaEnti = rectEnti.left;
+    float direitaEnti = rectEnti.left + rectEnti.width;
     float esquerdaPlat = rectPlat.left;
     float direitaPlat = rectPlat.left + rectPlat.width;
 
@@ -55,36 +55,36 @@ void Plataforma::obstaculizar(Personagem* pPers)
     bool tocando = false;
 
     // --- COLISÃO POR CIMA ---
-    if (velY > 0 && baixoPers - margem < topoPlat && baixoPers > topoPlat && direitaPers > esquerdaPlat + margem && esquerdaPers < direitaPlat - margem)
+    if (velY > 0 && baixoEnti - margem < topoPlat && baixoEnti > topoPlat && direitaEnti > esquerdaPlat + margem && esquerdaEnti < direitaPlat - margem)
     {
-        posPers.y = topoPlat - tamPers.y;
-        pPers->setCoords(posPers);
-        pPers->setVelVertical(0);
+        posEnti.y = topoPlat - tamEnti.y;
+        pEnti->setCoords(posEnti);
+        pEnti->setVelVertical(0);
         tocando = true;
     }
     // --- COLISÃO POR BAIXO ---
-    else if (velY < 0 && topoPers < baixoPlat && topoPers > baixoPlat - margem && direitaPers > esquerdaPlat + margem && esquerdaPers < direitaPlat - margem)
+    else if (velY < 0 && topoEnti < baixoPlat && topoEnti > baixoPlat - margem && direitaEnti > esquerdaPlat + margem && esquerdaEnti < direitaPlat - margem)
     {
-        posPers.y = baixoPlat;
-        pPers->setCoords(posPers);
-        pPers->setVelVertical(0);
+        posEnti.y = baixoPlat;
+        pEnti->setCoords(posEnti);
+        pEnti->setVelVertical(0);
     }
     // --- COLISÃO PELA ESQUERDA (separação de eixo X) ---
-    else if (velX > 0 && direitaPers > esquerdaPlat && esquerdaPers < esquerdaPlat && baixoPers > topoPlat + margem && topoPers < baixoPlat - margem)
+    else if (velX > 0 && direitaEnti > esquerdaPlat && esquerdaEnti < esquerdaPlat && baixoEnti > topoPlat + margem && topoEnti < baixoPlat - margem)
     {
-        posPers.x = esquerdaPlat - tamPers.x;
-        pPers->setCoords(posPers);
-        pPers->setVelocidade(0);
+        posEnti.x = esquerdaPlat - tamEnti.x;
+        pEnti->setCoords(posEnti);
+        pEnti->setVelocidade(0);
     }
     // --- COLISÃO PELA DIREITA (separação de eixo X) ---
-    else if (velX < 0 && esquerdaPers < direitaPlat && direitaPers > direitaPlat && baixoPers > topoPlat + margem && topoPers < baixoPlat - margem)
+    else if (velX < 0 && esquerdaEnti < direitaPlat && direitaEnti > direitaPlat && baixoEnti > topoPlat + margem && topoEnti < baixoPlat - margem)
     {
-        posPers.x = direitaPlat;
-        pPers->setCoords(posPers);
-        pPers->setVelocidade(0);
+        posEnti.x = direitaPlat;
+        pEnti->setCoords(posEnti);
+        pEnti->setVelocidade(0);
     }
 
-    pPers->setNoChao(tocando);
+    pEnti->setNoChao(tocando);
 }
 
 std::string Plataforma::getTextureFile()

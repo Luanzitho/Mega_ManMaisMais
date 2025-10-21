@@ -24,25 +24,25 @@ void Mola::executar(float dt)
     setCoords(posicao);
 }
 
-void Mola::obstaculizar(Personagem* pPers)
+void Mola::obstaculizar(Entidade* pEnti)
 {
-    if (!pPers) return;
+    if (!pEnti) return;
 
-    sf::FloatRect rectPers(pPers->getCoords(), pPers->getTamanho());
+    sf::FloatRect rectEnti(pEnti->getCoords(), pEnti->getTamanho());
     sf::FloatRect rectMola(getCoords(), getTamanho());
 
-    sf::Vector2f posPers = pPers->getCoords();
-    sf::Vector2f tamPers = pPers->getTamanho();
+    sf::Vector2f posEnti = pEnti->getCoords();
+    sf::Vector2f tamEnti = pEnti->getTamanho();
 
-    float velY = pPers->getVelVertical();
-    float velX = pPers->getVelocidade();
+    float velY = pEnti->getVelVertical();
+    float velX = pEnti->getVelocidade();
 
-    float topoPers = rectPers.top;
-    float baixoPers = rectPers.top + rectPers.height;
+    float topoEnti = rectEnti.top;
+    float baixoEnti = rectEnti.top + rectEnti.height;
     float topoMola = rectMola.top;
     float baixoMola = rectMola.top + rectMola.height;
-    float esquerdaPers = rectPers.left;
-    float direitaPers = rectPers.left + rectPers.width;
+    float esquerdaEnti = rectEnti.left;
+    float direitaEnti = rectEnti.left + rectEnti.width;
     float esquerdaMola = rectMola.left;
     float direitaMola = rectMola.left + rectMola.width;
 
@@ -51,36 +51,36 @@ void Mola::obstaculizar(Personagem* pPers)
     bool tocando = false;
 
     // --- COLISÃO POR CIMA ---
-    if (velY > 0 && baixoPers - margem < topoMola && baixoPers > topoMola && direitaPers > esquerdaMola + margem && esquerdaPers < direitaMola - margem)
+    if (velY > 0 && baixoEnti - margem < topoMola && baixoEnti > topoMola && direitaEnti > esquerdaMola + margem && esquerdaEnti < direitaMola - margem)
     {
-        posPers.y = topoMola - tamPers.y;
-        pPers->setCoords(posPers);
-        pPers->setVelVertical(elasticidade);
+        posEnti.y = topoMola - tamEnti.y;
+        pEnti->setCoords(posEnti);
+        pEnti->setVelVertical(elasticidade);
         //tocando = true;
     }
     // --- COLISÃO POR BAIXO ---
-    else if (velY < 0 && topoPers < baixoMola && topoPers > baixoMola - margem && direitaPers > esquerdaMola + margem && esquerdaPers < direitaMola - margem)
+    else if (velY < 0 && topoEnti < baixoMola && topoEnti > baixoMola - margem && direitaEnti > esquerdaMola + margem && esquerdaEnti < direitaMola - margem)
     {
-        posPers.y = baixoMola;
-        pPers->setCoords(posPers);
-        pPers->setVelVertical(0);
+        posEnti.y = baixoMola;
+        pEnti->setCoords(posEnti);
+        pEnti->setVelVertical(0);
     }
     // --- COLISÃO PELA ESQUERDA (separação de eixo X) ---
-    else if (velX > 0 && direitaPers > esquerdaMola && esquerdaPers < esquerdaMola && baixoPers > topoMola + margem && topoPers < baixoMola - margem)
+    else if (velX > 0 && direitaEnti > esquerdaMola && esquerdaEnti < esquerdaMola && baixoEnti > topoMola + margem && topoEnti < baixoMola - margem)
     {
-        posPers.x = esquerdaMola - tamPers.x;
-        pPers->setCoords(posPers);
-        pPers->setVelocidade(0);
+        posEnti.x = esquerdaMola - tamEnti.x;
+        pEnti->setCoords(posEnti);
+        pEnti->setVelocidade(0);
     }
     // --- COLISÃO PELA DIREITA (separação de eixo X) ---
-    else if (velX < 0 && esquerdaPers < direitaMola && direitaPers > direitaMola && baixoPers > topoMola + margem && topoPers < baixoMola - margem)
+    else if (velX < 0 && esquerdaEnti < direitaMola && direitaEnti > direitaMola && baixoEnti > topoMola + margem && topoEnti < baixoMola - margem)
     {
-        posPers.x = direitaMola;
-        pPers->setCoords(posPers);
-        pPers->setVelocidade(0);
+        posEnti.x = direitaMola;
+        pEnti->setCoords(posEnti);
+        pEnti->setVelocidade(0);
     }
 
-    pPers->setNoChao(tocando);
+    pEnti->setNoChao(tocando);
     /*if (!pPers) return; //LÓGICA ANTIGA
 
     sf::FloatRect rectPers(pPers->getCoords(), pPers->getTamanho());

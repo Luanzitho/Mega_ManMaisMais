@@ -2,11 +2,16 @@
 
 #include "Personagem.h"
 #include "Megaman.h"
+#include "../Itens/Regen.h"
 #include <time.h>
+#include <random>
+
+class Gerenciador_Colisoes;
 
 class Inimigo:public Personagem
 {
 protected:
+	std::random_device rd;
 	int nivel_maldade;
 	int dano;
 	int qtdPontos;
@@ -25,6 +30,7 @@ public:
 	virtual void danificar(Megaman* p) = 0;
 	void machucar(const int dmg);
 	void cederPontos();
+	void droparItem();
 	virtual std::string getTextureFile() = 0;
 	void associaListaEntidades(ListaEntidades* pLista);
 	void associaGerenciadorColisoes(Gerenciador_Colisoes* gc);

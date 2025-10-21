@@ -27,6 +27,7 @@ public:
 	void associaListaEntidades(ListaEntidades* pLista);
 	void associaGerenciadorColisoes(Gerenciador_Colisoes* GC);
 	void operator+=(const int pts);
+	void curar(const int hp);
 	void machucar(const int dmg);
 	void mover(float dt);
 	void atirar(float dt);

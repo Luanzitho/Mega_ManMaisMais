@@ -110,6 +110,7 @@ void Metall::machucar(const int dmg)
 	if (num_vidas <= 0)
 	{	
 		cederPontos();
+		droparItem();
 		destruir();
 	}
 }

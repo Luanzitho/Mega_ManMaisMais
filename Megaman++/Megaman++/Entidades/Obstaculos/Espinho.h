@@ -12,7 +12,7 @@ public:
 	Espinho();
 	~Espinho();
 	void executar(float dt);
-	void obstaculizar(Personagem* pPers);
+	void obstaculizar(Entidade* pEnti);
 	std::string getTextureFile();
 	void salvar();
 	void carregar();

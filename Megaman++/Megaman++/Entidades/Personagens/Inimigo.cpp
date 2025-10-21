@@ -1,12 +1,15 @@
 #include "Inimigo.h"
+#include "../../Gerenciadores/Gerenciador_Colisoes.h"
+#include <iostream>
 
 Inimigo::Inimigo() : pMega(nullptr), dano(0), LE(nullptr), GC(nullptr)
 {
 	srand(time(NULL));
 
 	//setId(2);
-
-	nivel_maldade = rand() % 3 + 1;
+	std::mt19937 gen(rd()); //Motor aleatório (Mersenne Twister)
+	
+	nivel_maldade = std::uniform_int_distribution<>(1, 3)(gen); //Nível de maldade entre 1 e 3
 
 	qtdPontos = nivel_maldade * 100; //Cada nível de maldade do inimigo resulta em 100 pontos a mais para a quantidade padrão de pontos
 
@@ -36,6 +39,7 @@ void Inimigo::machucar(const int dmg)
 	if (num_vidas <= 0)
 	{
 		cederPontos();
+		droparItem();
 		destruir();
 
 		if (id == 8) //Som de derrota para o CutMan
@@ -49,6 +53,37 @@ void Inimigo::machucar(const int dmg)
 void Inimigo::cederPontos()
 {
 	(*pMega) += qtdPontos;
+}
+
+void Inimigo::droparItem()
+{
+	if (!LE || !GC) {
+        std::cerr << "droparItem: LE ou GC nulo. Não foi possível adicionar item.\n";
+        return;
+    }
+
+    std::mt19937 gen(rd());
+    int chance = std::uniform_int_distribution<>(1, 100)(gen); // 1..100
+
+    if (chance <= 100) // 30% de chance
+    {
+        Regen* item = new Regen;
+        sf::Vector2f pos = getCoords();
+        pos.y -= 10.f;
+        item->setCoords(pos);
+        item->setGerenciadorGrafico(pGG);
+        item->associaListaEntidades(LE);
+        item->associaGerenciadorColisoes(GC);
+
+        LE->incluirEntidade(item);
+        GC->incluirItem(item);
+
+        std::cout << "Item dropado em (" << pos.x << "," << pos.y << "), chance=" << chance << "\n";
+    }
+    else
+    {
+        std::cout << "Sem drop (chance=" << chance << ")\n";
+    }
 }
 
 void Inimigo::associaListaEntidades(ListaEntidades* pLista)

@@ -12,7 +12,7 @@ public:
 	Plataforma();
 	~Plataforma();
 	void executar(float dt);
-	void obstaculizar(Personagem* pPers);
+	void obstaculizar(Entidade* pEnti);
 	std::string getTextureFile();
 	const float getAltura();
 	void salvar();

@@ -58,6 +58,13 @@ void Megaman::operator+=(const int pts)
 	pontos = pontos + pts;
 }
 
+void Megaman::curar(const int hp)
+{
+	num_vidas = num_vidas + hp;
+	if (num_vidas > 20)
+		num_vidas = 20;
+}
+
 void Megaman::machucar(const int dmg)
 {
 	if (!invencivel)

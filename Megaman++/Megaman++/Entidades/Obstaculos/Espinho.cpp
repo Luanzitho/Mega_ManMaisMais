@@ -25,25 +25,25 @@ void Espinho::executar(float dt)
     setCoords(posicao);
 }
 
-void Espinho::obstaculizar(Personagem* pPers)
+void Espinho::obstaculizar(Entidade* pEnti)
 {
-    if (!pPers) return;
+    if (!pEnti) return;
 
-    sf::FloatRect rectPers(pPers->getCoords(), pPers->getTamanho());
+    sf::FloatRect rectEnti(pEnti->getCoords(), pEnti->getTamanho());
     sf::FloatRect rectEspinho(getCoords(), getTamanho());
 
-    sf::Vector2f posPers = pPers->getCoords();
-    sf::Vector2f tamPers = pPers->getTamanho();
+    sf::Vector2f posEnti = pEnti->getCoords();
+    sf::Vector2f tamEnti = pEnti->getTamanho();
 
-    float velY = pPers->getVelVertical();
-    float velX = pPers->getVelocidade();
+    float velY = pEnti->getVelVertical();
+    float velX = pEnti->getVelocidade();
 
-    float topoPers = rectPers.top;
-    float baixoPers = rectPers.top + rectPers.height;
+    float topoEnti = rectEnti.top;
+    float baixoEnti = rectEnti.top + rectEnti.height;
     float topoEspinho = rectEspinho.top;
     float baixoEspinho = rectEspinho.top + rectEspinho.height;
-    float esquerdaPers = rectPers.left;
-    float direitaPers = rectPers.left + rectPers.width;
+    float esquerdaEnti = rectEnti.left;
+    float direitaEnti = rectEnti.left + rectEnti.width;
     float esquerdaEspinho = rectEspinho.left;
     float direitaEspinho = rectEspinho.left + rectEspinho.width;
 
@@ -52,38 +52,44 @@ void Espinho::obstaculizar(Personagem* pPers)
     bool tocando = false;
 
     // --- COLISÃO POR CIMA ---
-    if (velY > 0 && baixoPers - margem < topoEspinho && baixoPers > topoEspinho && direitaPers > esquerdaEspinho + margem && esquerdaPers < direitaEspinho - margem)
+    if (velY > 0 && baixoEnti - margem < topoEspinho && baixoEnti > topoEspinho && direitaEnti > esquerdaEspinho + margem && esquerdaEnti < direitaEspinho - margem)
     {
-        posPers.y = topoEspinho - tamPers.y;
-        pPers->setCoords(posPers);
-        if(danoso)
-            pPers->machucar(danosidade);
-        pPers->setVelVertical(0);
+        posEnti.y = topoEspinho - tamEnti.y;
+        pEnti->setCoords(posEnti);
+        if (danoso)
+        {
+            if (static_cast<Personagem*>(pEnti))
+            {
+				Personagem* pEntiAsPers = static_cast<Personagem*>(pEnti);
+				pEntiAsPers->machucar(danosidade);
+            }
+        }
+        pEnti->setVelVertical(0);
         tocando = true;
     }
     // --- COLISÃO POR BAIXO ---
-    else if (velY < 0 && topoPers < baixoEspinho && topoPers > baixoEspinho - margem && direitaPers > esquerdaEspinho + margem && esquerdaPers < direitaEspinho - margem)
+    else if (velY < 0 && topoEnti < baixoEspinho && topoEnti > baixoEspinho - margem && direitaEnti > esquerdaEspinho + margem && esquerdaEnti < direitaEspinho - margem)
     {
-        posPers.y = baixoEspinho;
-        pPers->setCoords(posPers);
-        pPers->setVelVertical(0);
+        posEnti.y = baixoEspinho;
+        pEnti->setCoords(posEnti);
+        pEnti->setVelVertical(0);
     }
     // --- COLISÃO PELA ESQUERDA (separação de eixo X) ---
-    else if (velX > 0 && direitaPers > esquerdaEspinho && esquerdaPers < esquerdaEspinho && baixoPers > topoEspinho + margem && topoPers < baixoEspinho - margem)
+    else if (velX > 0 && direitaEnti > esquerdaEspinho && esquerdaEnti < esquerdaEspinho && baixoEnti > topoEspinho + margem && topoEnti < baixoEspinho - margem)
     {
-        posPers.x = esquerdaEspinho - tamPers.x;
-        pPers->setCoords(posPers);
-        pPers->setVelocidade(0);
+        posEnti.x = esquerdaEspinho - tamEnti.x;
+        pEnti->setCoords(posEnti);
+        pEnti->setVelocidade(0);
     }
     // --- COLISÃO PELA DIREITA (separação de eixo X) ---
-    else if (velX < 0 && esquerdaPers < direitaEspinho && direitaPers > direitaEspinho && baixoPers > topoEspinho + margem && topoPers < baixoEspinho - margem)
+    else if (velX < 0 && esquerdaEnti < direitaEspinho && direitaEnti > direitaEspinho && baixoEnti > topoEspinho + margem && topoEnti < baixoEspinho - margem)
     {
-        posPers.x = direitaEspinho;
-        pPers->setCoords(posPers);
-        pPers->setVelocidade(0);
+        posEnti.x = direitaEspinho;
+        pEnti->setCoords(posEnti);
+        pEnti->setVelocidade(0);
     }
 
-    pPers->setNoChao(tocando);
+    pEnti->setNoChao(tocando);
     /*if (!pPers) return; //LÓGICA ANTIGA
 
     sf::FloatRect rectPers(pPers->getCoords(), pPers->getTamanho());

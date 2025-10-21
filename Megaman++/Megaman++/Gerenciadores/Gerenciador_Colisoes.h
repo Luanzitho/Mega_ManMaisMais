@@ -2,6 +2,7 @@
 
 #include "../Entidades/Personagens/Inimigo.h"
 #include "../Entidades/Personagens/Megaman.h"
+#include "../Entidades/Itens/Item.h"
 #include "../Entidades/Projeteis/ProjetilMetall.h"
 #include "../Entidades/Projeteis/ProjetilCutMan.h"
 #include "../Entidades/Obstaculos/Obstaculo.h"
@@ -10,11 +11,14 @@
 #include <list>
 #include <set>
 
+class Item;
+
 class Gerenciador_Colisoes
 {
 private:
 	std::vector<Inimigo*> LIs;
 	std::list<Obstaculo*> LOs;
+	std::list<Item*> Litens;
 	std::set<Projetil*> LPs;
 	ListaEntidades* LEs;
 	Megaman* p1;
@@ -24,14 +28,17 @@ private:
 	void tratarColisaoMegaObstacs();
 	void tratarColisaoMegaInimigos();
 	void tratarColisaoMegaProjeteis();
+	void tratarColisaoMegaItens();
 	void tratarColisaoInimsProjeteis();
 	void tratarColisaoInimsObstacs();
+	void tratarColisaoItemsObstacs();
 	void verificarRemovidos();
 
 public:
 	Gerenciador_Colisoes();
 	~Gerenciador_Colisoes();
 	void limpar();
+	void incluirItem(Item* pI);
 	void incluirInimigo(Inimigo* pI);
 	void incluirObstaculo(Obstaculo* pO);
 	void incluirProjetil(Projetil* pP);
