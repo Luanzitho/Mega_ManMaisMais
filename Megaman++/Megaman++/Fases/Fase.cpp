@@ -170,6 +170,7 @@ void Fase::pegarCamada(int i)
         }
     }
 }
+
 void Fase::separaSprites()
 {
     std::string imagemRelativa = faseJson["tilesets"][0]["image"];
@@ -214,7 +215,7 @@ int Fase::aleatoriza(int limite1, int limite2)
     return dist(gen);
 }
 /*
-void Fase::moveMapa(float dt)
+void Fase::moveMapa(float dt) //Lógica original
 {
     sf::FloatRect rect1(p1->getCoords(), p1->getTamanho());
 
@@ -283,19 +284,21 @@ void Fase::moveMapa(float dt)
     }
 }*/
 
-void Fase::moveMapa(float dt) //VERSÃO GERADA PELO COPILOT PARA SUPORTAR 2 JOGADORES
+void Fase::moveMapa(float dt) //VERSÃO AJUSTADA (DO COPILOT): ignora p2 se estiver morto
 {
     // escolher referência da câmera sem alterar p1/p2
-    Megaman* cam = p1;
-    if (p1 && !p1->getVivo() && p2 && p2->getVivo())
-        cam = p2;
+    Megaman* cam = nullptr;
+    if (p1 && p1->getVivo()) cam = p1;
+    else if (p2 && p2->getVivo()) cam = p2;
+    else if (p1) cam = p1; // fallback (mantém comportamento anterior se ambos mortos)
 
     if (!cam) return;
 
     sf::FloatRect rect1(cam->getCoords(), cam->getTamanho());
     sf::FloatRect rect2(getCoords(), getTamanho());
 
-    if (p2)
+    // só considerar reposicionamento de p2 enquanto ele estiver vivo
+    if (p2 && p2->getVivo())
     {
         sf::FloatRect rect3(p2->getCoords(), p2->getTamanho());
         if (rect3.intersects(rect2) && chao[ultimoSprite]->getCoords().x + chao[ultimoSprite]->getTamanho().x > rect2.width)
@@ -313,7 +316,8 @@ void Fase::moveMapa(float dt) //VERSÃO GERADA PELO COPILOT PARA SUPORTAR 2 JOGAD
             cam->setCoords(sf::Vector2f(rect2.width / 2, rect1.top));
             float camVel = cam->getVelocidade();
 
-            if (p2) {
+            // só aplicar lógica específica de p2 se ele estiver vivo
+            if (p2 && p2->getVivo()) {
                 sf::FloatRect rect3(p2->getCoords(), p2->getTamanho());
                 if (rect3.left >= rect2.width / 2)
                 {
