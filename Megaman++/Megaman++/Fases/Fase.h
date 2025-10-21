@@ -47,6 +47,7 @@ protected:
 	ListaEntidades LEs;
 	//Mola* mola;
 	bool acabou;
+	bool twoPlayers;
 	int minMetalls;
 	int minPlataformas;
 	int quantidadeLayers;

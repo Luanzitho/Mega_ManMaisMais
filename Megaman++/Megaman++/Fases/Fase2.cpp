@@ -56,14 +56,34 @@ Fase2::~Fase2()
 
 void Fase2::executar(float dt)
 {
-	desenharCenario();
+    desenharCenario();
     LEs.percorrer(dt, getTamanho());
-   
-	moveMapa(dt);
-    pontuacao = p1->getPontos();
-    if ((!p1->getVivo() && !p2) || (!p1->getVivo() && !p2->getVivo())) morreu = true;
-	GC.executar();
-    if (p1->getCoords().x > 1100) acabou = true;
+
+    if (twoPlayers && p2)
+    {
+        if (!p1->getVivo() && p2->getVivo())
+            LEs.redefinirAlvo(p2);
+    }
+
+    moveMapa(dt);
+
+	// escolher jogador de referência (mantendo p1/p2 intactos) OUTRA PARTE GERADA PELO COPILOT
+    Megaman* ativo = p1;
+    if ((!ativo || !ativo->getVivo()) && p2 && p2->getVivo())
+        ativo = p2;
+
+    if (ativo)
+        pontuacao = ativo->getPontos();
+
+    // marcar morte se ambos mortos (compatível com lógica existente)
+    if ((!p1->getVivo() && !p2) || (p2 && !p1->getVivo() && !p2->getVivo()))
+        morreu = true;
+
+    GC.executar();
+
+    // finalizar fase com base no jogador ativo (permite p2 concluir se p1 morreu)
+    if (ativo && ativo->getCoords().x > 1100)
+        acabou = true;
 }
 
 void Fase2::criarCutMan()

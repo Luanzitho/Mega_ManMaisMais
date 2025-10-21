@@ -47,20 +47,45 @@ Fase1::Fase1(): minBigEyes(3), minMolas(3)
 
 Fase1::~Fase1()
 {
-
 }
 
 void Fase1::executar(float dt)
 {
 	desenharCenario();
     LEs.percorrer(dt, getTamanho());
+
+    if (twoPlayers && p2)
+    {
+        if (!p1->getVivo() && p2->getVivo()) LEs.redefinirAlvo(p2);
+    }
+
 	moveMapa(dt);
+
+    // escolher jogador de referência (mantendo p1/p2 intactos) OUTRA PARTE GERADA PELO COPILOT
+    Megaman* ativo = p1;
+    if ((!ativo || !ativo->getVivo()) && p2 && p2->getVivo())
+        ativo = p2;
+
+    if (ativo)
+        pontuacao = ativo->getPontos();
+
+    // marcar morte se ambos mortos (compatível com lógica existente)
+    if ((!p1->getVivo() && !p2) || (p2 && !p1->getVivo() && !p2->getVivo()))
+        morreu = true;
+
+    GC.executar();
+
+    // finalizar fase com base no jogador ativo (permite p2 concluir se p1 morreu)
+    if (ativo && ativo->getCoords().x > 1100)
+        acabou = true;
+
+    /*
     pontuacao = p1->getPontos();
 
     if ((!p1->getVivo() && !p2) || (!p1->getVivo() && !p2->getVivo())) morreu = true;
 	GC.executar();
-    if (p1->getCoords().x > 1100)acabou=true;
-    
+    if (p1->getCoords().x > 1100) acabou=true;
+    */
 }
 
 void Fase1::criarMolas()

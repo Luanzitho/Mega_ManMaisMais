@@ -150,9 +150,12 @@ void Gerenciador_Colisoes::tratarColisaoMegaItens()
     }
     if (p2)
     {
-        if (verificarColisao(p2, *itIte) && p2 && p2->getVivo()) //Se houve a colisão e o p2 existir
+        for (itIte = Litens.begin(); itIte != Litens.end(); itIte++) //Colisão Item x Megaman player 2
         {
-            (*itIte)->serPego(p2);
+            if (verificarColisao(p2, *itIte) && p2->getVivo()) //Se houve a colisão e o p2 existir
+            {
+                (*itIte)->serPego(p2);
+            }
         }
     }
 }

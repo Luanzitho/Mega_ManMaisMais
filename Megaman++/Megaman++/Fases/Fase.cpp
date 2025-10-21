@@ -213,17 +213,16 @@ int Fase::aleatoriza(int limite1, int limite2)
 
     return dist(gen);
 }
-
+/*
 void Fase::moveMapa(float dt)
 {
     sf::FloatRect rect1(p1->getCoords(), p1->getTamanho());
-
 
     sf::FloatRect rect2(getCoords(), getTamanho());
     if (p2)
     {
         sf::FloatRect rect3(p2->getCoords(), p2->getTamanho());
-        if (!p1->getVivo() && p2->getVivo())p1 = p2;
+        if (!p1->getVivo() && p2->getVivo()) p1 = p2;
         else if (rect3.intersects(rect2) && chao[ultimoSprite]->getCoords().x + chao[ultimoSprite]->getTamanho().x > rect2.width)
         {
             if (rect3.left >= rect2.width / 2)
@@ -235,9 +234,9 @@ void Fase::moveMapa(float dt)
         if (rect1.left >= rect2.width / 2)
         {
             p1->setCoords(sf::Vector2f(rect2.width / 2, rect1.top));
-            /*if (p2)
+            if (p2)
                 if (p2->getCoords().x - p1->getVelocidade() > 0)p2->setCoords(sf::Vector2f(p2->getCoords().x - p1->getVelocidade() * dt, p2->getCoords().y));
-                */
+                
             if (p2) {
                 sf::FloatRect rect3(p2->getCoords(), p2->getTamanho());
                 if (rect3.left >= rect2.width / 2) 
@@ -282,6 +281,73 @@ void Fase::moveMapa(float dt)
             }
         }
     }
+}*/
+
+void Fase::moveMapa(float dt) //VERSÃO GERADA PELO COPILOT PARA SUPORTAR 2 JOGADORES
+{
+    // escolher referência da câmera sem alterar p1/p2
+    Megaman* cam = p1;
+    if (p1 && !p1->getVivo() && p2 && p2->getVivo())
+        cam = p2;
+
+    if (!cam) return;
+
+    sf::FloatRect rect1(cam->getCoords(), cam->getTamanho());
+    sf::FloatRect rect2(getCoords(), getTamanho());
+
+    if (p2)
+    {
+        sf::FloatRect rect3(p2->getCoords(), p2->getTamanho());
+        if (rect3.intersects(rect2) && chao[ultimoSprite]->getCoords().x + chao[ultimoSprite]->getTamanho().x > rect2.width)
+        {
+            if (rect3.left >= rect2.width / 2)
+                p2->setCoords(sf::Vector2f(rect2.width / 2, rect3.top));
+        }
+    }
+
+    if (chao[ultimoSprite]->getCoords().x + chao[ultimoSprite]->getTamanho().x > rect2.width) // Movimento do personagem/câmera
+    {
+        if (rect1.left >= rect2.width / 2)
+        {
+            // centraliza a referência da câmera (cam) sem alterar p1/p2
+            cam->setCoords(sf::Vector2f(rect2.width / 2, rect1.top));
+            float camVel = cam->getVelocidade();
+
+            if (p2) {
+                sf::FloatRect rect3(p2->getCoords(), p2->getTamanho());
+                if (rect3.left >= rect2.width / 2)
+                {
+                    p2->setCoords(sf::Vector2f(rect2.width / 2, rect3.top));
+
+                    for (int i = 0; i < chao.size(); i++)
+                        chao[i]->setCoords(sf::Vector2f(chao[i]->getCoords().x - camVel * dt, chao[i]->getCoords().y));
+
+                    for (int i = 0; i < tilesSprites.size(); i++)
+                        tilesSprites[i].setPosition(tilesSprites[i].getPosition().x - camVel * dt, tilesSprites[i].getPosition().y);
+
+                    for (int i = 0; i < inimigos.size(); i++)
+                        inimigos[i]->setCoords(sf::Vector2f(inimigos[i]->getCoords().x - camVel * dt, inimigos[i]->getCoords().y));
+
+                    for (int i = 0; i < obstaculos.size(); i++)
+                        obstaculos[i]->setCoords(sf::Vector2f(obstaculos[i]->getCoords().x - camVel * dt, obstaculos[i]->getCoords().y));
+                }
+            }
+            else
+            {
+                for (int i = 0; i < chao.size(); i++)
+                    chao[i]->setCoords(sf::Vector2f(chao[i]->getCoords().x - camVel * dt, chao[i]->getCoords().y));
+
+                for (int i = 0; i < tilesSprites.size(); i++)
+                    tilesSprites[i].setPosition(tilesSprites[i].getPosition().x - camVel * dt, tilesSprites[i].getPosition().y);
+
+                for (int i = 0; i < inimigos.size(); i++)
+                    inimigos[i]->setCoords(sf::Vector2f(inimigos[i]->getCoords().x - camVel * dt, inimigos[i]->getCoords().y));
+
+                for (int i = 0; i < obstaculos.size(); i++)
+                    obstaculos[i]->setCoords(sf::Vector2f(obstaculos[i]->getCoords().x - camVel * dt, obstaculos[i]->getCoords().y));
+            }
+        }
+    }
 }
 
 bool Fase::getAcabou()
@@ -299,10 +365,14 @@ void Fase::setTwoPlayers()
     p2->setExecutando(true);
 	GC.incluirMegaman(p2);
 	LEs.incluirEntidade(p2);
+
+	twoPlayers = true;
 }
 
 void Fase::setOnePlayer()
 {
+	twoPlayers = false;
+
     if(p2) p2->destruir();
 }
 

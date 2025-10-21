@@ -1,4 +1,5 @@
 #include "ListaEntidades.h"
+#include "../Entidades/Personagens/Inimigo.h"
 
 ListaEntidades::ListaEntidades()
 {
@@ -17,6 +18,27 @@ void ListaEntidades::incluirEntidade(Entidade* pE)
 {
 	if (pE)
 		LEs.incluir(pE);
+}
+
+void ListaEntidades::redefinirAlvo(Megaman* pM)
+{
+    if (!pM) return;
+
+    if (LEs.getpPrimeiro())
+    {
+        Lista<Entidade>::Elemento<Entidade>* aux = LEs.getpPrimeiro();
+        while (aux != nullptr)
+        {
+            Entidade* ent = aux->getInfo();
+            if (ent) {
+                Inimigo* pInimigo = dynamic_cast<Inimigo*>(ent);
+                if (pInimigo) {
+                    pInimigo->conhecerJogador(pM);
+                }
+            }
+            aux = aux->getProximo();
+        }
+    }
 }
 
 void ListaEntidades::percorrer(float dt, sf::Vector2f tam)
