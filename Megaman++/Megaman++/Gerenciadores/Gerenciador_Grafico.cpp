@@ -19,6 +19,9 @@ Gerenciador_Grafico::Gerenciador_Grafico(): window(sf::VideoMode(1280, 720), "Me
     window.setIcon(icone.getSize().x, icone.getSize().y, icone.getPixelsPtr());
 
     posicionarConsole(1700, 100); //Posiciona o console ao lado da janela do jogo
+
+	texturaHpBar.loadFromFile("Sprites/Megaman/HPBar/HPBar.png");
+	spriteHpBar.setTexture(texturaHpBar);
 }
 
 Gerenciador_Grafico::~Gerenciador_Grafico()
@@ -119,6 +122,39 @@ void Gerenciador_Grafico::desenhar(sf::Text text)
 void Gerenciador_Grafico::desenhar(sf::Sprite sprite)
 {
     window.draw(sprite);
+}
+
+void Gerenciador_Grafico::desenharBarraVida(Ente* pE, float hp, sf::Vector2f posicao)
+{
+    float largura = 3;
+	float altura = 3;
+
+    int cont = 28 - hp;
+
+    spriteHpBar.setTextureRect(sf::IntRect(0+8*cont, 0, 8, 56));
+
+    spriteHpBar.setScale(largura, altura);
+	spriteHpBar.setPosition(posicao.x, posicao.y + 50);
+
+	window.draw(spriteHpBar);
+}
+
+void Gerenciador_Grafico::desenharPontos(int qtdPontos, sf::Vector2f posicao)
+{
+    sf::Font fonte;
+    if (!fonte.loadFromFile("Fontes/Pixelify_Sans/static/PixelifySans-Regular.ttf"))
+    {
+        std::cout << "Erro ao carregar fonte de pontos!" << std::endl;
+        return;
+    }
+
+    sf::Text textoPontos;
+    textoPontos.setFont(fonte);
+    textoPontos.setString("Pontos: " + std::to_string(qtdPontos));
+    textoPontos.setCharacterSize(36);
+    textoPontos.setFillColor(sf::Color::White);
+    textoPontos.setPosition(posicao);
+	window.draw(textoPontos);
 }
 
 std::string Gerenciador_Grafico::getTexto()

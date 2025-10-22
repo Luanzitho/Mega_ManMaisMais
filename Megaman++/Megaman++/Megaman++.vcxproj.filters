@@ -182,11 +182,11 @@
     <ClInclude Include="Gerenciadores\Gerenciador_Sonoro.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Entidades\Itens\Item.h">
-      <Filter>Arquivos de Origem</Filter>
-    </ClInclude>
     <ClInclude Include="Entidades\Itens\Regen.h">
-      <Filter>Arquivos de Origem</Filter>
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Entidades\Itens\Item.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

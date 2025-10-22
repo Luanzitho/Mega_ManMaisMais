@@ -74,6 +74,8 @@ public:
 	void setOnePlayer();
 	int getPlayerHP(bool p2);
 	int getPlayerPoints();
+	void exibirBarraDeVida();
+	void exibirPontos();
 	virtual void salvar();
 	virtual void carregar();
 	const int getPontuacao();

@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-Megaman::Megaman() : Personagem(20), teclaApertada(false), cooldownTiro(0), player1(true), invencivel(false), framesInvencibilidade(0), cooldownNoChao(0)
+Megaman::Megaman() : Personagem(28), teclaApertada(false), cooldownTiro(0), player1(true), invencivel(false), framesInvencibilidade(0), cooldownNoChao(0)
 {
 	LE = nullptr;
 	GC = nullptr;
@@ -23,7 +23,7 @@ Megaman::Megaman() : Personagem(20), teclaApertada(false), cooldownTiro(0), play
 }
 int Megaman::pontos(0);
 
-Megaman::Megaman(bool player) : Personagem(20), teclaApertada(false), cooldownTiro(0), player1(player), invencivel(false), framesInvencibilidade(0), cooldownNoChao(0)
+Megaman::Megaman(bool player) : Personagem(28), teclaApertada(false), cooldownTiro(0), player1(player), invencivel(false), framesInvencibilidade(0), cooldownNoChao(0)
 {
 	LE = nullptr;
 	GC = nullptr;
@@ -61,8 +61,8 @@ void Megaman::operator+=(const int pts)
 void Megaman::curar(const int hp)
 {
 	num_vidas = num_vidas + hp;
-	if (num_vidas > 20)
-		num_vidas = 20;
+	if (num_vidas > 28)
+		num_vidas = 28;
 }
 
 void Megaman::machucar(const int dmg)
@@ -140,11 +140,8 @@ void Megaman::mover(float dt)
 		{
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 			{
-				velVertical = -350;
+				velVertical = -350.f;
 				noChao = false;
-				//std::cout << "Tenho " << getNumVidas() << " de HP" << std::endl;
-				//std::cout << "Tenho " << pontos << " pontos" << std::endl;
-				//std::cout << "FPS: " << 1.0 / dt << std::endl;
 			}
 		}
 		else

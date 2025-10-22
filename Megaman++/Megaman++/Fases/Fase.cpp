@@ -390,6 +390,18 @@ int Fase::getPlayerPoints()
     return p1->getPontos();
 }
 
+void Fase::exibirBarraDeVida()
+{
+	pGG->desenharBarraVida(p1, p1->getNumVidas(), sf::Vector2f(30.f, 20.f));
+    if(p2)
+		pGG->desenharBarraVida(p2, p2->getNumVidas(), sf::Vector2f(70.f, 20.f));
+}
+
+void Fase::exibirPontos()
+{
+    pGG->desenharPontos(p1->getPontos(), sf::Vector2f(1000.f, 20.f));
+}
+
 void Fase::salvar()
 {
     int lugar = getId();

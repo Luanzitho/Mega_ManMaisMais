@@ -14,6 +14,9 @@ private:
 	sf::RenderWindow window;
 	std::map<std::string, sf::Texture> texturas;
 	std::string textoDigitado;
+
+	sf::Sprite spriteHpBar;
+	sf::Texture texturaHpBar;
 	
 	Gerenciador_Grafico(); //Padrão singleton, vídeo do Burda
 
@@ -29,6 +32,8 @@ public:
 	void mostrarConteudoJanela();
 	void desenhar(sf::Text text);
 	void desenhar(sf::Sprite sprite);
+	void desenharBarraVida(Ente* pE, float hp, sf::Vector2f posicao);
+	void desenharPontos(int qtdPontos, sf::Vector2f posicao);
 	std::string getTexto();
 	void limpaTexto();
 	void fecharJanela();

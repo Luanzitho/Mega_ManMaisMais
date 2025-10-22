@@ -59,6 +59,9 @@ void Fase1::executar(float dt)
         if (!p1->getVivo() && p2->getVivo()) LEs.redefinirAlvo(p2);
     }
 
+	exibirBarraDeVida();
+	exibirPontos();
+
 	moveMapa(dt);
 
     // escolher jogador de referência (mantendo p1/p2 intactos) OUTRA PARTE GERADA PELO COPILOT
