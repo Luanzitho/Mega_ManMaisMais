@@ -14,6 +14,8 @@ private:
 	std::random_device rd;
 	ListaEntidades* LE;
 	Gerenciador_Colisoes* GC;
+	float altura;
+	float largura;
 
 public:
 	Regen();
@@ -23,6 +25,8 @@ public:
 	std::string getTextureFile();
 	void serPego(Megaman* p);
 	void mover(float dt);
+	int getFrame();
+	sf::Vector2f getEscalaCorreta();
 	void associaListaEntidades(ListaEntidades* pLista);
 	void associaGerenciadorColisoes(Gerenciador_Colisoes* gc);
 	void salvar();

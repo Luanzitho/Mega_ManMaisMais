@@ -10,18 +10,31 @@ Regen::Regen() : timerDespawn(0.f)
 	if (tipoRegen == 1)
 	{
 		setTamanho(sf::Vector2f(16.f, 16.f));
+		altura = largura = 16.f;
 		regenAmount = 3.f;
 	}
 	else if (tipoRegen == 2)
 	{
 		regenAmount = 10.f;
+		altura = largura = 40.f;
 		setTamanho(sf::Vector2f(50.f, 50.f));
 	}
 	else
 	{
-		regenAmount = 20.f;
+		regenAmount = 28.f;
+		altura = 50;
+		largura = 40;
 		setTamanho(sf::Vector2f(40.f, 50.f));
 	}
+
+	estadoAnimacao.numFrames = 6;
+	estadoAnimacao.frameAtual = 0;
+	estadoAnimacao.alturaSprite = 16;
+	estadoAnimacao.larguraSprite = 16;
+
+	tempoFrame = 0.2f; //Tempo entre frames
+	tempoAcumulado = 0.f;
+	animado = true;
 
 	pGS->carregarEfeito("HealSmall", "Sound/Effects/healsmall.wav");
 	pGS->carregarEfeito("HealBig", "Sound/Effects/healbig.wav");
@@ -35,8 +48,9 @@ Regen::~Regen()
 void Regen::executar(float dt)
 {
 	timerDespawn += dt;
+	timerFrame += dt;
 
-	if(!noChao)
+	if (!noChao)
 		sofrerAcaoDaGravidade(dt);
 
 	if (timerDespawn >= 5.f)
@@ -58,12 +72,7 @@ void Regen::regenerar(Megaman* p)
 
 std::string Regen::getTextureFile()
 {
-	if(tipoRegen == 1)
-		return "Sprites/Itens/regenSmall.png";
-	else if (tipoRegen == 2)
-		return "Sprites/Itens/regenBig.png";
-	else
-		return "Sprites/Itens/energyDrink.png";
+	return "Sprites/Itens/regen.png";
 }
 
 void Regen::serPego(Megaman* p)
@@ -78,6 +87,22 @@ void Regen::mover(float dt)
 	posicao.y += velVertical * dt;
 
 	setCoords(posicao);
+}
+
+int Regen::getFrame()
+{ 
+	int offset = (int)(timerFrame / tempoFrame) % 2; // 0 ou 1
+	return (tipoRegen - 1) * 2 + offset;
+}
+
+sf::Vector2f Regen::getEscalaCorreta()
+{
+	if (tipoRegen == 1)
+		return sf::Vector2f(32.f, 32.f);
+	else if (tipoRegen == 2)
+		return sf::Vector2f(50.f, 50.f);
+	else
+		return sf::Vector2f(50.f, 60.f);
 }
 
 void Regen::associaListaEntidades(ListaEntidades* pLista)

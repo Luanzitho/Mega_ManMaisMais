@@ -31,7 +31,6 @@ Metall::Metall(): timerEsconder(0), timerAtirar(0)
 	tempoAcumulado = 0.f;
 	animado = true;
 }
-
 int Metall::indiceMetall = -1;
 
 Metall::~Metall()

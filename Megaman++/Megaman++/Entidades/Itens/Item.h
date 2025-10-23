@@ -16,8 +16,8 @@ public:
 	virtual std::string getTextureFile() = 0;
 	virtual void serPego(Megaman* p) = 0;
 	virtual void mover(float dt) = 0;
-	int getFrame() { return 0; }
-	sf::Vector2f getEscalaCorreta() { return sf::Vector2f(0, 0); }
+	virtual int getFrame() = 0;
+	virtual sf::Vector2f getEscalaCorreta() = 0;
 	virtual void associaListaEntidades(ListaEntidades* pLista) = 0;
 	virtual void associaGerenciadorColisoes(Gerenciador_Colisoes* gc) = 0;
 	virtual void salvar();

@@ -2,6 +2,7 @@
 
 Item::Item()
 {
+	direita = true;
 }
 
 Item::~Item()
