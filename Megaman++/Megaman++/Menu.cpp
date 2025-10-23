@@ -4,6 +4,7 @@
 Menu::Menu() : escolha(0), tela(0), enter(false), isPressed(false), start(false), cooldown(0.f), fase(0), pause(false), pontuacao(0), terminou(false), rankingNomes(), rankingPontos(), twoPlayers(false), twoPlayersSalvo(false)
 {
 	setId(12);
+	jogoAberto = true;
 	pJog = nullptr;
 	pGG = Gerenciador_Grafico::getInstancia();
 	font = new sf::Font();
@@ -54,7 +55,7 @@ Menu::Menu() : escolha(0), tela(0), enter(false), isPressed(false), start(false)
 		//pGG->desenhar(texto);
 
 		pGS->pararMusica();
-		pGS->carregarMusica("Sound/Music/menu.wav");
+		pGS->carregarMusica("Sound/Music/apresentacao.wav");
 		pGS->tocarMusica();
 
 		pGS->carregarEfeito("select", "Sound/Effects/select.wav");
@@ -76,53 +77,68 @@ Menu::~Menu()
 void Menu::executar(float dt)
 {
 	pGG->desenharEnte(this);
-	//entradaUsuario = pGG->digitar(entradaUsuario);
-	cooldown += dt; //cooldown para evitar que o enter seja pressionado muitas vezes
-	if (pause)tela = 3;
-	if (terminou)tela = 4;
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !isPressed) //movimento da escolha de op��es
+	if (jogoAberto)
 	{
-		if(cooldown>0.25f)
-		{
-			pGS->tocarEfeito("select");
+		cooldown += dt;
 
-			if ((tela == 0 || tela == 1 || tela == 3) && escolha < 2) escolha++;
-			else if (tela == 2 && escolha < 3)escolha++;
-			else if (tela == 5 && escolha < 5)escolha++;
-			isPressed = true;
-			cooldown = 0;
-		}
-		
-	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && !isPressed && escolha > 0)
-	{
-		if(cooldown>0.25f)
+		if (cooldown >= 6.5)
 		{
-			pGS->tocarEfeito("select");
-
-			isPressed = true;
-			escolha--;
-			cooldown = 0;
+			jogoAberto = false;
+			pGS->pararMusica();
+			pGS->carregarMusica("Sound/Music/menu.wav");
+			pGS->tocarMusica();
 		}
-	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter) && !isPressed)
-	{
-		if(cooldown>0.25f)
-		{
-			pGS->tocarEfeito("confirm");
-
-			isPressed = true;
-			selecionar();
-			cooldown = 0;
-		}
-		
 	}
 	else
 	{
-		isPressed = false;
+		//entradaUsuario = pGG->digitar(entradaUsuario);
+		cooldown += dt; //cooldown para evitar que o enter seja pressionado muitas vezes
+		if (pause)tela = 3;
+		if (terminou)tela = 4;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !isPressed) //movimento da escolha de op��es
+		{
+			if (cooldown > 0.25f)
+			{
+				pGS->tocarEfeito("select");
+
+				if ((tela == 0 || tela == 1 || tela == 3) && escolha < 2) escolha++;
+				else if (tela == 2 && escolha < 3)escolha++;
+				else if (tela == 5 && escolha < 5)escolha++;
+				isPressed = true;
+				cooldown = 0;
+			}
+
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && !isPressed && escolha > 0)
+		{
+			if (cooldown > 0.25f)
+			{
+				pGS->tocarEfeito("select");
+
+				isPressed = true;
+				escolha--;
+				cooldown = 0;
+			}
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter) && !isPressed)
+		{
+			if (cooldown > 0.25f)
+			{
+				pGS->tocarEfeito("confirm");
+
+				isPressed = true;
+				selecionar();
+				cooldown = 0;
+			}
+
+		}
+		else
+		{
+			isPressed = false;
+		}
+
+		desenhaInteracao();
 	}
-		
-	desenhaInteracao();
 }
 
 
@@ -133,6 +149,8 @@ void Menu::setGame(Jogo* jog)
 
 std::string Menu::getTextureFile()
 {
+	if (jogoAberto)
+		return "Sprites/Menu/Menu0.png";
 	return "Sprites/Menu/Menu1.png";
 }
 

@@ -26,7 +26,7 @@ private:
 	bool twoPlayers;
 	bool twoPlayersSalvo;
 	//int quantidadeMenus;
-	
+	bool jogoAberto;
 
 public:
 	Menu();

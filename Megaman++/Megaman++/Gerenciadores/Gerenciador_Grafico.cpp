@@ -125,7 +125,7 @@ void Gerenciador_Grafico::animarPersonagem(Entidade* p)
     if (m && m->getInvencivel())
     {
         //Pisca a cada 0.1s
-        float tempoPiscar = 0.1f; // segundos
+        float tempoPiscar = 0.1f;
         float tempoAtual = relogioGlobal.getElapsedTime().asSeconds();
 
         int fase = static_cast<int>(tempoAtual / tempoPiscar);
