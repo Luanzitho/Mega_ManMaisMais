@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../Ente.h"
+#include "../Entidades/estadoAnimacao.h"
 
 class Entidade:public Ente
 {
@@ -14,11 +15,13 @@ protected:
 	bool noChao;
 	bool executando;
 	static int qualEntidade;
-	//float x;
-	//float y;
-	//ostream buffer;
+	
+	float timerFrame;
+	float tempoFrame;
+	float tempoAcumulado;
 
 public:
+	EstadoAnimacao estadoAnimacao;
 	Entidade();
 	~Entidade();
 	void destruir();
@@ -28,7 +31,12 @@ public:
 	void setVelVertical(float v);
 	float getVelVertical();
 	void setNoChao(bool noChao);
+	const bool getDireita();
 	const bool getNoChao();
+
+	virtual int getFrame() = 0;
+	virtual sf::Vector2f getEscalaCorreta() = 0;
+
 	void sofrerAcaoDaGravidade(float dt);
 	virtual void executar(float dt) = 0;
 	virtual std::string getTextureFile() = 0;

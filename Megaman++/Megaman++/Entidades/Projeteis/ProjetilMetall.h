@@ -17,6 +17,10 @@ public:
 	~ProjetilMetall();
 	void atingirMegaman(Megaman* p);
 	void mover(float dt);
+
+	int getFrame();
+	sf::Vector2f getEscalaCorreta();
+
 	void executar(float dt);
 	std::string getTextureFile();
 	void salvar();

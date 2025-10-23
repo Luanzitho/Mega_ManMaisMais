@@ -16,6 +16,15 @@ Megaman::Megaman() : Personagem(28), teclaApertada(false), cooldownTiro(0), play
 
 	setTamanho(sf::Vector2f(70.f, 70.f));
 
+	estadoAnimacao.numFrames = 13;
+	estadoAnimacao.frameAtual = 0;
+	estadoAnimacao.alturaSprite = 64;
+	estadoAnimacao.larguraSprite = 64;
+
+	tempoFrame = 0.2f; //Tempo entre frames
+	tempoAcumulado = 0.f;
+	animado = true;
+
 	pGS->carregarEfeito("tiroMegaman", "Sound/Effects/megabuster.wav");
 	pGS->carregarEfeito("megamanDMG", "Sound/Effects/megamandmg.wav");
 	pGS->carregarEfeito("Defeat", "Sound/Effects/defeat.wav");
@@ -35,6 +44,15 @@ Megaman::Megaman(bool player) : Personagem(28), teclaApertada(false), cooldownTi
 	velMax = 200;
 
 	setTamanho(sf::Vector2f(70.f, 70.f));
+
+	estadoAnimacao.numFrames = 13;
+	estadoAnimacao.frameAtual = 0;
+	estadoAnimacao.alturaSprite = 64;
+	estadoAnimacao.larguraSprite = 64;
+
+	tempoFrame = 0.2f; //Tempo entre frames
+	tempoAcumulado = 0.f;
+	animado = true;
 }
 
 Megaman::~Megaman()
@@ -70,6 +88,7 @@ void Megaman::machucar(const int dmg)
 	if (!invencivel)
 	{
 		num_vidas = num_vidas - dmg;
+		estadoAnimacao.Machucado = true;
 		pGS->tocarEfeito("megamanDMG");
 	}
 
@@ -86,81 +105,82 @@ void Megaman::mover(float dt)
 {
 	sf::Vector2f posicao = getCoords();
 
-	if (player1) //Player 1 usa as SETAS
-	{
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-		{
-			velocidade -= velMax;
-			direita = false;
-		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-		{
-			velocidade += velMax;
-			direita = true;
-		}
-		else
-			velocidade = velocidade * 0.9;
-	}
-
-	else //Player 2 usa WASD
-	{
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-		{
-			velocidade -= velMax; //aceleracao * dt;
-			direita = false;
-		}
-
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-		{
-			velocidade += velMax; //aceleracao* dt;
-			direita = true;
-		}
-
-		else
-			velocidade = velocidade * 0.9;
-	}
-
-	if (velocidade > velMax) //Limita a velocidade
-		velocidade = velMax;
-	else if (velocidade < velMax * (-1))
-		velocidade = velMax * (-1);
-
 	cooldownNoChao += dt;
-	if (cooldownNoChao > 0.1 && noChao) //Reseta a colisão com o chão de tempo em tempo para evitar o bug de levitação
-	{
-		noChao = false;
-		cooldownNoChao = 0;
-	}
 
 	if (noChao)
 	{
-		velVertical = 0;
-
-		if (player1) //Se for Player 1 usa seta para cima, se não, usa W
+		estadoAnimacao.Pulando = false;
+		if(velocidade != 0)
 		{
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-			{
-				velVertical = -350.f;
-				noChao = false;
-			}
+			estadoAnimacao.Parado = false;
+			estadoAnimacao.Andando = true;
 		}
 		else
 		{
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-			{
-				velVertical = -350.f;
-				noChao = false;
-			}
+			estadoAnimacao.Parado = true;
+			estadoAnimacao.Andando = false;
 		}
 	}
 
-	//else
-	//{
-	//	velVertical += gravidade * dt;
-	//}
+	if (cooldownNoChao > 0.2f)
+	{
+		cooldownNoChao = 0;
+		noChao = false;
+	}
 
-	//if (posicao.x + velocidade * dt > 0.f)
-	if (posicao.x + velocidade * dt > 0)posicao.x += velocidade * dt;
+	if (player1) //Player 1 usa as SETAS
+	{
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) 
+		{ 
+			velocidade = -velMax; 
+			direita = false; 
+			estadoAnimacao.Andando = true; 
+			estadoAnimacao.Parado = false; 
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) 
+		{ 
+			velocidade = velMax; 
+			direita = true; 
+			estadoAnimacao.Andando = true; 
+			estadoAnimacao.Parado = false; 
+		}
+		else velocidade = 0;
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && noChao) 
+		{ 
+			velVertical = -350.f; 
+			noChao = false; 
+			estadoAnimacao.Pulando = true; 
+			estadoAnimacao.Parado = false; 
+		}
+	}
+	else //Player 2 usa WASD
+	{
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) 
+		{ 
+			velocidade = -velMax; 
+			direita = false; 
+			estadoAnimacao.Andando = true; 
+			estadoAnimacao.Parado = false; 
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) 
+		{ 
+			velocidade = velMax; 
+			direita = true; 
+			estadoAnimacao.Andando = true; 
+			estadoAnimacao.Parado = false; 
+		}
+		else velocidade = 0;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && noChao) 
+		{ 
+			velVertical = -350.f; 
+			noChao = false; 
+			estadoAnimacao.Pulando = true; 
+			estadoAnimacao.Parado = false; 
+		}
+	}
+
+	if (posicao.x + velocidade * dt > 0) posicao.x += velocidade * dt;
 	posicao.y += velVertical * dt;
 
 	setCoords(posicao);
@@ -176,8 +196,10 @@ void Megaman::atirar(float dt)
 		{
 			if (!teclaApertada && cooldownTiro >= 0.25)
 			{
+				estadoAnimacao.Atacando = true;
+
 				sf::Vector2f pos = getCoords();
-				pos.x += (direita ? 10.f : 15.f);
+				pos.x += (direita ? 40.f : 15.f);
 				pos.y += getTamanho().y / 4;
 
 				ProjetilMegaman* tiro = new ProjetilMegaman(pos, direita);
@@ -204,8 +226,10 @@ void Megaman::atirar(float dt)
 		{
 			if (!teclaApertada && cooldownTiro >= 0.25)
 			{
+				estadoAnimacao.Atacando = true;
+
 				sf::Vector2f pos = getCoords();
-				pos.x += (direita ? 10.f : 15.f);
+				pos.x += (direita ? 40.f : 15.f);
 				pos.y += getTamanho().y / 4;
 
 				ProjetilMegaman* tiro = new ProjetilMegaman(pos, direita);
@@ -226,6 +250,14 @@ void Megaman::atirar(float dt)
 			teclaApertada = false;
 		}
 	}
+
+	if(cooldownTiro >= 0.15)
+		estadoAnimacao.Atacando = false;
+}
+
+const bool Megaman::getInvencivel()
+{
+	return invencivel;
 }
 
 void Megaman::executar(float dt)
@@ -233,23 +265,58 @@ void Megaman::executar(float dt)
 	mover(dt);
 	atirar(dt);
 
-	if (!noChao)
-		sofrerAcaoDaGravidade(dt);
+	tempoAcumulado += dt;
+	
+	if (!noChao) sofrerAcaoDaGravidade(dt);
 
-	if (invencivel)
+	if (invencivel) 
 	{
 		framesInvencibilidade += dt;
-
-		if (framesInvencibilidade >= 2)
-		{
-			framesInvencibilidade = 0;
-			invencivel = false;
-		}
+		if (framesInvencibilidade > 0.2f) estadoAnimacao.Machucado = false;
+		if (framesInvencibilidade >= 2.f) { framesInvencibilidade = 0.f; invencivel = false; }
 	}
+
+	timerFrame += dt;
+}
+
+int Megaman::getFrame()
+{
+	if (estadoAnimacao.Machucado) {
+		int offset = (int)(timerFrame / tempoFrame) % 2; // 0 ou 1
+		return 11 + offset; // 11 ou 12
+	}
+
+	if (estadoAnimacao.Pulando)
+	{
+		if (estadoAnimacao.Atacando)
+			return 10;
+		return 9;
+	}
+
+	if (estadoAnimacao.Andando)
+	{
+		if (estadoAnimacao.Atacando)
+			return 6 + (int((timerFrame / tempoFrame)) % 3); // frames 6-8
+		else
+			return 2 + (int((timerFrame / tempoFrame)) % 3); // frames 2-4
+	}
+
+	if (estadoAnimacao.Atacando)
+	{
+		return 5;
+	}
+
+	return (int((timerFrame / tempoFrame)) % 2); // frames 0-1
+}
+
+sf::Vector2f Megaman::getEscalaCorreta()
+{
+	return sf::Vector2f(100, 100);
 }
 
 std::string Megaman::getTextureFile()
 {
+	/*
 	if (player1)
 	{
 		if (!invencivel)
@@ -281,7 +348,10 @@ std::string Megaman::getTextureFile()
 				return "Sprites/Megaman/Parado/ParadoNH-Inv-dir.png";
 			return "Sprites/Megaman/Parado/ParadoNH-Inv-esq.png";
 		}
-	}
+	}*/
+	if(player1)
+		return "Sprites/Megaman/megaman.png";
+	return "Sprites/Megaman/megamanP2.png";
 }
 
 void Megaman::salvar()

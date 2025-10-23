@@ -17,6 +17,10 @@ public:
 	~Projetil();
 	const bool getDoMega();
 	void associaListaEntidades(ListaEntidades* pLista);
+
+	virtual int getFrame() = 0;
+	virtual sf::Vector2f getEscalaCorreta() = 0;
+
 	virtual void executar(float dt) = 0;
 	virtual std::string getTextureFile() = 0;
 	virtual void salvar();

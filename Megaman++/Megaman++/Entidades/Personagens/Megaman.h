@@ -4,6 +4,8 @@
 #include "../Projeteis/ProjetilMegaman.h"
 #include "../../Listas/ListaEntidades.h"
 #include <vector>
+#include <string>
+#include <utility>
 
 class Gerenciador_Colisoes;
 
@@ -31,6 +33,11 @@ public:
 	void machucar(const int dmg);
 	void mover(float dt);
 	void atirar(float dt);
+	const bool getInvencivel();
+
+	int getFrame(); // Range de frames atual
+	sf::Vector2f getEscalaCorreta();
+
 	void executar(float dt);
 	std::string getTextureFile();
 	void salvar();

@@ -6,6 +6,8 @@
 #include "../Consoleconfig.h"
 
 class Ente;
+class Megaman;
+class Entidade;
 
 class Gerenciador_Grafico
 {
@@ -17,6 +19,7 @@ private:
 
 	sf::Sprite spriteHpBar;
 	sf::Texture texturaHpBar;
+	sf::Clock relogioGlobal;
 	
 	Gerenciador_Grafico(); //Padrão singleton, vídeo do Burda
 
@@ -26,6 +29,7 @@ public:
 	sf::Texture& getTextura(const std::string& caminho); //Para armazenar as texturas. Em teoria corrige os crashes por chamar toda hora a textura
 	static Gerenciador_Grafico* getInstancia();
 	void desenharEnte(Ente* pE);
+	void animarPersonagem(Entidade* pE);
 	bool janelaEstaAberta();
 	void eventoFecharJanela();
 	void limparJanela();

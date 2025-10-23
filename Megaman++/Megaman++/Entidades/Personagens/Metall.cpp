@@ -21,6 +21,15 @@ Metall::Metall(): timerEsconder(0), timerAtirar(0)
 
 	pGS->carregarEfeito("MetallAtirar", "Sound/Effects/enemyshoot.wav");
 	pGS->carregarEfeito("MetallBlock", "Sound/Effects/block.wav");
+
+	estadoAnimacao.numFrames = 6;
+	estadoAnimacao.frameAtual = 0;
+	estadoAnimacao.alturaSprite = 16;
+	estadoAnimacao.larguraSprite = 18;
+
+	tempoFrame = 0.1f; //Tempo entre frames
+	tempoAcumulado = 0.f;
+	animado = true;
 }
 
 int Metall::indiceMetall = -1;
@@ -56,6 +65,20 @@ void Metall::esconder()
 void Metall::revelar()
 {
 	escondido = false;
+}
+
+int Metall::getFrame()
+{
+	if (escondido)
+	{
+		return ((nivel_maldade * 2) - 1);
+	}
+	return ((nivel_maldade * 2) - 2);
+}
+
+sf::Vector2f Metall::getEscalaCorreta()
+{
+	return sf::Vector2f(tamanho, tamanho);
 }
 
 void Metall::executar(float dt)
@@ -117,6 +140,7 @@ void Metall::machucar(const int dmg)
 
 std::string Metall::getTextureFile()
 {
+	/*
 	if (nivel_maldade == 1)
 	{
 		if (!escondido)
@@ -163,7 +187,8 @@ std::string Metall::getTextureFile()
 				return "Sprites/Inimigos/MetallEscondido2-dir.png";
 			return "Sprites/Inimigos/MetallEscondido2-esq.png";
 		}
-	}
+	}*/
+	return "Sprites/Inimigos/Metall.png";
 }
 
 void Metall::salvar()

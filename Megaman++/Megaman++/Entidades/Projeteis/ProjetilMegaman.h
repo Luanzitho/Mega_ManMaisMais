@@ -16,6 +16,10 @@ public:
 	~ProjetilMegaman();
 	void atingirInimigo(Inimigo* pI);
 	void mover(float dt);
+
+	int getFrame();
+	sf::Vector2f getEscalaCorreta();
+
 	void executar(float dt);
 	std::string getTextureFile();
 	void salvar();

@@ -2,8 +2,21 @@
 
 Entidade::Entidade(): vivo(true), gravidade(300), executando(false), direita(false), velocidade(0), velVertical(0), velMax(0), noChao(false)//x(-1), y(-1)
 {
+	estadoAnimacao.Parado = true;
+	estadoAnimacao.Andando = false;
+	estadoAnimacao.Pulando = false;
+	estadoAnimacao.Atacando = false;
+	estadoAnimacao.Machucado = false;
+	estadoAnimacao.Morrendo = false;
+
+	estadoAnimacao.numFrames = 0;
+	estadoAnimacao.frameAtual = 0;
+	estadoAnimacao.alturaSprite = 0;
+	estadoAnimacao.larguraSprite = 0;
+	animado = false;
 }
 int Entidade::qualEntidade = 0;
+
 Entidade::~Entidade()
 {
 }
@@ -46,6 +59,11 @@ void Entidade::setNoChao(const bool noChao)
 const bool Entidade::getNoChao()
 {
 	return noChao;
+}
+
+const bool Entidade::getDireita()
+{
+	return direita;
 }
 
 void Entidade::sofrerAcaoDaGravidade(float dt)

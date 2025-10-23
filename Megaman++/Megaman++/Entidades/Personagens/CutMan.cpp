@@ -16,6 +16,15 @@ CutMan::CutMan(): cooldownNoChao(0), timerAtirar(0), timerPerseguir(0), timerPul
 	forca = 2 + nivel_maldade;
 
 	pGS->carregarEfeito("CutManAtirar", "Sound/Effects/RollingCutter.wav");
+
+	estadoAnimacao.numFrames = 14;
+	estadoAnimacao.frameAtual = 0;
+	estadoAnimacao.alturaSprite = 32;
+	estadoAnimacao.larguraSprite = 32;
+
+	tempoFrame = 0.2f; //Tempo entre frames
+	tempoAcumulado = 0.f;
+	animado = true;
 }
 
 int CutMan::indiceCutMan = -1;
@@ -23,7 +32,6 @@ int CutMan::indiceCutMan = -1;
 CutMan::~CutMan()
 {
 }
-
 
 void CutMan::atirar()
 {
@@ -42,6 +50,8 @@ void CutMan::atirar()
 
 	setTamanho(sf::Vector2f(70.f, 70.f));
 	setCoords(sf::Vector2f(getCoords().x, getCoords().y + 25));
+
+	estadoAnimacao.Atacando = false;
 }
 
 void CutMan::possoAtirar()
@@ -56,6 +66,11 @@ void CutMan::mover(float dt)
 {
 	sf::Vector2f posicao = getCoords();
 	sf::Vector2f alvo = pMega->getCoords();
+
+	if (noChao) estadoAnimacao.Pulando = false;
+
+	if (velocidade == 0) estadoAnimacao.Parado = true;
+	else estadoAnimacao.Parado = false;
 
 	cooldownNoChao += dt;
 	if (cooldownNoChao > 0.1 && noChao)
@@ -72,6 +87,7 @@ void CutMan::mover(float dt)
 		if (noChao && timerPular >= 3)
 		{
 			velVertical = -300;
+			estadoAnimacao.Pulando = true;
 			noChao = false;
 			timerPular = 0;
 		}
@@ -86,14 +102,10 @@ void CutMan::mover(float dt)
 			direita = false;
 			velocidade -= velMax;
 		}
-	
+
+		estadoAnimacao.Andando = true;
 		timerPerseguir = 0;
 	}
-
-	//else
-	//{
-	//	velVertical += gravidade * dt;
-	//}
 
 	if (velocidade > velMax) //Limita a velocidade
 		velocidade = velMax;
@@ -104,6 +116,43 @@ void CutMan::mover(float dt)
 	posicao.y += velVertical * dt;
 
 	setCoords(posicao);
+}
+
+int CutMan::getFrame()
+{
+	if (estadoAnimacao.Atacando == true)
+	{
+		return (6 + (int((timerFrame / tempoFrame)) % 2));
+	}
+
+	if (estadoAnimacao.Parado == true)
+	{
+		if(podeAtirar)
+			return (int((timerFrame / tempoFrame)) % 2); // frames 0-1
+		return (8 + (int((timerFrame / tempoFrame)) % 2));		
+	}
+
+	if (estadoAnimacao.Pulando == true)
+	{
+		if (podeAtirar)
+			return 5;
+		return 13;
+	}
+
+	if (estadoAnimacao.Andando == true)
+	{
+		if (podeAtirar)
+			return 2 + (int((timerFrame / tempoFrame)) % 3); // frames 2-4
+		
+		return 10 + (int((timerFrame / tempoFrame)) % 3); // frames 10-12
+	}
+
+	return (int((timerFrame / tempoFrame)) % 2); // frames 0-1
+}
+
+sf::Vector2f CutMan::getEscalaCorreta()
+{ 
+	return sf::Vector2f(100, 100);
 }
 
 void CutMan::executar(float dt)
@@ -117,12 +166,17 @@ void CutMan::executar(float dt)
 	{ 
 		timerAtirar += dt;
 
+		if (timerAtirar >= 1.75) estadoAnimacao.Atacando = true;
+
 		if (timerAtirar >= 2)
 		{
+			velocidade = 0;
 			atirar();
 			timerAtirar = 0;
 		}
 	}
+
+	timerFrame += dt;
 }
 
 void CutMan::danificar(Megaman* p)
@@ -135,18 +189,7 @@ void CutMan::danificar(Megaman* p)
 
 std::string CutMan::getTextureFile()
 {
-	if (podeAtirar)
-	{
-		if (direita)
-			return "Sprites/Inimigos/CutMan1-L-dir.png";
-		return "Sprites/Inimigos/CutMan1-L-esq.png";
-	}
-	else
-	{
-		if (direita)
-			return "Sprites/Inimigos/CutMan1-dir.png";
-		return "Sprites/Inimigos/CutMan1-esq.png";
-	}
+	return "Sprites/Inimigos/CutMan.png";
 }
 
 void CutMan::salvar()

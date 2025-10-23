@@ -47,6 +47,10 @@ void ProjetilMegaman::mover(float dt)
 	setCoords(posicao);
 }
 
+int ProjetilMegaman::getFrame() { return 0; }
+//Funções para entidades com animação
+sf::Vector2f ProjetilMegaman::getEscalaCorreta() { return sf::Vector2f(0,0); }
+
 void ProjetilMegaman::executar(float dt)
 {
 	mover(dt);

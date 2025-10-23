@@ -23,6 +23,10 @@ public:
 	void atirar(const int tipo);
 	void esconder();
 	void revelar();
+	
+	int getFrame();
+	sf::Vector2f getEscalaCorreta();
+
 	void executar(float dt);
 	void mover(float dt);
 	void danificar(Megaman* p);

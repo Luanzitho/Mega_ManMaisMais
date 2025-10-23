@@ -9,6 +9,10 @@ Obstaculo::~Obstaculo()
 {
 }
 
+int Obstaculo::getFrame() { return 0; }
+//Funções para entidades com animação
+sf::Vector2f Obstaculo::getEscalaCorreta() { return sf::Vector2f(0, 0); }
+
 void Obstaculo::salvar() 
 {
 	int lugar = getId();

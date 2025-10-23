@@ -1,4 +1,5 @@
-#include "Gerenciador_Grafico.h"
+﻿#include "Gerenciador_Grafico.h"
+#include "../Entidades/Entidade.h"
 #include "../Entidades/Personagens/Megaman.h"
 #include <iostream>
 
@@ -29,7 +30,7 @@ Gerenciador_Grafico::~Gerenciador_Grafico()
     //delete instancia;
 }
 
-Gerenciador_Grafico* Gerenciador_Grafico::getInstancia() //Para instanciar um �nico Gerenciador_Grafico
+Gerenciador_Grafico* Gerenciador_Grafico::getInstancia() //Para instanciar um único Gerenciador_Grafico
 { 
     if (!instancia)
     {
@@ -38,16 +39,16 @@ Gerenciador_Grafico* Gerenciador_Grafico::getInstancia() //Para instanciar um �n
     return instancia; 
 }
 
-sf::Texture& Gerenciador_Grafico::getTextura(const std::string& caminho) 
+sf::Texture& Gerenciador_Grafico::getTextura(const std::string& caminho)
 {
     auto it = texturas.find(caminho);
-    
-    if (it == texturas.end()) 
-    {
-        sf::Texture textura;
-        textura.loadFromFile(caminho);
-        texturas[caminho] = textura;
-    }
+    if (it != texturas.end())
+        return it->second;
+
+    // Cria textura diretamente dentro do map
+    texturas[caminho] = sf::Texture();
+    if (!texturas[caminho].loadFromFile(caminho))
+        std::cout << "Falha ao carregar textura: " << caminho << std::endl;
 
     return texturas[caminho];
 }
@@ -55,6 +56,13 @@ sf::Texture& Gerenciador_Grafico::getTextura(const std::string& caminho)
 void Gerenciador_Grafico::desenharEnte(Ente* pE)
 {
     if (!pE) return;
+
+    if(pE->getAnimado())
+    {
+        Entidade* pEnt = static_cast<Entidade*>(pE);
+        animarPersonagem(pEnt);
+        return;
+	}
 
     sf::RectangleShape corpo;
     const std::string& caminho = pE->getTextureFile();
@@ -68,6 +76,69 @@ void Gerenciador_Grafico::desenharEnte(Ente* pE)
     corpo.setTexture(&textura);
 
     window.draw(corpo);
+}
+
+void Gerenciador_Grafico::animarPersonagem(Entidade* p)
+{
+    if (!p) return;
+
+    sf::Sprite sprite;
+    sf::Texture& textura = getTextura(p->getTextureFile());
+    sprite.setTexture(textura);
+
+    int frameAtual = p->getFrame();
+
+    // Tamanho do frame na textura
+    int texW = static_cast<int>(textura.getSize().x);
+    int texH = static_cast<int>(textura.getSize().y);
+    int numFrames = (p->estadoAnimacao.numFrames > 0) ? p->estadoAnimacao.numFrames : 1;
+    int larguraSprite = texW / numFrames;
+    int alturaSprite = texH;
+
+    // Rect do frame atual
+    sprite.setTextureRect(sf::IntRect(frameAtual * larguraSprite, 0, larguraSprite, alturaSprite));
+
+    // Tamanho desejado do sprite (visual) e da hitbox
+    sf::Vector2f tamanhoVisual = p->getEscalaCorreta(); // tamanho desejado do sprite
+    sf::Vector2f hitbox = p->getTamanho();               // tamanho real da hitbox
+
+    // Escala do sprite baseada no tamanho visual
+    float scaleX = tamanhoVisual.x / static_cast<float>(larguraSprite);
+    float scaleY = tamanhoVisual.y / static_cast<float>(alturaSprite);
+
+    // Determina a posição do sprite para centralizar na hitbox
+    float xPos, yPos;
+    yPos = p->getCoords().y + hitbox.y - tamanhoVisual.y; // base alinhada ao chão
+
+    if (p->getDireita())
+    {
+        sprite.setScale(scaleX, scaleY);
+        xPos = p->getCoords().x + (hitbox.x - tamanhoVisual.x) / 2.0f; // centraliza horizontalmente
+    }
+    else
+    {
+        sprite.setScale(-scaleX, scaleY);
+        xPos = p->getCoords().x + (hitbox.x + tamanhoVisual.x) / 2.0f; // centraliza horizontalmente invertido
+    }
+
+    sprite.setPosition(xPos, yPos);
+
+    bool visivel = true;
+
+    Megaman* m = dynamic_cast<Megaman*>(p);
+    if (m && m->getInvencivel())
+    {
+        // Pisca a cada 0.1s
+        float tempoPiscar = 0.1f; // segundos
+        float tempoAtual = relogioGlobal.getElapsedTime().asSeconds();
+
+        // Se o quociente for par → visível, se for ímpar → invisível
+        int fase = static_cast<int>(tempoAtual / tempoPiscar);
+        visivel = (fase % 2 == 0);
+    }
+
+    if (visivel)
+        window.draw(sprite);
 }
 
 bool Gerenciador_Grafico::janelaEstaAberta()
@@ -87,7 +158,7 @@ void Gerenciador_Grafico::eventoFecharJanela()
         }
 
         
-        // Captura as teclas digitadas (caracteres v�lidos)
+        // Captura as teclas digitadas (caracteres válidos)
         if (evento.type == sf::Event::TextEntered) {
             // Ignora teclas de controle (ex.: backspace, enter, etc)
             

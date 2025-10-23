@@ -56,6 +56,12 @@ const int Ente::getId()
 {
 	return id;
 }
+
+const bool Ente::getAnimado()
+{
+	return animado;
+}
+
 bool Ente::operator==(int id) const
 {
 	return this->id == id;

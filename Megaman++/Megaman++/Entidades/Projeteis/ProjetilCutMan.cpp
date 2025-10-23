@@ -10,6 +10,15 @@
 ProjetilCutMan::ProjetilCutMan(): timerRetornar(0), mestre(nullptr), limite(false)
 {
 	setId(6);
+
+	estadoAnimacao.numFrames = 4;
+	estadoAnimacao.frameAtual = 0;
+	estadoAnimacao.alturaSprite = 32;
+	estadoAnimacao.larguraSprite = 32;
+
+	tempoFrame = 0.1f; //Tempo entre frames
+	tempoAcumulado = 0.f;
+	animado = true;
 }
 
 int ProjetilCutMan::indiceProCut = -1;
@@ -30,6 +39,15 @@ ProjetilCutMan::ProjetilCutMan(sf::Vector2f posicao, int maldade, sf::Vector2f a
 	direcao /= comprimento;
 
 	setTamanho(sf::Vector2f(40.f, 40.f));
+
+	estadoAnimacao.numFrames = 4;
+	estadoAnimacao.frameAtual = 0;
+	estadoAnimacao.alturaSprite = 32;
+	estadoAnimacao.larguraSprite = 32;
+
+	tempoFrame = 0.1f; //Tempo entre frames
+	tempoAcumulado = 0.f;
+	animado = true;
 }
 
 ProjetilCutMan::~ProjetilCutMan()
@@ -49,9 +67,6 @@ void ProjetilCutMan::perseguir(float dt)
 {
 	sf::Vector2f posicao = getCoords();
 
-	//posicao.y += gravidade * dt;
-	//velVertical -= empuxo * dt;
-
 	posicao += direcao * velocidade * dt;
 	setCoords(posicao);
 }
@@ -66,9 +81,6 @@ void ProjetilCutMan::retornar(float dt)
 
 	posicao += direcao * velocidade * dt;
 
-	//posicao.y += gravidade * dt;
-	//velVertical -= empuxo * dt;
-
 	setCoords(posicao);
 
 	if (abs(posicao.x - mestre->getCoords().x) < 20 && abs(posicao.y - mestre->getCoords().y) < 15) //A lâmina retorna para a cabeça dele
@@ -76,6 +88,16 @@ void ProjetilCutMan::retornar(float dt)
 		mestre->possoAtirar();
 		destruir();
 	}
+}
+
+int ProjetilCutMan::getFrame()
+{
+	return (1 + (int((timerFrame / tempoFrame)) % 3));
+}
+
+sf::Vector2f ProjetilCutMan::getEscalaCorreta()
+{
+	return sf::Vector2f(50.f, 50.f);
 }
 
 void ProjetilCutMan::executar(float dt)
@@ -96,12 +118,15 @@ void ProjetilCutMan::executar(float dt)
 	{
 		retornar(dt);
 	}
+
+	timerFrame += dt;
 }
 
 std::string ProjetilCutMan::getTextureFile()
 {
-	return "Sprites/Projeteis/ProjetilCutMan1.png";
+	return "Sprites/Projeteis/RollingCutter.png";
 }
+
 void ProjetilCutMan::salvar()
 {
 	int lugar = getId();

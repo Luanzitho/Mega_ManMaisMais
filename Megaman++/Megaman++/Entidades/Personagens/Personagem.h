@@ -18,6 +18,10 @@ public:
 	virtual void machucar(const int dmg);
 	void setNumVidas(const int v);
 	int getNumVidas();
+
+	virtual int getFrame() = 0;
+	virtual sf::Vector2f getEscalaCorreta() = 0;
+
 	virtual void mover(float dt) = 0;
 	virtual void executar(float dt) = 0;
 	virtual std::string getTextureFile() = 0;

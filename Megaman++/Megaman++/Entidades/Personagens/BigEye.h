@@ -17,6 +17,8 @@ public:
 	void saltar();
 	void saltar(int chance);
 	void mover(float dt);
+	int getFrame();
+	sf::Vector2f getEscalaCorreta();
 	void executar(float dt);
 	void danificar(Megaman* p);
 	std::string getTextureFile();

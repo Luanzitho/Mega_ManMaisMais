@@ -12,6 +12,8 @@ protected:
 public:
 	Obstaculo();
 	~Obstaculo();
+	int getFrame();
+	sf::Vector2f getEscalaCorreta();
 	virtual void executar(float dt) = 0;
 	virtual void obstaculizar(Entidade* pEnti) = 0;
 	virtual std::string getTextureFile() = 0;

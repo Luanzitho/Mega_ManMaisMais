@@ -175,6 +175,7 @@
     <ClInclude Include="Entidades\Obstaculos\Plataforma.h" />
     <ClInclude Include="Entidades\Personagens\BigEye.h" />
     <ClInclude Include="Entidades\Personagens\CutMan.h" />
+    <ClInclude Include="Entidades\Personagens\EstadoAnimacao.h" />
     <ClInclude Include="Entidades\Personagens\Inimigo.h" />
     <ClInclude Include="Entidades\Personagens\Megaman.h" />
     <ClInclude Include="Entidades\Personagens\Metall.h" />

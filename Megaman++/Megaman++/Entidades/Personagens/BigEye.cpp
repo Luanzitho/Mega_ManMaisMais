@@ -33,6 +33,15 @@ BigEye::BigEye() : aceleracao(150), timerAtaque(0)
 
 	pGS->carregarEfeito("BigEye", "Sound/Effects/bigeye.wav");
 	pGS->setVolumeEfeitos(100.f);
+
+	estadoAnimacao.numFrames = 6;
+	estadoAnimacao.frameAtual = 0;
+	estadoAnimacao.alturaSprite = 48;
+	estadoAnimacao.larguraSprite = 32;
+
+	tempoFrame = 0.1f; //Tempo entre frames
+	tempoAcumulado = 0.f;
+	animado = true;
 }
 
 BigEye::~BigEye()
@@ -67,7 +76,8 @@ void BigEye::mover(float dt)
 
 	if (!noChao) //Só se movimenta se estiver no ar
 	{
-		//velVertical += gravidade * dt;
+		estadoAnimacao.Pulando = true;
+		estadoAnimacao.Atacando = false;
 		
 		if (direita)
 			velocidade += velMax;
@@ -76,10 +86,10 @@ void BigEye::mover(float dt)
 
 		posicao.x += velocidade * dt;
 	}
-
 	else //Se estiver no chão, procura o player e pula se o timer estiver em 3.5
 	{
 		timerAtaque += dt; //Quando o timer atinge 3.5 o BigEye pode pular
+		estadoAnimacao.Pulando = false;
 
 		velocidade = 0;
 
@@ -87,8 +97,11 @@ void BigEye::mover(float dt)
 			direita = true;
 		else
 			direita = false;
+		
+		if (timerAtaque >= 0.5)
+			estadoAnimacao.Atacando = true;
 
-		if (timerAtaque >= 1)
+		if (timerAtaque >= 0.8)
 		{
 			if (chanceCritico == 2)
 			{
@@ -112,6 +125,18 @@ void BigEye::mover(float dt)
 	setCoords(posicao);
 }
 
+int BigEye::getFrame()
+{
+	if (estadoAnimacao.Atacando == true)
+		return (nivel_maldade * 2) - 1;
+	return ((nivel_maldade * 2) - 2);
+}
+
+sf::Vector2f BigEye::getEscalaCorreta()
+{
+	return sf::Vector2f(raio, 120.f);
+}
+
 void BigEye::executar(float dt)
 {
 	mover(dt);
@@ -127,6 +152,7 @@ void BigEye::danificar(Megaman* p)
 
 std::string BigEye::getTextureFile()
 {
+	/*
 	if (nivel_maldade == 1)
 	{
 		if (direita)
@@ -144,7 +170,8 @@ std::string BigEye::getTextureFile()
 		if (direita)
 			return "Sprites/Inimigos/BigEye1-BAD-dir.png";
 		return "Sprites/Inimigos/BigEye1-BAD-esq.png";
-	}
+	}*/
+	return "Sprites/Inimigos/BigEye.png";
 }
 
 void BigEye::salvar()
