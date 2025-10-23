@@ -9,7 +9,7 @@ BigEye::BigEye() : aceleracao(150), timerAtaque(0)
 
 	setTamanho(sf::Vector2f(raio, 120.f));
 
-	velMax = 50;
+	velMax = VELOCIDADE_MAX;
 
 	qtdPontos += 200;
 
@@ -51,12 +51,12 @@ int BigEye::indiceBig = -1;// inicia os indices para carregar o save
 
 void BigEye::saltar() //Salto normal
 {
-	velVertical = -250;
+	velVertical = ALTURA_PULO;
 }
 
 void BigEye::saltar(int chance) //Salto carregado (+ dano)
 {
-	velVertical = -400;
+	velVertical = ALTRURA_PULO_CRITICO;
 	dano = dano * chance; //Dano em dobro no crítico
 }
 
@@ -88,7 +88,7 @@ void BigEye::mover(float dt)
 	}
 	else //Se estiver no chão, procura o player e pula se o timer estiver em 3.5
 	{
-		timerAtaque += dt; //Quando o timer atinge 3.5 o BigEye pode pular
+		timerAtaque += dt; //Quando o timer atinge o tempo o BigEye pode pular
 		estadoAnimacao.Pulando = false;
 
 		velocidade = 0;
@@ -98,10 +98,10 @@ void BigEye::mover(float dt)
 		else
 			direita = false;
 		
-		if (timerAtaque >= 0.5)
+		if (timerAtaque >= TEMPO_ANIMACAO_PULO)
 			estadoAnimacao.Atacando = true;
 
-		if (timerAtaque >= 0.8)
+		if (timerAtaque >= TEMPO_PULO)
 		{
 			if (chanceCritico == 2)
 			{
@@ -128,7 +128,7 @@ void BigEye::mover(float dt)
 int BigEye::getFrame()
 {
 	if (estadoAnimacao.Atacando == true)
-		return (nivel_maldade * 2) - 1;
+		return ((nivel_maldade * 2) - 1);
 	return ((nivel_maldade * 2) - 2);
 }
 

@@ -88,11 +88,28 @@ void Entidade::salvar()
 	
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["vivo"] = vivo;
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["direita"] = direita;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["noChao"] = noChao;
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["velocidade"] = velocidade;
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["velVertical"] = velVertical;
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["velMax"] = velMax;
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["noChao"] = noChao;
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["executando"] = executando;
+
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["timerFrame"] = timerFrame;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["tempoFrame"] = tempoFrame;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["tempoAcumulado"] = tempoAcumulado;
+	
+	//Parte da animação
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["estadoParado"] = estadoAnimacao.Parado;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["estadoAndando"] = estadoAnimacao.Andando;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["estadoPulando"] = estadoAnimacao.Pulando;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["estadoAtacando"] = estadoAnimacao.Atacando;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["estadoMachucado"] = estadoAnimacao.Machucado;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["estadoMorrendo"] = estadoAnimacao.Morrendo;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["estadoAlturaSprite"] = estadoAnimacao.alturaSprite;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["estadoLarguraSprite"] = estadoAnimacao.larguraSprite;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["estadoNumFrames"] = estadoAnimacao.numFrames;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["estadoFrameAtual"] = estadoAnimacao.frameAtual;
 
 	Ente::salvar();
 }
@@ -102,11 +119,27 @@ void Entidade::carregar()
 	int lugar = getId();
 	vivo = dadosSalvos["id"][lugar][indiceAtual]["vivo"];
 	direita = dadosSalvos["id"][lugar][indiceAtual]["direita"];
+	noChao = dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["direita"];
 	velocidade = dadosSalvos["id"][lugar][indiceAtual]["velocidade"];
 	velVertical = dadosSalvos["id"][lugar][indiceAtual]["velVertical"];
 	velMax = dadosSalvos["id"][lugar][indiceAtual]["velMax"];
 	noChao = dadosSalvos["id"][lugar][indiceAtual]["noChao"];
 	executando = dadosSalvos["id"][lugar][indiceAtual]["executando"];
+
+	timerFrame = dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["timerFrame"];
+	tempoFrame = dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["tempoFrame"];
+	tempoAcumulado = dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["tempoAcumulado"];
+
+	estadoAnimacao.Parado = dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["estadoParado"];
+	estadoAnimacao.Andando = dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["estadoAndando"];
+	estadoAnimacao.Pulando = dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["estadoPulando"];
+	estadoAnimacao.Atacando = dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["estadoAtacando"];
+	estadoAnimacao.Machucado = dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["estadoMachucado"];
+	estadoAnimacao.Morrendo = dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["estadoMorrendo"];
+	estadoAnimacao.alturaSprite = dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["estadoAlturaSprite"];
+	estadoAnimacao.larguraSprite = dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["estadoLarguraSprite"];
+	estadoAnimacao.numFrames = dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["estadoNumFrames"];
+	estadoAnimacao.frameAtual = dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["estadoFrameAtual"];
 
 	Ente::carregar();
 }

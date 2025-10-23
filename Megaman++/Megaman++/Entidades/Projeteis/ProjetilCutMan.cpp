@@ -57,6 +57,7 @@ ProjetilCutMan::~ProjetilCutMan()
 
 void ProjetilCutMan::atingirMegaman(Megaman* p)
 {
+	limite = true; //Retorna antes do tempo caso atinja o Mega Man
 	if (!p || p->getNumVidas() <= 0) return;
 
 	p->machucar(dano);
@@ -92,7 +93,7 @@ void ProjetilCutMan::retornar(float dt)
 
 int ProjetilCutMan::getFrame()
 {
-	return (1 + (int((timerFrame / tempoFrame)) % 3));
+	return (1 + (int((timerFrame / tempoFrame)) % 3)); //Frames 1-4
 }
 
 sf::Vector2f ProjetilCutMan::getEscalaCorreta()
@@ -109,12 +110,12 @@ void ProjetilCutMan::executar(float dt)
 	if (mestre && !(mestre->getVivo()))
 		destruir();
 
-	if (mestre && timerRetornar < 1 && !limite)
+	if (mestre && timerRetornar < TEMPO_RETORNAR && !limite)
 	{
 		perseguir(dt);
 	}
 
-	if (mestre && timerRetornar >= 1 || limite)
+	if (mestre && timerRetornar >= TEMPO_RETORNAR || limite) //Retorna se o timer chegar no máximo OU se acertar o Mega Man 
 	{
 		retornar(dt);
 	}

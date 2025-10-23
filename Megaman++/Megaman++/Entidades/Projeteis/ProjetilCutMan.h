@@ -1,5 +1,7 @@
 #pragma once
 
+#define TEMPO_RETORNAR 1
+
 #include "Projetil.h"
 
 class Megaman;

@@ -3,7 +3,17 @@
 
 #include <iostream>
 
-Megaman::Megaman() : Personagem(28), teclaApertada(false), cooldownTiro(0), player1(true), invencivel(false), framesInvencibilidade(0), cooldownNoChao(0)
+#define TEMPO_ATIRAR 0.25
+#define TEMPO_INVENCIVEL 2
+
+#define TEMPO_ANIMACAO_TIRO 0.15
+#define TEMPO_ANIMACAO_DANO 0.4
+
+#define ALTURA_PULO -350 
+#define VELOCIDADE_MAX 200
+#define VIDA_MAX 28 //Vida do Mega Man
+
+Megaman::Megaman() : Personagem(VIDA_MAX), teclaApertada(false), cooldownTiro(0), player1(true), invencivel(false), framesInvencibilidade(0), cooldownNoChao(0)
 {
 	LE = nullptr;
 	GC = nullptr;
@@ -12,7 +22,7 @@ Megaman::Megaman() : Personagem(28), teclaApertada(false), cooldownTiro(0), play
 
 	setId(1);
 
-	velMax = 200;
+	velMax = VELOCIDADE_MAX;
 
 	setTamanho(sf::Vector2f(70.f, 70.f));
 
@@ -21,7 +31,7 @@ Megaman::Megaman() : Personagem(28), teclaApertada(false), cooldownTiro(0), play
 	estadoAnimacao.alturaSprite = 64;
 	estadoAnimacao.larguraSprite = 64;
 
-	tempoFrame = 0.2f; //Tempo entre frames
+	tempoFrame = 0.15f; //Tempo entre frames
 	tempoAcumulado = 0.f;
 	animado = true;
 
@@ -32,7 +42,7 @@ Megaman::Megaman() : Personagem(28), teclaApertada(false), cooldownTiro(0), play
 }
 int Megaman::pontos(0);
 
-Megaman::Megaman(bool player) : Personagem(28), teclaApertada(false), cooldownTiro(0), player1(player), invencivel(false), framesInvencibilidade(0), cooldownNoChao(0)
+Megaman::Megaman(bool player) : Personagem(VIDA_MAX), teclaApertada(false), cooldownTiro(0), player1(player), invencivel(false), framesInvencibilidade(0), cooldownNoChao(0)
 {
 	LE = nullptr;
 	GC = nullptr;
@@ -41,7 +51,7 @@ Megaman::Megaman(bool player) : Personagem(28), teclaApertada(false), cooldownTi
 
 	direita = true;
 
-	velMax = 200;
+	velMax = VELOCIDADE_MAX;
 
 	setTamanho(sf::Vector2f(70.f, 70.f));
 
@@ -79,8 +89,8 @@ void Megaman::operator+=(const int pts)
 void Megaman::curar(const int hp)
 {
 	num_vidas = num_vidas + hp;
-	if (num_vidas > 28)
-		num_vidas = 28;
+	if (num_vidas > VIDA_MAX)
+		num_vidas = VIDA_MAX;
 }
 
 void Megaman::machucar(const int dmg)
@@ -107,26 +117,14 @@ void Megaman::mover(float dt)
 
 	cooldownNoChao += dt;
 
-	if (noChao)
-	{
-		estadoAnimacao.Pulando = false;
-		if(velocidade != 0)
-		{
-			estadoAnimacao.Parado = false;
-			estadoAnimacao.Andando = true;
-		}
-		else
-		{
-			estadoAnimacao.Parado = true;
-			estadoAnimacao.Andando = false;
-		}
-	}
-
-	if (cooldownNoChao > 0.2f)
+	if (noChao && cooldownNoChao > 0.1f) //Esse trecho serve para evitar o bug de levitação
 	{
 		cooldownNoChao = 0;
 		noChao = false;
 	}
+
+	if (!noChao && cooldownNoChao > 0.1) //Caso ele esteja caindo, mesmo sem apertar o pulo, ele entra na animação de pulo
+		estadoAnimacao.Pulando = true;
 
 	if (player1) //Player 1 usa as SETAS
 	{
@@ -148,7 +146,7 @@ void Megaman::mover(float dt)
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && noChao) 
 		{ 
-			velVertical = -350.f; 
+			velVertical = ALTURA_PULO; 
 			noChao = false; 
 			estadoAnimacao.Pulando = true; 
 			estadoAnimacao.Parado = false; 
@@ -173,7 +171,7 @@ void Megaman::mover(float dt)
 		else velocidade = 0;
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && noChao) 
 		{ 
-			velVertical = -350.f; 
+			velVertical = ALTURA_PULO; 
 			noChao = false; 
 			estadoAnimacao.Pulando = true; 
 			estadoAnimacao.Parado = false; 
@@ -194,7 +192,7 @@ void Megaman::atirar(float dt)
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 		{
-			if (!teclaApertada && cooldownTiro >= 0.25)
+			if (!teclaApertada && cooldownTiro >= TEMPO_ATIRAR)
 			{
 				estadoAnimacao.Atacando = true;
 
@@ -208,7 +206,6 @@ void Megaman::atirar(float dt)
 				tiro->setGerenciadorGrafico(pGG);
 				GC->incluirProjetil(tiro);
 
-				//pGS->carregarEfeito("tiroMegaman", "Sound/Effects/megabuster.wav");
 				pGS->tocarEfeito("tiroMegaman");
 
 				cooldownTiro = 0;
@@ -224,7 +221,7 @@ void Megaman::atirar(float dt)
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))
 		{
-			if (!teclaApertada && cooldownTiro >= 0.25)
+			if (!teclaApertada && cooldownTiro >= TEMPO_ATIRAR)
 			{
 				estadoAnimacao.Atacando = true;
 
@@ -238,7 +235,6 @@ void Megaman::atirar(float dt)
 				tiro->setGerenciadorGrafico(pGG);
 				GC->incluirProjetil(tiro);
 
-				//pGS->carregarEfeito("tiroMegaman", "Sound/Effects/megabuster.wav");
 				pGS->tocarEfeito("tiroMegaman");
 
 				cooldownTiro = 0;
@@ -251,7 +247,7 @@ void Megaman::atirar(float dt)
 		}
 	}
 
-	if(cooldownTiro >= 0.15)
+	if(cooldownTiro >= TEMPO_ANIMACAO_TIRO)
 		estadoAnimacao.Atacando = false;
 }
 
@@ -269,11 +265,31 @@ void Megaman::executar(float dt)
 	
 	if (!noChao) sofrerAcaoDaGravidade(dt);
 
+
+	if (noChao)
+	{
+		estadoAnimacao.Pulando = false;
+		if (velocidade != 0)
+		{
+			estadoAnimacao.Parado = false;
+			estadoAnimacao.Andando = true;
+		}
+		else
+		{
+			estadoAnimacao.Parado = true;
+			estadoAnimacao.Andando = false;
+		}
+	}
+
 	if (invencivel) 
 	{
 		framesInvencibilidade += dt;
-		if (framesInvencibilidade > 0.2f) estadoAnimacao.Machucado = false;
-		if (framesInvencibilidade >= 2.f) { framesInvencibilidade = 0.f; invencivel = false; }
+		if (framesInvencibilidade > TEMPO_ANIMACAO_DANO) estadoAnimacao.Machucado = false;
+		if (framesInvencibilidade >= TEMPO_INVENCIVEL)
+		{
+			framesInvencibilidade = 0.f; 
+			invencivel = false; 
+		}
 	}
 
 	timerFrame += dt;
@@ -281,9 +297,10 @@ void Megaman::executar(float dt)
 
 int Megaman::getFrame()
 {
-	if (estadoAnimacao.Machucado) {
-		int offset = (int)(timerFrame / tempoFrame) % 2; // 0 ou 1
-		return 11 + offset; // 11 ou 12
+	if (estadoAnimacao.Machucado) 
+	{
+		int offset = (int)(timerFrame / tempoFrame) % 2; //0 ou 1
+		return 11 + offset; //11 ou 12
 	}
 
 	if (estadoAnimacao.Pulando)
@@ -296,17 +313,14 @@ int Megaman::getFrame()
 	if (estadoAnimacao.Andando)
 	{
 		if (estadoAnimacao.Atacando)
-			return 6 + (int((timerFrame / tempoFrame)) % 3); // frames 6-8
-		else
-			return 2 + (int((timerFrame / tempoFrame)) % 3); // frames 2-4
+			return 6 + (int((timerFrame / tempoFrame)) % 3); //Frames 6-8
+		return 2 + (int((timerFrame / tempoFrame)) % 3); //Frames 2-4
 	}
 
 	if (estadoAnimacao.Atacando)
-	{
 		return 5;
-	}
-
-	return (int((timerFrame / tempoFrame)) % 2); // frames 0-1
+	
+	return (int((timerFrame / tempoFrame)) % 2); //Frames 0-1
 }
 
 sf::Vector2f Megaman::getEscalaCorreta()

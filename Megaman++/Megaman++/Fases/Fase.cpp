@@ -207,6 +207,12 @@ std::string Fase::getTextureFile()//rever o que retornar para desenhar o mapa
     return faseJson["tilesets"][0]["image"];
 }
 
+void Fase::incluirItens()
+{
+    std::vector<Item*> itensDaLista = LEs.getItensDaLista();
+    this->itens = itensDaLista;
+}
+
 int Fase::aleatoriza(int limite1, int limite2)
 {
     std::mt19937 gen(rd());                     // motor aleatório (Mersenne Twister)
@@ -317,7 +323,8 @@ void Fase::moveMapa(float dt) //VERSÃO AJUSTADA (DO COPILOT): ignora p2 se estiv
             float camVel = cam->getVelocidade();
 
             // só aplicar lógica específica de p2 se ele estiver vivo
-            if (p2 && p2->getVivo()) {
+            if (p2 && p2->getVivo()) 
+            {
                 sf::FloatRect rect3(p2->getCoords(), p2->getTamanho());
                 if (rect3.left >= rect2.width / 2)
                 {
@@ -334,6 +341,9 @@ void Fase::moveMapa(float dt) //VERSÃO AJUSTADA (DO COPILOT): ignora p2 se estiv
 
                     for (int i = 0; i < obstaculos.size(); i++)
                         obstaculos[i]->setCoords(sf::Vector2f(obstaculos[i]->getCoords().x - camVel * dt, obstaculos[i]->getCoords().y));
+
+                    for (int i = 0; i < itens.size(); i++)
+                        itens[i]->setCoords(sf::Vector2f(itens[i]->getCoords().x - camVel * dt, itens[i]->getCoords().y));
                 }
             }
             else
@@ -349,6 +359,9 @@ void Fase::moveMapa(float dt) //VERSÃO AJUSTADA (DO COPILOT): ignora p2 se estiv
 
                 for (int i = 0; i < obstaculos.size(); i++)
                     obstaculos[i]->setCoords(sf::Vector2f(obstaculos[i]->getCoords().x - camVel * dt, obstaculos[i]->getCoords().y));
+
+                for (int i = 0; i < itens.size(); i++)
+                    itens[i]->setCoords(sf::Vector2f(itens[i]->getCoords().x - camVel * dt, itens[i]->getCoords().y));
             }
         }
     }

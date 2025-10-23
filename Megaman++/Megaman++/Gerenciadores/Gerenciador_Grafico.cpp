@@ -57,13 +57,14 @@ void Gerenciador_Grafico::desenharEnte(Ente* pE)
 {
     if (!pE) return;
 
-    if(pE->getAnimado())
+    if(pE->getAnimado()) //Se tiver animações, entra aqui
     {
         Entidade* pEnt = static_cast<Entidade*>(pE);
         animarPersonagem(pEnt);
         return;
 	}
 
+    //Se tiver um único frame
     sf::RectangleShape corpo;
     const std::string& caminho = pE->getTextureFile();
     sf::Texture& textura = getTextura(caminho);
@@ -88,51 +89,45 @@ void Gerenciador_Grafico::animarPersonagem(Entidade* p)
 
     int frameAtual = p->getFrame();
 
-    // Tamanho do frame na textura
     int texW = static_cast<int>(textura.getSize().x);
     int texH = static_cast<int>(textura.getSize().y);
     int numFrames = (p->estadoAnimacao.numFrames > 0) ? p->estadoAnimacao.numFrames : 1;
     int larguraSprite = texW / numFrames;
     int alturaSprite = texH;
 
-    // Rect do frame atual
     sprite.setTextureRect(sf::IntRect(frameAtual * larguraSprite, 0, larguraSprite, alturaSprite));
 
-    // Tamanho desejado do sprite (visual) e da hitbox
-    sf::Vector2f tamanhoVisual = p->getEscalaCorreta(); // tamanho desejado do sprite
-    sf::Vector2f hitbox = p->getTamanho();               // tamanho real da hitbox
+    sf::Vector2f tamanhoVisual = p->getEscalaCorreta();
+    sf::Vector2f hitbox = p->getTamanho();
 
-    // Escala do sprite baseada no tamanho visual
+    //Correção da escala
     float scaleX = tamanhoVisual.x / static_cast<float>(larguraSprite);
     float scaleY = tamanhoVisual.y / static_cast<float>(alturaSprite);
 
-    // Determina a posição do sprite para centralizar na hitbox
     float xPos, yPos;
-    yPos = p->getCoords().y + hitbox.y - tamanhoVisual.y; // base alinhada ao chão
+    yPos = p->getCoords().y + hitbox.y - tamanhoVisual.y;
 
     if (p->getDireita())
     {
         sprite.setScale(scaleX, scaleY);
-        xPos = p->getCoords().x + (hitbox.x - tamanhoVisual.x) / 2.0f; // centraliza horizontalmente
+        xPos = p->getCoords().x + (hitbox.x - tamanhoVisual.x) / 2.0f;
     }
     else
     {
         sprite.setScale(-scaleX, scaleY);
-        xPos = p->getCoords().x + (hitbox.x + tamanhoVisual.x) / 2.0f; // centraliza horizontalmente invertido
+        xPos = p->getCoords().x + (hitbox.x + tamanhoVisual.x) / 2.0f; //Espelha a imagem se estiver olhando para a esquerda
     }
 
     sprite.setPosition(xPos, yPos);
 
     bool visivel = true;
-
-    Megaman* m = dynamic_cast<Megaman*>(p);
+    Megaman* m = dynamic_cast<Megaman*>(p); //Para o Mega Man quando estiver invencível
     if (m && m->getInvencivel())
     {
-        // Pisca a cada 0.1s
+        //Pisca a cada 0.1s
         float tempoPiscar = 0.1f; // segundos
         float tempoAtual = relogioGlobal.getElapsedTime().asSeconds();
 
-        // Se o quociente for par → visível, se for ímpar → invisível
         int fase = static_cast<int>(tempoAtual / tempoPiscar);
         visivel = (fase % 2 == 0);
     }

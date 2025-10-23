@@ -3,44 +3,108 @@
   "WorkspaceRootPath": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Itens\\Regen.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Itens\\Regen.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Itens\\Item.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Itens\\Item.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\CutMan.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\CutMan.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\EstadoAnimacao.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\EstadoAnimacao.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Inimigo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\Inimigo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Megaman.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\Megaman.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Itens\\Item.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Itens\\Item.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Itens\\Item.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Itens\\Item.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Entidade.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Entidade.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Itens\\Regen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Itens\\Regen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Itens\\Regen.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Itens\\Regen.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMetall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMetall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Entidade.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Entidade.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Ente.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Ente.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Ente.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Ente.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Fases\\Fase2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Fases\\Fase2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Fases\\Fase1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Fases\\Fase1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Megaman.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\Megaman.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Fases\\Fase.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Fases\\Fase.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Listas\\ListaEntidades.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Listas\\ListaEntidades.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Fases\\Fase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Fases\\Fase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Listas\\ListaEntidades.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Listas\\ListaEntidades.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\CutMan.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\CutMan.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilCutMan.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilCutMan.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilCutMan.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilCutMan.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\CutMan.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\CutMan.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\BigEye.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -51,12 +115,40 @@
       "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\BigEye.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilCutMan.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilCutMan.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Obstaculos\\Obstaculo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Obstaculos\\Obstaculo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMetall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMetall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Itens\\Item.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Itens\\Item.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Itens\\Regen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Itens\\Regen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMetall.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -67,92 +159,16 @@
       "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Obstaculos\\Obstaculo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\CutMan.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\CutMan.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Inimigo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\Inimigo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilCutMan.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilCutMan.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Ente.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Ente.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Entidade.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Entidade.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Entidade.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Entidade.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Ente.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Ente.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Fases\\Fase2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Fases\\Fase2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Obstaculos\\Obstaculo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Obstaculos\\Obstaculo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\EstadoAnimacao.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Personagens\\EstadoAnimacao.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Jogo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Jogo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Fases\\Fase.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Fases\\Fase.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Fases\\Fase1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Fases\\Fase1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Fases\\Fase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Fases\\Fase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -187,22 +203,6 @@
       "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Listas\\Lista.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Listas\\ListaEntidades.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Listas\\ListaEntidades.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Listas\\ListaEntidades.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Listas\\ListaEntidades.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Obstaculos\\Espinho.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BF64C1A3-FC1D-4E0F-BDA8-0655B0AD7FB1}|Megaman\u002B\u002B\\Megaman\u002B\u002B.vcxproj|solutionrelative:Megaman\u002B\u002B\\Entidades\\Obstaculos\\Espinho.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -218,7 +218,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -226,32 +226,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Item.cpp",
-              "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Itens\\Item.cpp",
-              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Itens\\Item.cpp",
-              "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Itens\\Item.cpp",
-              "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Itens\\Item.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-23T03:15:48.044Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "Regen.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Itens\\Regen.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Itens\\Regen.cpp",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Itens\\Regen.cpp",
               "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Itens\\Regen.cpp",
-              "ViewState": "AgIAAFcAAAAAAAAAAADwvzUAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAADgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-23T02:18:22.359Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T02:18:22.359Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 36,
               "Title": "Regen.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Itens\\Regen.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Itens\\Regen.h",
@@ -263,19 +250,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 35,
               "Title": "Item.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Itens\\Item.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Itens\\Item.h",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Itens\\Item.h",
               "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Itens\\Item.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-10-23T00:00:14.78Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 34,
               "Title": "ProjetilMetall.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMetall.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMetall.h",
@@ -287,7 +274,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 39,
               "Title": "ProjetilMegaman.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.cpp",
@@ -299,31 +286,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 33,
               "Title": "Metall.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.h",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.h",
               "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.h",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABsAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-06-09T00:19:27.11Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 32,
               "Title": "Metall.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.cpp",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.cpp",
               "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Personagens\\Metall.cpp",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAEkAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAABMAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-09T00:19:46.223Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 38,
               "Title": "Obstaculo.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Obstaculos\\Obstaculo.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Obstaculos\\Obstaculo.cpp",
@@ -335,7 +322,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 0,
+              "Title": "Gerenciador_Grafico.cpp",
+              "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.cpp",
+              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.cpp",
+              "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.cpp",
+              "RelativeToolTip": "Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.cpp",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-09T00:19:41.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Item.cpp",
+              "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Itens\\Item.cpp",
+              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Itens\\Item.cpp",
+              "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Itens\\Item.cpp",
+              "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Itens\\Item.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-23T03:15:48.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EstadoAnimacao.h",
+              "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\EstadoAnimacao.h",
+              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\EstadoAnimacao.h",
+              "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\EstadoAnimacao.h",
+              "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\EstadoAnimacao.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-23T13:33:35.326Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
               "Title": "Obstaculo.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Obstaculos\\Obstaculo.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Obstaculos\\Obstaculo.h",
@@ -347,19 +371,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Megaman.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Megaman.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Personagens\\Megaman.cpp",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Megaman.cpp",
               "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Personagens\\Megaman.cpp",
-              "ViewState": "AgIAAAQBAAAAAAAAAADgvx0BAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAGkBAAAAAAAAAADgv0IBAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-09T00:19:45.003Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 37,
               "Title": "ProjetilMetall.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMetall.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMetall.cpp",
@@ -371,7 +395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 40,
               "Title": "ProjetilMegaman.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilMegaman.h",
@@ -383,7 +407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "Projetil.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.h",
@@ -395,79 +419,79 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 28,
               "Title": "Projetil.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.cpp",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.cpp",
               "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Projeteis\\Projetil.cpp",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-09T00:19:49.023Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 8,
               "Title": "Entidade.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Entidade.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Entidade.h",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Entidade.h",
               "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Entidade.h",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABcAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAAMAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-06-09T00:19:14.347Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 6,
               "Title": "Entidade.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Entidade.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Entidade.cpp",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Entidade.cpp",
               "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Entidade.cpp",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAA4AAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAADwv5AAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-09T00:19:37.698Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 11,
               "Title": "Personagem.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.cpp",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.cpp",
               "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-09T00:19:47.511Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 10,
               "Title": "Personagem.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.h",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.h",
               "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Personagens\\Personagem.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAwAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-06-09T00:19:28.983Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 15,
               "Title": "Megaman.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Megaman.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Personagens\\Megaman.h",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Megaman.h",
               "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Personagens\\Megaman.h",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-06-09T00:19:25.647Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 31,
               "Title": "Gerenciador_Grafico.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.h",
@@ -479,43 +503,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 9,
               "Title": "Ente.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Ente.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Ente.h",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Ente.h",
               "RelativeToolTip": "Megaman\u002B\u002B\\Ente.h",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAcwCMAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACMAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-06-09T00:19:13.647Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Gerenciador_Grafico.cpp",
-              "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.cpp",
-              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.cpp",
-              "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.cpp",
-              "RelativeToolTip": "Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Grafico.cpp",
-              "ViewState": "AgIAAHgAAAAAAAAAAAAAAAIAAAAtAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "Ente.cpp",
+              "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Ente.cpp",
+              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Ente.cpp",
+              "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Ente.cpp",
+              "RelativeToolTip": "Megaman\u002B\u002B\\Ente.cpp",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-09T00:19:41.583Z"
+              "WhenOpened": "2025-06-09T00:19:33.83Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "EstadoAnimacao.h",
-              "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\EstadoAnimacao.h",
-              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Personagens\\EstadoAnimacao.h",
-              "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\EstadoAnimacao.h",
-              "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Personagens\\EstadoAnimacao.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-22T14:31:37.529Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 41,
               "Title": "Jogo.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Jogo.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Jogo.cpp",
@@ -527,103 +539,92 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 1,
               "Title": "Menu.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Menu.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Menu.cpp",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Menu.cpp",
               "RelativeToolTip": "Megaman\u002B\u002B\\Menu.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAOYAAAAAAAAAAAAewPAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-15T14:52:55.446Z"
+              "WhenOpened": "2025-10-15T14:52:55.446Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 14,
               "Title": "Fase1.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Fases\\Fase1.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Fases\\Fase1.cpp",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Fases\\Fase1.cpp",
               "RelativeToolTip": "Megaman\u002B\u002B\\Fases\\Fase1.cpp",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAAD4AAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAADcAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-22T00:05:05.775Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 26,
               "Title": "BigEye.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\BigEye.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Personagens\\BigEye.cpp",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\BigEye.cpp",
               "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Personagens\\BigEye.cpp",
-              "ViewState": "AgIAAFwAAAAAAAAAAADgv2cAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAALMAAAAAAAAAAAAiwIcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-09T00:19:34.676Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 27,
               "Title": "BigEye.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\BigEye.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Personagens\\BigEye.h",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\BigEye.h",
               "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Personagens\\BigEye.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-06-09T00:19:12.708Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 18,
               "Title": "Fase.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Fases\\Fase.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Fases\\Fase.h",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Fases\\Fase.h",
               "RelativeToolTip": "Megaman\u002B\u002B\\Fases\\Fase.h",
-              "ViewState": "AgIAADgAAAAAAAAAAADwv0wAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAEcAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-06-08T20:38:26.737Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 16,
               "Title": "Fase.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Fases\\Fase.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Fases\\Fase.cpp",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Fases\\Fase.cpp",
               "RelativeToolTip": "Megaman\u002B\u002B\\Fases\\Fase.cpp",
-              "ViewState": "AgIAAIEBAAAAAAAAAAAiwIwBAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAANAAAAAAAAAAAADgv9cAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-09T00:19:38.956Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 13,
               "Title": "Fase2.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Fases\\Fase2.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Fases\\Fase2.cpp",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Fases\\Fase2.cpp",
               "RelativeToolTip": "Megaman\u002B\u002B\\Fases\\Fase2.cpp",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAAEQAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAEAAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-22T01:30:50.368Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Ente.cpp",
-              "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Ente.cpp",
-              "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Ente.cpp",
-              "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Ente.cpp",
-              "RelativeToolTip": "Megaman\u002B\u002B\\Ente.cpp",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAD0AAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-09T00:19:33.83Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 45,
               "Title": "Plataforma.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Obstaculos\\Plataforma.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Obstaculos\\Plataforma.h",
@@ -635,7 +636,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 42,
               "Title": "Menu.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Menu.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Menu.h",
@@ -647,7 +648,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 44,
               "Title": "Inimigo.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Inimigo.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Personagens\\Inimigo.h",
@@ -659,7 +660,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 43,
               "Title": "Jogo.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Jogo.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Jogo.h",
@@ -671,55 +672,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 22,
               "Title": "CutMan.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\CutMan.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Personagens\\CutMan.cpp",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\CutMan.cpp",
               "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Personagens\\CutMan.cpp",
-              "ViewState": "AgIAAA4AAAAAAAAAAADgvxgAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAAKAAAAAAAAAAAADgv6sAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-13T15:48:14.838Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 25,
               "Title": "CutMan.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\CutMan.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Personagens\\CutMan.h",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\CutMan.h",
               "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Personagens\\CutMan.h",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-06-13T15:40:13.252Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 24,
               "Title": "ProjetilCutMan.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilCutMan.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilCutMan.h",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilCutMan.h",
               "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilCutMan.h",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABkAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-10-16T17:16:12.413Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 23,
               "Title": "ProjetilCutMan.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilCutMan.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilCutMan.cpp",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilCutMan.cpp",
               "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Projeteis\\ProjetilCutMan.cpp",
-              "ViewState": "AgIAAFsAAAAAAAAAAADgv2MAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAHMAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-22T23:44:47.043Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 46,
               "Title": "Mola.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Obstaculos\\Mola.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Obstaculos\\Mola.h",
@@ -731,7 +732,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 47,
               "Title": "Espinho.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Obstaculos\\Espinho.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Obstaculos\\Espinho.h",
@@ -743,7 +744,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 48,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\main.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\main.cpp",
@@ -755,7 +756,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 49,
               "Title": "Lista.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Listas\\Lista.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Listas\\Lista.h",
@@ -767,13 +768,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 3,
               "Title": "Inimigo.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Inimigo.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Entidades\\Personagens\\Inimigo.cpp",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Entidades\\Personagens\\Inimigo.cpp",
               "RelativeToolTip": "Megaman\u002B\u002B\\Entidades\\Personagens\\Inimigo.cpp",
-              "ViewState": "AgIAADoAAAAAAAAAAAAiwEUAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAiwFMAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-09T00:19:42.343Z"
             },
@@ -791,31 +792,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 17,
               "Title": "ListaEntidades.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Listas\\ListaEntidades.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Listas\\ListaEntidades.cpp",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Listas\\ListaEntidades.cpp",
               "RelativeToolTip": "Megaman\u002B\u002B\\Listas\\ListaEntidades.cpp",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAqwBoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAiwCUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-09T00:19:43.651Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 20,
               "Title": "ListaEntidades.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Listas\\ListaEntidades.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Listas\\ListaEntidades.h",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Listas\\ListaEntidades.h",
               "RelativeToolTip": "Megaman\u002B\u002B\\Listas\\ListaEntidades.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-06-09T00:19:24.966Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 21,
               "Title": "Gerenciador_Colisoes.h",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.h",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.h",
@@ -827,13 +828,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 19,
               "Title": "Gerenciador_Colisoes.cpp",
               "DocumentMoniker": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.cpp",
               "RelativeDocumentMoniker": "Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.cpp",
               "ToolTip": "C:\\Users\\Jambr\\Documents\\GitHub\\Mega_ManMaisMais\\Megaman\u002B\u002B\\Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.cpp",
               "RelativeToolTip": "Megaman\u002B\u002B\\Gerenciadores\\Gerenciador_Colisoes.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAPkAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-09T00:19:40.959Z"
             },

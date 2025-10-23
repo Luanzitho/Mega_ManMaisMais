@@ -36,6 +36,8 @@ Regen::Regen() : timerDespawn(0.f)
 	tempoAcumulado = 0.f;
 	animado = true;
 
+	noChao = false;
+
 	pGS->carregarEfeito("HealSmall", "Sound/Effects/healsmall.wav");
 	pGS->carregarEfeito("HealBig", "Sound/Effects/healbig.wav");
 	pGS->carregarEfeito("1up", "Sound/Effects/1up.wav");
@@ -49,6 +51,8 @@ void Regen::executar(float dt)
 {
 	timerDespawn += dt;
 	timerFrame += dt;
+
+	mover(dt);
 
 	if (!noChao)
 		sofrerAcaoDaGravidade(dt);

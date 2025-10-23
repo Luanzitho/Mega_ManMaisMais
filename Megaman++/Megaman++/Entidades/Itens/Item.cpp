@@ -3,6 +3,8 @@
 Item::Item()
 {
 	direita = true;
+	noChao = false;
+	velVertical -= 25;
 }
 
 Item::~Item()

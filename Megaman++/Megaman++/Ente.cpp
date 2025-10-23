@@ -57,6 +57,11 @@ const int Ente::getId()
 	return id;
 }
 
+void Ente::setAnimado(const bool animado)
+{
+	this->animado = animado;
+}
+
 const bool Ente::getAnimado()
 {
 	return animado;
@@ -86,6 +91,7 @@ void Ente::salvar()
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["posicao"]["y"] = getCoords().y;
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["tamanho"]["x"] = getTamanho().x;
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["tamanho"]["y"] = getTamanho().y;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["animado"] = animado;
 
 	std::ofstream novoArquivo("Saves/save1.json");
 	if (novoArquivo.is_open()) {
@@ -104,5 +110,5 @@ void Ente::carregar()
 	//carregando os atributos de Ente dos dados salvos
 	setCoords(sf::Vector2f(dadosSalvos["id"][lugar][indiceAtual]["posicao"]["x"], dadosSalvos["id"][lugar][indiceAtual]["posicao"]["y"]));
 	setTamanho(sf::Vector2f(dadosSalvos["id"][lugar][indiceAtual]["tamanho"]["x"], dadosSalvos["id"][lugar][indiceAtual]["tamanho"]["y"]));
-
+	setAnimado(dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["animado"]);
 }

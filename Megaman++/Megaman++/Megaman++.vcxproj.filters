@@ -188,7 +188,7 @@
     <ClInclude Include="Entidades\Itens\Item.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Entidades\Personagens\EstadoAnimacao.h">
+    <ClInclude Include="Entidades\EstadoAnimacao.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>

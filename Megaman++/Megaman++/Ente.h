@@ -33,6 +33,7 @@ public:
 	void setId(const int id);
 	bool operator==(int id) const;
 	const int getId();
+	void setAnimado(const bool animado);
 	const bool getAnimado();
 	virtual void executar(float dt) = 0;
 	virtual std::string getTextureFile() = 0;

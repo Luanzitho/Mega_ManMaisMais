@@ -9,6 +9,7 @@
 #include "../Entidades/Personagens/CutMan.h"
 #include "../Entidades/Obstaculos/Mola.h"
 #include "../Entidades/Obstaculos/Espinho.h"
+#include "../Entidades/Itens/Regen.h"
 
 #include <random>
 #include <fstream>
@@ -44,6 +45,7 @@ protected:
 	std::vector<Plataforma*> chao;
 	std::vector<Inimigo*> inimigos;
 	std::vector<Obstaculo*> obstaculos;
+	std::vector<Item*> itens;
 	ListaEntidades LEs;
 	//Mola* mola;
 	bool acabou;
@@ -67,6 +69,7 @@ public:
 	void pegarCamada(int i);
 	void separaSprites();
 	std::string getTextureFile();
+	void incluirItens();
 	int aleatoriza(int limite1, int limite2);
 	void moveMapa(float dt);
 	bool getAcabou();

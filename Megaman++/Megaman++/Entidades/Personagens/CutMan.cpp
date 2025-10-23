@@ -9,7 +9,7 @@ CutMan::CutMan(): cooldownNoChao(0), timerAtirar(0), timerPerseguir(0), timerPul
 	setId(8);
 	setNumVidas(22 + nivel_maldade * 2);
 
-	velMax = 200;
+	velMax = VELOCIDADE_MAX;
 	
 	qtdPontos += 900;
 
@@ -69,7 +69,7 @@ void CutMan::mover(float dt)
 
 	if (noChao) estadoAnimacao.Pulando = false;
 
-	if (velocidade == 0) estadoAnimacao.Parado = true;
+	if (velocidade == 0 && noChao) estadoAnimacao.Parado = true;
 	else estadoAnimacao.Parado = false;
 
 	cooldownNoChao += dt;
@@ -78,15 +78,17 @@ void CutMan::mover(float dt)
 		noChao = false;
 		cooldownNoChao = 0;
 	}
+	if (!noChao && cooldownNoChao > 0.1) //Caso ele esteja caindo, mesmo sem usar o pulo, ele entra na animação de pulo
+		estadoAnimacao.Pulando = true;
 
 	timerPerseguir += dt;
 	timerPular += dt;
 
-	if (timerPerseguir >= 1) 
+	if (timerPerseguir >= TEMPO_PERSEGUIR) 
 	{
-		if (noChao && timerPular >= 3)
+		if (noChao && timerPular >= TEMPO_PULAR)
 		{
-			velVertical = -300;
+			velVertical = ALTURA_PULO;
 			estadoAnimacao.Pulando = true;
 			noChao = false;
 			timerPular = 0;
@@ -122,32 +124,32 @@ int CutMan::getFrame()
 {
 	if (estadoAnimacao.Atacando == true)
 	{
-		return (6 + (int((timerFrame / tempoFrame)) % 2));
+		return (6 + (int((timerFrame / tempoFrame)) % 2)); //Frames 6-7 (Arremessando a lâmina)
 	}
 
 	if (estadoAnimacao.Parado == true)
 	{
 		if(podeAtirar)
-			return (int((timerFrame / tempoFrame)) % 2); // frames 0-1
-		return (8 + (int((timerFrame / tempoFrame)) % 2));		
+			return (int((timerFrame / tempoFrame)) % 2); //Frames 0-1 (Parado com a lâmina)
+		return (8 + (int((timerFrame / tempoFrame)) % 2)); //Frames 8-9 (Parado sem a lâmina)
 	}
 
 	if (estadoAnimacao.Pulando == true)
 	{
-		if (podeAtirar)
-			return 5;
-		return 13;
+		if (podeAtirar) 
+			return 5; //Pulo (lâmina)
+		return 13; //Pulo (Sem lâmina)
 	}
 
 	if (estadoAnimacao.Andando == true)
 	{
 		if (podeAtirar)
-			return 2 + (int((timerFrame / tempoFrame)) % 3); // frames 2-4
+			return 2 + (int((timerFrame / tempoFrame)) % 3); //Frames 2-4 (Andando com a lâmina)
 		
-		return 10 + (int((timerFrame / tempoFrame)) % 3); // frames 10-12
+		return 10 + (int((timerFrame / tempoFrame)) % 3); //Frames 10-12 (Andando sem a lâmina)
 	}
 
-	return (int((timerFrame / tempoFrame)) % 2); // frames 0-1
+	//return (int((timerFrame / tempoFrame)) % 2);
 }
 
 sf::Vector2f CutMan::getEscalaCorreta()
@@ -166,9 +168,9 @@ void CutMan::executar(float dt)
 	{ 
 		timerAtirar += dt;
 
-		if (timerAtirar >= 1.75) estadoAnimacao.Atacando = true;
+		if (timerAtirar >= TEMPO_ANIMACAO_TIRO) estadoAnimacao.Atacando = true;
 
-		if (timerAtirar >= 2)
+		if (timerAtirar >= TEMPO_ATIRAR)
 		{
 			velocidade = 0;
 			atirar();

@@ -53,6 +53,7 @@ void Fase1::executar(float dt)
 {
 	desenharCenario();
     LEs.percorrer(dt, getTamanho());
+    incluirItens();
 
     if (twoPlayers && p2)
     {

@@ -1,5 +1,14 @@
 #pragma once
 
+#define TEMPO_ATIRAR 1.75
+#define TEMPO_PULAR 3
+#define TEMPO_PERSEGUIR 1
+
+#define TEMPO_ANIMACAO_TIRO 1.75
+
+#define ALTURA_PULO -300 
+#define VELOCIDADE_MAX 200
+
 #include "Inimigo.h"
 #include "../Projeteis/ProjetilCutMan.h"
 

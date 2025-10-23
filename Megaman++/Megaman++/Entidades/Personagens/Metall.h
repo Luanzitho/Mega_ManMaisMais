@@ -1,5 +1,8 @@
 #pragma once
 
+#define TEMPO_ATIRAR 3
+#define TEMPO_ESCONDER 2.5
+
 #include "Inimigo.h"
 #include "Megaman.h"
 #include "../Projeteis/ProjetilMetall.h"

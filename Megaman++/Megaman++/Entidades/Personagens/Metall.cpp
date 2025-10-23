@@ -90,7 +90,7 @@ void Metall::executar(float dt)
 	if(!noChao)
 		sofrerAcaoDaGravidade(dt);
 
-	if (abs(pMega->getCoords().x - getCoords().x) < 200 && timerAtirar >= 3)
+	if (abs(pMega->getCoords().x - getCoords().x) < 200 && timerAtirar >= TEMPO_ATIRAR)
 	{
 		revelar(); //Ele precisa sair antes de atirar
 		atirar(1); //Tiro 1 - Linha reta
@@ -99,7 +99,7 @@ void Metall::executar(float dt)
 		timerAtirar = 0;
 		timerEsconder = 0;
 	}
-	else if (timerEsconder >= 2.5)
+	else if (timerEsconder >= TEMPO_ESCONDER)
 	{
 		esconder();
 	}

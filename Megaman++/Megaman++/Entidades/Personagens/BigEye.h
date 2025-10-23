@@ -1,5 +1,12 @@
 #pragma once
 
+#define TEMPO_PULO 0.8
+#define TEMPO_ANIMACAO_PULO 0.5
+
+#define ALTURA_PULO -250
+#define ALTRURA_PULO_CRITICO -400
+#define VELOCIDADE_MAX 50
+
 #include "Inimigo.h"
 
 class BigEye:public Inimigo //Equivalente a inimigo médio

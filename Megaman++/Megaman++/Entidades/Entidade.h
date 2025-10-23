@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../Ente.h"
-#include "../Entidades/estadoAnimacao.h"
+#include "../Entidades/EstadoAnimacao.h"
 
 class Entidade:public Ente
 {

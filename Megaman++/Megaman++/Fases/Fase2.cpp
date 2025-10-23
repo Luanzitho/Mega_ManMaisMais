@@ -58,11 +58,11 @@ void Fase2::executar(float dt)
 {
     desenharCenario();
     LEs.percorrer(dt, getTamanho());
+    incluirItens();
 
     if (twoPlayers && p2)
     {
-        if (!p1->getVivo() && p2->getVivo())
-            LEs.redefinirAlvo(p2);
+        if (!p1->getVivo() && p2->getVivo()) LEs.redefinirAlvo(p2);
     }
 
 	exibirBarraDeVida();

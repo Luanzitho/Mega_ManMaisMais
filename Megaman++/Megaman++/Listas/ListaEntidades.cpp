@@ -20,6 +20,23 @@ void ListaEntidades::incluirEntidade(Entidade* pE)
 		LEs.incluir(pE);
 }
 
+std::vector<Item*> ListaEntidades::getItensDaLista()
+{
+    std::vector<Item*> itensDaLista;
+
+    Lista<Entidade>::Elemento<Entidade>* aux = LEs.getpPrimeiro();
+
+    while (aux != nullptr)
+    {
+        if (Item* item = dynamic_cast<Item*>(aux->getInfo()))
+            itensDaLista.push_back(item);
+
+        aux = aux->getProximo();
+    }
+
+    return itensDaLista;
+}
+
 void ListaEntidades::redefinirAlvo(Megaman* pM)
 {
     if (!pM) return;

@@ -167,6 +167,7 @@
   <ItemGroup>
     <ClInclude Include="Ente.h" />
     <ClInclude Include="Entidades\Entidade.h" />
+    <ClInclude Include="Entidades\EstadoAnimacao.h" />
     <ClInclude Include="Entidades\Itens\Item.h" />
     <ClInclude Include="Entidades\Itens\Regen.h" />
     <ClInclude Include="Entidades\Obstaculos\Espinho.h" />
@@ -175,7 +176,6 @@
     <ClInclude Include="Entidades\Obstaculos\Plataforma.h" />
     <ClInclude Include="Entidades\Personagens\BigEye.h" />
     <ClInclude Include="Entidades\Personagens\CutMan.h" />
-    <ClInclude Include="Entidades\Personagens\EstadoAnimacao.h" />
     <ClInclude Include="Entidades\Personagens\Inimigo.h" />
     <ClInclude Include="Entidades\Personagens\Megaman.h" />
     <ClInclude Include="Entidades\Personagens\Metall.h" />

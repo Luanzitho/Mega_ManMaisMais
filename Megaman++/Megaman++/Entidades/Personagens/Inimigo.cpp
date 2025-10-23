@@ -63,13 +63,13 @@ void Inimigo::droparItem()
     }
 
     std::mt19937 gen(rd());
-    int chance = std::uniform_int_distribution<>(1, 100)(gen); // 1..100
+    int chance = std::uniform_int_distribution<>(1, 100)(gen); //1 a 100
 
-    if (chance <= 100) // 30% de chance
+    if (chance <= 30) //30% de chance
     {
         Regen* item = new Regen;
         sf::Vector2f pos = getCoords();
-        pos.y -= 10.f;
+        //pos.y += 10.f;
         item->setCoords(pos);
         item->setGerenciadorGrafico(pGG);
         item->associaListaEntidades(LE);
@@ -78,12 +78,12 @@ void Inimigo::droparItem()
         LE->incluirEntidade(item);
         GC->incluirItem(item);
 
-        std::cout << "Item dropado em (" << pos.x << "," << pos.y << "), chance=" << chance << "\n";
+        //std::cout << "Item dropado em (" << pos.x << "," << pos.y << "), chance=" << chance << "\n";
     }
-    else
-    {
-        std::cout << "Sem drop (chance=" << chance << ")\n";
-    }
+    //else
+    //{
+    //    std::cout << "Sem drop (chance=" << chance << ")\n";
+    //}
 }
 
 void Inimigo::associaListaEntidades(ListaEntidades* pLista)
