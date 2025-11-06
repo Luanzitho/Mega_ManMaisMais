@@ -56,7 +56,7 @@ void BigEye::saltar() //Salto normal
 
 void BigEye::saltar(int chance) //Salto carregado (+ dano)
 {
-	velVertical = ALTRURA_PULO_CRITICO;
+	velVertical = ALTURA_PULO_CRITICO;
 	dano = dano * chance; //Dano em dobro no crítico
 }
 
