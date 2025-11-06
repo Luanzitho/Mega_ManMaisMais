@@ -7,7 +7,10 @@ class Gerenciador_Colisoes;
 
 class Item:public Entidade
 {
-private:
+protected:
+	float altura;
+	float largura;
+	float timerDespawn;
 
 public:
 	Item();

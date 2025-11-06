@@ -4,7 +4,7 @@
 Ente::Ente(): id(0), indiceAtual(0)
 {
 	pGG = nullptr;
-	pGS = AudioManager::getInstancia();
+	pGS = Gerenciador_Sonoro::getInstancia();
 	std::fstream jsonFile("Saves/save1.json");
 	if(jsonFile.is_open() && dadosSalvos== nullptr)
 	{

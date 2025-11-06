@@ -203,9 +203,9 @@ void Metall::carregar()
 {
 	int lugar = getId();
 	indiceAtual = ++indiceMetall;
-	timerEsconder=dadosSalvos["id"][lugar][indiceAtual]["timerEsconder"];
-	timerAtirar=dadosSalvos["id"][lugar][indiceAtual]["timerAtirar"];
-	escondido=dadosSalvos["id"][lugar][indiceAtual]["escondido"];
+	timerEsconder = dadosSalvos["id"][lugar][indiceAtual]["timerEsconder"];
+	timerAtirar = dadosSalvos["id"][lugar][indiceAtual]["timerAtirar"];
+	escondido = dadosSalvos["id"][lugar][indiceAtual]["escondido"];
 
 	Inimigo::carregar();
 }

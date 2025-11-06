@@ -3,17 +3,18 @@
 #include <map>
 #include <string>
 
-class AudioManager
+class Gerenciador_Sonoro
 {
 private:
-	static AudioManager* instancia;
+	static Gerenciador_Sonoro* instancia;
     sf::Music musicaFundo; //Música de fundo
     std::map<std::string, sf::SoundBuffer> buffers; //Buffers dos efeitos
     std::map<std::string, sf::Sound> sons; //Sons que usam os buffers
-    AudioManager(); //Construtor privado para singleton
+    Gerenciador_Sonoro(); //Construtor privado para singleton
 
 public:
-    static AudioManager* getInstancia();
+    static Gerenciador_Sonoro* getInstancia();
+    ~Gerenciador_Sonoro();
     bool carregarMusica(const std::string& arquivo); //Música de fundo
     void tocarMusica(bool loop = true);
     void pausarMusica();

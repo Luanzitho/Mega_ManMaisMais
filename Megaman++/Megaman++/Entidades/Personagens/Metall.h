@@ -39,4 +39,3 @@ public:
 	void carregar();
 	static void resetIndice() { indiceMetall = -1; }
 };
-

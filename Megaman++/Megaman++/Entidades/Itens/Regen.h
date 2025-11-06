@@ -2,6 +2,8 @@
 #include "Item.h"
 #include <random>
 
+#define TEMPO_DESPAWN 5
+
 class Item;
 class Megaman;
 
@@ -9,13 +11,11 @@ class Regen:public Item
 {
 private:
 	float regenAmount;
-	float timerDespawn;
 	int tipoRegen;
 	std::random_device rd;
 	ListaEntidades* LE;
 	Gerenciador_Colisoes* GC;
-	float altura;
-	float largura;
+	static int indiceRegen;
 
 public:
 	Regen();

@@ -1,42 +1,46 @@
 #include "Gerenciador_Sonoro.h"
 
-AudioManager* AudioManager::instancia = nullptr;
+Gerenciador_Sonoro* Gerenciador_Sonoro::instancia = nullptr;
 
-AudioManager::AudioManager()
+Gerenciador_Sonoro::Gerenciador_Sonoro()
 {
 }
 
-AudioManager* AudioManager::getInstancia()
+Gerenciador_Sonoro* Gerenciador_Sonoro::getInstancia()
 {
     if (!instancia)
     {
-        instancia = new AudioManager();
+        instancia = new Gerenciador_Sonoro();
     }
     return instancia;
 }
-//#include <iostream>
-bool AudioManager::carregarMusica(const std::string& arquivo)
+
+Gerenciador_Sonoro::~Gerenciador_Sonoro()
+{
+}
+
+bool Gerenciador_Sonoro::carregarMusica(const std::string& arquivo)
 {
     //std::cout << "maoe";
     return musicaFundo.openFromFile(arquivo);
 }
 
-void AudioManager::tocarMusica(bool loop)
+void Gerenciador_Sonoro::tocarMusica(bool loop)
 {
     musicaFundo.setLoop(loop);
     musicaFundo.play();
 }
 
-void AudioManager::pausarMusica() { musicaFundo.pause(); }
+void Gerenciador_Sonoro::pausarMusica() { musicaFundo.pause(); }
 
-void AudioManager::pararMusica() { musicaFundo.stop(); }
+void Gerenciador_Sonoro::pararMusica() { musicaFundo.stop(); }
 
-void AudioManager::setVolumeMusica(float volume)
+void Gerenciador_Sonoro::setVolumeMusica(float volume)
 {
     musicaFundo.setVolume(volume);
 }
 
-bool AudioManager::carregarEfeito(const std::string& nome, const std::string& arquivo) //Efeitos sonoros
+bool Gerenciador_Sonoro::carregarEfeito(const std::string& nome, const std::string& arquivo) //Efeitos sonoros
 {
     sf::SoundBuffer buffer;
     if (!buffer.loadFromFile(arquivo))
@@ -51,15 +55,15 @@ bool AudioManager::carregarEfeito(const std::string& nome, const std::string& ar
     return true;
 }
 
-void AudioManager::tocarEfeito(const std::string& nome)
+void Gerenciador_Sonoro::tocarEfeito(const std::string& nome)
 {
     if (sons.find(nome) != sons.end())
         sons[nome].play();
 }
 
-void AudioManager::setVolumeEfeitos(float volume)
+void Gerenciador_Sonoro::setVolumeEfeitos(float volume)
 {
-    for (auto it = sons.begin(); it != sons.end(); ++it) //Iterador clássico para compatibilidade C++11
+    for (auto it = sons.begin(); it != sons.end(); ++it)
     {
         it->second.setVolume(volume);
     }

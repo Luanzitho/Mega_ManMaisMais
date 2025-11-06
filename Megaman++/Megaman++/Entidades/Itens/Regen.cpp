@@ -1,8 +1,10 @@
 #include "Regen.h"
 #include "../Personagens/Megaman.h"
 
-Regen::Regen() : timerDespawn(0.f)
+Regen::Regen()
 {
+	setId(9);
+
 	std::mt19937 gen(rd()); //Motor aleatório (Mersenne Twister)
 
 	tipoRegen = std::uniform_int_distribution<>(1, 3)(gen); //Variação entre 1 e 3
@@ -57,7 +59,7 @@ void Regen::executar(float dt)
 	if (!noChao)
 		sofrerAcaoDaGravidade(dt);
 
-	if (timerDespawn >= 5.f)
+	if (timerDespawn >= TEMPO_DESPAWN)
 		destruir();
 }
 
@@ -121,12 +123,17 @@ void Regen::associaGerenciadorColisoes(Gerenciador_Colisoes* gc)
 
 void Regen::salvar()
 {
+	//int lugar = getId();
+	//dadosSalvos["id"][getId()][indiceAtual]["regenAmount"] = regenAmount;
+	//dadosSalvos["id"][getId()][indiceAtual]["tipoRegen"] = tipoRegen;
 	Item::salvar();
-	dadosSalvos["id"][getId()][indiceAtual]["regenAmount"] = regenAmount;
 }
 
 void Regen::carregar()
 {
+	int lugar = getId();
+	//indiceAtual = ++indiceRegen;
+	//regenAmount = dadosSalvos["id"][getId()][indiceAtual]["regenAmount"];
+	//tipoRegen = dadosSalvos["id"][getId()][indiceAtual]["tipoRegen"];
 	Item::carregar();
-	regenAmount = dadosSalvos["id"][getId()][indiceAtual]["regenAmount"];
 }

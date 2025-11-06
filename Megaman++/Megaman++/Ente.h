@@ -15,7 +15,7 @@ class Ente
 protected:
 	int id;
 	Gerenciador_Grafico* pGG;
-	AudioManager* pGS;
+	Gerenciador_Sonoro* pGS;
 	//Gerenciador_Colisoes* pGC;
 	sf::Vector2f coords;
 	sf::Vector2f tamanho;

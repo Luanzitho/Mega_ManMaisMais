@@ -12,7 +12,7 @@ Jogo::Jogo() : GG(*Gerenciador_Grafico::getInstancia()), inMenu(true), playing(f
 	f2->setCoords(sf::Vector2f(0.f, 0.f));
 	f2->setGerenciadorGrafico(&GG);
 
-	GS = AudioManager::getInstancia();
+	GS = Gerenciador_Sonoro::getInstancia();
 	GS->setVolumeMusica(75.f);
 
 	GS->carregarEfeito("victory", "Sound/Effects/victory.wav");
