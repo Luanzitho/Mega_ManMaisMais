@@ -12,16 +12,18 @@ Item::~Item()
 
 void Item::salvar()
 {
+	int lugar = getId();
+	dadosSalvos["id"][dadosSalvos["id"][lugar].size() - 1]["altura"] = altura;
+	dadosSalvos["id"][dadosSalvos["id"][lugar].size() - 1]["larura"] = largura;
+	dadosSalvos["id"][dadosSalvos["id"][lugar].size() - 1]["timerDespawn"] = timerDespawn;
 	Entidade::salvar();
-	//dadosSalvos["id"][dadosSalvos["id"][lugar].size() - 1]["altura"] = altura;
-	//dadosSalvos["id"][dadosSalvos["id"][lugar].size() - 1]["larura"] = largura;
-	//dadosSalvos["id"][dadosSalvos["id"][lugar].size() - 1]["timerDespawn"] = timerDespawn;
 }
 
 void Item::carregar()
 {
+	int lugar = getId();
+	altura = dadosSalvos["id"][lugar][indiceAtual]["altura"];
+	largura = dadosSalvos["id"][lugar][indiceAtual]["largura"];
+	timerDespawn = dadosSalvos["id"][lugar][indiceAtual]["timerDespawn"];
 	Entidade::carregar();
-	//altura = dadosSalvos["id"][indiceAtual]["altura"];
-	//largura = dadosSalvos["id"][indiceAtual]["largura"];
-	//timerDespawn = dadosSalvos["id"][indiceAtual]["timerDespawn"];
 }

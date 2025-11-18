@@ -27,6 +27,7 @@ private:
 	bool twoPlayersSalvo;
 	//int quantidadeMenus;
 	bool jogoAberto;
+	bool existeSave;
 
 public:
 	Menu();
@@ -41,5 +42,6 @@ public:
 	void salvar();
 	void carregar();
 	void setTerminou(bool termi, int pontos);
+	void verificaSave();
 	//void carregaRanking();
 };

@@ -130,6 +130,7 @@ void Jogo::iniciar(int fase)
 		inMenu = false;
 		playing = true;
 		faseA = fase;
+		reiniciarFases();
 		if (fase == 1)
 		{
 			GS->pararMusica();

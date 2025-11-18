@@ -1,5 +1,7 @@
 C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Ente.cpp;C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Debug\Ente.obj
 C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Entidade.cpp;C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Debug\Entidade.obj
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Itens\Item.cpp;C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Debug\Item.obj
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Itens\Regen.cpp;C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Debug\Regen.obj
 C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Obstaculos\Espinho.cpp;C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Debug\Espinho.obj
 C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Obstaculos\Mola.cpp;C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Debug\Mola.obj
 C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Obstaculos\Obstaculo.cpp;C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Debug\Obstaculo.obj
@@ -19,6 +21,7 @@ C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\F
 C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase2.cpp;C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Debug\Fase2.obj
 C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Colisoes.cpp;C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Debug\Gerenciador_Colisoes.obj
 C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.cpp;C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Debug\Gerenciador_Grafico.obj
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Sonoro.cpp;C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Debug\Gerenciador_Sonoro.obj
 C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Jogo.cpp;C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Debug\Jogo.obj
 C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Listas\ListaEntidades.cpp;C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Debug\ListaEntidades.obj
 C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\main.cpp;C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Debug\main.obj

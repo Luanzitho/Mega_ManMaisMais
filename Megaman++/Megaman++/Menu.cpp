@@ -1,7 +1,7 @@
 ﻿#include "Menu.h"
 #include <iostream>
 
-Menu::Menu() : escolha(0), tela(0), enter(false), isPressed(false), start(false), cooldown(0.f), fase(0), pause(false), pontuacao(0), terminou(false), rankingNomes(), rankingPontos(), twoPlayers(false), twoPlayersSalvo(false)
+Menu::Menu() : escolha(0), tela(0), enter(false), isPressed(false), start(false), cooldown(0.f), fase(0), pause(false), pontuacao(0), terminou(false), rankingNomes(), rankingPontos(), twoPlayers(false), twoPlayersSalvo(false), existeSave(false)
 {
 	setId(12);
 	jogoAberto = true;
@@ -62,6 +62,7 @@ Menu::Menu() : escolha(0), tela(0), enter(false), isPressed(false), start(false)
 		pGS->carregarEfeito("confirm", "Sound/Effects/confirm.wav");
 		pGS->setVolumeEfeitos(100.f);
 	}
+	verificaSave();
 }
 
 Menu::~Menu()
@@ -116,7 +117,8 @@ void Menu::executar(float dt)
 				pGS->tocarEfeito("select");
 
 				isPressed = true;
-				escolha--;
+				if (tela != 2 || (tela==2 && (existeSave || escolha>1)))escolha--;
+				else if (!existeSave && escolha == 1)escolha = 1;
 				cooldown = 0;
 			}
 		}
@@ -189,7 +191,7 @@ void Menu::selecionar()
 	}
 	else if(tela==2)
 	{
-		if (escolha == 0) { //Continuar
+		if (escolha == 0 && existeSave) { //Continuar
 			carregar();
 			if(twoPlayers!=twoPlayersSalvo)
 			{
@@ -221,6 +223,7 @@ void Menu::selecionar()
 		else if (escolha == 1)// salvar
 		{
 			salvar();
+			existeSave = true;
 			pJog->salvar();
 		}
 		else if (escolha == 2)//voltar para o menu principal
@@ -277,7 +280,8 @@ void Menu::selecionar()
 	{
 		tela = 1;
 	}
-	escolha = 0; //limpa a variavel para quando voltar para o menu
+	if (tela != 2)escolha = 0; //limpa a variavel para quando voltar para o menu
+	else escolha = 1;
 }
 
 void Menu::desenhaInteracao()
@@ -302,7 +306,7 @@ void Menu::desenhaInteracao()
 	}
 	else if (tela == 2)//escolha da fase
 	{
-		for (int i = 6; i < 10; i++)
+		for (int i = existeSave? 6:7; i < 10; i++)
 		{
 			if (i == escolha + 6)texts[i].setOutlineThickness(3.f);
 			else texts[i].setOutlineThickness(0);
@@ -364,6 +368,7 @@ void Menu::salvar()
 	dadosSalvos= json::object({});
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["fase"] = fase;
 	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()-1]["twoPlayers"] = twoPlayers;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["existeSave"] = existeSave;
 	for (int i = 0; i < rankingPontos.size(); i++)
 	{
 		dadosSalvos["id"][getId()][dadosSalvos["id"][getId()].size() - 1]["ranking"]["nomes"][i] = rankingNomes[i];
@@ -379,6 +384,7 @@ void Menu::carregar()
 	
 	fase = dadosSalvos["id"][lugar][indiceAtual]["fase"];
 	twoPlayersSalvo = dadosSalvos["id"][lugar][indiceAtual]["twoPlayers"];
+	existeSave = dadosSalvos["id"][lugar][indiceAtual]["existeSave"];
 
 	for (int i = 0; i < rankingPontos.size(); i++)
 	{
@@ -392,4 +398,14 @@ void Menu::setTerminou(bool termi, int pontos)
 {
 	terminou = termi;
 	pontuacao = pontos;
+	existeSave = false;
+}
+
+void Menu::verificaSave()
+{
+	indiceAtual = dadosSalvos["id"][getId()].size() - 1;
+	if(dadosSalvos["id"][getId()][indiceAtual]["existeSave"])
+	{
+		existeSave = dadosSalvos["id"][getId()][indiceAtual]["existeSave"];
+	}
 }

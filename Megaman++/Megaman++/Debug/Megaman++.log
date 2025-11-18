@@ -1,103 +1,178 @@
 ﻿  Ente.cpp
-C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
-  (compilando o arquivo fonte 'Ente.cpp')
-  
   Entidade.cpp
-C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
-  (compilando o arquivo fonte 'Entidades/Entidade.cpp')
-  
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Entidade.cpp(87,25): warning C4018: '>=': incompatibilidade de signed/unsigned
+  Item.cpp
+  Regen.cpp
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Itens\Regen.cpp(76,11): warning C4244: 'argumento': conversão de 'float' para 'const int', possível perda de dados
   Espinho.cpp
-C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
-  (compilando o arquivo fonte 'Entidades/Obstaculos/Espinho.cpp')
-  
   Mola.cpp
-C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
-  (compilando o arquivo fonte 'Entidades/Obstaculos/Mola.cpp')
-  
   Obstaculo.cpp
-C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
-  (compilando o arquivo fonte 'Entidades/Obstaculos/Obstaculo.cpp')
-  
   Plataforma.cpp
-C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
-  (compilando o arquivo fonte 'Entidades/Obstaculos/Plataforma.cpp')
-  
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Obstaculos\Plataforma.cpp(6,15): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Obstaculos\Plataforma.cpp(8,17): warning C4244: '=': conversão de 'int' para 'float', possível perda de dados
   BigEye.cpp
-C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
-  (compilando o arquivo fonte 'Entidades/Personagens/BigEye.cpp')
-  
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\BigEye.cpp(6,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\BigEye.cpp(8,21): warning C4244: '=': conversão de 'int' para 'float', possível perda de dados
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\BigEye.cpp(75,27): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
   CutMan.cpp
-C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
-  (compilando o arquivo fonte 'Entidades/Personagens/CutMan.cpp')
-  
   Inimigo.cpp
-C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
-  (compilando o arquivo fonte 'Entidades/Personagens/Inimigo.cpp')
-  
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\Inimigo.cpp(7,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\Inimigo.cpp(102,25): warning C4018: '>=': incompatibilidade de signed/unsigned
   Megaman.cpp
-C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
-  (compilando o arquivo fonte 'Entidades/Personagens/Megaman.cpp')
-  
   Metall.cpp
-C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
-  (compilando o arquivo fonte 'Entidades/Personagens/Metall.cpp')
-  
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\Metall.cpp(9,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\Metall.cpp(80,31): warning C4244: 'argumento': conversão de 'int' para 'T', possível perda de dados
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\Metall.cpp(80,31): warning C4244:         with
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\Metall.cpp(80,31): warning C4244:         [
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\Metall.cpp(80,31): warning C4244:             T=float
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\Metall.cpp(80,31): warning C4244:         ]
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\Metall.cpp(80,22): warning C4244: 'argumento': conversão de 'int' para 'T', possível perda de dados
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\Metall.cpp(80,22): warning C4244:         with
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\Metall.cpp(80,22): warning C4244:         [
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\Metall.cpp(80,22): warning C4244:             T=float
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\Metall.cpp(80,22): warning C4244:         ]
   Personagem.cpp
-C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
-  (compilando o arquivo fonte 'Entidades/Personagens/Personagem.cpp')
-  
   Projetil.cpp
-C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
-  (compilando o arquivo fonte 'Entidades/Projeteis/Projetil.cpp')
-  
   ProjetilCutMan.cpp
-C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
-  (compilando o arquivo fonte 'Entidades/Projeteis/ProjetilCutMan.cpp')
-  
   ProjetilMegaman.cpp
-C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
-  (compilando o arquivo fonte 'Entidades/Projeteis/ProjetilMegaman.cpp')
-  
   ProjetilMetall.cpp
-C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
-  (compilando o arquivo fonte 'Entidades/Projeteis/ProjetilMetall.cpp')
-  
   Fase.cpp
-C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\CutMan.h(3,9): warning C4005: 'TEMPO_ATIRAR': redefinição de macro
   (compilando o arquivo fonte 'Fases/Fase.cpp')
+      C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\Metall.h(3,9):
+      ver a definição anterior de "TEMPO_ATIRAR"
   
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\CutMan.h(9,9): warning C4005: 'ALTURA_PULO': redefinição de macro
+  (compilando o arquivo fonte 'Fases/Fase.cpp')
+      C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\BigEye.h(6,9):
+      ver a definição anterior de "ALTURA_PULO"
+  
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\CutMan.h(10,9): warning C4005: 'VELOCIDADE_MAX': redefinição de macro
+  (compilando o arquivo fonte 'Fases/Fase.cpp')
+      C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\BigEye.h(8,9):
+      ver a definição anterior de "VELOCIDADE_MAX"
+  
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase.cpp(73,23): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase.cpp(90,23): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase.cpp(142,23): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase.cpp(155,16): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase.cpp(160,36): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase.cpp(333,39): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase.cpp(336,39): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase.cpp(339,39): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase.cpp(342,39): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase.cpp(345,39): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase.cpp(351,35): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase.cpp(354,35): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase.cpp(357,35): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase.cpp(360,35): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase.cpp(363,35): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase.cpp(408,44): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase.cpp(410,45): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase.cpp(429,19): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase.cpp(434,23): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase.cpp(621,20): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase.cpp(625,23): warning C4018: '<': incompatibilidade de signed/unsigned
   Fase1.cpp
-C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\CutMan.h(3,9): warning C4005: 'TEMPO_ATIRAR': redefinição de macro
   (compilando o arquivo fonte 'Fases/Fase1.cpp')
+      C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\Metall.h(3,9):
+      ver a definição anterior de "TEMPO_ATIRAR"
   
-  Fase2.cpp
-C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
-  (compilando o arquivo fonte 'Fases/Fase2.cpp')
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\CutMan.h(9,9): warning C4005: 'ALTURA_PULO': redefinição de macro
+  (compilando o arquivo fonte 'Fases/Fase1.cpp')
+      C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\BigEye.h(6,9):
+      ver a definição anterior de "ALTURA_PULO"
   
-  Gerenciador_Colisoes.cpp
-C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
-  (compilando o arquivo fonte 'Gerenciadores/Gerenciador_Colisoes.cpp')
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\CutMan.h(10,9): warning C4005: 'VELOCIDADE_MAX': redefinição de macro
+  (compilando o arquivo fonte 'Fases/Fase1.cpp')
+      C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\BigEye.h(8,9):
+      ver a definição anterior de "VELOCIDADE_MAX"
   
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase1.cpp(183,27): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase1.cpp(219,27): warning C4018: '<': incompatibilidade de signed/unsigned
   Gerando Código...
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\CutMan.cpp(153,1): warning C4715: 'CutMan::getFrame': nem todos os caminhos de controle retornam um valor
   Compilando...
-  Gerenciador_Grafico.cpp
-C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
-  (compilando o arquivo fonte 'Gerenciadores/Gerenciador_Grafico.cpp')
+  Fase2.cpp
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\CutMan.h(3,9): warning C4005: 'TEMPO_ATIRAR': redefinição de macro
+  (compilando o arquivo fonte 'Fases/Fase2.cpp')
+      C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\Metall.h(3,9):
+      ver a definição anterior de "TEMPO_ATIRAR"
   
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\CutMan.h(9,9): warning C4005: 'ALTURA_PULO': redefinição de macro
+  (compilando o arquivo fonte 'Fases/Fase2.cpp')
+      C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\BigEye.h(6,9):
+      ver a definição anterior de "ALTURA_PULO"
+  
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\CutMan.h(10,9): warning C4005: 'VELOCIDADE_MAX': redefinição de macro
+  (compilando o arquivo fonte 'Fases/Fase2.cpp')
+      C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\BigEye.h(8,9):
+      ver a definição anterior de "VELOCIDADE_MAX"
+  
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase2.cpp(186,27): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Fases\Fase2.cpp(220,27): warning C4018: '<': incompatibilidade de signed/unsigned
+  Gerenciador_Colisoes.cpp
+  Gerenciador_Grafico.cpp
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.cpp(198,14): warning C4244: 'inicializando': conversão de 'float' para 'int', possível perda de dados
+  Gerenciador_Sonoro.cpp
   Jogo.cpp
-C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\CutMan.h(3,9): warning C4005: 'TEMPO_ATIRAR': redefinição de macro
   (compilando o arquivo fonte 'Jogo.cpp')
+      C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\Metall.h(3,9):
+      ver a definição anterior de "TEMPO_ATIRAR"
+  
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\CutMan.h(9,9): warning C4005: 'ALTURA_PULO': redefinição de macro
+  (compilando o arquivo fonte 'Jogo.cpp')
+      C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\BigEye.h(6,9):
+      ver a definição anterior de "ALTURA_PULO"
+  
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\CutMan.h(10,9): warning C4005: 'VELOCIDADE_MAX': redefinição de macro
+  (compilando o arquivo fonte 'Jogo.cpp')
+      C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\BigEye.h(8,9):
+      ver a definição anterior de "VELOCIDADE_MAX"
   
   ListaEntidades.cpp
-C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
-  (compilando o arquivo fonte 'Listas/ListaEntidades.cpp')
-  
   main.cpp
-C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\CutMan.h(3,9): warning C4005: 'TEMPO_ATIRAR': redefinição de macro
   (compilando o arquivo fonte 'main.cpp')
+      C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\Metall.h(3,9):
+      ver a definição anterior de "TEMPO_ATIRAR"
+  
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\CutMan.h(9,9): warning C4005: 'ALTURA_PULO': redefinição de macro
+  (compilando o arquivo fonte 'main.cpp')
+      C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\BigEye.h(6,9):
+      ver a definição anterior de "ALTURA_PULO"
+  
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\CutMan.h(10,9): warning C4005: 'VELOCIDADE_MAX': redefinição de macro
+  (compilando o arquivo fonte 'main.cpp')
+      C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\BigEye.h(8,9):
+      ver a definição anterior de "VELOCIDADE_MAX"
   
   Menu.cpp
-C:\Users\Jambr\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Gerenciadores\Gerenciador_Grafico.h(3,10): error C1083: Não é possível abrir arquivo incluir: 'SFML/Graphics.hpp': No such file or directory
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\CutMan.h(3,9): warning C4005: 'TEMPO_ATIRAR': redefinição de macro
   (compilando o arquivo fonte 'Menu.cpp')
+      C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\Metall.h(3,9):
+      ver a definição anterior de "TEMPO_ATIRAR"
   
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\CutMan.h(9,9): warning C4005: 'ALTURA_PULO': redefinição de macro
+  (compilando o arquivo fonte 'Menu.cpp')
+      C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\BigEye.h(6,9):
+      ver a definição anterior de "ALTURA_PULO"
+  
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\CutMan.h(10,9): warning C4005: 'VELOCIDADE_MAX': redefinição de macro
+  (compilando o arquivo fonte 'Menu.cpp')
+      C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Entidades\Personagens\BigEye.h(8,9):
+      ver a definição anterior de "VELOCIDADE_MAX"
+  
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Menu.cpp(27,20): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Menu.cpp(39,20): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Menu.cpp(47,20): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Menu.cpp(237,17): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Menu.cpp(256,21): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Menu.cpp(335,18): warning C4018: '<=': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Menu.cpp(367,20): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Megaman++\Menu.cpp(383,20): warning C4018: '<': incompatibilidade de signed/unsigned
   Gerando Código...
+  LINK : C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Debug\Megaman++.exe não encontrado ou não compilado pelo o último link incremental; executando link completo
+  Megaman++.vcxproj -> C:\Users\Luanzinho\Documents\GitHub\Mega_ManMaisMais\Megaman++\Debug\Megaman++.exe

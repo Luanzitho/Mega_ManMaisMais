@@ -3,7 +3,7 @@
 
 Regen::Regen()
 {
-	setId(9);
+	setId(14);
 
 	std::mt19937 gen(rd()); //Motor aleatório (Mersenne Twister)
 
@@ -44,6 +44,7 @@ Regen::Regen()
 	pGS->carregarEfeito("HealBig", "Sound/Effects/healbig.wav");
 	pGS->carregarEfeito("1up", "Sound/Effects/1up.wav");
 }
+int  Regen::indiceRegen = -1;
 
 Regen::~Regen()
 {
@@ -123,17 +124,17 @@ void Regen::associaGerenciadorColisoes(Gerenciador_Colisoes* gc)
 
 void Regen::salvar()
 {
-	//int lugar = getId();
-	//dadosSalvos["id"][getId()][indiceAtual]["regenAmount"] = regenAmount;
-	//dadosSalvos["id"][getId()][indiceAtual]["tipoRegen"] = tipoRegen;
+	int lugar = getId();
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size()]["regenAmount"] = regenAmount;
+	dadosSalvos["id"][lugar][dadosSalvos["id"][lugar].size() - 1]["tipoRegen"] = tipoRegen;
 	Item::salvar();
 }
 
 void Regen::carregar()
 {
 	int lugar = getId();
-	//indiceAtual = ++indiceRegen;
-	//regenAmount = dadosSalvos["id"][getId()][indiceAtual]["regenAmount"];
-	//tipoRegen = dadosSalvos["id"][getId()][indiceAtual]["tipoRegen"];
+	indiceAtual = ++indiceRegen;
+	regenAmount = dadosSalvos["id"][lugar][indiceAtual]["regenAmount"];
+	tipoRegen = dadosSalvos["id"][lugar][indiceAtual]["tipoRegen"];
 	Item::carregar();
 }
